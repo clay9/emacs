@@ -1,0 +1,9 @@
+;;
+;;*** Special Date ***
+;;
+%%(diary-anniversary 12 19 1989) ♥我%d岁生日♥ 
+
+;;
+;;*** Appointments ***
+;;
+&* 1, *: ❀给妈妈充话费❀

@@ -1,0 +1,33 @@
+#+STARTUP: overview
+* TODO 苹果企业者账号
+  SCHEDULED: <2018-09-19 Wed>
+  
+* DONE 网络知识学习
+  CLOSED: [2018-09-18 Tue 18:03] SCHEDULED: <2018-09-18 Tue>
+  - "DONE" Note in [2018-09-18 Tue]
+  1. [ ] 嗅探端口
+  2. [ ] 内网穿透
+
+* DONE GitLab代码管理 -- 通知邓权, 文伟军 上传代码
+  CLOSED: [2018-09-17 Mon 12:10] SCHEDULED: <2018-09-17 Mon>
+  - "DONE" Note in [2018-09-17 Mon]
+  
+* DONE GitLab搭建在mac系统上
+  CLOSED: [2018-09-14 Fri 17:24] SCHEDULED: <2018-09-14 Fri>
+  - "DONE" Note in [2018-09-14 Fri]
+  
+* TODO 服务器框架系统整理
+  SCHEDULED: <2018-09-10 Mon>
+  
+* TODO GitLab CI && CD
+** gitlab总览
+** gitlab CI总览
+** gitlab CD总览
+** gitlab CI实践应用
+** gitlab CD实践应用
+* TODO 文伟军交还 钥匙 && 显示器
+  SCHEDULED: <2018-09-25 Tue>
+  
+
+
+
