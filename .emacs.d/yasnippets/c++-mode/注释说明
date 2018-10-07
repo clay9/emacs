@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: /* */ 
+# key: coml
+# --
+/* ${1:condition} */
+$0

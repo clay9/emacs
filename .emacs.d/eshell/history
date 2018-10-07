@@ -1,0 +1,47 @@
+ls
+g+
+gcc
+g++
+g++ test.cpp -o test
+ls
+./test 
+cd ~
+git status
+ls
+ll
+clear
+
+git status
+exit
+ls
+gcc -v
+cd ~/Desktop/
+git clone git://git.kernel.org/pub/scm/git/git.git 
+git clone https://github.com/MobClub/New-Unity-For-ShareSDK.git
+cd ../
+cd ../
+gtags
+cd ../
+cd ../
+cd ../
+cd ../
+gtags
+cd -
+ls
+cd Scripts/
+ls
+clear
+
+ls
+ExitManagera.cs       GameApp.cs.meta      GameVersion.cs           Models.meta           Utility             shared.meta
+rm GTAGS.meta GTAGS 
+clear
+
+ls
+rm GRTAGS GRTAGS.meta 
+clear
+
+ls
+rm GPATH GPATH.meta 
+clear
+
