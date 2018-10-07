@@ -16,8 +16,9 @@
   CLOSED: [2018-09-14 Fri 17:24] SCHEDULED: <2018-09-14 Fri>
   - "DONE" Note in [2018-09-14 Fri]
   
-* TODO 服务器框架系统整理
-  SCHEDULED: <2018-09-10 Mon>
+* DONE 服务器框架系统整理
+  CLOSED: [2018-10-07 Sun 20:49] SCHEDULED: <2018-09-10 Mon>
+  - "DONE" Note in [2018-10-07 Sun]
   
 * TODO GitLab CI && CD
 ** gitlab总览
