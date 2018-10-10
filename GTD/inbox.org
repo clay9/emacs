@@ -83,10 +83,6 @@
   local:
   A - B - C  - D - E
 
- 
-
- 
-
   1. branch是commit的连线
   2. 本地起多个commit是良好习惯, 但是提交的时候 主要合并
 
