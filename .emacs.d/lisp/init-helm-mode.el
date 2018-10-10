@@ -20,7 +20,7 @@
 (setq helm-boring-buffer-regexp-list
    (quote
     ("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*Messages\\*" "\\*GNU Emacs\\*"
-     "\*Color\*" "BigDay" "\\*Completions\\*" "\*Org Agenda\*" "\*Flycheck error message\*" "Help" "Backtrace" "new snippet" "Calendar" "Fancy Diary Entries" "\*Org LATEX Export\*" "\*Customize Option\*" "\\*Warnings\\*")))
+     "\*Color\*" "BigDay" "\\*Completions\\*" "\*Org Agenda\*" "\*Flycheck error message\*" "Help" "Backtrace" "new snippet" "Calendar" "Fancy Diary Entries" "\*Org LATEX Export\*" "\*Customize Option\*" "\\*Warnings\\*" ".DS_Store")))
 
 
 ;; ******************

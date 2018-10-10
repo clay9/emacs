@@ -75,6 +75,45 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-block-separator 42)
+ '(org-agenda-menu-show-matcher nil)
+ '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (csharp-mode hydra yasnippet-snippets company-c-headers symbol-overlay slime flycheck smartparens sr-speedbar company))))
+    (ledger-mode csharp-mode hydra yasnippet-snippets company-c-headers symbol-overlay slime flycheck smartparens sr-speedbar company))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip ((t (:foreground "white"))))
+ '(flycheck-error-list-highlight ((t (:underline t))))
+ '(flycheck-fringe-info ((t (:inherit success :underline t))))
+ '(flycheck-fringe-warning ((t (:inherit error :underline t))))
+ '(flycheck-warning ((t (:inherit error :underline t))))
+ '(flyspell-incorrect ((t (:inherit warning :underline t))))
+ '(helm-buffer-directory ((t (:background "black" :foreground "Sienna3"))))
+ '(helm-buffer-file ((t (:background "black" :foreground "white"))))
+ '(helm-candidate-number ((t (:background "grey75" :foreground "black"))))
+ '(helm-ff-directory ((t (:background "black" :foreground "Sienna3"))))
+ '(helm-ff-dotted-directory ((t (:background "black" :foreground "Sienna3"))))
+ '(helm-ff-file ((t (:background "black" :foreground "white"))))
+ '(helm-ff-invalid-symlink ((t (:foreground "green"))))
+ '(helm-ff-symlink ((t (:foreground "green"))))
+ '(helm-history-remote ((t (:foreground "red"))))
+ '(helm-selection ((t (:underline "cyan"))))
+ '(helm-source-header ((t (:background "black" :foreground "white" :weight bold :height 2 :family "微软雅黑"))))
+ '(org-agenda-date ((t (:inherit org-agenda-structure :foreground "white"))) t)
+ '(org-agenda-date-today ((t (:foreground "white" :underline t :slant normal :weight normal))) t)
+ '(org-agenda-date-weekend ((t (:foreground "white"))) t)
+ '(org-agenda-structure ((t (:foreground "white"))))
+ '(org-habit-alert-face ((t (:background "orange" :foreground "black"))))
+ '(org-list-dt ((t nil)))
+ '(org-scheduled-previously ((t (:foreground "PaleGreen"))))
+ '(org-tag ((t nil)))
+ '(org-time-grid ((t (:foreground "white"))))
+ '(org-todo ((t (:foreground "Pink"))))
+ '(org-warning ((t (:foreground "red"))))
+ '(speedbar-directory-face ((t (:foreground "Sienna3"))))
+ '(speedbar-file-face ((t (:foreground "white"))))
+ '(yas-field-highlight-face ((t (:foreground "green" :background "black" :inherit (quote region))))))
