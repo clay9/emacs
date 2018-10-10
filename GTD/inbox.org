@@ -69,24 +69,3 @@
 
 
 
-
-* git修改本地的commit
-  在合并到公共远端之前， 所有修改都是  可逆
-
-  git rebase -- 不加任何参数的时候, 表示的是合并(类似于 git merge)
-
-  git rebase -i
-
-  remote：
-  A - B - C
-
-  local:
-  A - B - C  - D - E
-
-  1. branch是commit的连线
-  2. 本地起多个commit是良好习惯, 但是提交的时候 主要合并
-
-
-
-
-  
