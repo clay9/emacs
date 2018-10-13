@@ -476,7 +476,7 @@
 	   ((:url . "http://elpa.gnu.org/packages/flylisp.html")
 	    (:keywords))])
  (fountain-mode .
-		[(2 6 0)
+		[(2 6 1)
 		 ((emacs
 		   (24 5)))
 		 "Major mode for screenwriting in Fountain markup" single
@@ -544,6 +544,11 @@
 	 "play GNU Go in a buffer" tar
 	 ((:keywords "games" "processes")
 	  (:url . "http://www.gnuvola.org/software/gnugo/"))])
+ (gnus-mock .
+	    [(0 1 1)
+	     nil "Mock Gnus installation for testing" single
+	     ((:url . "http://elpa.gnu.org/packages/gnus-mock.html")
+	      (:keywords))])
  (heap .
        [(0 5)
 	nil "Heap (a.k.a. priority queue) data structure" single
