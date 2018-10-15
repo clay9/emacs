@@ -1,0 +1,4 @@
+*
+!.emacs.d/
+!.gitignore
+!.bash_profile

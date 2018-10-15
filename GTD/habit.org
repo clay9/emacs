@@ -3,7 +3,8 @@
 * GTD habit
 * ********************
 * TODO inbox							      :habit:
-  SCHEDULED: <2018-10-14 Sun 17:30-18:20 ++1d/2d>
+  SCHEDULED: <2018-10-16 Tue 17:30-18:20 ++1d/2d>
+  - "DONE" Note in [2018-10-15 Mon]
   - "DONE" Note in [2018-10-13 Sat]
   - "DONE" Note in [2018-10-12 Fri]
   - "DONE" Note in [2018-10-11 Thu]
@@ -53,14 +54,15 @@
   - "DONE" Note in [2017-11-29 Wed]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-13 Sat 11:36]
+  :LAST_REPEAT: [2018-10-15 Mon 12:59]
   :END:
   1. -> task    : 打tags
   2. -> project : 打tags
   3. -> trash   : 
      
 * TODO next step						      :habit:
-  SCHEDULED: <2018-10-15 Mon 18:00-21:00 ++3d>
+  SCHEDULED: <2018-10-18 Thu 18:00-21:00 ++3d>
+  - "DONE" Note in [2018-10-15 Mon]
   - "DONE" Note in [2018-10-12 Fri]
   - "DONE" Note in [2018-10-10 Wed]
   - "DONE" Note in [2018-10-07 Sun]
@@ -91,7 +93,7 @@
   - "DONE" Note in [2017-11-29 Wed]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-12 Fri 12:41]
+  :LAST_REPEAT: [2018-10-15 Mon 12:59]
   :END:
   1. task    : 打TODO
   2. project : 打TODO
@@ -169,12 +171,13 @@
   为以后准备,  可抵消前5年的
 
 * TODO 税务: 对账
-  SCHEDULED: <2018-10-15 Mon .+3m>
+  SCHEDULED: <2019-01-15 Tue .+3m>
+  - "DONE" Note in [2018-10-15 Mon]
   - "DONE" Note in [2018-07-15 Sun]
   - "DONE" Note in [2018-04-05 Thu]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-07-15 Sun 16:26]
+  :LAST_REPEAT: [2018-10-15 Mon 12:59]
   :END:
   
   中国民生银行 -- 下载对账明细
