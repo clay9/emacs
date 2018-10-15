@@ -1,6 +1,7 @@
 #+STARTUP: overview
-* TODO 苹果企业者账号
-  SCHEDULED: <2018-09-19 Wed>
+* DONE 苹果企业者账号
+  CLOSED: [2018-10-15 Mon 13:31] SCHEDULED: <2018-09-19 Wed>
+  - "DONE" Note in [2018-10-15 Mon]
   
 * DONE 网络知识学习
   CLOSED: [2018-09-18 Tue 18:03] SCHEDULED: <2018-09-18 Tue>
