@@ -33,8 +33,9 @@
 
 
 
-* TODO 新手入门指导教程
-  SCHEDULED: <2018-10-08 Mon>
+* DONE 新手入门指导教程
+  CLOSED: [2018-10-17 Wed 18:13] SCHEDULED: <2018-10-08 Mon>
+  - "DONE" Note in [2018-10-17 Wed]
 
 ** 团队上手流程总览
 ** Tim使用注意事项
