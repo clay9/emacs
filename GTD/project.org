@@ -34,7 +34,7 @@
 ** DONE 9. ICP域名备案
    CLOSED: [2017-12-07 Thu 12:37]
 
-* PROJECT 棋牌项目优化
+* PROJECT 棋牌项目优化					   :urgent:important:
 ** 服务端
    1. GameServer工程中 获取本机ip地址
       现在是在Define.h中手动处理, 如何更改为自动获取
@@ -74,7 +74,7 @@
    3. 配置文件的整理
       保证可以最小化使用
 
-* GitLab CI && CD
+* PROJECT GitLab CI && CD					  :important:
 ** GitLab简介
 ** CI简介 && CD简介
 ** CI实操
