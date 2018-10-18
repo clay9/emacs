@@ -1,5 +1,5 @@
 #+STARTUP: overview
-* PROJECT 文伟军劳动仲裁
+* PROJECT 文伟军劳动仲裁				   :urgent:important:
 ** 1. 领取劳动仲裁书
    珞喻路718号, 709研究所里面, 大门进来右手边有一车棚, 走完右转, 荣胜修理厂里面Ems快递点
 ** 2. 律师询问意见
@@ -47,7 +47,7 @@
 ** DONE 9. ICP域名备案
    CLOSED: [2017-12-07 Thu 12:37]
 
-* PROJECT 棋牌项目优化					   :urgent:important:
+* PROJECT 棋牌项目优化
 ** 服务端
    1. GameServer工程中 获取本机ip地址
       现在是在Define.h中手动处理, 如何更改为自动获取
