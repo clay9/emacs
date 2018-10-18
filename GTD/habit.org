@@ -157,7 +157,8 @@
   
 
 * TODO 税务: 公司发票
-  SCHEDULED: <2018-10-18 Thu .+1m>
+  SCHEDULED: <2018-11-18 Sun .+1m>
+  - "DONE" Note in [2018-10-18 Thu]
   - "DONE" Note in [2018-09-18 Tue]
   - "DONE" Note in [2018-08-18 Sat]
   - "DONE" Note in [2018-07-15 Sun]
@@ -167,7 +168,7 @@
   - "DONE" Note in [2018-01-29 Mon]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-09-18 Tue 12:50]
+  :LAST_REPEAT: [2018-10-18 Thu 13:37]
   :END:
   
   为以后准备,  可抵消前5年的
