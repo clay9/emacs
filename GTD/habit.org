@@ -64,7 +64,8 @@
   3. -> trash   : 
      
 * TODO next step						      :habit:
-  SCHEDULED: <2018-10-18 Thu 18:00-21:00 ++3d>
+  SCHEDULED: <2018-10-21 Sun 18:00-21:00 ++3d>
+  - "DONE" Note in [2018-10-18 Thu]
   - "DONE" Note in [2018-10-15 Mon]
   - "DONE" Note in [2018-10-12 Fri]
   - "DONE" Note in [2018-10-10 Wed]
@@ -96,7 +97,7 @@
   - "DONE" Note in [2017-11-29 Wed]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-15 Mon 12:59]
+  :LAST_REPEAT: [2018-10-18 Thu 14:29]
   :END:
   1. task    : ¥ÚTODO
   2. project : ¥ÚTODO
