@@ -7,8 +7,9 @@
   DEADLINE: <2018-10-22 Mon>
 * WAITING 金币场
   SCHEDULED: <2018-10-18 Thu>
-* TODO 苹果整包更新问题
-  SCHEDULED: <2018-10-18 Thu>
+* DONE 苹果整包更新问题
+  CLOSED: [2018-10-18 Thu 19:16] SCHEDULED: <2018-10-18 Thu>
+  - "DONE" Note in [2018-10-18 Thu]
   1. IOS问题  
      无法打开itms-services
   2. Android  
