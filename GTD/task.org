@@ -2,6 +2,7 @@
 * TODO 自行车修理
   <2018-10-21 Sun>
 * TODO mac下mail如何发送附件
+  SCHEDULED: <2018-10-18 Thu>
 * TODO 人事
 * TODO 金币场
 * TODO 苹果整包更新问题
