@@ -4,13 +4,17 @@
 * TODO mac下mail如何发送附件
   SCHEDULED: <2018-10-18 Thu>
 * TODO 人事
+  DEADLINE: <2018-10-22 Mon>
 * TODO 金币场
+  SCHEDULED: <2018-10-18 Thu>
 * TODO 苹果整包更新问题
+  SCHEDULED: <2018-10-18 Thu>
   1. IOS问题  
      无法打开itms-services
   2. Android  
      下载的路径为我们自己的服务器的, 应该放到第三方平台
 * TODO 苹果端微信支付  
+  SCHEDULED: <2018-10-18 Thu>
 * CANCEL 苹果企业者账号
   CLOSED: [2018-10-15 Mon 13:31] SCHEDULED: <2018-09-19 Wed>
   - "DONE" Note in [2018-10-15 Mon]
