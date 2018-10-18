@@ -879,7 +879,9 @@
 	C-b d 使当前session deatch运行在后台
 
 ** mail
-   
+   [[https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_72/com.ibm.aix.cmds3/mail.htm][mail参考网址]]
+
+
 ** *************************************************************
 ** 小知识
    rpm 与 deb
