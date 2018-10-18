@@ -1,5 +1,5 @@
 #+STARTUP: overview
-* DONE 苹果企业者账号
+* CANCEL 苹果企业者账号
   CLOSED: [2018-10-15 Mon 13:31] SCHEDULED: <2018-09-19 Wed>
   - "DONE" Note in [2018-10-15 Mon]
   
@@ -21,16 +21,9 @@
   CLOSED: [2018-10-07 Sun 20:49] SCHEDULED: <2018-09-10 Mon>
   - "DONE" Note in [2018-10-07 Sun]
   
-* TODO GitLab CI && CD
-** gitlab总览
-** gitlab CI总览
-** gitlab CD总览
-** gitlab CI实践应用
-** gitlab CD实践应用
 * TODO 文伟军交还 钥匙 && 显示器
   SCHEDULED: <2018-09-25 Tue>
   
-
 
 
 * DONE 新手入门指导教程
@@ -54,6 +47,4 @@
      1) 证明7月多已与公司解除合同
      2) 后面合同改为与个人签订
 
-* TODO 自动更新文档优化
-  SCHEDULED: <2018-10-17 Wed>
-  
+
