@@ -5,7 +5,7 @@
   SCHEDULED: <2018-10-18 Thu>
 * TODO 人事
   DEADLINE: <2018-10-22 Mon>
-* TODO 金币场
+* WAITING 金币场
   SCHEDULED: <2018-10-18 Thu>
 * TODO 苹果整包更新问题
   SCHEDULED: <2018-10-18 Thu>
