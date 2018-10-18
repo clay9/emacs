@@ -2,7 +2,7 @@
 * TODO 自行车修理
   <2018-10-21 Sun>
 * mac下mail如何发送附件
-
+* mac下mail如何过滤收件人 或者 crontab如何不给mail发送邮件
 * TODO 人事
   DEADLINE: <2018-10-22 Mon>
 * WAITING 金币场
