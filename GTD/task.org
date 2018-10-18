@@ -9,6 +9,7 @@
      无法打开itms-services
   2. Android  
      下载的路径为我们自己的服务器的, 应该放到第三方平台
+* TODO 苹果端微信支付  
 * CANCEL 苹果企业者账号
   CLOSED: [2018-10-15 Mon 13:31] SCHEDULED: <2018-09-19 Wed>
   - "DONE" Note in [2018-10-15 Mon]
