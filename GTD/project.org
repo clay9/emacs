@@ -64,7 +64,9 @@
       图集的优化
    6. 子游戏如何与大厅分离
    7. UGUI 与 NGUI的统一
-** TODO Web
+** Web
+   CLOSED: [2018-10-18 Thu 13:38]
+   - "CANCEL" Note in [2018-10-18 Thu]
    接触不多, 无法评估
 ** TODO Database
    1. 未使用到的全部删除
