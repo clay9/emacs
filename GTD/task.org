@@ -1,8 +1,8 @@
 #+STARTUP: overview
 * TODO 自行车修理
   <2018-10-21 Sun>
-* TODO mac下mail如何发送附件
-  SCHEDULED: <2018-10-18 Thu>
+* mac下mail如何发送附件
+
 * TODO 人事
   DEADLINE: <2018-10-22 Mon>
 * WAITING 金币场
