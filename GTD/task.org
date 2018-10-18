@@ -1,4 +1,13 @@
 #+STARTUP: overview
+* TODO 自行车修理
+* TODO mac下mail如何发送附件
+* TODO 人事
+* TODO 金币场
+* TODO 苹果整包更新问题
+  1. IOS问题  
+     无法打开itms-services
+  2. Android  
+     下载的路径为我们自己的服务器的, 应该放到第三方平台
 * CANCEL 苹果企业者账号
   CLOSED: [2018-10-15 Mon 13:31] SCHEDULED: <2018-09-19 Wed>
   - "DONE" Note in [2018-10-15 Mon]
@@ -46,6 +55,3 @@
   3. 公司的证明
      1) 证明7月多已与公司解除合同
      2) 后面合同改为与个人签订
-
-
-
