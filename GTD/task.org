@@ -16,7 +16,9 @@
 * 苹果Android整包更新问题
   1. Android  
      下载的路径为我们自己的服务器的, 应该放到第三方平台
-* TODO crontab中的git commit如何只记录有用的log日志
+* DONE crontab中的git commit如何只记录有用的log日志
+  CLOSED: [2018-10-19 Fri 22:34]
+  - "DONE" Note in [2018-10-19 Fri]
 * crontab中的git hook中的git push如何不往mail中发信息
 * TODO 苹果端微信支付  
   SCHEDULED: <2018-10-18 Thu>
