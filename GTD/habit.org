@@ -104,7 +104,8 @@
   2. project : ¥ÚTODO
 
 * TODO archive							      :habit:
-  SCHEDULED: <2018-10-19 Fri 18:30 ++1w>
+  SCHEDULED: <2018-10-26 Fri 18:30 ++1w>
+  - "DONE" Note in [2018-10-19 Fri]
   - "DONE" Note in [2018-10-12 Fri]
   - "DONE" Note in [2018-10-07 Sun]
   - "DONE" Note in [2018-09-28 Fri]
@@ -126,7 +127,7 @@
   - "DONE" Note in [2018-01-29 Mon]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-12 Fri 12:42]
+  :LAST_REPEAT: [2018-10-19 Fri 20:36]
   :END:
   
   
