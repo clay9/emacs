@@ -16,6 +16,8 @@
 * 苹果Android整包更新问题
   1. Android  
      下载的路径为我们自己的服务器的, 应该放到第三方平台
+* crontab中的git commit如何只记录有用的log日志
+* crontab中的git hook中的git push如何不往mail中发信息
 * TODO 苹果端微信支付  
   SCHEDULED: <2018-10-18 Thu>
 * CANCEL 苹果企业者账号
