@@ -7,12 +7,14 @@
   DEADLINE: <2018-10-22 Mon>
 * WAITING 金币场
   SCHEDULED: <2018-10-18 Thu>
-* DONE 苹果整包更新问题
+* DONE 苹果IOS整包更新问题
   CLOSED: [2018-10-18 Thu 19:16] SCHEDULED: <2018-10-18 Thu>
   - "DONE" Note in [2018-10-18 Thu]
-  1. IOS问题  
-     无法打开itms-services
-  2. Android  
+  - IOS问题  
+    无法打开itms-services
+ 
+* 苹果Android整包更新问题
+  1. Android  
      下载的路径为我们自己的服务器的, 应该放到第三方平台
 * TODO 苹果端微信支付  
   SCHEDULED: <2018-10-18 Thu>
