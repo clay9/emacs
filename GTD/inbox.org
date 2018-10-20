@@ -54,6 +54,48 @@
    1. 对于温馨, 对于叶子, 有太多的纠结
 ** 特殊
 
-* 歪胡子 修改后 需要提交到git -- 大局结束的bug修复
 
-* 苹果打包工程中 新增了2个问题， 需要更新到git - frame - wike的文档中
+
+* 微信支付
+
+  思路:
+  1. U3D 调用苹果的函数  实现微信支付
+  2. 苹果的函数, 调用 微信IOS的库函数
+
+
+  微信支付
+  微信支付 正常流程应该是 
+  1. 客户端发送商品信息(不包含价格)给微信函数
+  2. 微信函数 获取 服务端(或后台)返回完整商品信息(包含价格)
+  3. 微信函数 将完整商品信息 传递给微信后台
+  4. 微信函数 掉起微信, 开始准备支付
+
+* s
+2018-10-20 14:19:17.440062+0800 jxz[564:203816] 统一订单connet=======>
+:appid=wx70aed43ff612dfa5
+&attach=100043,1,1,1
+&body=道具购买
+&mch_id=1503657081
+&nonce_str=5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+&notify_url=http://my.45quyou.com:8304/WXPayResult.aspx
+&out_trade_no=JYCZI8U6JH4QDDJ
+&spbill_create_ip=192.168.5.102
+&total_fee=1881247408
+&trade_type=APP
+&key=e10adc3949ba59abbe56e057f20f883e
+
+2018-10-20 14:19:17.440272+0800 jxz[564:203816] 统一订单connet 加密后=======>:677DE31C8A7E9891EE2A09A35B748720
+2018-10-20 14:19:17.444770+0800 jxz[564:203816] httpString is <xml>
+<attach>100043,1,1,1</attach>
+<mch_id>1503657081</mch_id>
+<out_trade_no>JYCZI8U6JH4QDDJ</out_trade_no>
+<trade_type>APP</trade_type>
+<nonce_str>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</nonce_str>
+<total_fee>1881247408</total_fee>
+<spbill_create_ip>192.168.5.102</spbill_create_ip>
+<notify_url>http://my.45quyou.com:8304/WXPayResult.aspx</notify_url>
+<body>道具购买</body>
+<appid>wx70aed43ff612dfa5</appid>
+<sign>677DE31C8A7E9891EE2A09A35B748720</sign></xml>
+
+2018-10-20 14:19:17.794446+0800 jxz[564:203816] responseString is <xml><return_code><![CDATA[FAIL]]></return_code>

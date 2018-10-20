@@ -1,7 +1,9 @@
 #+STARTUP: overview
 * PROJECT 项目文档整理
 * PROJECT 文伟军劳动仲裁				   :urgent:important:
-** TODO 1. 领取劳动仲裁书
+** DONE 1. 领取劳动仲裁书
+   CLOSED: [2018-10-20 Sat 11:08]
+   - "DONE" Note in [2018-10-20 Sat]
    <2018-10-18 Thu>--<2018-10-19 Fri>
    
    珞喻路718号, 709研究所里面, 大门进来右手边有一车棚, 走完右转, 荣胜修理厂里面Ems快递点

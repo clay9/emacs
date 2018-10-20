@@ -1,63 +1,26 @@
 #+STARTUP: overview
+* DONE 苹果打包工程中 新增了2个问题， 需要更新到git - frame - wike的文档中
+  CLOSED: [2018-10-20 Sat 18:06]
+  - "DONE" Note in [2018-10-20 Sat]
+* TODO 歪胡子 修改后 需要提交到git -- 大局结束的bug修复
+* TODO 文档: Android && 苹果自动更新
+* TODO 文档: 苹果微信支付
 * TODO 自行车修理
   <2018-10-21 Sun>
-* mac下mail如何发送附件
-* TODO mac下mail如何过滤收件人 或者 crontab如何不给mail发送邮件
 * TODO 人事
   DEADLINE: <2018-10-22 Mon>
 * WAITING 金币场
   SCHEDULED: <2018-10-18 Thu>
-* DONE 苹果IOS整包更新问题
-  CLOSED: [2018-10-18 Thu 19:16] SCHEDULED: <2018-10-18 Thu>
-  - "DONE" Note in [2018-10-18 Thu]
-  - IOS问题  
-    无法打开itms-services
- 
 * 苹果Android整包更新问题
   1. Android  
      下载的路径为我们自己的服务器的, 应该放到第三方平台
-* DONE crontab中的git commit如何只记录有用的log日志
-  CLOSED: [2018-10-19 Fri 22:34]
-  - "DONE" Note in [2018-10-19 Fri]
-* crontab中的git hook中的git push如何不往mail中发信息
-* TODO 苹果端微信支付  
+* TODO 苹果端微信支付 -- 回调不显示
   SCHEDULED: <2018-10-18 Thu>
-* CANCEL 苹果企业者账号
-  CLOSED: [2018-10-15 Mon 13:31] SCHEDULED: <2018-09-19 Wed>
-  - "DONE" Note in [2018-10-15 Mon]
-  
-* DONE 网络知识学习
-  CLOSED: [2018-09-18 Tue 18:03] SCHEDULED: <2018-09-18 Tue>
-  - "DONE" Note in [2018-09-18 Tue]
-  1. [ ] 嗅探端口
-  2. [ ] 内网穿透
-
-* DONE GitLab代码管理 -- 通知邓权, 文伟军 上传代码
-  CLOSED: [2018-09-17 Mon 12:10] SCHEDULED: <2018-09-17 Mon>
-  - "DONE" Note in [2018-09-17 Mon]
-  
-* DONE GitLab搭建在mac系统上
-  CLOSED: [2018-09-14 Fri 17:24] SCHEDULED: <2018-09-14 Fri>
-  - "DONE" Note in [2018-09-14 Fri]
-  
-* DONE 服务器框架系统整理
-  CLOSED: [2018-10-07 Sun 20:49] SCHEDULED: <2018-09-10 Mon>
-  - "DONE" Note in [2018-10-07 Sun]
-  
 * TODO 文伟军交还 钥匙 && 显示器
   SCHEDULED: <2018-09-25 Tue>
   
 
 
-* DONE 新手入门指导教程
-  CLOSED: [2018-10-17 Wed 18:13] SCHEDULED: <2018-10-08 Mon>
-  - "DONE" Note in [2018-10-17 Wed]
 
-** 团队上手流程总览
-** Tim使用注意事项
-** Git使用流程
-*** Git使用流程
-*** 代码规范要求
-*** 绩效标准
-** Tower使用注意事项
-
+* TODO Emacs收发邮件
+  SCHEDULED: <2018-10-20 Sat>

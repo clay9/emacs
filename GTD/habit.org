@@ -3,7 +3,8 @@
 * GTD habit
 * ********************
 * TODO inbox							      :habit:
-  SCHEDULED: <2018-10-20 Sat 17:30-18:20 ++1d/2d>
+  SCHEDULED: <2018-10-21 Sun 17:30-18:20 ++1d/2d>
+  - "DONE" Note in [2018-10-20 Sat]
   - "DONE" Note in [2018-10-19 Fri]
   - "DONE" Note in [2018-10-18 Thu]
   - "DONE" Note in [2018-10-17 Wed]
@@ -58,7 +59,7 @@
   - "DONE" Note in [2017-11-29 Wed]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-19 Fri 12:35]
+  :LAST_REPEAT: [2018-10-20 Sat 08:59]
   :END:
   1. -> task    : ´òtags
   2. -> project : ´òtags
