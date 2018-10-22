@@ -1,26 +1,49 @@
 #+STARTUP: overview
+* TODO 文档: 微信支付 for android
+
+  思路:
+  1. U3D 调用苹果的函数  实现微信支付
+  2. 苹果的函数, 调用 微信IOS的库函数
+
+
+  微信支付
+  微信支付 正常流程应该是 
+  1. 客户端发送商品信息(不包含价格)给微信函数
+  2. 微信函数 获取 服务端(或后台)返回完整商品信息(包含价格)
+  3. 微信函数 将完整商品信息 传递给微信后台
+  4. 微信函数 掉起微信, 开始准备支付
+
+
+
+
 * DONE 苹果打包工程中 新增了2个问题， 需要更新到git - frame - wike的文档中
   CLOSED: [2018-10-20 Sat 18:06]
   - "DONE" Note in [2018-10-20 Sat]
-* TODO 歪胡子 修改后 需要提交到git -- 大局结束的bug修复
+* DONE 歪胡子 修改后 需要提交到git -- 大局结束的bug修复
+  CLOSED: [2018-10-22 Mon 15:36]
+  - "DONE" Note in [2018-10-22 Mon]
 * TODO 文档: Android && 苹果自动更新
-* TODO 文档: 苹果微信支付
+* TODO 文档: 微信支付 for ios
 * TODO 自行车修理
   <2018-10-21 Sun>
-* TODO 人事
-  DEADLINE: <2018-10-22 Mon>
+* DONE 人事
+  CLOSED: [2018-10-22 Mon 15:30] DEADLINE: <2018-10-22 Mon>
+  - "DONE" Note in [2018-10-22 Mon]
 * WAITING 金币场
   SCHEDULED: <2018-10-18 Thu>
 * 苹果Android整包更新问题
   1. Android  
      下载的路径为我们自己的服务器的, 应该放到第三方平台
-* TODO 苹果端微信支付 -- 回调不显示
-  SCHEDULED: <2018-10-18 Thu>
+* CANCEL 苹果端微信支付 -- 回调不显示
+  CLOSED: [2018-10-22 Mon 18:36] SCHEDULED: <2018-10-18 Thu>
+  - "CANCEL" Note in [2018-10-22 Mon] \\
+    没有解决, 暂时不处理
 * TODO 文伟军交还 钥匙 && 显示器
   SCHEDULED: <2018-09-25 Tue>
   
 
 
 
-* TODO Emacs收发邮件
-  SCHEDULED: <2018-10-20 Sat>
+* DONE Emacs收发邮件
+  CLOSED: [2018-10-22 Mon 15:30] SCHEDULED: <2018-10-20 Sat>
+  - "DONE" Note in [2018-10-22 Mon]
