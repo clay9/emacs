@@ -1,5 +1,7 @@
 #+STARTUP: overview
-* TODO 文档: 微信支付 for android
+* DONE 文档: 微信支付 for android
+  CLOSED: [2018-10-25 Thu 13:48]
+  - "DONE" Note in [2018-10-25 Thu]
 
   思路:
   1. U3D 调用苹果的函数  实现微信支付
@@ -23,7 +25,9 @@
   CLOSED: [2018-10-22 Mon 15:36]
   - "DONE" Note in [2018-10-22 Mon]
 * TODO 文档: Android && 苹果自动更新
-* TODO 文档: 微信支付 for ios
+* DONE 文档: 微信支付 for ios
+  CLOSED: [2018-10-25 Thu 13:49]
+  - "DONE" Note in [2018-10-25 Thu]
 * TODO 自行车修理
   <2018-10-21 Sun>
 * DONE 人事
