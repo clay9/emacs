@@ -3,7 +3,8 @@
 * GTD habit
 * ********************
 * TODO inbox							      :habit:
-  SCHEDULED: <2018-10-23 Tue 17:30-18:20 ++1d/2d>
+  SCHEDULED: <2018-10-30 Tue 17:30-18:20 ++1d/2d>
+  - "DONE" Note in [2018-10-29 Mon]
   - "DONE" Note in [2018-10-22 Mon]
   - "DONE" Note in [2018-10-20 Sat]
   - "DONE" Note in [2018-10-19 Fri]
@@ -60,14 +61,15 @@
   - "DONE" Note in [2017-11-29 Wed]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-22 Mon 15:30]
+  :LAST_REPEAT: [2018-10-29 Mon 18:48]
   :END:
   1. -> task    : 打tags
   2. -> project : 打tags
   3. -> trash   : 
      
 * TODO next step						      :habit:
-  SCHEDULED: <2018-10-24 Wed 18:00-21:00 ++3d>
+  SCHEDULED: <2018-10-30 Tue 18:00-21:00 ++3d>
+  - "DONE" Note in [2018-10-29 Mon]
   - "DONE" Note in [2018-10-22 Mon]
   - "DONE" Note in [2018-10-18 Thu]
   - "DONE" Note in [2018-10-15 Mon]
@@ -101,13 +103,14 @@
   - "DONE" Note in [2017-11-29 Wed]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-22 Mon 15:31]
+  :LAST_REPEAT: [2018-10-29 Mon 18:52]
   :END:
   1. task    : 打TODO
   2. project : 打TODO
 
 * TODO archive							      :habit:
-  SCHEDULED: <2018-10-26 Fri 18:30 ++1w>
+  SCHEDULED: <2018-11-02 Fri 18:30 ++1w>
+  - "DONE" Note in [2018-10-29 Mon]
   - "DONE" Note in [2018-10-19 Fri]
   - "DONE" Note in [2018-10-12 Fri]
   - "DONE" Note in [2018-10-07 Sun]
@@ -130,7 +133,7 @@
   - "DONE" Note in [2018-01-29 Mon]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-19 Fri 20:36]
+  :LAST_REPEAT: [2018-10-29 Mon 18:49]
   :END:
   
   

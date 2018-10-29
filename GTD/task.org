@@ -1,4 +1,11 @@
 #+STARTUP: overview
+* WAITING 鬼胡子 
+  SCHEDULED: <2018-10-29 Mon>
+  
+
+* TODO 跑得快
+  SCHEDULED: <2018-10-29 Mon>
+  
 * DONE 文档: 微信支付 for android
   CLOSED: [2018-10-25 Thu 13:48]
   - "DONE" Note in [2018-10-25 Thu]
@@ -17,7 +24,6 @@
 
 
 
-
 * DONE 苹果打包工程中 新增了2个问题， 需要更新到git - frame - wike的文档中
   CLOSED: [2018-10-20 Sat 18:06]
   - "DONE" Note in [2018-10-20 Sat]
@@ -33,8 +39,9 @@
 * DONE 人事
   CLOSED: [2018-10-22 Mon 15:30] DEADLINE: <2018-10-22 Mon>
   - "DONE" Note in [2018-10-22 Mon]
-* WAITING 金币场
-  SCHEDULED: <2018-10-18 Thu>
+* DONE 金币场
+  CLOSED: [2018-10-29 Mon 18:52] SCHEDULED: <2018-10-18 Thu>
+  - "DONE" Note in [2018-10-29 Mon]
 * 苹果Android整包更新问题
   1. Android  
      下载的路径为我们自己的服务器的, 应该放到第三方平台
@@ -42,10 +49,9 @@
   CLOSED: [2018-10-22 Mon 18:36] SCHEDULED: <2018-10-18 Thu>
   - "CANCEL" Note in [2018-10-22 Mon] \\
     没有解决, 暂时不处理
-* TODO 文伟军交还 钥匙 && 显示器
+* WAITING 文伟军交还 钥匙 && 显示器
   SCHEDULED: <2018-09-25 Tue>
   
-
 
 
 * DONE Emacs收发邮件

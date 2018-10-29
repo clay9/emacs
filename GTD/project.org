@@ -92,8 +92,10 @@
       保证可以最小化使用
 
 * PROJECT GitLab CI && CD					  :important:
-** GitLab简介
-** CI简介 && CD简介
+** TODO GitLab简介
+   SCHEDULED: <2018-10-30 Tue>
+   
+** TODO CI简介 && CD简介
 ** CI实操
 ** CD实操
 
