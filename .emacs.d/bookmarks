@@ -4,7 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* TODO 文档: 微信支付 ")
+ (front-context-string . "* WAITING 鬼胡子 \n ")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 )
