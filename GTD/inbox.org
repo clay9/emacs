@@ -65,3 +65,17 @@
 	
   
   表现: 断线重连后, 5分钟内无法创建游戏,  但是5分钟后  可以
+
+
+* U3D 一键打包
+  -projectPath <pathname>
+   打开指定路径的项目
+
+
+
+* Xcode 一键打包 
+** xcodebuild
+   xcodebuild将对应的项目打包成.app文件
+
+** xcrun
+   xcrun将对应的.app文件转换为对应的.ipa文件
