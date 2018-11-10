@@ -65,8 +65,8 @@
   :STYLE:    habit
   :LAST_REPEAT: [2018-11-10 Sat 21:25]
   :END:
-  1. -> task    : ´òtags
-  2. -> project : ´òtags
+  1. -> task    : æ‰“tags
+  2. -> project : æ‰“tags
   3. -> trash   : 
      
 * TODO next step						      :habit:
@@ -109,8 +109,8 @@
   :STYLE:    habit
   :LAST_REPEAT: [2018-11-10 Sat 21:25]
   :END:
-  1. task    : ´òTODO
-  2. project : ´òTODO
+  1. task    : æ‰“TODO
+  2. project : æ‰“TODO
 
 * TODO archive							      :habit:
   SCHEDULED: <2018-11-16 Fri 18:30 ++1w>
@@ -147,7 +147,7 @@
 * ********************
 * important habit
 * ********************
-* TODO ¹«Ë¾Äê¼ì
+* TODO å…¬å¸å¹´æ£€
   SCHEDULED: <2019-04-05 Fri .+1y>
   - "DONE" Note in [2018-04-05 Thu]
   :PROPERTIES:
@@ -155,7 +155,7 @@
   :LAST_REPEAT: [2018-04-05 Thu 23:36]
   :END:
   
-* TODO ÉÏ°ëÄê¶ÔÕË
+* TODO ä¸ŠåŠå¹´å¯¹è´¦
   SCHEDULED: <2019-06-23 Sun .+1y>
   - "DONE" Note in [2018-06-23 Sat]
   :PROPERTIES:
@@ -163,15 +163,15 @@
   :LAST_REPEAT: [2018-06-23 Sat 18:53]
   :END:
   
-* TODO ÏÂ°ëÄê¶ÔÕË
-  SCHEDULED: <2018-11-20 ÖÜ¶þ .+1y>
+* TODO ä¸‹åŠå¹´å¯¹è´¦
+  SCHEDULED: <2018-11-20 å‘¨äºŒ .+1y>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2017-11-20 ÖÜÒ» 10:46]
+  :LAST_REPEAT: [2017-11-20 å‘¨ä¸€ 10:46]
   :END:
   
 
-* TODO Ë°Îñ: ¹«Ë¾·¢Æ±
+* TODO ç¨ŽåŠ¡: å…¬å¸å‘ç¥¨
   SCHEDULED: <2018-11-18 Sun .+1m>
   - "DONE" Note in [2018-10-18 Thu]
   - "DONE" Note in [2018-09-18 Tue]
@@ -186,9 +186,9 @@
   :LAST_REPEAT: [2018-10-18 Thu 13:37]
   :END:
   
-  ÎªÒÔºó×¼±¸,  ¿ÉµÖÏûÇ°5ÄêµÄ
+  ä¸ºä»¥åŽå‡†å¤‡,  å¯æŠµæ¶ˆå‰5å¹´çš„
 
-* TODO Ë°Îñ: ¶ÔÕË
+* TODO ç¨ŽåŠ¡: å¯¹è´¦
   SCHEDULED: <2019-01-15 Tue .+3m>
   - "DONE" Note in [2018-10-15 Mon]
   - "DONE" Note in [2018-07-15 Sun]
@@ -198,10 +198,10 @@
   :LAST_REPEAT: [2018-10-15 Mon 12:59]
   :END:
   
-  ÖÐ¹úÃñÉúÒøÐÐ -- ÏÂÔØ¶ÔÕËÃ÷Ï¸
+  ä¸­å›½æ°‘ç”Ÿé“¶è¡Œ -- ä¸‹è½½å¯¹è´¦æ˜Žç»†
   
 
-* TODO Î¢ÐÅ¹«ÖÚºÅ ÄêÉó
+* TODO å¾®ä¿¡å…¬ä¼—å· å¹´å®¡
   SCHEDULED: <2019-08-18 Sun .+1y>
   - "DONE" Note in [2018-08-18 Sat]
   :PROPERTIES:
@@ -213,7 +213,7 @@
 * ********************
 * company habit
 * ********************
-* TODO ¹¤×Ê½áËã
+* TODO å·¥èµ„ç»“ç®—
   SCHEDULED: <2018-12-10 Mon 09:20 .+1m>
   - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-10-10 Wed]
@@ -228,7 +228,7 @@
   :LAST_REPEAT: [2018-11-10 Sat 21:25]
   :END:
 
-* TODO ¹¤×Ê·¢·Å
+* TODO å·¥èµ„å‘æ”¾
   SCHEDULED: <2018-12-10 Mon 09:00 .+1m>
   - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-10-10 Wed]
