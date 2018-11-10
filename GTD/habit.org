@@ -3,7 +3,8 @@
 * GTD habit
 * ********************
 * TODO inbox							      :habit:
-  SCHEDULED: <2018-11-02 Fri 17:30-18:20 ++1d/2d>
+  SCHEDULED: <2018-11-11 Sun 17:30-18:20 ++1d/2d>
+  - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-11-01 Thu]
   - "DONE" Note in [2018-10-29 Mon]
   - "DONE" Note in [2018-10-22 Mon]
@@ -62,14 +63,15 @@
   - "DONE" Note in [2017-11-29 Wed]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-11-01 Thu 15:42]
+  :LAST_REPEAT: [2018-11-10 Sat 21:25]
   :END:
   1. -> task    : 打tags
   2. -> project : 打tags
   3. -> trash   : 
      
 * TODO next step						      :habit:
-  SCHEDULED: <2018-11-02 Fri 18:00-21:00 ++3d>
+  SCHEDULED: <2018-11-11 Sun 18:00-21:00 ++3d>
+  - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-11-01 Thu]
   - "DONE" Note in [2018-10-29 Mon]
   - "DONE" Note in [2018-10-22 Mon]
@@ -105,13 +107,14 @@
   - "DONE" Note in [2017-11-29 Wed]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-11-01 Thu 15:42]
+  :LAST_REPEAT: [2018-11-10 Sat 21:25]
   :END:
   1. task    : 打TODO
   2. project : 打TODO
 
 * TODO archive							      :habit:
-  SCHEDULED: <2018-11-02 Fri 18:30 ++1w>
+  SCHEDULED: <2018-11-16 Fri 18:30 ++1w>
+  - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-10-29 Mon]
   - "DONE" Note in [2018-10-19 Fri]
   - "DONE" Note in [2018-10-12 Fri]
@@ -135,7 +138,7 @@
   - "DONE" Note in [2018-01-29 Mon]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-29 Mon 18:49]
+  :LAST_REPEAT: [2018-11-10 Sat 21:25]
   :END:
   
   
@@ -211,7 +214,8 @@
 * company habit
 * ********************
 * TODO 工资结算
-  SCHEDULED: <2018-11-10 Sat 09:20 .+1m>
+  SCHEDULED: <2018-12-10 Mon 09:20 .+1m>
+  - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-10-10 Wed]
   - "DONE" Note in [2018-09-06 Thu]
   - "DONE" Note in [2018-08-06 Mon]
@@ -221,11 +225,12 @@
   - "DONE" Note in [2018-01-29 Mon]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-10 Wed 10:24]
+  :LAST_REPEAT: [2018-11-10 Sat 21:25]
   :END:
 
 * TODO 工资发放
-  SCHEDULED: <2018-11-10 Sat 09:00 .+1m>
+  SCHEDULED: <2018-12-10 Mon 09:00 .+1m>
+  - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-10-10 Wed]
   - "DONE" Note in [2018-09-06 Thu]
   - "DONE" Note in [2018-08-06 Mon]
@@ -235,6 +240,6 @@
   - "DONE" Note in [2018-01-29 Mon]
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-10-10 Wed 10:24]
+  :LAST_REPEAT: [2018-11-10 Sat 21:25]
   :END:
   
