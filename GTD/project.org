@@ -1,5 +1,5 @@
 #+STARTUP: overview
-* PROJECT 项目文档整理
+* PROJECT 歪胡子项目					   :urgent:important:
 * PROJECT 文伟军劳动仲裁				   :urgent:important:
 ** DONE 1. 领取劳动仲裁书
    CLOSED: [2018-10-20 Sat 11:08]
@@ -7,7 +7,9 @@
    <2018-10-18 Thu>--<2018-10-19 Fri>
    
    珞喻路718号, 709研究所里面, 大门进来右手边有一车棚, 走完右转, 荣胜修理厂里面Ems快递点
-** TODO 2. 律师询问意见
+** DONE 2. 律师询问意见
+   CLOSED: [2018-11-11 Sun 13:11]
+   - "DONE" Note in [2018-11-11 Sun]
    <2018-10-18 Thu>--<2018-10-23 Tue>
    1) 离职人员的证明
       证明在7月21号公司已遣散
@@ -18,6 +20,9 @@
    3) 公司的证明
       1) 证明7月21号已与本公司接触所有业务合作
       2) 证明之后是与我个人签约的协议 -- 没必要第一次拿出来
+** WAITING 等待仲裁结果
+   SCHEDULED: <2018-11-11 Sun>
+   
 * PROJECT 企业形象搭建						  :important:
 ** DONE 1. 钉钉
    CLOSED: [2017-11-02 周四 10:03]
@@ -91,11 +96,5 @@
    3. 配置文件的整理
       保证可以最小化使用
 
-* PROJECT GitLab CI && CD					  :important:
-** TODO GitLab简介
-   SCHEDULED: <2018-10-30 Tue>
-   
-** TODO CI简介 && CD简介
-** CI实操
-** CD实操
+
 

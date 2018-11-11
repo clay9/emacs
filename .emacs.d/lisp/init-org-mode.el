@@ -39,10 +39,7 @@
 
  ;; (dir) - Org mode - Tags - Setting tags
 (setq org-tag-alist
-      '(("郭攀" . ?g)
-	("黄浩" . ?h)
-	("李志虎" . ?l) ;; L的小写
-	(:startgroup . nil)
+      '((:startgroup . nil)
 	("urgent" . ?u)
 	(:endgroup . nil)
 	(:startgroup . nil)
@@ -73,6 +70,13 @@
 
 ;; (dir) - Org mode -Capture_Refile_Archive - Archiving  - Moving a tree to the archive file
 (setq org-archive-location "~/GTD/archive.org::* Finished Tasks")
+
+(setq org-agenda-sorting-strategy
+      (quote ((agenda time-up habit-up todo-state-up scheduled-down deadline-down)
+              (todo priority-down category-keep)
+              (tags priority-down category-keep)
+              (search category-keep))))
+
 
  ;; (dir) - Org mode - Agenda views - Agenda files
 (setq org-agenda-files

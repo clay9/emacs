@@ -1065,7 +1065,6 @@
     决定了哪个activity先启动， 决定了哪些activity可以启动
     
     inter-filter决定了activity是否是main activity，也决定了activity在什么情形下可以隐式启动
-
    
 ** shareSDK指导文档
 *** 基本说明

@@ -1,63 +1,26 @@
 #+STARTUP: overview
+* TODO U3D 一键打包
+  -projectPath <pathname>
+   打开指定路径的项目
+
+* TODO Xcode 一键打包 
+  SCHEDULED: <2018-11-11 Sun>
+** xcodebuild
+   xcodebuild将对应的项目打包成.app文件
+
+** xcrun
+   xcrun将对应的.app文件转换为对应的.ipa文件
+* 修理自行车
+* DONE mac上安装pallel, vs2012
+  CLOSED: [2018-11-11 Sun 16:00] DEADLINE: <2018-11-11 Sun>
+  - "DONE" Note in [2018-11-11 Sun]
+* TODO 公司和家 通过git完成数据互通
 * WAITING 鬼胡子 
   SCHEDULED: <2018-10-29 Mon>
   
-
-* TODO 跑得快
-  SCHEDULED: <2018-10-29 Mon>
-  
-* DONE 文档: 微信支付 for android
-  CLOSED: [2018-10-25 Thu 13:48]
-  - "DONE" Note in [2018-10-25 Thu]
-
-  思路:
-  1. U3D 调用苹果的函数  实现微信支付
-  2. 苹果的函数, 调用 微信IOS的库函数
-
-
-  微信支付
-  微信支付 正常流程应该是 
-  1. 客户端发送商品信息(不包含价格)给微信函数
-  2. 微信函数 获取 服务端(或后台)返回完整商品信息(包含价格)
-  3. 微信函数 将完整商品信息 传递给微信后台
-  4. 微信函数 掉起微信, 开始准备支付
-
-
-
-* DONE 苹果打包工程中 新增了2个问题， 需要更新到git - frame - wike的文档中
-  CLOSED: [2018-10-20 Sat 18:06]
-  - "DONE" Note in [2018-10-20 Sat]
-* DONE 歪胡子 修改后 需要提交到git -- 大局结束的bug修复
-  CLOSED: [2018-10-22 Mon 15:36]
-  - "DONE" Note in [2018-10-22 Mon]
-* TODO 文档: Android && 苹果自动更新
-* DONE 文档: 微信支付 for ios
-  CLOSED: [2018-10-25 Thu 13:49]
-  - "DONE" Note in [2018-10-25 Thu]
-* TODO 自行车修理
-  <2018-10-21 Sun>
-* DONE 人事
-  CLOSED: [2018-10-22 Mon 15:30] DEADLINE: <2018-10-22 Mon>
-  - "DONE" Note in [2018-10-22 Mon]
-* DONE 金币场
-  CLOSED: [2018-10-29 Mon 18:52] SCHEDULED: <2018-10-18 Thu>
-  - "DONE" Note in [2018-10-29 Mon]
-* 苹果Android整包更新问题
-  1. Android  
-     下载的路径为我们自己的服务器的, 应该放到第三方平台
-* CANCEL 苹果端微信支付 -- 回调不显示
-  CLOSED: [2018-10-22 Mon 18:36] SCHEDULED: <2018-10-18 Thu>
-  - "CANCEL" Note in [2018-10-22 Mon] \\
-    没有解决, 暂时不处理
 * WAITING 文伟军交还 钥匙 && 显示器
   SCHEDULED: <2018-09-25 Tue>
   
-
-
-* DONE Emacs收发邮件
-  CLOSED: [2018-10-22 Mon 15:30] SCHEDULED: <2018-10-20 Sat>
-  - "DONE" Note in [2018-10-22 Mon]
-
 * WAITING 代理后台 && 总后台					  :important:
   DEADLINE: <2018-11-08 Thu>
   
