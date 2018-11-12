@@ -3,8 +3,9 @@
   -projectPath <pathname>
    打开指定路径的项目
 
-* TODO Xcode 一键打包 
-  SCHEDULED: <2018-11-11 Sun>
+* DONE Xcode 一键打包 
+  CLOSED: [2018-11-12 Mon 19:37] SCHEDULED: <2018-11-11 Sun>
+  - "DONE" Note in [2018-11-12 Mon]
 ** xcodebuild
    xcodebuild将对应的项目打包成.app文件
 
@@ -14,13 +15,17 @@
 * DONE mac上安装pallel, vs2012
   CLOSED: [2018-11-11 Sun 16:00] DEADLINE: <2018-11-11 Sun>
   - "DONE" Note in [2018-11-11 Sun]
-* TODO 公司和家 通过git完成数据互通
+* CANCEL 公司和家 通过git完成数据互通
+  CLOSED: [2018-11-12 Mon 12:25]
+  - "CANCEL" Note in [2018-11-12 Mon] \\
+    仔细想了想, 其实没什么必要, 只要保证公司的电脑能够按时push即可, 家里电脑使用的时候记得pull
 * WAITING 鬼胡子 
   SCHEDULED: <2018-10-29 Mon>
   
 * WAITING 文伟军交还 钥匙 && 显示器
   SCHEDULED: <2018-09-25 Tue>
   
-* WAITING 代理后台 && 总后台					  :important:
-  DEADLINE: <2018-11-08 Thu>
+* DONE 代理后台 && 总后台					  :important:
+  CLOSED: [2018-11-12 Mon 19:37] DEADLINE: <2018-11-08 Thu>
+  - "DONE" Note in [2018-11-12 Mon]
   
