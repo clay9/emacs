@@ -4,7 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* TODO U3D 一键打包\n")
+ (front-context-string . "* TODO Magit使用体验")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 )
