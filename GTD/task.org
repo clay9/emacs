@@ -1,4 +1,5 @@
 #+STARTUP: overview
+* TODO kernel中 的define.h中 MAX_CHAIR需要改为6
 * TODO Magit使用体验
   SCHEDULED: <2018-11-13 Tue>
   
