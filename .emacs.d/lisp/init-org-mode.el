@@ -3,6 +3,9 @@
  ;; org-mode
 ;; ******************
 
+;; agenda的出现模式
+(setq org-agenda-window-setup 'current-window)
+
  ;; (dir) - Org mode - Document Structure - Visibility cycling - Catching invisible edits
 (setq org-catch-invisible-edits 'error)
 

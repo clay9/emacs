@@ -4,9 +4,6 @@
 ;; ********************
 (menu-bar-mode 0)
 
-(set-frame-parameter (selected-frame) 'alpha (list 85 50))
-(add-to-list 'default-frame-alist (cons 'alpha (list 85 50)))
-
 ;; ********************
 ;; tool bar
 ;; ********************
@@ -24,6 +21,13 @@
 ;; ********************
 (add-to-list 'default-frame-alist '(width . 130))
 (add-to-list 'default-frame-alist '(height . 40))
+
+
+;; ********************
+;; frame transparent
+;; ********************
+(set-frame-parameter (selected-frame) 'alpha (list 85 50))
+(add-to-list 'default-frame-alist (cons 'alpha (list 85 50)))
 
 
 ;; ********************
