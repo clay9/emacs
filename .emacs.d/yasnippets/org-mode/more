@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: HTML more
+# key: more
+# --
+#+HTML: <!-- more -->

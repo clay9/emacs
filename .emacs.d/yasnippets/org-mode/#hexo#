@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: hexo
+# key: hexo
+# --
+#+TITLE: ${1}
+#+DATE: 
+#+LAYOUT: post
+#+CATEGORIES: ${2}
+#+TAGS: ${3}

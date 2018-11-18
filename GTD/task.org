@@ -1,7 +1,8 @@
 #+STARTUP: overview
 * TODO kernel中 的define.h中 MAX_CHAIR需要改为6
-* TODO Magit使用体验
-  SCHEDULED: <2018-11-13 Tue>
+* DONE Magit使用体验
+  CLOSED: [2018-11-17 Sat 13:50] SCHEDULED: <2018-11-13 Tue>
+  - "DONE" Note in [2018-11-17 Sat]
   
 * TODO U3D 一键打包
   -projectPath <pathname>

@@ -65,3 +65,4 @@ exit
 scort
 exit
 ls
+emacs --version

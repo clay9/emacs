@@ -110,7 +110,7 @@
 (setq org-agenda-todo-list-sublevels 'nil)
 
  ;; (dir) - Org mode - Agenda Views - Presentation and sortind - Time of day specifications
-(setq org-agenda-time-grid '((daily today) "----------------" (800 1000 1200 1400 1600 1800 2000)))
+;(setq org-agenda-time-grid '((daily today) "----------------" (800 1000 1200 1400 1600 1800 2000)))
 
  ;; (dir) - Org mode - Agenda Views - Custom agenda views
 (setq org-agenda-custom-commands
