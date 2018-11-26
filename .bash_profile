@@ -7,5 +7,6 @@ export CLICOLOR=1
 export LSCOLORS=bxfxaxdxcxegedabagacad
 
 export PATH=$PATH:~/bin
+export PATH=$PATH:/Volumes/\[C\]\ Windows_IDE.hidden/Windows/System32 
 
 source ~/.git-completion.bash
