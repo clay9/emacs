@@ -180,7 +180,11 @@
   
 
 * TODO 税务: 公司发票
-  SCHEDULED: <2018-11-18 Sun .+1m>
+  SCHEDULED: <2019-01-20 Sun .+1m>
+  :PROPERTIES:
+  :LAST_REPEAT: [2018-12-20 Thu 18:12]
+  :END:
+  - "CANCEL" Note in [2018-12-20 Thu]
   - "DONE" Note in [2018-10-18 Thu]
   - "DONE" Note in [2018-09-18 Tue]
   - "DONE" Note in [2018-08-18 Sat]
@@ -222,7 +226,11 @@
 * company habit
 * ********************
 * TODO 工资结算
-  SCHEDULED: <2018-12-10 Mon 09:20 .+1m>
+  SCHEDULED: <2019-01-20 Sun 09:20 .+1m>
+  :PROPERTIES:
+  :LAST_REPEAT: [2018-12-20 Thu 18:12]
+  :END:
+  - "DONE" Note in [2018-12-20 Thu]
   - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-10-10 Wed]
   - "DONE" Note in [2018-09-06 Thu]
@@ -237,7 +245,11 @@
   :END:
 
 * TODO 工资发放
-  SCHEDULED: <2018-12-10 Mon 09:00 .+1m>
+  SCHEDULED: <2019-01-20 Sun 09:00 .+1m>
+  :PROPERTIES:
+  :LAST_REPEAT: [2018-12-20 Thu 18:12]
+  :END:
+  - "CANCEL" Note in [2018-12-20 Thu]
   - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-10-10 Wed]
   - "DONE" Note in [2018-09-06 Thu]

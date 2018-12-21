@@ -20,9 +20,10 @@
    3) 公司的证明
       1) 证明7月21号已与本公司接触所有业务合作
       2) 证明之后是与我个人签约的协议 -- 没必要第一次拿出来
-** WAITING 等待仲裁结果
-   SCHEDULED: <2018-11-11 Sun>
+** CANCEL 等待仲裁结果
+   CLOSED: [2018-12-20 Thu 18:12] SCHEDULED: <2018-11-11 Sun>
    
+   - "CANCEL" Note in [2018-12-20 Thu]
 * PROJECT 企业形象搭建						  :important:
 ** DONE 1. 钉钉
    CLOSED: [2017-11-02 周四 10:03]
