@@ -1,38 +1,7 @@
 #+STARTUP: overview
-* TODO kernel中 的define.h中 MAX_CHAIR需要改为6
-* DONE Magit使用体验
-  CLOSED: [2018-11-17 Sat 13:50] SCHEDULED: <2018-11-13 Tue>
-  - "DONE" Note in [2018-11-17 Sat]
-  
-* TODO U3D 一键打包
-  -projectPath <pathname>
-   打开指定路径的项目
-
-* DONE Xcode 一键打包 
-  CLOSED: [2018-11-12 Mon 19:37] SCHEDULED: <2018-11-11 Sun>
-  - "DONE" Note in [2018-11-12 Mon]
-** xcodebuild
-   xcodebuild将对应的项目打包成.app文件
-
-** xcrun
-   xcrun将对应的.app文件转换为对应的.ipa文件
 * 修理自行车
-* DONE mac上安装pallel, vs2012
-  CLOSED: [2018-11-11 Sun 16:00] DEADLINE: <2018-11-11 Sun>
-  - "DONE" Note in [2018-11-11 Sun]
-* CANCEL 公司和家 通过git完成数据互通
-  CLOSED: [2018-11-12 Mon 12:25]
-  - "CANCEL" Note in [2018-11-12 Mon] \\
-    仔细想了想, 其实没什么必要, 只要保证公司的电脑能够按时push即可, 家里电脑使用的时候记得pull
-* DONE 鬼胡子 
-  CLOSED: [2018-12-20 Thu 18:12] SCHEDULED: <2018-10-29 Mon>
-  
-  - "DONE" Note in [2018-12-20 Thu]
 * CANCEL 文伟军交还 钥匙 && 显示器
   CLOSED: [2018-12-20 Thu 18:12] SCHEDULED: <2018-09-25 Tue>
   
   - "CANCEL" Note in [2018-12-20 Thu]
-* DONE 代理后台 && 总后台					  :important:
-  CLOSED: [2018-11-12 Mon 19:37] DEADLINE: <2018-11-08 Thu>
-  - "DONE" Note in [2018-11-12 Mon]
-  
+

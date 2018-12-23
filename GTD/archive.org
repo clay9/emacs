@@ -445,608 +445,190 @@
    2. customize-group       设置face属性
    3. package-list-packages 加载插件
       
-* Linux
-** 基本操作
-   1. 修改linux主机名称
-      1) 只在当前bash生效 hostname
-      2) 永久生效 /etc/sysconfig/network 重启
-	          /etc/hostname 重启
-      ubuntu 16.04
-      1) 修改/etc/hostname
-      2) 修改/etc/hosts -- 只是ip与域名的对应而已
-
-   2. 增加用户
-      1) useradd     创建用户   --  修改/etc/passwd
-      2) passwd      修改密码   --  修改/etc/shadow
-      3) sudoers(?)  设置权限   --  修改/etc/sudoers
-
-   3. 修改bash配置
-      .bashrc  -- 配置文件, 指令的别名等, 比如ll
-      .profile -- 脚本文件, 存在是自动执行.bashrc
-
-   4. 更新源
-      1) 修改/etc/apt/source.list
-      2) sudo apt update
-
-   5. 安装常用软件
-      1) git && gitosis && gitweb && gitlab
-      2) emacs
-      3) apache
-      4) vsftp
-
-   6. 磁盘管理
-      du  对特定磁盘查看  -- 有点像windows下的 右键目录-属性
-      df  filesystem总览  -- 有点像windows下的 磁盘管理
-** *************************************************************
-** Web服务器搭建
-*** 总览
-    
-    | 软件    | 功能            | 备注      |
-    |---------+-----------------+-----------|
-    | Apatch2 | 解析Html与CSS   | 开源,免费 |
-    |---------+-----------------+-----------|
-    | Php     | 解析php         | 开源      |
-    |---------+-----------------+-----------|
-    | mysql   | 支持mysql数据库 | 开源      |
-    |---------+-----------------+-----------|
-
-*** apache
-    sudo apt-get install apache2
-    这里的是apache2.4
-
-    _操作步骤_
-    修改配置文件即可.
-    apache2.4的配置文件在 /etc/apache2/apache2.conf
-    在apache2.conf中, 包含了其他的配置 -- 类似于我的emacs配置文件
-
-    所包含的目录为 *.enabled
-    enabled的有个同级目录为availabled
-    availabled目录中包含支持的配置, 而enabled目录则是使用的配置
-    而且enabled连接到availabled中的文件
-    简单说, 所有可用配置都放availabled中了, 要使用的则从avaliabled中放进了(连接)enabled中
-
-    配置文件的语法...有待学习
-    <Directory> <File> 等等
-
-
-    _常见错误_
-    1. 没有到/的权限
-        you don't have permission to access / on this website
-
-       这个问题一般发生在讲www目录指向 /usr/share /var/www时候
-       因为apache2.4默认目录不能离开这2个范围
-       所以如果要指向其他目录的话
-       需要在其中配置<Directory>选项, 具体方法见我的web配置文件 或者 我的firefox书签
-*** CGI模块
-    CGI提供应用程序与apache(web)的接口
-    只有apache加载CGI模块之后, 才能调起应用程序 -- 或者说是应用程序输出到web上
-
-    0. perl *.cgi 确保perl已经安装了cgi模块
-       如果没有安装cgi模块
-       执行
-       perl -e shell -MCPAN
-       然后
-       install CGI
-       算了, 上面那个方法太慢了,
-       可以直接到官网www.cpan.org去搜素CGI, 然后下载(他们在代码有在github上托管)
-       perl Makefile.PL
-       nmake
-       nmake test
-       nmake install
-       安装就完成了。
-
-    1. 默认的apache没有加载cgi, 需要手动加载
-       sudo ln -s /etc/apache2/mods-available/cgid.conf  /etc/apache2/mods-enabled
-       sudo ln -s /etc/apache2/mods-available/cgid.load  /etc/apache2/mods-enabled
-       最好在/etc/apache2/modes-available目录执行指令, 不然很容易出错 :( 不知道为什么
-
-    2. 在1中只是加载了模块, 还需要正确配置它
-       对于cgi的配置比较特殊, 我们在虚拟目录中进行了配置
-       虚拟目录在 /etc/apache2/sites-enabled/000-default.conf
-
-       	#如果不加这一行 会报forbide错误, apache2.4设定
-	<Directory /home/web>
-	     AllowOverride all
-	     Require all granted
-	</Directory>
-
-	#gitweb配置
-	<Directory /home/web>
-	     Options ExecCGI
-	     Allowoverride all
-	     Require all granted
-
-	     #增加cgi .pl .sh等的支持 -- 仅限与该Directoru文件夹中
-	     AddHandler cgi-script .pl .sh .cgi .scm
-
-#	     <Files index.cgi>
-#	     	  SetHandler cgi-script
-#	     </Files>
-	</Directory>
-
-	这么做的好处是, 我们把cgi限制在了directory中, 提高了安全
-
-     3. 重启apache
-	sudo /etc/init.d/apache2 restart || stop || start
-
-** Git服务器搭建
-*** 总览
-    
-    | 软件    | 功能                        | 备注               |
-    |---------+-----------------------------+--------------------|
-    | git     | 基础功能                    |                    |
-    |---------+-----------------------------+--------------------|
-    | gitosis | 私钥公钥管理                |                    |
-    |---------+-----------------------------+--------------------|
-    | gitweb  | 将git数据放到web上显示      | 代码显示           |
-    |---------+-----------------------------+--------------------|
-    | gitlab  | local->local_remote->public | 更好的保护public库 |
-    |---------+-----------------------------+--------------------|
-
-*** git server搭建
-    1. 建立一个git专用user
-       useradd gitone
-       1) 修改gitone的权限
-	  /etc/passwd
-	  gitone:x:1001:1001::/home/gitone:/bin/bashgitone:x:1001:1001::/home/gitone:/bin/git-shell
-
-	  [备注] git-shell
-	  git-shell使用户只有push和pull的权限, 而没有使用shell的权限
-	  我们的目的只是开放git服务器, 并不开放linux服务器 :)
-	  如果设置为/bin/false将导致用户没有git pull 和git push权限,
-	  所以应该设置为 /usr/bin/git-shell
-
-	  [备注2]
-	  如果想使用/usr/bin/git-shell
-	  应该在/etc/shells中增加 /usr/bin/git-shell
-
-    2. 建立一个empty responsibility
-       git init --bar /home/gitone/server.git
-       1) 文件的位置很重要
-	  因为只有gitone的权限, 所以文件最好放在gitone有权限的地方, 比如~
-	  假设放在 /home/clay 很容易导致git使用者因权限问题无法push pull
-
-       2) 建立empty responsibilit 很重要
-	  如果不是空的远端, 在client端push的时候 报错
-	  即使不报错, 也很容易造成困扰, 比如A正在branch01工作, B却推送到了branch01, 导致A很难受
-
-    3. 公钥私钥
-       PasswordAuthentication no # 禁止密码认证，默认是打开的
-       PermitRootLogin no # 禁止root用户登陆
-
-       1) 禁止root用户登录, 确保了只有gitone 才有权限
-       2) 禁止密码认证, 有很多好处
-	  1. 安全性大大加强
-	  2. 方便管理, 以后权限的增加只需要删除或增加公钥私钥
-       3) 因为禁止了密码认证,只能使用公钥私钥
-	  ssh-keygen -t rsa
-
-    4. gitosis管理密钥
-
-    5. 常见问题
-       1) git status显示中文问题
-	  git config -- global core.quotepath false
-
-*** gitosis配置
-    1. gitosis安装
-       1) github上面找个顺眼的git clone
-       2) 安装python
-       3) cd gitosis & sudo python setup.py install
-    2. 配置gitosis
-       gitosis有意思的一点是它的配置使用的是git仓库
-       1) 执行gitosis-init < id_ras.pub 生成id_rsa的用户即拥有gitosis-admin仓库的root权限: 与执行该命令的用户无关
-       2) cd responsibility/gitosis-admin 其中的gitosis-conf即是配置文件
-          而 keydir下则是保留了ssh的认证信息
-	  简单说  没有ssh的公钥, 有conf权限, 会因ssh的原因无法进入
-	          有ssh的公钥,   没conf权限, 会因gitosis原因无法进入
-       3) 将其他的git库放在responsibility中
-	  至于为什么这样放置, 肯定是因为gitosis中的配置, 至于是代码中还是配置文件中, 暂时不知晓
-	  比如server库, 放置在/responsiblity/server之后
-	  我们只需要在conf中增加用户信息即可
-	  注意, 这里的私钥公钥 应该由用户自己提供, 因为后面跟着账号名称???是否有必要, 有待验证
-	  A. 将用户的公钥放在keydir下, 为了方便管理, 我们可以以用户名命名, 比如WangChengQing
-          B. 在conf中增加server下WangChengQing的权限
-	     [group server] #已验证, 这只是group的命名, 与其他无关
-	     members = WangChengQing # 这里的名字必须与keydir下.pub同名
-             writable = server # 这里的server应该与responsibility下的server仓库同名
-	                       # readonly表示只有读权限  writable读写权限
-          C. members = WangChengQing WenXin # 两个名字之间的不是空格 而是Tab键
-             :(多么痛的领悟
-             尝试过 逗号, 空格发现都无法生效
-             逗号会导致WangChengQing用户失效
-             空格虽然不会导致WangChengQing用户失效, 却使WenXin无法使用
-             只有Tab才会使两个账号都可以使用
-	  D. 经证实, 与C无关, C是误报, 空格可以正常使用
-	     真正的问题是 gitosis更新的时候, 没有同步更新auth文件
-
-	     1. 在gitosis-admin中提交的时候, bash已经报错了, 但没有注意到 = =!
-       	     2. gitosis只是管理.ssh/auth文件, 所以无法push 或clone的时候, 首先应该查看auth文件
-
-             真正的原因是在git/responsibility中放入了一个git项目, 但这个项目的目录并不是以.git结尾,导致了错误
-             这也是push到gitosis-admin的时候, bash提示的错误 = =！ 下次必须看打印和log日志！！！
-             还有gitosis只是管理auth的工具, auth才是最重要的文件, 所以下次学着先看auth文件！！！
-       4) 重新生成认证文件
-
-	  sudo -H -u git gitosis-init  < ~/gitosis.pub
-
-*** gitweb配置
-    sudo apt-get install gitweb
-    更建议去github上找gitweb项目
-
-    _依赖说明_
-    gitweb依赖cgi
-    cgi   依赖perl (cgi只是perl的一个模块)
-    apache需要加载cgi
-
-    所以测试顺序
-    1. perl能运行cgi等文件
-    2. apache能正确加载cgi
-    3. gitweb可以运行
-       其实基本到了步骤2 就可以确保gitweb的运行成功了
-
-
-    _操作步骤_
-    1. 安装完后, 直接将git目录扔到apache的www目录下即可
-    2. 修改/etc/gitweb.conf
-       在gitweb.conf中有一项projectroot, 即git的目录仓库
-       与gitosis的Responsibility非常的契合!!
-
-    _常见问题_
-    1. 网站打开之后变成源码或者变成下载
-       原因是apache 没有正确加载cgi模块
-       具体操作见 web服务器搭建 -- CGI
-
-*** gitlab配置
-    1. gitlab是类似于github一样的代码托管站点
-       gitlab是独立软件, 不依赖于apache(gitlab与gitweb差异还是很大的)
-
-    2. 下载gitlab
-       根据官方说明来操作 https://about.gitlab.com
-       下载的时候需要注意.
-       ubuntu 对应的包软件是dpkg, 其对应deb文件
-       RedHat 对应的包软件是rpm,  其对应rpm文件
-       注: 推荐使用web下载, 貌似脚本下载特别卡
-           w3m https://packages.gitlab.com/gitlab/gitlab-ce
-
-    3. 配置gitlab
-       配置生效 sudo gitlab-ctl reconfigure
-       重启进程 sudo gitlab-ce stop | start | restart
-
-       1) 修改访问url
-          1) /etc/gitlab/gitlab.rb 中 external_url "http://60.205.215.87"  -- 不仅仅影响登陆, 还会影响项目的显示
-                                                                           -- 貌似只修改这一个url即可??
-	  2) /var/opt/gitlab/gitlab-rails/etc/gitlab.yml 中 Web Server Settings中的host 60.205.215.87
-       2)
-
-    4. 常见问题
-       1) sudo gitlab-ctl reconfigure失败
-	  如果最开始就失败, 很大概率是因为git用户名问题
-	  gitlab-ce会创建git用户, 如果系统中原先有git用户, 很容易造成reconfigure失败
-       2) gitlab会不会造成系统不安全
-	  不会, gitlab虽然创建了很多新用户, 但是可以在/etc/shadow中可以看到这些账号的密码都是!
-	  即这些账号不允许通过密码登陆shell, 所以gitlab不会造成系统的不安全
-       3) 超大文件(5000+文件的日志显示), 会导致浏览器假死, 怀疑是服务器原因
-
-*** ssh
-    ssh-keygen 生产密钥公钥
-    ssh-agent  密钥管理进程
-    ssh-add    往ssh-agent中添加密钥
-
-    问题
-    1. 在windows10 + git下, 发现agent只对当前session(bash)有效, 当当前session关闭后, agent无效
-       具体的表现为, ssh-add -L提示无法与agent链接
-       实验了各种方法
-       1) eval `ssh-agent`
-       2) eval $(ash-agent)
-       3) ssh-agent -s
-       4) ssh-agent -c
-       发现以上方法全都无效
-       最后的解决是这样的, 因为~/.ssh/id_rsa是默认的私钥, 所以我直接把我的私钥WangChengQing cp过去了
-       发现解决
-       :( 至今没有想出如何解决这个问题, 但后来想了想 这也不是大问题, 于是放过(老了就是啰嗦啊)
-
-** Ftp服务器搭建
-   1. 使用vsftp -- very securty ftp软件
-      启动 sudo service vsftpd restart
-
-   2. 配置vsftpd.conf
-      1) _目录设置_
-	 vsftp会自动建立ftp账号, 其在/etc/passwd中对应的home就是ftp的目录
-      2) _权限设置_
-         具体的设置详见 《vsftpd.conf 详解与实例配置 - lingfeng72》见firefox标签
-         A. 不开放除 虚拟/目录之外的任何目录
-         B. 人员设置要合理
-      3) 修改默认端口
-	 listen_port=2121;
-
-   3. 常见问题
-      1) ubuntu下 会加载pam_service_name=vsftpd
-         但是/etc/pam.d/vsftpd没有内容,
-         因此需要删除/etc/pam.d/vsftpd文件
-
-      2) 如果使用的是云主机|云服务器
-	 一定记得要修改云控制台中的"安全策略"
-	 安全策略配置:
-	 ftp需要开放
-	 1) 21端口, 用来传输指令
-	 2) 20端口, 数据传输 -- 主动模式下
-	 3) 随机端口, 数据传输 -- 被动模式下
-	    出于安全考虑, 随机端口, 应该在vsftpd.conf中做限制,
-	    然后在云安全策略中, 仅开放范围内的随机端口即可
-	 注: ftp使用的tcp协议, 所以在安全策略中不需要开放udp协议
-	 详见 firefox标签《VSFTP通讯原理与搭建详解》
-
-      3) linux本身的目录权限也会影响到ftp的使用者
-         1) 比如目录权限是555, 没有w权限, 则即使在vsftp.conf中配置了write权限也无效
-	 2) 其次要注意目录的owner
-
-      4) 500错误: 如果用户被限制为只能在虚拟/目录下(chroot), 此时若用户对虚拟/目录有w权限,
-	 则会报此错误
-
-	 解决方案:
-	 1. 账号clay用来上传   账号whoever用来下载
-	 2. /etc/passwd中ftp的home 设置为 /home/ftpRoot/ftp
-	 3. clay的虚拟/设置为/home/ftpRoot  注:ftpRoot权限为555 即clay不会报500错误
-	 4. whoerver的虚拟/设置为/home/ftpRoot/ftp 注: ftp权限为775, 即whoerver不会报500错误
-	    并且clay有w权限
-	 这个方案就是利用权限差来实现的
-
-      5) linux下ftp服务器, 在windows下访问乱码问题
-	 问题根因: 编码显示问题
-	 1) 首先locate查看linux当前使用的编码
-
-	 2) windows下编码一般是GBK
-
-	 3) 在linux下载编码转换工具convmv, 然后将ftp目录下的文件转换为GBK即可
-
-      6) vsftpd配置文件排错
-	 可以执行sudo vsftpd查看错误提示
-	 注: 必须在前面加上sudo 不然会报错
-
-** *************************************************************
-** tmux && screen
-   为什么使用tmux 和 screen: 因为网络不稳定, 总是掉线, 导致东西无法保存
-   讲解它们之前必须要先了解nohup 与 &
-*** nohup 与 &
-    nohup与 &都是后台运行
-    nohup会占用标准输出
-    &则不会占用标准输出
-    它们的作用都是为了防止session关闭后, 程序无法运行
-
-    但每个程序都要加上 nohup前缀 或者 &后缀, 则会特别麻烦, 因此出现了screen与tmux
-
-*** screen
-    screen属于GNU计划
-    然其操作什么的并不友善, 个人更倾向于tmux
-
-    【基本指令】
-    screen | screen -S <name> 创建screen
-    screen -d                 detach screen  只有deatch之后 其他人才能attach
-    screen -r                 reatach screen 链接screen
-    screen -ls | screen -list 列出所有的screen
-
-    【快捷键操作】
-    screen的一个弊端就是将太多功能放在了快捷键上 而不是放在CMD上
-    C-a 为screen指令的前缀
-    C-a k  kill
-    C-a w  列出所有的screen窗口  -- 亲测无效???
-    C-a p |C-a n 切换到上一个或下一个窗口 -- 亲测无效??
-    C-a z  类似于emacs的C-z 将程序放入后台 可以通过jobs 和fg操作
-    通过C-a z可以了解screen的工作原理 -- screen就是新开了一个shell, 在里面有不同的窗口windows
-    然后可以在windows间切换, 或者是回到原先的shell中
-
-
-    【为什么放弃screen】
-    虽然查看教程, 发现screen还有很多高级功能, 然而screen的窗口功能太不友好, 导致我经常不知道自己工作
-    在哪个窗口下, 而且因为C-a w的无效, 很难有一览全局, 所以最后选择放弃screen, 改投tmux
-
-*** tmux
-    _框架_
-
-    server  -> session 01  |
-            -> session 02  |  --> socket 01(默认socket)
-            -> session 03     --> socket 02(通过-L | -S生成的新的socket)
-            ...
-	    ...
-    即一个server 多个session, session又属于socket
-
-    _基本指令_
-    tmux
-    tmux ls                  列出所有的tmux session, 注意没有-  --
-    tmux attach              attch到上次的tmux session
-    tmux attach -t session   attch到指定的tmux session
-    tmux kill-session -t     关闭session
-    tmux kill-server -t      关闭server
-    注: 关闭server 将导致tmux关闭, tmux中的程序也会关闭
-        如果session退出之前, tmux是挂起状态stopped,那么下次session重新链接后, 将导致tmux关闭
-    tmux new -s $sessionName 创建一个新的session, 并指定其名称, 不然就是递增数字
-
-    _快捷键操作_
-    tmux以C-b作为快捷键的前缀
-    C-b ?             列出所有的命令
-    C-b 数字 | n | p  切换窗口
-    C-b C-z           挂起程序
-    C-b d             deatach类似于screen中的deatch
-                      deatch之后就可以回到正常的shell, 并使tmux运行在后台
-
-    _为什么选择tmux_
-    友好的界面, 友好的C-b ?帮助提示, 简单的操作
-
-    _遗留问题_
-     1. [ ] 如果运行 tmux& (&后台运行), 会导致莫名其妙的问题
-     2. [X] 如何使tmux在后台运行
-	使用bg命令无效, 这与进程的状态有关...有时间再看
-	C-b d 使当前session deatch运行在后台
-
-** mail
-   [[https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_72/com.ibm.aix.cmds3/mail.htm][mail参考网址]]
-
-   mail -s TiTILE address
-
-** *************************************************************
-** 小知识
-   rpm 与 deb
-    1. rpm 与 deb转换
-       rpm 是RedHat的包管理工具, 其对应的是 *.rpm文件
-       dpkg是ubuntu的包管理工具, 其对应的是 *.deb文件
-
-       有时候我们下载了 *.rpm文件, 发现ubuntu无法安装
-       这时候可以通过alien工具转换 rpm文件为deb文件
-
-       sudo apt install alien
-       sudo alien xxxx.rpm -- 如果成功, pwd下应该生成了deb文件
-       sudo dpkg -i xxxx.deb
-
-       貌似alien不是很好用, 非常容易报错
-
-** 包管理
-   问题描述: sudo apt-get -f install的时候提示包依赖出错
-   解决方案:
-             1. cd /var/lib/dpkg
-	     2. sudo mv info info.bak #备份
-	     3. sudo mkdir info
-	     4. sudo apt-get install --reinstall <包名>
-	        或者 sudo apt-get -f install
-	     5. sudo rm -rf info #删除新建立的info
-	     6. sudo mv info.bak info #恢复之前的info
-
-* C++
-** 随笔
-  1. sizeof()  size() length()区别
-     区别一
-     sizeof()返回的是类型的大小
-     size()返回的是占位的大小 包含后面的\0
-     length()返回的是字节的长度, 不包含\0
-
-     区别二
-     sizeof()是独立函数, 独立于类存在
-     size() length()是类的成员函数
-** socket
-   详见 ~/Code/Socket/
-   1. [ ] socket的缺点
-      1) 队列问题
-	 只能一个个处理, 导致后面的只能排队等待
-
-   2. [ ] socket的进阶
-      1) 多线程 -- 异步问题
-      2) 多进程 -- close问题
-      3) 半阻塞
-
-*** Socket由来
-    socket是应用层 与 传输层和网络层之间的一个抽象层
-    它的出现是为了简化网络进程通信
-
-    TODONOW artist-mode绘图
-
-*** 基本流程
-    TODONOW 使用artist-mode画图
-*** 函数讲解
-    1. socket(domain, socket_type, protol)
-       domain
-       socket_type
-       protol
-       socket()本质是创建了一个进程文件表, 返回的值为指向进程文件表的指针的索引.
-    2. bind(fd, sockaddr*, len)
-       fd:        socket()中的文件表指针的索引
-       sockaddr:  地址, 端口
-       len:       sockaddr的长度
-       <1> 比较有意思的是sockaddr根据family的不同, 可以与不同的结构体互转
-           比如
-            AF_INET   sockaddr_in
-            AF_INET6  sockaddr_in6
-            AF_UNIX   sockaddr_un
-           这几种结构体都与sockaddr可互转(字节对齐blabla)
-       bind()本质是在补充socket()创建的文件表. socket()时候该文件表很多值都是空的, bind()来补充
-       因为client 在connect的时候, 系统会自动分配端口,以及绑定本机ip, 所以client的socket一般不必要
-       使用bind()
-    3. connet(fd, sockaddr*, len)
-       连接到其他scokaddr
-    4. listen(fd, iMaxNum)
-       一般只在server开启listen(), 监听指定的端口信息
-    5. accept()
-       accept()会造成阻塞.
-       它会将listen()中的sockaddr进行处理
-       处理流程是 accept()会创建一个新的fd_connet, 此fd_connet公用server socket() fd的端口和地址
-       但次fd_connect仅仅是用来传输数据的
-    6. recv(fd, msg)  send(fd, msg)
-       至accetp()时候, 一切操作就和在本地上操作一样,
-       所以这里的recv() 和 send()操作与本机上的文件操作是一样的
-    7. close(fd)  shutdown(fd, type)
-       linux一切皆是file原则, fd可以关闭
-
-*** 头文件
-     1. usr/include/x86_64-linux-gnu/sys/socket.h
-	结构体
-        sockaddr
-	函数
-        socket() connect() send() recv() close()
-	socket() bind()    lisent()  accept() recv() send() close()
-        g++的默认目录中已经包含了sys/的上层目录
-     2. usr/include/netinet/in.h
-	结构体
-        AF_INET  中的 sockaddr_in
-	AF_INET6 中的 sockaddr_in6
-	AF_UNIx  中的 sockaddr_un
-     3. user/include/arpa/inet.h
-	函数
-	htons()
-	inet_addr()
-
-*** C++例子
-    具体见Examples/socket
-
-*** Unix Program 卷一 心得
-    整本书讲了二部分,
-    一为如何正确的创建socket fd进程文件表
-    二为如何设计开发一个健壮的服务器|客户端程序
-
-**** socket fd
-     进程文件表主要有
-
-     | 名称 | 说明                                      | 备注                 |
-     |------+-------------------------------------------+----------------------|
-     | fd   | 文件描述符, 表的索引                      |                      |
-     |------+-------------------------------------------+----------------------|
-     | host | 1. 域名(DNS /etc/hosts) 2. ip地址         | 兼容Ipv4 Ipv6是难点  |
-     |------+-------------------------------------------+----------------------|
-     | 服务 | 1. 服务名称(/etc/services) 2. 端口        |                      |
-     |------+-------------------------------------------+----------------------|
-     | 协议 | 1. 传输层(/etc/protol) 2. 网络层          | 链路层用到的比较少   |
-     |------+-------------------------------------------+----------------------|
-     | 网络 | 1. 网络名称?(DNS /etc/networks) 2. ip地址 | 谁会使用到这些信息?? |
-     |------+-------------------------------------------+----------------------|
-
-     期间用到的函数主要有
-     注: 尽量使用ipv4, ipv6通用的函数
-     1. 流程函数
-	socket() bind() listen() connect() accept()等
-     2. 字节处理函数
-	处理大小字节序 htons() htonl() ntohs() ntohl()
-	处理域名与十分数字 getaddrinfo()  getnameinfo()
-     3. 处理sockaddr结构体的函数
-	getsockname() 返回ocal fd
-	getpeername() 返回remote fd
-	等
-
-**** 健壮的server | client程序
-     需要掌握:
-     1. 各协议的细节
-        比如tcp连接的三次握手, 四次close等
-     2. 操作系统缓冲区机制
-	主要影响 read() write()等读写操作
-     3. 进程, 线程, I/O操作 和 协议的结合
-
-     待补充
-
-
-*** STUDY socket待学习
-    1. 对协议的认知不够
-       tcp ip udp
-    2. 操作系统缓冲区的学习
-    3. 眼光被局限与socket编程了
-       应该更高一点
-
-* Android
+* GNU
+** git
+*** F&Q
+    1. 问: 命令行下的git status如何显示中文
+       答：git config --global core.quotepath false
+
+    2. 问：在命令行下(gnu-bash)中git不能补全git的命令
+       答: 1) 首先获得源码 git clone git://git.kernel.org/pub/scm/git/git.git 
+       1) 从源码中拷贝git-completion.bash到用户主目录下. git-completion.bash 
+          cp git/contrib/completion/git-completion.bash ~/.git-completion.bash 
+       2) 在 .bashrc 中加入 source ~/.git-completion.bash 
+       3) 在shell下执行 . ~/.bashrc
+
+    3. 问: 如何取消对文件的跟踪
+       答: 分情况而定
+       1) 对于从没有追踪过的文件, 只需要设置.gitignore即可
+       2) 对于已经追踪过的文件, 需要git rm --cached (-r) file 然后再加入到.gitignoe中即可
+
+** global
+   功能:
+   global是tag解析器
+   tag为对象，比如变量，函数或者类等
+
+   命令:
+   gtags  -- 生成供helm-gtags使用的数据
+   htags  -- 生成html的数据， 命令 htags --suggest
+   global -- 查看
+
+   缺陷：
+   global并不完美，比如无法解析局部变量
+
+** gcc
+    1. 查看搜索路径
+	g++ | gcc -print-serach-dirs (可通过--help查看)
+    2. 设定搜索路径
+	gcc  C_INCLUDE_PATH
+	g++  CPLUS_INCLUDE_PATH
+
+	ep: export CPLUS_INCLUDE_PATH=/usr/lib/
+	_扩展1_
+	1. 输出 echo $C_INCLUDE_PATH
+	2. 调用 $C_INCLUDE_PATH
+	3. 赋值 export C_INCLUDE_PATH
+	4. 删除变量 unset C_INCLUDE_PATH
+	5. C++调用 string strValue(getenv("C_INCLUDE_PATH")
+       
+* ***********个人***************
+* 个人账号密码
+   | 功能                 | 商家      | 账号                 | 密码                      | 备注         |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | QQ                   | 腾讯      | 377133665            | clay501031219             |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | u3d                  | unity     | 377133665@qq.com     | Wx501031219               |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | gmail                | google    | w377133665@gamil.com | Wx501031219               |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | steam                | stream    | w501031219           | Wx@501031219              |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | 百度云盘             | 百度      | 13407105971          | Wx501031219               |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | bilibili             |           | 13407105971          | Wx501031219               |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | AppleID              | 苹果      | 377133665@qq.com     | Wx@377133665              |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | 暴雪战网账号         | 暴雪      | 377133665@qq.com     | Wx50103129                |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | 暴雪战网账号         | 暴雪      | 460253673@qq.com     | Wx501031219               | 魔兽世界专用 |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | 中国人民银行信贷查询 |           | clay2018             | Wx501031219               |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | github               |           | clay9                | Wx501031219               |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+   | Parallels            | Parallels | 377133665@qq.com     | Wx501031219               |              |
+   |----------------------+-----------+----------------------+---------------------------+--------------|
+
+* ***********公司**************
+* 资质申请
+
+   | 名称                 | 厂家  | 要求                         | 实际时间  | 备注                     |
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   | 微信开放平台         |       |                              |           |                          |
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   | 微信开发者资质认证   | 微信  | 1. 企业营业照                | 4-5小时   | 只要配合审查员, 认证很快 |
+   | (步骤1)              |       | 2. 法人身份证                |           |                          |
+   |                      |       | 3. 对公账户                  |           |                          |
+   |                      |       | 4. 公章(企业章)              |           |                          |
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   | 第一类               | 微信  | 1. 应用图标                  | 4个工作日 | 默认开放了:              |
+   | 移动应用申请 (步骤2) |       | 2. 应用官网                  |           | 1. 分享到朋友圈          |
+   |                      |       | 3. 应用下载地址              |           | 2. 发送给朋友            |
+   |                      |       | 4. 应用签名                  |           | 3. 微信登录              |
+   |                      |       | 5. 包名                      |           | 4. 智能接口              |
+   |                      |       |                              |           | 5. 一次性订阅消息        |
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   | 第一类               | 微信  |                              |           | 建议先申请公众号         |
+   | 微信支付 申请(步骤3) |       |                              |           |                          |
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   | 微信公众号           |       |                              |           |                          |
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   | 微信公众号申请       | 微信  | 1. 微信号所绑银行卡          | 4-5小时   | 只要配合审查员, 认证很快 |
+   |                      |       | 支持实名认证                 |           |                          |
+   |                      |       | 2. 公章                      |           |                          |
+   |                      |       | 3. 营业执照                  |           |                          |
+   |                      |       | 4. 对公账户                  |           |                          |
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+   | 苹果开发者账号       | Apple | 1. visa卡或mastercard        | 12天      | D-U-N-S 等了9天          |
+   |                      |       | 2. D-U-N-S(邓白氏, 企业需要) |           | 苹果等了3天              |
+   |                      |       |                              |           | 邓白氏需要：营业执照     |
+   |----------------------+-------+------------------------------+-----------+--------------------------|
+
+
+   注:
+   1. 订阅号, 服务号, 企业号的差异
+      详见 https://kf.qq.com/faq/120911VrYVrA130805byM32u.html
+      订阅号: 个人|组织, 每天可4条消息, 无服务功能
+      服务号: 组织, 服务功能, 例如银行查询等
+      企业号: 企业内部管理使用
+   2. 同一个邮箱只能绑定微信产品的一种帐号
+      比如 微信公众号平台 与 微信开放平台 需要2个邮箱
+
+* 企业账号密码
+
+   | 功能         | 商家             | 性质 | 账号                   | 密码                | 备注          | 负责人 | 状态     |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 对公账户     | 民生银行         | 公   | *                      | *                   |               | 王成庆 |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 第三方账户   | 支付宝           | 公   | postmaster@45quyou.com | Wx@201881(登录密码) |               | 王成庆 |          |
+   |              |                  |      |                        | Wx@501031(支付密码) |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 商铺         | 淘宝             | 公   | postmaster@45quyou.com | Wx@20180906         | 绑定手机      | 王成庆 |          |
+   |              |                  |      |                        |                     | 134-0710-5971 |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | API-1        | 微信开放平台     | 公   | postmaster@45quyou.com | 45quyou.com         | 绑定微信      | 王成庆 | 微信支付 |
+   |              |                  |      |                        |                     | w377133665    |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | API-2        | 微信公众平台     | 公   | 377133665@qq.com       | Wx501031219         | 绑定微信      | 王成庆 | 微信支付 |
+   |              |                  |      |                        |                     | w377133665    |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | API-3        | 支付宝           | 公   |                        |                     |               | 王成庆 | 等支付宝 |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | API-4        | 苹果开发者       | 公   | 377133665@qq.com       | 见个人账号密码表    |               | 王成庆 |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | API-5        | mob(ShareSDK)    | 公   | 377133665@qq.com       | Wx501031219         |               | 王成庆 |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | API-6        | 魔窗             | 公   | 377133665@qq.com       | WCQ@377133665       |               | 王成庆 |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | API-7        | 腾讯语音SDK(GME) | 公   | QQ账号 377133665       |                     |               | 王成庆 | 绑定微信 |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 企业资源1    | 万网             | 私   | 180-0715-5971          | Wx501031219         | 域名          | 王成庆 |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 企业资源2    | 智联招聘         | 公   | 45quyou                | Wx501031219         |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 企业资源3    | 猪八戒           | 公   | 13407105971            | @45quyou            |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   |              | 猪八戒           | 公   | 支付密码               | Wx@501031           |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 企业资源4    | ICP              | 公   | clay99                 | Wx501031            |               | 王成庆 |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | CSDN         |                  | 公   | w501031219             | Wx@501031219        |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 蒲公英       | 苹果ipa发布使用  | 公   | 13407105971            | Wx501031219         |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | Gitlab       |                  | 公   | root                   | Wx@377133665        |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   |              |                  | 私   | clay                   | Wx@501031219        |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | fir.im       |                  | 公   | 80012498@qq.com        | abcd810515          |               | 王成庆 |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 数据库服务器 |                  | 公   | administrator          | Wx@45quyou          |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   |              |                  | 私   | clay                   | Wx@501031           |               |        |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+   | 数据库       |                  | 公   | 45quyou                | @45quyou.com        |               | 邓权   |          |
+   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
+
+* ***********待归档*************
+* Finished Tasks
+* 项目应用
 ** Java的一些基础
 *** Activity
     Activity是 java中类的实例化
@@ -1173,817 +755,4 @@
       1) web后台的配置  1处
 	 1) URL中需要配置 为 XXX?key1=:key1&key2=:key2
       2) 跳转界面代码中的解析 1处
-
-* GNU
-** git
-*** F&Q
-    1. 问: 命令行下的git status如何显示中文
-       答：git config --global core.quotepath false
-
-    2. 问：在命令行下(gnu-bash)中git不能补全git的命令
-       答: 1) 首先获得源码 git clone git://git.kernel.org/pub/scm/git/git.git 
-       1) 从源码中拷贝git-completion.bash到用户主目录下. git-completion.bash 
-          cp git/contrib/completion/git-completion.bash ~/.git-completion.bash 
-       2) 在 .bashrc 中加入 source ~/.git-completion.bash 
-       3) 在shell下执行 . ~/.bashrc
-
-    3. 问: 如何取消对文件的跟踪
-       答: 分情况而定
-       1) 对于从没有追踪过的文件, 只需要设置.gitignore即可
-       2) 对于已经追踪过的文件, 需要git rm --cached (-r) file 然后再加入到.gitignoe中即可
-
-** global
-   功能:
-   global是tag解析器
-   tag为对象，比如变量，函数或者类等
-
-   命令:
-   gtags  -- 生成供helm-gtags使用的数据
-   htags  -- 生成html的数据， 命令 htags --suggest
-   global -- 查看
-
-   缺陷：
-   global并不完美，比如无法解析局部变量
-
-** gcc
-    1. 查看搜索路径
-	g++ | gcc -print-serach-dirs (可通过--help查看)
-    2. 设定搜索路径
-	gcc  C_INCLUDE_PATH
-	g++  CPLUS_INCLUDE_PATH
-
-	ep: export CPLUS_INCLUDE_PATH=/usr/lib/
-	_扩展1_
-	1. 输出 echo $C_INCLUDE_PATH
-	2. 调用 $C_INCLUDE_PATH
-	3. 赋值 export C_INCLUDE_PATH
-	4. 删除变量 unset C_INCLUDE_PATH
-	5. C++调用 string strValue(getenv("C_INCLUDE_PATH")
-       
-* Gitlab
-** CI && CC
-   CI 持续集成开发
-   CC 
-** F&Q
-* 协议 && 杂项
-** 字符编码
-   注: 知乎上有一篇非常不错的关于编码的讨论, 详见FireFox书签
-
-   写入内存过程:
-   符号  --> 根据符号表(编码表), 找到符号的value  --> 根据实现算法(utf-8等), 计算出在内存中的值  --> 内存值
-
-   解析过程:
-   内存值 --> 根据算法, 计算出符号的value  --> 根据符号表, 找到value对应的符号 --> 符号
-
-
-   1. 编码小知识
-   ios-8859-1 为http上所使用的编码
-  
-   我在gitlab上面下载的代码虽然最原始是GBK编码（win下），
-   下载到mac后 通过file -I 会被识别为iso-8859-1, 就是因为是http协议下载的
-   所以转换为mac下可以使用的时候，做法应该是：
-   iconv -f GBK -t UTF-8  file > file2
-
-*** ASCII && Unicode
-    由来
-    ASCII码 -- 保存英文以及一些特殊控制字符 byte即2^8=256个符号
-
-    Unicode -- 1. ASCII符号表只能有256个符号, 不够其他国家使用, 比如汉字有10W+
-               2. 各个国家符号表(key)对应的value不同, 导致web通信困难(乱码), 为了统一, unicode出现
-*** Unicode && utf-8
-    Unicod只是符号表, 其内部类似于这样
-    | 符号 | Value |
-    |------+-------|
-    | 严   |  4E25 |
-    |------+-------|
-    |      |       |
-
-    即我们的汉字"严" 对应的Unicode Value就是 4E25
-    但Unicode只是规定了符号表的map(key, value),
-    并没有规定value在内存中的存储形式,
-    比如little endian中"严"是25 4E 第一个字节为25, 第二个字节为4E
-    而  big    endian中则是  4E 25
-    除了大小字节序问题, 4E 25的如何实现也有非常多的方法
-    常见的有utf-8  utf-16等等
-
-    所以utf-8只是实现Unicode的一种方式
-    比较重要的一点是, 为了兼容ASCII,
-    ASCII对应的符号value, 在ASCII与utf-8中一致(即英文与控制符号一致)
-*** ASCII && Unicode转换
-    这个转换确实纠结了我很久
-
-    转换的复杂性在于
-    1. 字节长度问题
-       ASCII码的value是一个BYTE, 其value在内存中的实现也是一个byte
-       Unicode的value是二个byte, 其Value在内存中的实现(utf-8)有1-5个byte
-
-       字节长度不同, 导致我们需要在char* 和 wchar_t*间转换
-    2. 编码格式
-       注: 其实1应该也属于编码格式
-
-       因为ASCII 和 Unicode(自身)之间的实现方式差异很大, 在其中转换的时候要非常熟悉各种编码实现的原理
-
-    为了解决2个问题, 可以考虑一下2个函数, 虽然是windows下的:
-    MultiByteToWideChar和WideCharToMultiByte
-
-** 大小字节序
-   对于多字节, 比如 AE FF
-
-   Big—Endian 大字节
-   如果在内存中
-   0x 0000 0001 AE
-   0x 0000 0002 FF
-   即内存中的低位保存的是高字节 则为Big-Endian
-
-   little-Endian 小字节
-   如果在内存中
-   0x 0000 0001 FF
-   0x 0000 0002 AE
-   即内存中的地位保存的是低字节 则为little-Endian
-
-   网络上的传输为大字节序
-   所以在host传入到internet时候, 比如socket, 应该将字节序转换
-
-** ip地址详解
-   1. 主机host的数量        决定了    选择 A类 B类 或者C类地址
-   2. hosts的划分, 即子网   决定了    掩码的值
-   3. 掩码的值              决定了    ip地址的网络id 与 主机id
-
-
-   A类的掩码 为 255.0.0.0
-   B类的掩码 为 255.255.0.0
-   C类的掩码 为 255.255.255.0
-
-   通过A类掩码 计算出 所能承载的host数量n,
-                      按ip从0.0.0.0开始, 数到host数量n, 计算出A类ip地址范围
-
-   通过B类掩码 计算出 所能承载的host数量m
-                      按A类广播地址+1开始, 数到m, 计算出B类ip地址范围
-
-   通过C类掩码 计算出 所能承载的host数量x
-                      按B类广播地址+1开始, 数到x, 计算出C类ip地址范围
-
-
-   子网的第一个ip地址 和最后一个ip地址有特殊含义
-   第一个ip地址为  本机地址??????
-   最后一个ip地址为广播地址
-   这2个地址 被设计用来做其他事情, 设计的时候不应该考虑吧进去
-
-* ***********硬件***************
-* 电脑硬件
-** 存储介质
-*** 存储模式
-    1. SSD固态
-    2. 机械
-*** BIOS启动
-    1. lagcy经典(老式)启动
-    2. uef新式启动
-    /
-    lagcy使用MBR(main bios record主引导)分区模式
-    UEF使用GPT(Graph part table网格表)分区模式
-    两者不能互通
-    比如,使用MBR的只能使用lagcy引导, 使用GPT的只能使用UEF引导
-
-* ***********书籍***************
-* 阅读感悟
-** Effective C++ (第三版)
-*** 随手笔记
-    1. 条款27
-       1. 单一对象可能拥有一个以上的地址 P118
-       2. 对象的布局方式和它们的地址计算方式,随编译器不同而不同 P119
-       //
-    2. 测试内存
-       测试一
-       int *p = new int; //假设p指向地址0x00010001
-       *p = 88;
-       p = null;         //此时0x00010001中的值是否还存在?
-       delete p;         //此时0x00010001中的值是否还存在?
-
-       测试二
-       int *p = new int; //假设p指向地址0x00010001
-       *p = 88;
-       delete p;         //此时0x00010001中的值是否还存在?
-
-       1) 预期结果
-          测试一  存在, 但没人调用
-          测试二  不存在.取决于delete函数的实现,默认实现会清空该内存
-
-       2) 测试结果
-          测试一  存在, 没人使用
-          测试二  不存在. 值变为0
-
-       _结论_
-       1. delete删除一个指针时, 会消除这个对象
-          1) 指针不再存在
-          2) 指针所指的内容变为空
-    3. 上面问题暴露出的不足
-       1) 进制转换
-       2) 内存被使用意味着什么?
-
-    4. 进制转换
-       1. N进制 单bit能表示的范围为0 ~ N-1
-       2. 1为16进制表示4位二进制
-          16进制  =  2^4
-          2 进制  =  2^1
-       3. 十进制之所以流行纯粹是因为历史原因...
-          或者说是因为计算机出现的晚
-
-*** 第五章 实现
-  1. _条款26 尽可能延后变量定义式的出现时间_
-     1. 为什么
-        主因: 效率
-
-        A. 控制流经过变量时,有构造成本(if hvae构造函数); 离开时,有析构成本(if have析构函数).
-        B. 如果未显示初始化,则会调用默认构造函数,成本++; 后面赋值的时候,调用operata=(),成本++
-
-     2. 怎么做
-        两层含义.一指变量定义的时间(针对A); 二指初始化时间(针对B)
-        尽可能延后变量定义式的出现时间,直至其初值确定.
-
-  2. _条款27 尽量少做转型动作_
-     1. 现状
-        转型语法
-        1) C风格:
-           T(Value)       -- 函数风格
-           (T)Value       -- 变量风格
-        2) C++风格
-           const_cast     -- 仅用于去除变量的const属性
-           static_cast    -- 强迫隐式转换
-           dynamic_cast   -- 执行 安全向下转型(主要和继承相关)
-           reinterpret_cast -- 执行低级转型
-
-     2. 为什么
-        主因: 安全, 效率(针对dynamic_cast)
-
-        转型破坏了类型安全
-        A. 转型实际是生成临时副本???
-           所以使用时,容易导致错误.(与返回值一样)
-        B. dynamic_cast机制导致使用时,效率底下
-
-     3. 怎么做
-        //TODONOW
-        1. 主要针对dynamic_cast
-        2. 继承体系图
-
-  3. _条款28 避免返回handles指向对象内部成分_
-     1. 为什么
-        主因: 封装, dangling
-
-        A. if成员变量A, 则A的封装等于  (A handle) Fun B()  与  A中的最小者
-           所以返回对象内部的handle导致封装性被破坏
-        B. 如果C指向了A. 则当对象析构时, 将导致C为danling空悬.
-
-  4. _条款29 为异常安全而努力是值得的_
-
-  5. _条款30 透彻了解inlining的里里外外_
-     1. inlining的优点
-        1) 没有函数调用的开销
-        2) 编译器一般会为inlining执行语境相关最优化
-           备注: 语境最优化解释
-                 inlining只是申请, 具体是否为内联, 取决于编译器
-     2. inlining的缺点
-        1) 导致代码体积变大, 可能导致内存换页, 影响效率
-        2) inlining的代码无法调试
-           函数都不存在, 如何调试 :)
-
-  6. _条款31 将文件间的编译依存关系降至最低_
-     1. 为什么
-        主因: 编译效率
-
-     2. 怎么做
-        将接口与实现分离
-
-        1) Handle classes
-        2) Interface classes
-           //TODONOW
-
-  7. _总结_
-     这一章节主要讲了"效率"问题
-     从"实现"的角度,来讲解如何提高效率
-     其中有一个80-20法则,即程序80%的效率取决于20%的代码
-
-*** 第八章 定制new和delete
-    1. _条款49 了解new-handler的行为_
-       1. 什么是new-handler
-          函数原型
-          void* operator new(std::size_t size) throw(std::bad_alloc)   //注: 形参可能不同
-          void* operator new[](std::size_t size) throw(std::bad_alloc) //注: 形参可能不同
-
-          new-handle 即是常见的new 和 new[]
-
-       2. 工作机制
-          当成功分配内存时, 会返回指向内存块的指针
-          否则会抛出异常 ( 所以以 ptrnull == p来判断是否new成功是错误的)
-          抛出异常时, 会调用set_new_handler函数
-          原型如下
-          namespace std
-          {
-            typedef void (*new_handler)();
-            new_handle set_new_handler(new_handle p) throw();
-          }
-          注: 其返回值为调用set_new_handler之前的函数指针,
-          其形参为抛出异常时,将要调用的函数指针.
-
-    2. _条款50 了解new和delete的合理替换时机_
-       1. 定制new时,需要考虑不同机器上的内存分配问题
-          比如
-          1) 大小字序
-          2) 字节对齐
-          3) 多线程安全
-
-    3. _条款51 编写new和delete时需固守常规_
-       一些约定俗成的东西
-       1. new new[]
-          1) 可处理0byte内存申请
-          2) 内部循环,一直调用new—handler
-
-       2. delete delete[]
-          1) 对于null指针,可安全执行
-
-    4. _条款52 写了placement new也要写placement delete_
-       默认的会调用global中(new文件中)的delete
-       所以如果定制了new, 同时也要定制delete
-
-    5.  _总结_
-        这一章节, 主要讲解了new-handler在处理内存上的行为流程
-        细节设计到的不多, 主要还在于流程上的把握
-
-* ***********个人***************
-* 个人账号密码
-   | 功能                 | 商家      | 账号                 | 密码                      | 备注         |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | QQ                   | 腾讯      | 377133665            | clay501031219             |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | u3d                  | unity     | 377133665@qq.com     | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | gmail                | google    | w377133665@gamil.com | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | stream               | stream    | w501031219           | Wx@501031219              |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | 百度云盘             | 百度      | 13407105971          | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | bilibili             |           | 13407105971          | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | mac电脑密码          | mac       | 王成庆               | wenxin                    |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | AppleID              | 苹果      | 377133665@qq.com     | Wx@377133665              |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | 暴雪战网账号         | 暴雪      | 377133665@qq.com     | Wx50103129                |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | 暴雪战网账号         | 暴雪      | 460253673@qq.com     | Wx501031219               | 魔兽世界专用 |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | 中国人民银行信贷查询 |           | clay2018             | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | github               |           | clay9                | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | Tower                |           | 微信账号             |                           |              |
-   |                      |           | 377133665@qq.com     | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | TeamViewer           | 家        | 377133665@qq.com     | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | TeamViewer           | 公司      |                      | 无人值守密码 Wx@377133665 |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-   | Parallels            | Parallels | 377133665@qq.com     | Wx501031219               |              |
-   |----------------------+-----------+----------------------+---------------------------+--------------|
-
-* ***********公司**************
-* 工资
-   :PROPERTIES:
-   :ARCHIVE_TIME: 2018-04-05 Thu 23:33
-   :ARCHIVE_FILE: ~/GTD/archive.org
-   :ARCHIVE_CATEGORY: archive
-   :ARCHIVE_OLPATH: Finished Tasks
-   :END:
-*** 2017年10月份
-    
-   | 姓名   |   薪资 | 出勤天数 | 迟到天数 |   出勤报酬 | 迟到罚金 |   报销 |  实际工资 |
-   |--------+--------+----------+----------+------------+----------+--------+-----------|
-   | 李志虎 |   6500 |       20 |        0 |  4193.5484 |        0 |  212.3 | 4405.8484 |
-   |--------+--------+----------+----------+------------+----------+--------+-----------|
-   | 郭攀   |   7500 |     19.5 |        0 |  4717.7419 |        0 |        | 4717.7419 |
-   |--------+--------+----------+----------+------------+----------+--------+-----------|
-   | 杨晴   |  10500 |       18 |        0 |  6096.7742 |        0 |        | 6096.7742 |
-   |--------+--------+----------+----------+------------+----------+--------+-----------|
-   | 黄浩   |   6000 |     19.5 |        0 |  3774.1935 |        0 |        | 3774.1935 |
-   |--------+--------+----------+----------+------------+----------+--------+-----------|
-   | !      | 总薪资 | 平均出勤 | 平均迟到 | 总出勤报酬 |   总罚金 | 总报销 |    总支出 |
-   |--------+--------+----------+----------+------------+----------+--------+-----------|
-   |        |  31500 |    19.25 |        0 |  18782.258 |        0 |  212.3 | 18994.558 |
-   |--------+--------+----------+----------+------------+----------+--------+-----------|
-   #+TBLFM: $8=$5-$6+$7::$5=$2*$3/31::$6=$4*30
-   #+TBLFM: @>$2=vsum(@<<$2..@>>>$2)::@>$5=vsum(@<<$5..@>>>$5)::@>$6=vsum(@<<$6..@>>>$6)
-   #+TBLFM: @>$7=vsum(@<<$7..@>>>$7)::@>$3=vmean(@<<$3..@>>>$3)::@>$4=vmean(@<<$4..@>>>$4)
-   #+TBLFM: @>$8=vsum(@<<$8..@>>>$8)
-
-*** 2017年11月份
-
-   | ! | 姓名         |   薪资 | 出勤天数 | 迟到天数 | 绩效 | 转正 |   出勤报酬 | 迟到罚金 | 报销费用 |  实际工资 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 李志虎       |   6500 |       22 |        0 |    1 |    1 |       6500 |        0 |      102 |      6602 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 郭攀         |   7500 |     21.5 |        7 |    1 |    1 |  7329.5455 |      210 |          | 7119.5455 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   | # | 杨晴 -离职   |  10500 |     14.5 |        0 |  0.8 |    1 |  5536.3636 |        0 |          | 5536.3636 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 黄浩         |   6000 |     21.5 |        9 |    1 |    1 |  5863.6364 |      270 |      246 | 5839.6364 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 梁家荣       |   3000 |       21 |        0 |    1 |    1 |  2863.6364 |        0 |          | 2863.6364 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 文伟军       |   8500 |       15 |        0 |    1 |  0.8 |  4636.3636 |        0 |          | 4636.3636 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 周冰清 -离职 |   3500 |       18 |        0 |  0.8 |  0.8 |  1832.7273 |        0 |          | 1832.7273 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 朱博文 -离职 |   5000 |       10 |        0 |  0.3 |  0.8 |  545.45455 |        0 |          | 545.45455 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   | ! |              | 总薪资 | 平均出勤 | 平均迟到 |      |      | 总出勤报酬 |   总罚金 |          |    总支出 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   | # | /            |  50500 |  17.9375 |        2 |      |  7.2 |  35107.727 |      480 |      348 | 34975.727 |
-   |---+--------------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-   #+TBLFM: $8=$3*$6*$7*$4/22::$9=$5*30::$>=$8-$9+$10::@>$3=vsum(@<<$3..@>>>$3)::@>$8=vsum(@<<$8..@>>>$8)::@>$9=vsum(@<<$9..@>>>$9)::@>$10=vsum(@<<$10..@>>>$10)::@>$>=vsum(@<<$>..@>>>$>)::@>$4=vmean(@<<$4..@>>>$4)::@>$5=vmean(@<<$5..@>>>$5)
-
-*** 2017年12月份
-
-   | ! | 姓名   |   薪资 |  出勤天数 |  迟到天数 | 绩效 | 转正 |   出勤报酬 | 迟到罚金 | 报销费用 |  实际工资 |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   |   | 李志虎 |   6500 |        22 |         0 |    1 |    1 |       6500 |        0 |          |      6500 |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   |   | 郭攀   |   7500 |      18.5 |         0 |    1 |    1 |  6306.8182 |        0 |          | 6306.8182 |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   |   | 黄浩   |   6000 |        21 |         8 |  0.8 |    1 |  4581.8182 |      240 |          | 4341.8182 |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   |   | 梁家荣 |   3000 |        21 |         0 |  0.9 |    1 |  2577.2727 |        0 |          | 2577.2727 |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   |   | 文伟军 |   8500 |        22 |         0 |  0.8 |    1 |      6800. |        0 |          |     6800. |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   |   | 胡淳杰 |   5000 |        22 |         0 |  0.7 |    1 |      3500. |        0 |          |     3500. |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   | ! |        | 总薪资 |  平均出勤 |  平均迟到 |      |      | 总出勤报酬 |   总罚金 |          |    总支出 |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   | # | /      |  36500 | 21.083333 | 1.3333333 |      |  7.2 |  30265.909 |      240 |        0 | 30025.909 |
-   |---+--------+--------+-----------+-----------+------+------+------------+----------+----------+-----------|
-   #+TBLFM: $8=$3*$6*$7*$4/22::$9=$5*30::$>=$8-$9+$10::@>$3=vsum(@<<$3..@>>>$3)::@>$8=vsum(@<<$8..@>>>$8)::@>$9=vsum(@<<$9..@>>>$9)::@>$10=vsum(@<<$10..@>>>$10)::@>$>=vsum(@<<$>..@>>>$>)::@>$4=vmean(@<<$4..@>>>$4)::@>$5=vmean(@<<$5..@>>>$5)
-
-*** 2018年1月份
-
-   | ! | 姓名   |   薪资 |  出勤天数 | 迟到天数 | 绩效 | 转正 |   出勤报酬 | 迟到罚金 | 报销费用 |  实际工资 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 李志虎 |   6500 |        22 |        0 |    1 |    1 |       6500 |        0 |          |      6500 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   | # | 郭攀   |   7500 |        17 |        0 |    1 |    1 |  5795.4545 |        0 |          | 5795.4545 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   | # | 黄浩   |   6000 |        14 |        6 |  0.8 |    1 |  3054.5455 |      180 |          | 2874.5455 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   | # | 梁家荣 |   3000 |        21 |        0 |    1 |    1 |  2863.6364 |        0 |          | 2863.6364 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   |   | 文伟军 |   8500 |        22 |        0 |    1 |    1 |       8500 |        0 |          |      8500 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   | # | 胡淳杰 |   5000 |        22 |        0 |    1 |  0.8 |      4000. |        0 |          |     4000. |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   | ! |        | 总薪资 |  平均出勤 | 平均迟到 |      |      | 总出勤报酬 |   总罚金 |          |    总支出 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   | # | /      |  36500 | 19.666667 |        1 |      |  7.2 |  30713.636 |      180 |        0 | 30533.636 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+-----------|
-   #+TBLFM: $8=$3*$6*$7*$4/22::$9=$5*30::$>=$8-$9+$10::@>$3=vsum(@<<$3..@>>>$3)::@>$8=vsum(@<<$8..@>>>$8)::@>$9=vsum(@<<$9..@>>>$9)::@>$10=vsum(@<<$10..@>>>$10)::@>$>=vsum(@<<$>..@>>>$>)::@>$4=vmean(@<<$4..@>>>$4)::@>$5=vmean(@<<$5..@>>>$5)
-
-*** 2018年4月份
-
-   | ! | 姓名   |   薪资 |  出勤天数 | 迟到天数 | 绩效 | 转正 |   出勤报酬 | 迟到罚金 | 报销费用 | 实际工资 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 李志虎 |  10000 |        20 |        0 |    1 |    1 |      10000 |        0 |          |    10000 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 邓权   |   7000 |        20 |        0 |    1 |    1 |       7000 |        0 |          |     7000 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 文伟军 |   8500 |        20 |        0 |    1 |    1 |       8500 |        0 |          |     8500 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 张潘   |   4000 |        13 |        0 |    1 |    1 |       2600 |        0 |          |     2600 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 胡伟   |   4500 |        13 |        0 |    1 |    1 |       2925 |        0 |          |     2925 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 许诗韵 |   5000 |        15 |        0 |    1 |    1 |       3750 |        0 |          |     3750 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 严一飞 |   3000 |        20 |        0 |    1 |    1 |       3000 |        0 |          |     3000 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 骆兵兵 |   3000 |        20 |        0 |    1 |    1 |       3000 |        0 |          |     3000 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   |   | 皮郑华 |   3000 |         4 |        0 |    1 |    1 |        600 |        0 |          |      600 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   | ! |        | 总薪资 |  平均出勤 | 平均迟到 |      |      | 总出勤报酬 |   总罚金 |          |   总支出 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   | # | /      |  48000 | 16.111111 |        0 |      |  7.2 |      41375 |        0 |        0 |    41375 |
-   |---+--------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-   #+TBLFM: $8=$3*$6*$7*$4/20::$9=$5*30::$>=$8-$9+$10::@>$3=vsum(@<<$3..@>>>$3)::@>$8=vsum(@<<$8..@>>>$8)::@>$9=vsum(@<<$9..@>>>$9)::@>$10=vsum(@<<$10..@>>>$10)::@>$>=vsum(@<<$>..@>>>$>)::@>$4=vmean(@<<$4..@>>>$4)::@>$5=vmean(@<<$5..@>>>$5)
-
-*** 2018年5月份
-  | ! | 姓名   |   薪资 | 出勤天数 | 迟到天数 | 绩效 | 转正 |   出勤报酬 | 迟到罚金 | 报销费用 |  实际工资 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 李志虎 |  10000 |       22 |        0 |    1 |    1 |      10000 |        0 |    -4000 |      6000 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 邓权   |   7000 |       22 |        0 |    1 |    1 |       7000 |        0 |    -7000 |         0 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 文伟军 |   8500 |       22 |        0 |    1 |    1 |       8500 |        0 |          |      8500 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 张潘   |   4000 |       11 |        0 |    1 |    1 |       2000 |        0 |          |      2000 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 胡伟   |   4500 |       22 |        0 |    1 |    1 |       4500 |        0 |          |      4500 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 许诗韵 |   5000 |       22 |        0 |    1 |    1 |       5000 |        0 |          |      5000 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 严一飞 |   3000 |       21 |        0 |    1 |    1 |  2863.6364 |        0 |          | 2863.6364 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 骆兵兵 |   3000 |       22 |        0 |    1 |    1 |       3000 |        0 |          |      3000 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 皮郑华 |   3000 |       22 |        0 |    1 |    1 |       3000 |        0 |          |      3000 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | 肖伟明 |   3000 |       14 |        0 |    1 |    1 |  1909.0909 |        0 |          | 1909.0909 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | ! |        | 总薪资 | 平均出勤 | 平均迟到 |      |      | 总出勤报酬 |   总罚金 |          |    总支出 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  | # | /      |  51000 |       20 |        0 |      |  7.2 |  47772.727 |        0 |   -11000 | 36772.727 |
-  |---+--------+--------+----------+----------+------+------+------------+----------+----------+-----------|
-  #+TBLFM: $8=$3*$6*$7*$4/22::$9=$5*30::$>=$8-$9+$10::@>$3=vsum(@<<$3..@>>>$3)::@>$8=vsum(@<<$8..@>>>$8)::@>$9=vsum(@<<$9..@>>>$9)::@>$10=vsum(@<<$10..@>>>$10)::@>$>=vsum(@<<$>..@>>>$>)::@>$4=vmean(@<<$4..@>>>$4)::@>$5=vmean(@<<$5..@>>>$5)
-
-*** 2018年6月份
-  | ! | 姓名     |   薪资 |  出勤天数 | 迟到天数 | 绩效 | 转正 |   出勤报酬 | 迟到罚金 | 报销费用 | 实际工资 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 1李志虎  |  10000 |        20 |        0 |    1 |    1 |      10000 |        0 |          |    10000 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 3邓权    |   7000 |      19.5 |        0 |    1 |    1 |      6825. |        0 |     1000 |    7825. |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 2文伟军  |   8500 |        20 |        0 |    1 |    1 |       8500 |        0 |          |     8500 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 6胡伟    |   4500 |        19 |        0 |    1 |    1 |       4275 |        0 |          |     4275 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 5许诗韵  |   5000 |      17.5 |        0 |    1 |    1 |      4375. |        0 |          |    4375. |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 4严一飞  |   3000 |      18.5 |        0 |    1 |    1 |      2775. |        0 |          |    2775. |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 7肖伟明  |   3000 |        19 |        0 |    1 |    1 |       2850 |        0 |          |     2850 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 8江梦琳  |   3000 |        19 |          |    1 |    1 |       2850 |        0 |          |     2850 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 9喻进环  |   3000 |        15 |          |    1 |    1 |       2250 |        0 |          |     2250 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 10王翼羽 |   4000 |        14 |          |    1 |    1 |       2800 |        0 |          |     2800 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 11沈豪   |   3000 |         5 |          |    1 |    1 |        750 |        0 |          |      750 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  | ! |          | 总薪资 |  平均出勤 | 平均迟到 |      |      | 总出勤报酬 |   总罚金 |          |   总支出 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  | # | /        |  54000 | 16.954545 |        0 |      |  7.2 |     48250. |        0 |     1000 |   49250. |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  #+TBLFM: $8=$3*$6*$7*$4/20::$9=$5*30::$>=$8-$9+$10::@>$3=vsum(@<<$3..@>>>$3)::@>$8=vsum(@<<$8..@>>>$8)::@>$9=vsum(@<<$9..@>>>$9)::@>$10=vsum(@<<$10..@>>>$10)::@>$>=vsum(@<<$>..@>>>$>)::@>$4=vmean(@<<$4..@>>>$4)::@>$5=vmean(@<<$5..@>>>$5)
-
-*** 2018年7月份
-  | ! | 姓名     |   薪资 |  出勤天数 | 迟到天数 | 绩效 | 转正 |   出勤报酬 | 迟到罚金 | 报销费用 | 实际工资 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 1李志虎  |  10000 |        20 |        0 |    1 |    1 |      10000 |        0 |          |    10000 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 3邓权    |   7000 |      19.5 |        0 |    1 |    1 |      6825. |        0 |     1000 |    7825. |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 2文伟军  |   8500 |        20 |        0 |    1 |    1 |       8500 |        0 |          |     8500 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  | # | 6胡伟    |   4500 |        19 |        0 |    1 |    1 |       4275 |        0 |          |     4275 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 4严一飞  |   3000 |      18.5 |        0 |    1 |    1 |      2775. |        0 |          |    2775. |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 7肖伟明  |   3000 |        19 |        0 |    1 |    1 |       2850 |        0 |          |     2850 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 8江梦琳  |   3000 |        19 |          |    1 |    1 |       2850 |        0 |          |     2850 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 9喻进环  |   3000 |        15 |          |    1 |    1 |       2250 |        0 |          |     2250 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  | # | 10王翼羽 |   4000 |        14 |          |    1 |    1 |       2800 |        0 |          |     2800 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  |   | 11沈豪   |   3000 |         5 |          |    1 |    1 |        750 |        0 |          |      750 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  | ! |          | 总薪资 |  平均出勤 | 平均迟到 |      |      | 总出勤报酬 |   总罚金 |          |   总支出 |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  | # | /        |  54000 | 16.954545 |        0 |      |  7.2 |     48250. |        0 |     1000 |   49250. |
-  |---+----------+--------+-----------+----------+------+------+------------+----------+----------+----------|
-  #+TBLFM: $8=$3*$6*$7*$4/20::$9=$5*30::$>=$8-$9+$10::@>$3=vsum(@<<$3..@>>>$3)::@>$8=vsum(@<<$8..@>>>$8)::@>$9=vsum(@<<$9..@>>>$9)::@>$10=vsum(@<<$10..@>>>$10)::@>$>=vsum(@<<$>..@>>>$>)::@>$4=vmean(@<<$4..@>>>$4)::@>$5=vmean(@<<$5..@>>>$5)
-
-*** 2018年8月份
-*** 2018年9月份
-    文伟军 请假  9.17  9.18  9.19 
-*** 2018年10月份
-    邓权请假 10.8半天， 10月9号
-* 资质申请
-
-   | 名称                 | 厂家  | 要求                         | 实际时间  | 备注                     |
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   | 微信开放平台         |       |                              |           |                          |
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   | 微信开发者资质认证   | 微信  | 1. 企业营业照                | 4-5小时   | 只要配合审查员, 认证很快 |
-   | (步骤1)              |       | 2. 法人身份证                |           |                          |
-   |                      |       | 3. 对公账户                  |           |                          |
-   |                      |       | 4. 公章(企业章)              |           |                          |
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   | 第一类               | 微信  | 1. 应用图标                  | 4个工作日 | 默认开放了:              |
-   | 移动应用申请 (步骤2) |       | 2. 应用官网                  |           | 1. 分享到朋友圈          |
-   |                      |       | 3. 应用下载地址              |           | 2. 发送给朋友            |
-   |                      |       | 4. 应用签名                  |           | 3. 微信登录              |
-   |                      |       | 5. 包名                      |           | 4. 智能接口              |
-   |                      |       |                              |           | 5. 一次性订阅消息        |
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   | 第一类               | 微信  |                              |           | 建议先申请公众号         |
-   | 微信支付 申请(步骤3) |       |                              |           |                          |
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   | 微信公众号           |       |                              |           |                          |
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   | 微信公众号申请       | 微信  | 1. 微信号所绑银行卡          | 4-5小时   | 只要配合审查员, 认证很快 |
-   |                      |       | 支持实名认证                 |           |                          |
-   |                      |       | 2. 公章                      |           |                          |
-   |                      |       | 3. 营业执照                  |           |                          |
-   |                      |       | 4. 对公账户                  |           |                          |
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-   | 苹果开发者账号       | Apple | 1. visa卡或mastercard        | 12天      | D-U-N-S 等了9天          |
-   |                      |       | 2. D-U-N-S(邓白氏, 企业需要) |           | 苹果等了3天              |
-   |                      |       |                              |           | 邓白氏需要：营业执照     |
-   |----------------------+-------+------------------------------+-----------+--------------------------|
-
-
-   注:
-   1. 订阅号, 服务号, 企业号的差异
-      详见 https://kf.qq.com/faq/120911VrYVrA130805byM32u.html
-      订阅号: 个人|组织, 每天可4条消息, 无服务功能
-      服务号: 组织, 服务功能, 例如银行查询等
-      企业号: 企业内部管理使用
-   2. 同一个邮箱只能绑定微信产品的一种帐号
-      比如 微信公众号平台 与 微信开放平台 需要2个邮箱
-
-* 企业账号密码
-
-   | 功能         | 商家             | 性质 | 账号                   | 密码                | 备注          | 负责人 | 状态     |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 对公账户     | 民生银行         | 公   | *                      | *                   |               | 王成庆 |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 第三方账户   | 支付宝           | 公   | postmaster@45quyou.com | Wx@201881(登录密码) |               | 王成庆 |          |
-   |              |                  |      |                        | Wx@501031(支付密码) |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 商铺         | 淘宝             | 公   | postmaster@45quyou.com | Wx@20180906         | 绑定手机      | 王成庆 |          |
-   |              |                  |      |                        |                     | 134-0710-5971 |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | API-1        | 微信开放平台     | 公   | postmaster@45quyou.com | 45quyou.com         | 绑定微信      | 王成庆 | 微信支付 |
-   |              |                  |      |                        |                     | w377133665    |        |          |
-   |              |                  |      | jsklnwt@163.com        | abcd810515          | 聚贤庄        | 李总   |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | API-2        | 微信公众平台     | 公   | 377133665@qq.com       | Wx501031219         | 绑定微信      | 王成庆 | 微信支付 |
-   |              |                  |      |                        |                     | w377133665    |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | API-3        | 支付宝           | 公   |                        |                     |               | 王成庆 | 等支付宝 |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | API-4        | 苹果开发者       | 公   | 377133665@qq.com       | Wx@377133665        |               | 王成庆 |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | API-5        | ShareSDK         | 公   | 377133665@qq.com       | Wx501031219         |               | 王成庆 |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | API-6        | 魔窗             | 公   | 377133665@qq.com       | WCQ@377133665       |               | 王成庆 |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | API-7        | 腾讯语音SDK(GME) | 公   | QQ账号 377133665       |                     |               | 王成庆 | 绑定微信 |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 企业资源1    | 万网             | 私   | 180-0715-5971          | Wx501031219         | 域名          | 王成庆 |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   |              | 企业邮箱         | 公   | postmaster@45quyou.com | lizhihu@45quyou.com |               | 李志虎 | 已舍弃   |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 企业资源2    | 智联招聘         | 公   | 45quyou                | Wx501031219         |               | 温馨   |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 企业资源3    | 猪八戒           | 公   | 13407105971            | @45quyou            |               | 黄浩   |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   |              | 猪八戒           | 公   | 支付密码               | Wx@501031           |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 企业资源4    | ICP              | 公   | clay99                 | Wx501031            |               | 王成庆 |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | CSDN         |                  | 公   | w501031219             | Wx@501031219        |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 路由器管理员 | 公司             | 公   |                        | Wx501031219         |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 蒲公英       | 苹果ipa发布使用  | 公   | 13407105971            | Wx501031219         |               | 文伟军 |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | Gitlab       |                  | 公   | root                   | Wx@377133665        |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   |              |                  | 私   | clay                   | Wx@501031219        |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | fir.im       |                  | 公   | 80012498@qq.com        | abcd810515          |               | 王成庆 |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 聚贤庄服务器 |                  | 公   | administrator          | Abcd810515++        |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 数据库服务器 |                  | 公   | administrator          | Wx@45quyou          |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   |              |                  | 私   | clay                   | Wx@501031           |               |        |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-   | 数据库       |                  | 公   | 45quyou                | @45quyou.com        |               | 邓权   |          |
-   |--------------+------------------+------+------------------------+---------------------+---------------+--------+----------|
-
-* ***********待归档*************
-* Finished Tasks
-** 项目周期
-   :PROPERTIES:
-   :ARCHIVE_TIME: 2018-05-17 Thu 13:16
-   :ARCHIVE_FILE: ~/GTD/inbox.org
-   :ARCHIVE_CATEGORY: inbox
-   :END:
-*** 设计
-    1. 客户需求初步对接
-       时间周期: 1-2天
-       对 接 人: 王成庆
-       对接目标: 该项目是否可以进行
-       所需信息: 1) 项目收益 2) 开发难度评估
-    2. 客户需求拍板
-       对 接 人: 王成庆, 项目经理
-       所需信息: 1) 工期排版 2) 项目再次评估 
-       客户处理: 合同的签写
-    3. 设计文档初步规划
-       对 接 人: 项目经理
-       完成事项: 设计文档的编写 
-       1) UI的确认 2) 消息号结构体的编写 3) 数据库的影响(可以让邓权评估)
-       确 认 人: 王成庆
-    4. 设计文档拍板
-       对 接 人: 项目经理
-       确 认 人: 王成庆, 客户
-       备注说明: 如果客户在此时更改需求, 需要额外收费
-*** 开发
-    1. UI
-    2. 服务端
-    3. 客户端
-    4. web
-*** 测试
-    1. 设计文档中有 专门针对 测试的一环节, 此是测试基准
-    2. 在指定的时间, 完成所有测试, 每一项测试都需要签字确认
-    3. 将所有问题 描述清楚后, 写成文档, 发送给项目经理
-    4. 项目经理 根据 (一期, 二期, 三期)进行问题总结, 并在项目开发时候发送给专门人员处理
-    5. 第三期测试的时候, 必须测试人员 && 项目经理 && 王成庆 签字
-
-      
-    测试文档(不提供电子版, 只有纸质版)
-    
-*** 交付
-**** 备注说明
-    1. 此时的交付只是给客户的演示, 此时仍然是搭建在我们自己的服务器上, 
-       只有客户交付完所有尾款之后, 才会帮他搭建
-       如果项目款项是分三期的, 那么只有三期全部结束之后, 才会帮客户搭建
-**** 规范
-    1. 服务端出包规范
-       1) 服务器上的目录 为  45quyou
-       2) 目录中需要增加这样的文件  武汉四五趣游网络科技有限公司
-          里面的内容如下:
-          frame :  commit号 或者 tag名字
-          client:  commit号 或者 tag名字
-          sub_frame: tag名字
-          sub_client:tag名字
-          备注: 子游戏必须打tag,   frame|client有tag打tag, 没有则使用commit
-    2. 客户端出包规范
-       1) 软件的包名
-       2) 客户端需要提交以下信息给项目经理         
-          里面的内容如下:
-          frame :  commit号 或者 tag名字
-          client:  commit号 或者 tag名字
-          sub_frame: tag名字
-          sub_client:tag名字
-          备注: 子游戏必须打tag,   frame|client有tag打tag, 没有则使用commit
-
-** 三期计划
-   :PROPERTIES:
-   :ARCHIVE_TIME: 2018-05-17 Thu 13:16
-   :ARCHIVE_FILE: ~/GTD/inbox.org
-   :ARCHIVE_CATEGORY: inbox
-   :END:
-*** 一期 -- 通用的游戏 (初版)
-    1. 界面完善                    --  UI
-    2. 界面跳转逻辑没有问题        -- 大厅
-    3. 进入子游戏正常              -- 大厅
-    4. 子游戏流程可测试            -- 子游戏复杂
-    5. 小局结算                    -- 固定
-    6. 大局结算                    -- 固定
-    7. 解散房间                    -- 固定
-    8. 大厅的各种功能              -- 大厅
-
-    完整的游戏流程
-
-*** 二期 -- 特定游戏  (定制商)
-    1. 通用游戏 --> 定制游戏
-    3. 子游戏规则测试(定制)
-
-*** 三期 -- 运营(运营商)
-    1. 断线重连
-    2. 用户体验 -- 比如用户提示
-    3. 玩家 动作特效
-    4. 定时器 方位和时间 显示
-
-** 聚贤庄服务器
-   :PROPERTIES:
-   :ARCHIVE_TIME: 2018-10-18 Thu 14:27
-   :ARCHIVE_FILE: ~/GTD/inbox.org
-   :ARCHIVE_CATEGORY: inbox
-   :END:
-116.62.149.123   -- 登录服
-120.27.238.146   -- 游戏服
-121.43.164.10    -- 游戏服
-47.99.46.57      -- 游戏服
-120.27.235.52    -- 后台
-
 

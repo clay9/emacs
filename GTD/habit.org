@@ -2,8 +2,14 @@
 * ********************
 * GTD habit
 * ********************
-* TODO inbox							      :habit:
-  SCHEDULED: <2018-11-18 Sun 17:30-18:20 ++1d/2d>
+* TODO inbox                                                          :habit:
+  SCHEDULED: <2018-12-24 Mon 17:30-18:20 ++1d/2d>
+  :PROPERTIES:
+  :LAST_REPEAT: [2018-12-23 Sun 17:44]
+  :END:
+  - "DONE" Note in [2018-12-23 Sun]
+  - "DONE" Note in [2018-12-23 Sun]
+  - "DONE" Note in [2018-12-23 Sun]
   - "DONE" Note in [2018-11-17 Sat]
   - "DONE" Note in [2018-11-14 Wed]
   - "DONE" Note in [2018-11-12 Mon]
@@ -73,8 +79,13 @@
   2. -> project : 打tags
   3. -> trash   : 
      
-* TODO next step						      :habit:
-  SCHEDULED: <2018-11-20 Tue 18:00-21:00 ++3d>
+* TODO next step                                                      :habit:
+  SCHEDULED: <2018-12-26 Wed 18:00-21:00 ++3d>
+  :PROPERTIES:
+  :LAST_REPEAT: [2018-12-23 Sun 17:44]
+  :END:
+  - "DONE" Note in [2018-12-23 Sun]
+  - "DONE" Note in [2018-12-23 Sun]
   - "DONE" Note in [2018-11-17 Sat]
   - "DONE" Note in [2018-11-14 Wed]
   - "DONE" Note in [2018-11-11 Sun]
@@ -119,8 +130,12 @@
   1. task    : 打TODO
   2. project : 打TODO
 
-* TODO archive							      :habit:
-  SCHEDULED: <2018-11-23 Fri 18:30 ++1w>
+* TODO archive                                                        :habit:
+  SCHEDULED: <2018-12-28 Fri 18:30 ++1w>
+  :PROPERTIES:
+  :LAST_REPEAT: [2018-12-23 Sun 17:44]
+  :END:
+  - "DONE" Note in [2018-12-23 Sun]
   - "DONE" Note in [2018-11-17 Sat]
   - "DONE" Note in [2018-11-10 Sat]
   - "DONE" Note in [2018-10-29 Mon]
@@ -172,13 +187,14 @@
   :END:
   
 * TODO 下半年对账
-  SCHEDULED: <2018-11-20 周二 .+1y>
+  SCHEDULED: <2019-12-23 Mon .+1y>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2017-11-20 周一 10:46]
+  :LAST_REPEAT: [2018-12-23 Sun 15:31]
   :END:
   
 
+  - "DONE" Note in [2018-12-23 Sun]
 * TODO 税务: 公司发票
   SCHEDULED: <2019-01-20 Sun .+1m>
   :PROPERTIES:
@@ -225,41 +241,3 @@
 * ********************
 * company habit
 * ********************
-* TODO 工资结算
-  SCHEDULED: <2019-01-20 Sun 09:20 .+1m>
-  :PROPERTIES:
-  :LAST_REPEAT: [2018-12-20 Thu 18:12]
-  :END:
-  - "DONE" Note in [2018-12-20 Thu]
-  - "DONE" Note in [2018-11-10 Sat]
-  - "DONE" Note in [2018-10-10 Wed]
-  - "DONE" Note in [2018-09-06 Thu]
-  - "DONE" Note in [2018-08-06 Mon]
-  - "DONE" Note in [2018-06-18 Mon]
-  - "DONE" Note in [2018-05-06 Sun]
-  - "DONE" Note in [2018-04-05 Thu]
-  - "DONE" Note in [2018-01-29 Mon]
-  :PROPERTIES:
-  :STYLE:    habit
-  :LAST_REPEAT: [2018-11-10 Sat 21:25]
-  :END:
-
-* TODO 工资发放
-  SCHEDULED: <2019-01-20 Sun 09:00 .+1m>
-  :PROPERTIES:
-  :LAST_REPEAT: [2018-12-20 Thu 18:12]
-  :END:
-  - "CANCEL" Note in [2018-12-20 Thu]
-  - "DONE" Note in [2018-11-10 Sat]
-  - "DONE" Note in [2018-10-10 Wed]
-  - "DONE" Note in [2018-09-06 Thu]
-  - "DONE" Note in [2018-08-06 Mon]
-  - "DONE" Note in [2018-06-23 Sat]
-  - "DONE" Note in [2018-05-06 Sun]
-  - "DONE" Note in [2018-04-05 Thu]
-  - "DONE" Note in [2018-01-29 Mon]
-  :PROPERTIES:
-  :STYLE:    habit
-  :LAST_REPEAT: [2018-11-10 Sat 21:25]
-  :END:
-  
