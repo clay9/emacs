@@ -446,23 +446,6 @@
    3. package-list-packages 加载插件
       
 * GNU
-** git
-*** F&Q
-    1. 问: 命令行下的git status如何显示中文
-       答：git config --global core.quotepath false
-
-    2. 问：在命令行下(gnu-bash)中git不能补全git的命令
-       答: 1) 首先获得源码 git clone git://git.kernel.org/pub/scm/git/git.git 
-       1) 从源码中拷贝git-completion.bash到用户主目录下. git-completion.bash 
-          cp git/contrib/completion/git-completion.bash ~/.git-completion.bash 
-       2) 在 .bashrc 中加入 source ~/.git-completion.bash 
-       3) 在shell下执行 . ~/.bashrc
-
-    3. 问: 如何取消对文件的跟踪
-       答: 分情况而定
-       1) 对于从没有追踪过的文件, 只需要设置.gitignore即可
-       2) 对于已经追踪过的文件, 需要git rm --cached (-r) file 然后再加入到.gitignoe中即可
-
 ** global
    功能:
    global是tag解析器
