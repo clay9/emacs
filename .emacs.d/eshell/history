@@ -66,3 +66,11 @@ scort
 exit
 ls
 emacs --version
+cd test/
+clear
+
+make 2> ~/Desktop/make.error 
+make 2 > ~/Desktop/make.error 
+clear
+
+make 2> ~/Desktop/make.error 
