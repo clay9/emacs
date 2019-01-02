@@ -27,12 +27,10 @@
 
 
 * autotools实际使用
-
   1. 发布时候 提供./configure目录之前的东西即可
   2. 文件夹准备
      include -- 放置头文件
      src     -- 放置源文件
-
 
 ** 疑问
    1. autoscan生成的.scan文件中AC_INIT和AM_INIT_AUTOMAKE的具体差异
@@ -46,9 +44,7 @@
       如果子目录下Makefile.am目标为program, 则automake可以正常运行, 但是子目录下并没有生成Makefile.in.暂时还不知道问题在哪
 
    4. 返回指针 还是返回引用
-
    
-
 ** 记录
    1. std::string本身没有格式化的函数, 使用的是sprintf
       printf  将目标格式化 并输出到标准输出
@@ -62,3 +58,50 @@
       count：是buffer的长度.
 
       count不能使用sizeof运算符, sizeof求的是内存中的字节数(char数目)
+   4. c++ there are no arguments to 'memset' that depend on a template parameter
+      #+BEGIN_EXAMPLE
+      template  class ComboMill
+      {
+      // ...
+	
+      void SetMembership (bool iIsMember)
+      {
+           for (int i = 0; i < mMembership.size(); i++)
+		{
+			mMembership[i] = iIsMember;
+		}
+	}
+	
+	void First ()
+	{
+		// error on next line
+		SetMembership (false);
+	}
+ 
+	// ...
+	};
+      #+END_EXAMPLE
+      代码如上, g++编译的时候回报如上的错误, 提示对于模板类, 该函数错误
+      修改的话,如下. 但是还不知道原因
+      #+BEGIN_EXAMPLE
+      	void First ()
+	{
+		// error on next line
+		this->SetMembership (false);
+	}
+ 
+	// ...
+	};
+      #+END_EXAMPLE
+   5. char 与 wchar_t
+      | 类型    | 说明          | 求字符长 | 求内存长 | 备注 |
+      |---------+---------------+----------+----------+------|
+      | char    | 单字节        | strlen   | sizeof   |      |
+      |---------+---------------+----------+----------+------|
+      | wchar_t | 扩展字符      | wcslen   | sizeof   |      |
+      |         | 多用于unicode |          |          |      |
+      |---------+---------------+----------+----------+------|
+
+      
+
+   
