@@ -209,10 +209,11 @@
 
   - "DONE" Note in [2018-12-23 Sun]
 * TODO 税务: 公司发票
-  SCHEDULED: <2019-01-20 Sun .+1m>
+  SCHEDULED: <2019-03-01 Fri .+1m>
   :PROPERTIES:
-  :LAST_REPEAT: [2018-12-20 Thu 18:12]
+  :LAST_REPEAT: [2019-02-01 Fri 15:17]
   :END:
+  - "DONE" Note in [2019-02-01 Fri]
   - "CANCEL" Note in [2018-12-20 Thu]
   - "DONE" Note in [2018-10-18 Thu]
   - "DONE" Note in [2018-09-18 Tue]
@@ -230,7 +231,11 @@
   为以后准备,  可抵消前5年的
 
 * TODO 税务: 对账
-  SCHEDULED: <2019-01-15 Tue .+3m>
+  SCHEDULED: <2019-05-01 Wed .+3m>
+  :PROPERTIES:
+  :LAST_REPEAT: [2019-02-01 Fri 15:17]
+  :END:
+  - "DONE" Note in [2019-02-01 Fri]
   - "DONE" Note in [2018-10-15 Mon]
   - "DONE" Note in [2018-07-15 Sun]
   - "DONE" Note in [2018-04-05 Thu]
