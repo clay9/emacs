@@ -3,10 +3,12 @@
 * GTD habit
 * ********************
 * TODO inbox                                                          :habit:
-  SCHEDULED: <2019-02-14 Thu 17:30-18:20 ++1d/2d>
+  SCHEDULED: <2019-03-03 Sun 17:30-18:20 ++1d/2d>
   :PROPERTIES:
-  :LAST_REPEAT: [2019-02-13 Wed 17:40]
+  :LAST_REPEAT: [2019-03-02 Sat 19:06]
   :END:
+  - "DONE" Note in [2019-03-02 Sat]
+  - "DONE" Note in [2019-03-02 Sat]
   - "DONE" Note in [2019-02-13 Wed]
   - "DONE" Note in [2019-02-13 Wed]
   - "DONE" Note in [2019-02-13 Wed]
@@ -90,10 +92,11 @@
   3. -> trash   : 
      
 * TODO next step                                                      :habit:
-  SCHEDULED: <2019-02-15 Fri 18:00-21:00 ++3d>
+  SCHEDULED: <2019-03-05 Tue 18:00-21:00 ++3d>
   :PROPERTIES:
-  :LAST_REPEAT: [2019-02-13 Wed 17:39]
+  :LAST_REPEAT: [2019-03-02 Sat 19:06]
   :END:
+  - "DONE" Note in [2019-03-02 Sat]
   - "DONE" Note in [2019-02-13 Wed]
   - "DONE" Note in [2019-02-13 Wed]
   - "DONE" Note in [2019-01-10 Thu]
@@ -147,10 +150,11 @@
   2. project : 打TODO
 
 * TODO archive                                                        :habit:
-  SCHEDULED: <2019-02-15 Fri 18:30 ++1w>
+  SCHEDULED: <2019-03-08 Fri 18:30 ++1w>
   :PROPERTIES:
-  :LAST_REPEAT: [2019-02-13 Wed 17:40]
+  :LAST_REPEAT: [2019-03-02 Sat 19:06]
   :END:
+  - "DONE" Note in [2019-03-02 Sat]
   - "DONE" Note in [2019-02-13 Wed]
   - "DONE" Note in [2019-01-08 Tue]
   - "DONE" Note in [2018-12-29 Sat]
@@ -187,9 +191,9 @@
 
 
 * ********************
-* important habit
+* important habit -- 因不再使用, 取消
 * ********************
-* TODO 公司年检
+* 公司年检
   SCHEDULED: <2019-04-05 Fri .+1y>
   - "DONE" Note in [2018-04-05 Thu]
   :PROPERTIES:
@@ -197,7 +201,7 @@
   :LAST_REPEAT: [2018-04-05 Thu 23:36]
   :END:
   
-* TODO 上半年对账
+* 上半年对账
   SCHEDULED: <2019-06-23 Sun .+1y>
   - "DONE" Note in [2018-06-23 Sat]
   :PROPERTIES:
@@ -205,7 +209,7 @@
   :LAST_REPEAT: [2018-06-23 Sat 18:53]
   :END:
   
-* TODO 下半年对账
+* 下半年对账
   SCHEDULED: <2019-12-23 Mon .+1y>
   :PROPERTIES:
   :STYLE:    habit
@@ -214,11 +218,12 @@
   
 
   - "DONE" Note in [2018-12-23 Sun]
-* TODO 税务: 公司发票
-  SCHEDULED: <2019-03-01 Fri .+1m>
+* 税务: 公司发票
+  SCHEDULED: <2019-04-02 Tue .+1m>
   :PROPERTIES:
-  :LAST_REPEAT: [2019-02-01 Fri 15:17]
+  :LAST_REPEAT: [2019-03-02 Sat 19:06]
   :END:
+  - "DONE" Note in [2019-03-02 Sat]
   - "DONE" Note in [2019-02-01 Fri]
   - "CANCEL" Note in [2018-12-20 Thu]
   - "DONE" Note in [2018-10-18 Thu]
@@ -236,7 +241,7 @@
   
   为以后准备,  可抵消前5年的
 
-* TODO 税务: 对账
+* 税务: 对账
   SCHEDULED: <2019-05-01 Wed .+3m>
   :PROPERTIES:
   :LAST_REPEAT: [2019-02-01 Fri 15:17]
@@ -253,7 +258,7 @@
   中国民生银行 -- 下载对账明细
   
 
-* TODO 微信公众号 年审
+* 微信公众号 年审
   SCHEDULED: <2019-08-18 Sun .+1y>
   - "DONE" Note in [2018-08-18 Sat]
   :PROPERTIES:
