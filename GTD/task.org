@@ -1,6 +1,1 @@
 #+STARTUP: overview
-* CANCEL 文伟军交还 钥匙 && 显示器
-  CLOSED: [2018-12-20 Thu 18:12] SCHEDULED: <2018-09-25 Tue>
-  
-  - "CANCEL" Note in [2018-12-20 Thu]
-

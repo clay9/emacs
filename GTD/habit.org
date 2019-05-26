@@ -194,7 +194,11 @@
 * important habit -- 因不再使用, 取消
 * ********************
 * 公司年检
-  SCHEDULED: <2019-04-05 Fri .+1y>
+  SCHEDULED: <2020-05-26 Tue .+1y>
+  :PROPERTIES:
+  :LAST_REPEAT: [2019-05-26 Sun 00:45]
+  :END:
+  - "DONE" Note in [2019-05-26 Sun]
   - "DONE" Note in [2018-04-05 Thu]
   :PROPERTIES:
   :STYLE:    habit
@@ -219,10 +223,11 @@
 
   - "DONE" Note in [2018-12-23 Sun]
 * 税务: 公司发票
-  SCHEDULED: <2019-04-02 Tue .+1m>
+  SCHEDULED: <2019-06-26 Wed .+1m>
   :PROPERTIES:
-  :LAST_REPEAT: [2019-03-02 Sat 19:06]
+  :LAST_REPEAT: [2019-05-26 Sun 00:45]
   :END:
+  - "DONE" Note in [2019-05-26 Sun]
   - "DONE" Note in [2019-03-02 Sat]
   - "DONE" Note in [2019-02-01 Fri]
   - "CANCEL" Note in [2018-12-20 Thu]
@@ -242,10 +247,11 @@
   为以后准备,  可抵消前5年的
 
 * 税务: 对账
-  SCHEDULED: <2019-05-01 Wed .+3m>
+  SCHEDULED: <2019-08-26 Mon .+3m>
   :PROPERTIES:
-  :LAST_REPEAT: [2019-02-01 Fri 15:17]
+  :LAST_REPEAT: [2019-05-26 Sun 00:45]
   :END:
+  - "DONE" Note in [2019-05-26 Sun]
   - "DONE" Note in [2019-02-01 Fri]
   - "DONE" Note in [2018-10-15 Mon]
   - "DONE" Note in [2018-07-15 Sun]
