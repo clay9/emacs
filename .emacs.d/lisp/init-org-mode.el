@@ -87,6 +87,7 @@
 	    "~/GTD/task.org"
 	    "~/GTD/habit.org"
 	    "~/GTD/project.org"
+	    "~/GTD/archive.org"
 	    "~/GTD/trash.org"));;因四象限屏蔽掉archive.org
 
  ;; (dir) - Org mode - Agenda Vies - Built_in agenda views - Weekly/daily agenda
@@ -114,7 +115,7 @@
 
  ;; (dir) - Org mode - Agenda Views - Custom agenda views
 (setq org-agenda-custom-commands
-      '(("a" "agenda && waiting"
+      '(("a" "agenda"
 	 ((agenda)))
 	;四象限 project
 	("p" "Project 四象限"
@@ -138,7 +139,17 @@
 		((org-agenda-overriding-header "TAG 第四象限"))))
 	 ((org-agenda-files '("~/GTD/task.org"))
 	  (org-agenda-overriding-header "Inbox")))
-	;场景
+	;inbox文件
+	("i" "Inbox"
+	 ((tags "+LEVEL=1"
+		((org-agenda-overriding-header "Inbox Things"))))
+	 ((org-agenda-files '("~/GTD/inbox.org"))))
+	;task DONE
+	("d" "task :: DONE"
+	 ((tags "+LEVEL=1+TODO=\"DONE\""
+		((org-agenda-overriding-header "task :: DONE"))))
+	 ((org-agenda-files '("~/GTD/task.org"))))
+	;next step
 	("n" "Next Step"
 	 ((todo "TODO"
 		((org-agenda-overriding-header "TODO")))

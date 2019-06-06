@@ -80,7 +80,7 @@ _j_: 扩展   _i_: 增加   _v_: 查看
  ("j" yas-expand)  ;;<Tab>仍可使用
  ("i" yas-new-snippet)
  ("v" yas-visit-snippet-file))
-;(global-set-key (kbd "C-'")  'hydra-yas-minor/body) ;;写入init-global-shortkey中
+;(global-set-key (kbd "C-;")  'hydra-yas-minor/body) ;;写入init-global-shortkey中
 
 
 

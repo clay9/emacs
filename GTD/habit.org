@@ -2,195 +2,35 @@
 * ********************
 * GTD habit
 * ********************
-* TODO inbox                                                          :habit:
-  SCHEDULED: <2019-05-27 Mon 17:30-18:20 ++1d/2d>
-  :PROPERTIES:
-  :LAST_REPEAT: [2019-05-26 Sun 20:13]
-  :END:
-  - "DONE" Note in [2019-05-26 Sun]
-  - "DONE" Note in [2019-03-02 Sat]
-  - "DONE" Note in [2019-03-02 Sat]
-  - "DONE" Note in [2019-02-13 Wed]
-  - "DONE" Note in [2019-02-13 Wed]
-  - "DONE" Note in [2019-02-13 Wed]
-  - "DONE" Note in [2019-01-10 Thu]
-  - "DONE" Note in [2019-01-08 Tue]
-  - "DONE" Note in [2019-01-08 Tue]
-  - "DONE" Note in [2018-12-29 Sat]
-  - "DONE" Note in [2018-12-27 Thu]
-  - "DONE" Note in [2018-12-26 Wed]
-  - "DONE" Note in [2018-12-24 Mon]
-  - "DONE" Note in [2018-12-23 Sun]
-  - "DONE" Note in [2018-12-23 Sun]
-  - "DONE" Note in [2018-12-23 Sun]
-  - "DONE" Note in [2018-11-17 Sat]
-  - "DONE" Note in [2018-11-14 Wed]
-  - "DONE" Note in [2018-11-12 Mon]
-  - "DONE" Note in [2018-11-11 Sun]
-  - "DONE" Note in [2018-11-10 Sat]
-  - "DONE" Note in [2018-11-01 Thu]
-  - "DONE" Note in [2018-10-29 Mon]
-  - "DONE" Note in [2018-10-22 Mon]
-  - "DONE" Note in [2018-10-20 Sat]
-  - "DONE" Note in [2018-10-19 Fri]
-  - "DONE" Note in [2018-10-18 Thu]
-  - "DONE" Note in [2018-10-17 Wed]
-  - "DONE" Note in [2018-10-16 Tue]
-  - "DONE" Note in [2018-10-15 Mon]
-  - "DONE" Note in [2018-10-13 Sat]
-  - "DONE" Note in [2018-10-12 Fri]
-  - "DONE" Note in [2018-10-11 Thu]
-  - "DONE" Note in [2018-10-10 Wed]
-  - "DONE" Note in [2018-10-08 Mon]
-  - "DONE" Note in [2018-10-07 Sun]
-  - "DONE" Note in [2018-10-04 Thu]
-  - "DONE" Note in [2018-10-03 Wed]
-  - "DONE" Note in [2018-09-29 Sat]
-  - "DONE" Note in [2018-09-28 Fri]
-  - "DONE" Note in [2018-09-27 Thu]
-  - "DONE" Note in [2018-09-26 Wed]
-  - "DONE" Note in [2018-09-25 Tue]
-  - "DONE" Note in [2018-09-21 Fri]
-  - "DONE" Note in [2018-09-19 Wed]
-  - "DONE" Note in [2018-09-18 Tue]
-  - "DONE" Note in [2018-09-17 Mon]
-  - "DONE" Note in [2018-09-15 Sat]
-  - "DONE" Note in [2018-09-14 Fri]
-  - "DONE" Note in [2018-09-12 Wed]
-  - "DONE" Note in [2018-09-11 Tue]
-  - "DONE" Note in [2018-09-10 Mon]
-  - "DONE" Note in [2018-09-08 Sat]
-  - "DONE" Note in [2018-09-03 Mon]
-  - "DONE" Note in [2018-08-31 Fri]
-  - "DONE" Note in [2018-08-18 Sat]
-  - "DONE" Note in [2018-08-06 Mon]
-  - "DONE" Note in [2018-08-06 Mon]
-  - "DONE" Note in [2018-07-20 Fri]
-  - "DONE" Note in [2018-07-15 Sun]
-  - "DONE" Note in [2018-07-15 Sun]
-  - "DONE" Note in [2018-06-25 Mon]
-  - "CANCEL" Note in [2018-06-23 Sat]
-  - "DONE" Note in [2018-06-18 Mon]
-  - "DONE" Note in [2018-06-11 Mon]
-  - "DONE" Note in [2018-05-17 Thu]
-  - "DONE" Note in [2018-05-16 Wed]
-  - "DONE" Note in [2018-05-15 Tue]
-  - "DONE" Note in [2018-05-14 Mon]
-  - "DONE" Note in [2018-05-12 Sat]
-  - "DONE" Note in [2018-05-07 Mon]
-  - "DONE" Note in [2018-05-06 Sun]
-  - "DONE" Note in [2018-05-04 Fri]
-  - "DONE" Note in [2018-04-11 Wed]
-  - "DONE" Note in [2018-04-05 Thu]
-  - "DONE" Note in [2018-01-29 Mon]
-  - "DONE" Note in [2017-11-29 Wed]
+* TODO 1. inbox                                                       :habit:
+  SCHEDULED: <2019-06-04 Wed 22:00 ++1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-11-17 Sat 13:49]
   :END:
-  1. -> task    : 打tags
-  2. -> project : 打tags
-  3. -> trash   : 
      
-* TODO next step                                                      :habit:
-  SCHEDULED: <2019-05-28 Tue 18:00-21:00 ++3d>
-  :PROPERTIES:
-  :LAST_REPEAT: [2019-05-26 Sun 20:13]
-  :END:
-  - "DONE" Note in [2019-05-26 Sun]
-  - "DONE" Note in [2019-03-02 Sat]
-  - "DONE" Note in [2019-02-13 Wed]
-  - "DONE" Note in [2019-02-13 Wed]
-  - "DONE" Note in [2019-01-10 Thu]
-  - "DONE" Note in [2019-01-08 Tue]
-  - "DONE" Note in [2018-12-29 Sat]
-  - "DONE" Note in [2018-12-26 Wed]
-  - "DONE" Note in [2018-12-23 Sun]
-  - "DONE" Note in [2018-12-23 Sun]
-  - "DONE" Note in [2018-11-17 Sat]
-  - "DONE" Note in [2018-11-14 Wed]
-  - "DONE" Note in [2018-11-11 Sun]
-  - "DONE" Note in [2018-11-10 Sat]
-  - "DONE" Note in [2018-11-01 Thu]
-  - "DONE" Note in [2018-10-29 Mon]
-  - "DONE" Note in [2018-10-22 Mon]
-  - "DONE" Note in [2018-10-18 Thu]
-  - "DONE" Note in [2018-10-15 Mon]
-  - "DONE" Note in [2018-10-12 Fri]
-  - "DONE" Note in [2018-10-10 Wed]
-  - "DONE" Note in [2018-10-07 Sun]
-  - "DONE" Note in [2018-10-03 Wed]
-  - "DONE" Note in [2018-09-27 Thu]
-  - "DONE" Note in [2018-09-25 Tue]
-  - "DONE" Note in [2018-09-21 Fri]
-  - "DONE" Note in [2018-09-18 Tue]
-  - "DONE" Note in [2018-09-15 Sat]
-  - "DONE" Note in [2018-09-12 Wed]
-  - "DONE" Note in [2018-09-10 Mon]
-  - "DONE" Note in [2018-09-08 Sat]
-  - "DONE" Note in [2018-09-03 Mon]
-  - "DONE" Note in [2018-08-31 Fri]
-  - "DONE" Note in [2018-08-18 Sat]
-  - "DONE" Note in [2018-08-06 Mon]
-  - "DONE" Note in [2018-07-20 Fri]
-  - "DONE" Note in [2018-07-15 Sun]
-  - "DONE" Note in [2018-06-23 Sat]
-  - "DONE" Note in [2018-06-18 Mon]
-  - "DONE" Note in [2018-06-11 Mon]
-  - "DONE" Note in [2018-05-15 Tue]
-  - "DONE" Note in [2018-05-12 Sat]
-  - "DONE" Note in [2018-05-06 Sun]
-  - "DONE" Note in [2018-04-11 Wed]
-  - "DONE" Note in [2018-04-05 Thu]
-  - "DONE" Note in [2018-01-29 Mon]
-  - "DONE" Note in [2017-11-29 Wed]
+* TODO 2. next step                                                   :habit:
+  SCHEDULED: <2019-06-04 Thu 22:00 ++3d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-11-17 Sat 13:49]
   :END:
-  1. task    : 打TODO
-  2. project : 打TODO
 
-* TODO archive                                                        :habit:
-  SCHEDULED: <2019-05-31 Fri 18:30 ++1w>
-  :PROPERTIES:
-  :LAST_REPEAT: [2019-05-26 Sun 20:14]
-  :END:
-  - "DONE" Note in [2019-05-26 Sun]
-  - "DONE" Note in [2019-03-02 Sat]
-  - "DONE" Note in [2019-02-13 Wed]
-  - "DONE" Note in [2019-01-08 Tue]
-  - "DONE" Note in [2018-12-29 Sat]
-  - "DONE" Note in [2018-12-23 Sun]
-  - "DONE" Note in [2018-11-17 Sat]
-  - "DONE" Note in [2018-11-10 Sat]
-  - "DONE" Note in [2018-10-29 Mon]
-  - "DONE" Note in [2018-10-19 Fri]
-  - "DONE" Note in [2018-10-12 Fri]
-  - "DONE" Note in [2018-10-07 Sun]
-  - "DONE" Note in [2018-09-28 Fri]
-  - "DONE" Note in [2018-09-21 Fri]
-  - "DONE" Note in [2018-09-14 Fri]
-  - "DONE" Note in [2018-09-08 Sat]
-  - "DONE" Note in [2018-08-31 Fri]
-  - "DONE" Note in [2018-08-18 Sat]
-  - "DONE" Note in [2018-08-06 Mon]
-  - "DONE" Note in [2018-07-20 Fri]
-  - "DONE" Note in [2018-07-15 Sun]
-  - "DONE" Note in [2018-06-23 Sat]
-  - "DONE" Note in [2018-06-18 Mon]
-  - "DONE" Note in [2018-06-11 Mon]
-  - "DONE" Note in [2018-05-12 Sat]
-  - "DONE" Note in [2018-05-06 Sun]
-  - "DONE" Note in [2018-04-11 Wed]
-  - "DONE" Note in [2018-04-05 Thu]
-  - "DONE" Note in [2018-01-29 Mon]
+* TODO 3. agenda                                                      :habit:
+  SCHEDULED: <2019-06-04 Fri 22:00 ++1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2018-11-17 Sat 13:50]
   :END:
   
-  
+* TODO 4. archive                                                     :habit:
+  SCHEDULED: <2019-06-04 Fri 22:00 ++1w>
+  :PROPERTIES:
+  :STYLE:    habit
+  :END:
+
+* TODO 5. blog                                                        :habit:
+  SCHEDULED: <2019-06-04 Fri 22:00 ++10d>
+  :PROPERTIES:
+  :STYLE:    habit
+  :END:
 
 
 * ********************

@@ -1,1 +1,8 @@
 #+STARTUP: overview
+* DONE 文档扩充 记得增加四象限法则                         :urgent:important:
+  CLOSED: [2019-06-04 Tue 22:16]
+  - "DONE" Note in [2019-06-04 Tue]
+  [2019-06-04 Tue] from /Users/clay/GTD/task.org
+  content:
+  * hexo文档扩充
+    文档扩充出出差出出
