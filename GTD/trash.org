@@ -1,1 +1,21 @@
 #+STARTUP: overview
+* DONE blog发布
+  CLOSED: [2019-06-06 Thu 23:11] SCHEDULED: <2019-06-06 Thu>
+  - "DONE" Note in [2019-06-06 Thu]
+  [2019-06-06 Thu] from 
+  content:
+* DONE hexo文档扩充
+  CLOSED: [2019-06-06 Thu 23:20] SCHEDULED: <2019-06-06 Thu>
+  - "DONE" Note in [2019-06-06 Thu] \\
+    没什么可说的...
+  [2019-06-06 Thu] from 
+  content:
+* DONE 2019.06.04任务整理
+  CLOSED: [2019-06-06 Thu 22:53]
+  - "DONE" Note in [2019-06-06 Thu]
+** [ ] 2 resume
+
+   one for QP    -->  10 times
+   other for common --> 3 platform
+** [ ] hexo熟悉 && hexo文档扩充
+** [ ] 认真思考下下步打算

@@ -4,12 +4,12 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* 文档扩充 记得增加四象限法则")
- (rear-context-string . "D和org-mode非常的契合\n")
- (position . 1944))
+ (front-context-string . "* 制作org-mode的演示 ")
+ (rear-context-string . "ARTUP: overview\n")
+ (position . 21))
 ("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* 文档扩充 记得增加四象限法则")
+ (front-context-string . "* 2\n* DONE agend")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 )

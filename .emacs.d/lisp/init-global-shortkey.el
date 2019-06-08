@@ -48,8 +48,13 @@
 ;; *********************************
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c w") 'org-refile)
-(global-set-key (kbd "C-c y") 'org-archive-subtree)
+;;非agenda 模式, 不常用
+(global-set-key (kbd "C-c C-w") 'org-refile)
+(global-set-key (kbd "C-c C-y") 'org-archive-subtree)
+;;agenda 模式, 常用
+(global-set-key (kbd "C-c w") 'org-agenda-refile)
+(global-set-key (kbd "C-c y") 'org-agenda-archive)
+
 ;;TODONOW 1.org-refile  2.org-archive-subtree  其实只对org-mode生效
 
 

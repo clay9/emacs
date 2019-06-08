@@ -64,9 +64,10 @@
 
  ;; (dir) - Org mode - Capture_Refile_Archive - Refile and copy
 (setq org-refile-targets
-      (quote(("~/GTD/task.org" :level . 1)
-	     ("~/GTD/project.org" :level . 2)
-	     ("~/GTD/trash.org" :level . 1))))
+      '(("~/GTD/task.org" :maxlevel . 1)
+	("~/GTD/project.org" :maxlevel . 2)
+	("~/GTD/trash.org" :level . 1)))
+
 (setq org-refile-use-outline-path 'file)
 (setq org-reverse-note-order t)
 (setq org-log-refile (quote nil))
@@ -88,7 +89,7 @@
 	    "~/GTD/habit.org"
 	    "~/GTD/project.org"
 	    "~/GTD/archive.org"
-	    "~/GTD/trash.org"));;因四象限屏蔽掉archive.org
+	    "~/GTD/trash.org"))
 
  ;; (dir) - Org mode - Agenda Vies - Built_in agenda views - Weekly/daily agenda
 (setq org-agenda-include-diary t)
@@ -117,6 +118,14 @@
 (setq org-agenda-custom-commands
       '(("a" "agenda"
 	 ((agenda)))
+	;inbox文件
+	("i" "Inbox"
+	 ((tags "+LEVEL=1-important-urgent"
+		((org-agenda-overriding-header "Inbox Things -- origin")))
+	  (tags "+LEVEL=1+important|urgent"
+		((org-agenda-overriding-header "Inbox Things -- marked")))
+	  )
+	 ((org-agenda-files '("~/GTD/inbox.org"))))
 	;四象限 project
 	("p" "Project 四象限"
 	 ((tags-todo "+important+urgent/PROJECT"
@@ -126,7 +135,10 @@
 	  (tags-todo "-important+urgent/PROJECT"
 		     	 ((org-agenda-overriding-header "第三象限")))
 	  (tags-todo "-important-urgent/PROJECT"
-		     ((org-agenda-overriding-header "第四象限")))))
+		     ((org-agenda-overriding-header "第四象限")))
+	  (tags "+LEVEL=1-TODO=\"PROJECT\""
+		((org-agenda-overriding-header "未进行的工程"))))
+	 ((org-agenda-files '("~/GTD/project.org"))))
 	;四象限 todo (仅限task.org)
 	("f" "TAGS 四象限"
 	 ((tags "+important+urgent+LEVEL=1-TODO=\"TODO\"-TODO=\"WAITING\"-TODO=\"CANCEL\"-TODO=\"DONE\""
@@ -137,24 +149,19 @@
 		((org-agenda-overriding-header "TAG 第三象限")))	  
 	  (tags "-important-urgent+LEVEL=1-TODO=\"TODO\"-TODO=\"WAITING\"-TODO=\"CANCEL\"-TODO=\"DONE\""
 		((org-agenda-overriding-header "TAG 第四象限"))))
-	 ((org-agenda-files '("~/GTD/task.org"))
-	  (org-agenda-overriding-header "Inbox")))
-	;inbox文件
-	("i" "Inbox"
-	 ((tags "+LEVEL=1"
-		((org-agenda-overriding-header "Inbox Things"))))
-	 ((org-agenda-files '("~/GTD/inbox.org"))))
-	;task DONE
-	("d" "task :: DONE"
-	 ((tags "+LEVEL=1+TODO=\"DONE\""
-		((org-agenda-overriding-header "task :: DONE"))))
 	 ((org-agenda-files '("~/GTD/task.org"))))
 	;next step
 	("n" "Next Step"
 	 ((todo "TODO"
 		((org-agenda-overriding-header "TODO")))
 	  (todo "WAITING"
-		((org-agenda-overriding-header "WAITING")))))))
+		((org-agenda-overriding-header "WAITING")))))
+	;task DONE
+	("d" "task :: DONE"
+	 ((tags "+LEVEL=1+TODO=\"DONE\""
+		((org-agenda-overriding-header "task :: DONE"))))
+	 ((org-agenda-files '("~/GTD/task.org"))))
+	))
 
  ;; others M-x customize group
 (setq org-agenda-hide-tags-regexp

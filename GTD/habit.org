@@ -2,37 +2,56 @@
 * ********************
 * GTD habit
 * ********************
-* TODO 1. inbox                                                       :habit:
-  SCHEDULED: <2019-06-04 Wed 22:00 ++1d>
+* TODO 1. [i] inbox                                                   :habit:
+  SCHEDULED: <2019-06-09 Sun 23:00 ++1d>
   :PROPERTIES:
   :STYLE:    habit
+  :LAST_REPEAT: [2019-06-08 Sat 19:30]
   :END:
      
-* TODO 2. next step                                                   :habit:
-  SCHEDULED: <2019-06-04 Thu 22:00 ++3d>
+  - "DONE" Note in [2019-06-08 Sat] \\
+    只有一个 itme
+  - "DONE" Note in [2019-06-07 Fri] \\
+    正常打卡, 2个任务
+  - "DONE" Note in [2019-06-06 Thu] \\
+    从此刻开始, 新的开始!!!
+* TODO 2. [f,p] next step                                             :habit:
+  SCHEDULED: <2019-06-09 Sun 23:00 ++3d>
   :PROPERTIES:
   :STYLE:    habit
+  :LAST_REPEAT: [2019-06-06 Thu 23:07]
   :END:
 
-* TODO 3. agenda                                                      :habit:
-  SCHEDULED: <2019-06-04 Fri 22:00 ++1d>
+  - "DONE" Note in [2019-06-06 Thu]
+* TODO 3. [n] agenda                                                  :habit:
+  SCHEDULED: <2019-06-09 Sun 23:00 ++1d>
   :PROPERTIES:
   :STYLE:    habit
+  :LAST_REPEAT: [2019-06-08 Sat 00:58]
   :END:
   
-* TODO 4. archive                                                     :habit:
-  SCHEDULED: <2019-06-04 Fri 22:00 ++1w>
+  - "DONE" Note in [2019-06-08 Sat] \\
+    今天弄到晚了, 下次应该早点进行的. 或者是将habit时间调到后面
+  - "DONE" Note in [2019-06-06 Thu]
+* TODO 4. [d] archive                                                 :habit:
+  SCHEDULED: <2019-06-13 Thu 23:00 ++1w>
   :PROPERTIES:
   :STYLE:    habit
+  :LAST_REPEAT: [2019-06-06 Thu 23:21]
   :END:
 
+  - "DONE" Note in [2019-06-06 Thu]
 * TODO 5. blog                                                        :habit:
-  SCHEDULED: <2019-06-04 Fri 22:00 ++10d>
+  SCHEDULED: <2019-06-16 Sun 23:00 ++10d>
   :PROPERTIES:
   :STYLE:    habit
+  :LAST_REPEAT: [2019-06-06 Thu 23:24]
   :END:
 
 
+  - "DONE" Note in [2019-06-06 Thu] \\
+    1. GTD && org-mode
+    2. hexo文档 补充 文件链接
 * ********************
 * important habit -- 因不再使用, 取消
 * ********************
