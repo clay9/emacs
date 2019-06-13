@@ -1,7 +1,8 @@
 #+STARTUP: overview
 * PROJECT 正面直视未来                                     :urgent:important:
-** TODO 浏览招聘信息
-   SCHEDULED: <2019-06-09 Sun 11:00-13:00>
+** DONE 浏览招聘信息
+   CLOSED: [2019-06-12 Wed 17:03] SCHEDULED: <2019-06-09 Sun 11:00-13:00>
+   - "DONE" Note in [2019-06-12 Wed]
 ** DONE 完成1份通用简历
    CLOSED: [2019-06-08 Sat 19:31] SCHEDULED: <2019-06-08 Sat 11:00-13:00>
    - "DONE" Note in [2019-06-08 Sat] \\
@@ -21,7 +22,7 @@
 * PROJECT 企业形象搭建						  :important:
 ** DONE 1. 钉钉
    使用功能:
-   1. 公司座机
+   1. 公司座机 -- 智能办公电话
 ** DONE 2. 对公账户						       :民生银行:
 ** DONE 3. 企业支付宝账号认证 						:支付宝:
 ** DONE 4. 淘宝账号认证

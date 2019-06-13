@@ -117,7 +117,9 @@
  ;; (dir) - Org mode - Agenda Views - Custom agenda views
 (setq org-agenda-custom-commands
       '(("a" "agenda"
-	 ((agenda)))
+	 ((agenda)
+	  
+	  ))
 	;inbox文件
 	("i" "Inbox"
 	 ((tags "+LEVEL=1-important-urgent"
