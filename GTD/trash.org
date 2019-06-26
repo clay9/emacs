@@ -1,4 +1,14 @@
 #+STARTUP: overview
+* DONE 执行hexod.sh
+  CLOSED: [2019-06-07 Fri 23:23]
+  - "DONE" Note in [2019-06-07 Fri] \\
+    执行 hexod.sh
+  [2019-06-06 Thu] from 
+  content:
+  github官网暂时无法访问, hexod.sh无法上传到github. 
+  需要更新2篇文章(只需要执行 hexod.sh)：
+  一个是 GTD && org-mode
+  一个是 hexo文档
 * DONE blog发布
   CLOSED: [2019-06-06 Thu 23:11] SCHEDULED: <2019-06-06 Thu>
   - "DONE" Note in [2019-06-06 Thu]

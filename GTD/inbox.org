@@ -1,6 +1,1 @@
 #+STARTUP: overview
-* 在C-c a a界面中增加 主任务
-  [2019-06-12 Wed] from 
-  content:
-
-  在agenda的界面下方, 增加主任务一栏

@@ -3,12 +3,15 @@
 * GTD habit
 * ********************
 * TODO 1. [i] inbox                                                   :habit:
-  SCHEDULED: <2019-06-13 Thu 23:00 .+1d>
+  SCHEDULED: <2019-06-17 Mon 23:00 .+1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-06-12 Wed 17:02]
+  :LAST_REPEAT: [2019-06-16 Sun 15:55]
   :END:
      
+  - "DONE" Note in [2019-06-16 Sun] \\
+    没有任何capture item
+  - "DONE" Note in [2019-06-13 Thu]
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-08 Sat] \\
@@ -18,34 +21,40 @@
   - "DONE" Note in [2019-06-06 Thu] \\
     从此刻开始, 新的开始!!!
 * TODO 2. [f,p] next step                                             :habit:
-  SCHEDULED: <2019-06-15 Sat 23:00 .+3d>
+  SCHEDULED: <2019-06-19 Wed 23:00 .+3d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-06-12 Wed 17:03]
+  :LAST_REPEAT: [2019-06-16 Sun 15:56]
   :END:
 
+  - "DONE" Note in [2019-06-16 Sun] \\
+    无效操作
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-06 Thu]
 * TODO 3. [n] agenda                                                  :habit:
-  SCHEDULED: <2019-06-13 Thu 23:00 .+1d>
+  SCHEDULED: <2019-06-17 Mon 23:00 .+1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-06-12 Wed 17:03]
+  :LAST_REPEAT: [2019-06-16 Sun 15:56]
   :END:
   
+  - "DONE" Note in [2019-06-16 Sun] \\
+    无效操作
+  - "DONE" Note in [2019-06-13 Thu]
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-08 Sat] \\
     今天弄到晚了, 下次应该早点进行的. 或者是将habit时间调到后面
   - "DONE" Note in [2019-06-06 Thu]
 * TODO 4. [d] archive                                                 :habit:
-  SCHEDULED: <2019-06-13 Thu 23:00 .+1w>
+  SCHEDULED: <2019-06-20 Thu 23:00 .+1w>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-06-06 Thu 23:21]
+  :LAST_REPEAT: [2019-06-13 Thu 22:39]
   :END:
 
+  - "DONE" Note in [2019-06-13 Thu]
   - "DONE" Note in [2019-06-06 Thu]
 * TODO 5. blog                                                        :habit:
   SCHEDULED: <2019-06-16 Sun 23:00 .+10d>

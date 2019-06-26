@@ -511,6 +511,32 @@
 
 * ***********待归档*************
 * Finished Tasks
+
+** DONE agenda C-c a p                                            :important:
+   CLOSED: [2019-06-08 Sat 00:45] SCHEDULED: <2019-06-07 Fri>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-06-13 Thu 22:39
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-06-08 Sat] \\
+     解决方案:
+     使用方案二. 
+    
+     org-mode refile时候不支持修改格式;
+     在C-c a p界面下方增加了"未进行"一栏.
+    
+     在进行habit:next step的时候顺便整理project即可.
+   [2019-06-06 Thu] from 
+   content:
+   item A 从inbox --[C-c w]--> project的时候, 
+   如果切换到C-a a p界面, 发现找不到item A.
+  
+   修改方案:
+   方案1(最优):  item A移动到project的时候, 增加PROJECT标签。
+   方案2: 在C-a a p界面下方, 即四象限下方, 在增加一栏. 比如待整理. 但是这样, 可能会增加habit:project
+
 * 项目应用
 ** Java的一些基础
 *** Activity
