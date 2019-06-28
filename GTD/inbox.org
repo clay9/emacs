@@ -1,1 +1,15 @@
 #+STARTUP: overview
+* Kitematic 卡在 Starting Docker VM界面
+
+  try this (THIS RESET SCRIPT WILL WIPE ALL DOCKER AND KITEMATIC DATA - RUN AT YOUR OWN RISK)
+
+CLOSE KITEMATIC AND DOCKER completely (QUIT)
+open terminal
+Choose either 3A OR 3B
+3A. wget https://raw.githubusercontent.com/docker/kitematic/master/util/reset && chmod a+x reset && ./reset
+3B. curl https://raw.githubusercontent.com/docker/kitematic/master/util/reset | bash
+(IGONRE LAST WARNING ABOUT VIRTUALBOX UNINSTALL)
+open docker and let it get started
+then open kitematic
+* 修改mac菜单栏 图标位置
+  按住Command 拖拽即可
