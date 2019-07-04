@@ -1,5 +1,8 @@
 #+STARTUP: overview
-* PROJECT 正面直视未来                                     :urgent:important:
+* DONE 正面直视未来                                        :urgent:important:
+  CLOSED: [2019-07-03 Wed 22:03]
+  - "DONE" Note in [2019-07-03 Wed] \\
+    已找到工作, 还可以继续观望
 ** DONE 浏览招聘信息
    CLOSED: [2019-06-12 Wed 17:03] SCHEDULED: <2019-06-09 Sun 11:00-13:00>
    - "DONE" Note in [2019-06-12 Wed]
@@ -8,10 +11,12 @@
    - "DONE" Note in [2019-06-08 Sat] \\
      1. 完成效果不理想, 个人不满意
      2. 时间又拖延了
-** TODO 完成1份棋牌简历
-   SCHEDULED: <2019-06-09 Sun 11:00-13:00>
-** TODO 投递20家公司
-   SCHEDULED: <2019-06-09 Sun 15:00-18:00>
+** DONE 完成1份棋牌简历
+   CLOSED: [2019-06-30 Sun 21:21] SCHEDULED: <2019-06-09 Sun 11:00-13:00>
+   - "DONE" Note in [2019-06-30 Sun]
+** DONE 投递20家公司
+   CLOSED: [2019-06-30 Sun 21:21] SCHEDULED: <2019-06-09 Sun 15:00-18:00>
+   - "DONE" Note in [2019-06-30 Sun]
 ** DONE 认真思考下下步打算
    CLOSED: [2019-06-08 Sat 19:29] SCHEDULED: <2019-06-08 Sat 19:00-21:00>
    - "DONE" Note in [2019-06-08 Sat] \\

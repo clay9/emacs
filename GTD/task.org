@@ -1,11 +1,14 @@
 #+STARTUP: overview
+* TODO emacs中的 mode-map 如何添加元素                            :important:
+  DEADLINE: <2019-07-03 Wed>
 * TODO 在C-c a a界面中增加 主任务                          :urgent:important:
   SCHEDULED: <2019-06-14 Fri 13:00>
   [2019-06-12 Wed] from 
   content:
 
   在agenda的界面下方, 增加主任务一栏
-* 制作org-mode的演示 
+* TODO 制作org-mode的演示 
+  DEADLINE: <2019-07-03 Wed>
   [2019-06-08 Sat] from 
   content:
   制作org-mode的演示图例. 使用gif动态图

@@ -74,3 +74,9 @@ make 2 > ~/Desktop/make.error
 clear
 
 make 2> ~/Desktop/make.error 
+hexod.sh
+clear
+
+ls
+quit
+exit

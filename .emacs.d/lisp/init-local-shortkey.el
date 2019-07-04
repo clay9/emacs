@@ -92,8 +92,8 @@ _j_: 扩展   _i_: 增加   _v_: 查看
 (define-key artist-mode-map (kbd "RET") 'org-return)
 (define-key artist-mode-map (kbd "DEL") 'org-delete-backward-char)
 (define-key artist-mode-map (kbd "TAB") 'org-cycle)
-(define-key artist-mode-map (kbd "\C-@")'artist-key-set-point) 
 
+;; 默认快捷键
 ;1) line                 :: C-c C-a l
 ;   proy_line            :: C-c C-a p
 ;2) rectngle             :: C-c C-a r
@@ -101,7 +101,39 @@ _j_: 扩展   _i_: 增加   _v_: 查看
 ;3) elipse               :: C-c C-a e
 ;   circle               :: C-c C-a c
 ;4) spray                :: C-c C-a S
-;;TODONOW 使用hydra-mode管理这些artist-mode中的快捷键
+
+;; 修改默认快捷键
+(require 'artist)
+(defhydra hydra-artist-mode (:color blue
+                             :hint nil)
+ "
+_o_: 起点
+_l_: 线      _p_: 直线
+_r_: 四边形  _s_: 正方形
+_e_: 椭圆    _c_: 圆
+_y_: 水雾
+"
+ ("o" artist-key-set-point)
+ 
+ ("l" artist-select-op-line)
+ ("p" artist-select-op-poly-line)
+ 
+ ("r" artist-select-op-rectangle)
+ ("s" artist-select-op-square)
+ 
+ ("e" artist-select-op-ellipse)
+ ("c" artist-select-op-circle)
+ 
+ ("y" artist-select-op-spray-can))
+(global-set-key (kbd "C-@")  'hydra-artist-mode/body) ;;如何在lisp map中添加元素
+
+;; TOODNOW 如何在lisp的map中添加元素
+;(setq artist-mode-map
+;      (append '((define-key map "\C-," 'hydra-artist-mode)) artist-mode-map))
+
+;(define-key artist-mode-map (kbd "\C-,") 'hydra-artist-mode/body)
+
+
 
 
 

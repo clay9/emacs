@@ -6,8 +6,7 @@
 ;; color && format
 ;; ********************
 (setq yas-snippet-dirs
-   (quote
-    ("~/BigDay/yasnippets/")))
+       '("~/.emacs.d/yasnippets"))
 
 (yas-load-directory "~/.emacs.d/yasnippets/")
 

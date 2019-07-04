@@ -138,7 +138,7 @@
 		     	 ((org-agenda-overriding-header "第三象限")))
 	  (tags-todo "-important-urgent/PROJECT"
 		     ((org-agenda-overriding-header "第四象限")))
-	  (tags "+LEVEL=1-TODO=\"PROJECT\""
+	  (tags "+LEVEL=1-TODO=\"PROJECT\"-TODO=\"CANCEL\"-TODO=\"DONE\""
 		((org-agenda-overriding-header "未进行的工程"))))
 	 ((org-agenda-files '("~/GTD/project.org"))))
 	;四象限 todo (仅限task.org)

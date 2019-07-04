@@ -4,8 +4,7 @@
 ;; ********************
 ;; .h关联到c++ mode
 (setq auto-mode-alist
-      (append '(("\\.h$" . c++-mode )
-                    ) auto-mode-alist))
+      (append '(("\\.h$" . c++-)) auto-mode-alist))
 
 ;; (dir) - CC Mode - Sample Init File
 (defconst my-cpp-style

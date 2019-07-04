@@ -8,8 +8,8 @@
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 ("org-refile-last-stored"
- (filename . "~/GTD/trash.org")
- (front-context-string . "* DONE 执行hexod.s")
+ (filename . "~/GTD/task.org")
+ (front-context-string . "* emacs中的 mode-m")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 )
