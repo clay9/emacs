@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: com : BEGIN_COMMENT
+# key: com
+# --
+#+BEGIN_COMMENT
+${1}
+#+END_COMMENT
+
