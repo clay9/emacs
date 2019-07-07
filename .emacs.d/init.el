@@ -78,6 +78,12 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-block-separator 42)
  '(org-agenda-menu-show-matcher nil)
+ '(org-priority-faces
+   (quote
+    ((65 :background "red" :foreground "white" :weight bold)
+     (66 :background "DarkOrange" :foreground "white" :weight bold)
+     (67 :background "yellow" :foreground "DarkGreen" :weight bold)
+     (68 :background "DodgerBlue" :foreground "black" :weight bold))))
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote

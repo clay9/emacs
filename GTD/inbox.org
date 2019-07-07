@@ -1,1 +1,17 @@
 #+STARTUP: overview
+* agenda中mark之后, B动作中有一个A
+  [2019-07-07 Sun] from /Users/clay/GTD/task.org
+  content:
+  1. 执行该命令, 发现全部到了一个Archive的*item中, 而且agenda中也不再显示了
+  2. 可以具体看看这个功能, 是否可以取代 org-agenda-archive
+* org-agenda需要修改的地方
+  [2019-07-07 Sun] from 
+  content:
+  1. bulk-custom-function中增加 bulk add proirity的函数
+  2. 同步修改 blog/org-agenda.org
+* artist-mode Set-point之后如何确认绘制完成
+  [2019-07-07 Sun] from 
+  content:
+
+  举例:
+  C-@ o 选择绘制起点, 怎么确认绘制完成????

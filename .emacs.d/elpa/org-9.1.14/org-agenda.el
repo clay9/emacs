@@ -3068,7 +3068,7 @@ Agenda views are separated by `org-agenda-block-separator'."
 	   ((assoc (char-to-string c) custom)
 	    (setq selstring (concat selstring (char-to-string c)))
 	    (throw 'exit (cons selstring restriction)))
-	   ((memq c prefixes)
+	   ((memq c prefixes)org-agenda-custom-commands-local-options
 	    (setq selstring (concat selstring (char-to-string c))
 		  prefixes nil
 		  rmheader (or rmheader t)
@@ -9829,14 +9829,15 @@ The prefix arg is passed through to the command if possible."
 
   ;; Prompt for the bulk command.
   (message
-   (concat (if org-agenda-persistent-marks "Bulk (persistent): " "Bulk: ")
-	   "[$]arch [A]rch->sib [t]odo [+/-]tag [s]chd [d]eadline [r]efile "
-	   "[S]catter [f]unction    "
-	   (and org-agenda-bulk-custom-functions
-		(format " Custom: [%s]"
-			(mapconcat (lambda (f) (char-to-string (car f)))
-				   org-agenda-bulk-custom-functions
-				   "")))))
+;; added by WangChengQing 2019.7.7 修改样式
+"
+_w_ : refile
+_y_ : archive    _A_ : archive->sib
+_t_ : todo       _+-_: tag
+_s_ : schedule   _d_ : deadline
+_S_ : Scatter    _f_ : function
+")
+  
   (catch 'exit
     (let* ((org-log-refile (if org-log-refile 'time nil))
 	   (entries (reverse org-agenda-bulk-marked-entries))
@@ -9852,7 +9853,7 @@ The prefix arg is passed through to the command if possible."
 	   (org-agenda-bulk-action)
 	   (throw 'exit nil)))
 
-	(?$
+	(?y
 	 (setq cmd #'org-agenda-archive))
 
 	(?A

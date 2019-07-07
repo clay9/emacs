@@ -4,12 +4,12 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* 在C-c a a界面中增加 ")
- (rear-context-string . "ARTUP: overview\n")
- (position . 21))
+ (front-context-string . "* artist-mode Se")
+ (rear-context-string . "/org-agenda.org\n")
+ (position . 338))
 ("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* emacs中的 mode-m")
+ (front-context-string . "* agenda bulk cu")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 )

@@ -2,13 +2,14 @@
 * ********************
 * GTD habit
 * ********************
-* TODO 1. [i] inbox                                                   :habit:
-  SCHEDULED: <2019-07-07 Sun 23:00 .+1d>
+* TODO 1.[i] inbox     清空便签                                       :habit:
+  SCHEDULED: <2019-07-08 Mon 23:00 .+1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-06 Sat 19:55]
+  :LAST_REPEAT: [2019-07-07 Sun 12:11]
   :END:
      
+  - "DONE" Note in [2019-07-07 Sun]
   - "DONE" Note in [2019-07-06 Sat]
   - "DONE" Note in [2019-07-04 Thu]
   - "DONE" Note in [2019-07-03 Wed] \\
@@ -24,7 +25,7 @@
     正常打卡, 2个任务
   - "DONE" Note in [2019-06-06 Thu] \\
     从此刻开始, 新的开始!!!
-* TODO 2. [f,p] next step                                             :habit:
+* TODO 2.[f] next step 清空任务                                       :habit:
   SCHEDULED: <2019-07-09 Tue 23:00 .+3d>
   :PROPERTIES:
   :STYLE:    habit
@@ -39,13 +40,14 @@
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-06 Thu]
-* TODO 3. [n] agenda                                                  :habit:
-  SCHEDULED: <2019-07-07 Sun 23:00 .+1d>
+* TODO 3.[n] agenda    确认任务                                       :habit:
+  SCHEDULED: <2019-07-08 Mon 23:00 .+1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-06 Sat 19:55]
+  :LAST_REPEAT: [2019-07-07 Sun 12:14]
   :END:
   
+  - "DONE" Note in [2019-07-07 Sun]
   - "DONE" Note in [2019-07-06 Sat]
   - "DONE" Note in [2019-07-04 Thu]
   - "DONE" Note in [2019-07-03 Wed]
@@ -57,7 +59,7 @@
   - "DONE" Note in [2019-06-08 Sat] \\
     今天弄到晚了, 下次应该早点进行的. 或者是将habit时间调到后面
   - "DONE" Note in [2019-06-06 Thu]
-* TODO 4. [d] archive                                                 :habit:
+* TODO 4.[ ] archive   任务反馈                                       :habit:
   SCHEDULED: <2019-07-10 Wed 23:00 .+1w>
   :PROPERTIES:
   :STYLE:    habit
@@ -67,21 +69,6 @@
   - "DONE" Note in [2019-07-03 Wed]
   - "DONE" Note in [2019-06-13 Thu]
   - "DONE" Note in [2019-06-06 Thu]
-* TODO 5. blog                                                        :habit:
-  SCHEDULED: <2019-07-10 Wed 23:00 .+10d>
-  :PROPERTIES:
-  :STYLE:    habit
-  :LAST_REPEAT: [2019-06-30 Sun 22:59]
-  :END:
-
-
-  - "DONE" Note in [2019-06-30 Sun] \\
-    1. Hydra-mode
-    2. yasnippet-mode
-    3. artist-mode && graphviz-mode
-  - "DONE" Note in [2019-06-06 Thu] \\
-    1. GTD && org-mode
-    2. hexo文档 补充 文件链接
 * ********************
 * important habit -- 因不再使用, 取消
 * ********************

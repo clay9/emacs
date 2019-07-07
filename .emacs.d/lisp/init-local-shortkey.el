@@ -2,7 +2,7 @@
 ;; 目录一栏
 ;; 0.helm-mode 1.helm-gtags
 ;; 2.symbol-overlay-mode  3.hs-hide-mode  4.speedbar  5.yasnippet
-;; 6.artist-mode
+;; 6.artist-mode  7.org-agenda-mode
 
 ;; *********************************
 ;; 0.helm-mode
@@ -135,6 +135,15 @@ _y_: 水雾
 
 
 
+;; *********************************
+;; 7.org-agenda-mode
+;; *********************************
+(require 'org-agenda)
+(define-key org-agenda-mode-map (kbd "m") 'org-agenda-bulk-mark)       ;mark
+(define-key org-agenda-mode-map (kbd "M") 'org-agenda-bulk-mark-all)   ;mark all
+(define-key org-agenda-mode-map (kbd "u") 'org-agenda-bulk-unmark)     ;unmark
+(define-key org-agenda-mode-map (kbd "U") 'org-agenda-bulk-unmark-all) ;unmark all
 
+(define-key org-agenda-mode-map (kbd "a") 'org-agenda-bulk-action)     ;执行动作
 
 (provide 'init-local-shortkey)
