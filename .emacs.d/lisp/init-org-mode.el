@@ -78,11 +78,10 @@
 (setq org-archive-location "~/GTD/archive.org::* Finished Tasks")
 
 (setq org-agenda-sorting-strategy
-      (quote ((agenda time-up habit-up todo-state-up scheduled-down deadline-down)
+      (quote ((agenda time-up todo-state-up scheduled-up deadline-up priority-up)
               (todo priority-down category-keep)
               (tags priority-down category-keep)
               (search category-keep))))
-
 
  ;; (dir) - Org mode - Agenda views - Agenda files
 (setq org-agenda-files
@@ -227,9 +226,7 @@
 ;; ****************
 ;; 设置启动界面
 ;; ****************
-(defun my_org_agenda_start
-    (org-agenda-custom-commands  "\C-c a a")
-  )
+(setq org-agenda-prefix-format "%?-7t%-12:s ")
 (org-agenda-list)
 (delete-other-windows)
 

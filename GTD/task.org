@@ -45,17 +45,26 @@
   content:
   待确认: 可以为item添加ABC三种优先级,  四象限是否可以借鉴, 从而省去u+i的tag
 * TODO 小蝌蚪聊天室 
+  :PROPERTIES:
+  :END:
   [2019-07-06 Sat] from 
   content:
   1. 详细查看 -- 感觉可以应用在商业上
-* TODO fuck -- 自动修改敲错的指令
+* DONE fuck -- 自动修改敲错的指令
+  CLOSED: [2019-07-07 Sun 20:42] SCHEDULED: <2019-07-07 Sun>
+  - "DONE" Note in [2019-07-07 Sun] \\
+    详见 https://github.com/nvbn/thefuck
   [2019-07-06 Sat] from 
   content:
   1. 这个可以有
 * TODO acaudwell -- 把git commit做成动画
+  SCHEDULED: <2019-07-07 Sun>
   [2019-07-06 Sat] from 
   content:
-* TODO Carbon -- 把编辑器中代码 变为 图片
+* CANCEL Carbon -- 把编辑器中代码 变为 图片
+  CLOSED: [2019-07-07 Sun 20:47] SCHEDULED: <2019-07-07 Sun>
+  - "CANCEL" Note in [2019-07-07 Sun] \\
+    对于emacs来说, 没有必要使用这个软件
   [2019-07-06 Sat] from 
   content:
   需求:
