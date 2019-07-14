@@ -68,9 +68,9 @@
 
 (global-set-key (kbd "C-x C-;") 'sr-speedbar-toggle)
 
-(global-set-key (kbd "C-'")  'hydra-symbol-overlay/body) ;;语法高亮
-(global-set-key (kbd "C-j")  'hydra-helm-gtags/body) ;;
-(global-set-key (kbd "C-;")  'hydra-yas-minor/body) ;; yasnippets前缀
+;(global-set-key (kbd "C-'")  'hydra-symbol-overlay/body) ;;语法高亮
+;(global-set-key (kbd "C-j")  'hydra-helm-gtags/body) ;;
+;(global-set-key (kbd "C-;")  'hydra-yas-minor/body) ;; yasnippets前缀
 
 
 

@@ -2,7 +2,9 @@
 ;; 目录一栏
 ;; 0.helm-mode 1.helm-gtags
 ;; 2.symbol-overlay-mode  3.hs-hide-mode  4.speedbar  5.yasnippet
-;; 6.artist-mode  7.org-agenda-mode
+;; 6.artist-mode  7.org-agenda-mode 8.smartparens-mode
+
+(require 'hydra) ;;使用hydra管理快捷键
 
 ;; *********************************
 ;; 0.helm-mode
@@ -26,7 +28,7 @@ _j_: 相关引用      _p_: 上个位置      _n_: 下个位置
  ("j" helm-gtags-dwim)
  ("p" helm-gtags-previous-history)
  ("n" helm-gtags-next-history))
-;(global-set-key (kbd "C-j")  'hydra-helm-gtags/body) ;;写入init-global-shortkey中
+(define-key helm-gtags-mode-map (kbd "\C-c ;") 'hydra-helm-gtags/body)
 
 
 ;; *********************************
@@ -48,7 +50,7 @@ _i_: 高亮            _n_: 下一个位置          _w_: 复制
  ("w" symbol-overlay-save-symbol)
  ("q" symbol-overlay-query-replace)
  ("r" symbol-overlay-rename))
-;(global-set-key (kbd "C-'")  'hydra-symbol-overlay/body) ;;写入init-global-shortkey中
+(define-key symbol-overlay-map (kbd "\C-c j") 'hydra-symbol-overlay/body)
 
 
 ;; *********************************
@@ -80,8 +82,7 @@ _j_: 扩展   _i_: 增加   _v_: 查看
  ("j" yas-expand)  ;;<Tab>仍可使用
  ("i" yas-new-snippet)
  ("v" yas-visit-snippet-file))
-;(global-set-key (kbd "C-;")  'hydra-yas-minor/body) ;;写入init-global-shortkey中
-
+(define-key yas-minor-mode-map (kbd "\C-c ,") 'hydra-yas-minor/body)
 
 
 ;; *********************************
@@ -93,21 +94,12 @@ _j_: 扩展   _i_: 增加   _v_: 查看
 (define-key artist-mode-map (kbd "DEL") 'org-delete-backward-char)
 (define-key artist-mode-map (kbd "TAB") 'org-cycle)
 
-;; 默认快捷键
-;1) line                 :: C-c C-a l
-;   proy_line            :: C-c C-a p
-;2) rectngle             :: C-c C-a r
-;   squares              :: C-c C-a s
-;3) elipse               :: C-c C-a e
-;   circle               :: C-c C-a c
-;4) spray                :: C-c C-a S
-
 ;; 修改默认快捷键
 (require 'artist)
 (defhydra hydra-artist-mode (:color blue
                              :hint nil)
  "
-_o_: 起点
+_o_: 起点,终点
 _l_: 线      _p_: 直线
 _r_: 四边形  _s_: 正方形
 _e_: 椭圆    _c_: 圆
@@ -125,14 +117,7 @@ _y_: 水雾
  ("c" artist-select-op-circle)
  
  ("y" artist-select-op-spray-can))
-(global-set-key (kbd "C-@")  'hydra-artist-mode/body) ;;如何在lisp map中添加元素
-
-;; TOODNOW 如何在lisp的map中添加元素
-;(setq artist-mode-map
-;      (append '((define-key map "\C-," 'hydra-artist-mode)) artist-mode-map))
-
-;(define-key artist-mode-map (kbd "\C-,") 'hydra-artist-mode/body)
-
+(define-key artist-mode-map (kbd "\C-c g") 'hydra-artist-mode/body)
 
 
 ;; *********************************
@@ -145,5 +130,32 @@ _y_: 水雾
 (define-key org-agenda-mode-map (kbd "U") 'org-agenda-bulk-unmark-all) ;unmark all
 
 (define-key org-agenda-mode-map (kbd "a") 'org-agenda-bulk-action)     ;执行动作
+
+
+;; *********************************
+;; 8.smartparens
+;; *********************************
+(require 'smartparens)
+(defhydra hydra-smartparens (:color blue
+				    :hint nil)
+ "
+^高亮^               ^跳转^                   ^操作^
+^^^^^^-----------------------------------------------------------------
+_p_: 上一个sexp      _n_: 下一个sexp          ^ ^
+_b_: sexp开头        _f_: sexp结尾            ^ ^
+_k_: kill sexp       _w_: copy sexp           ^ ^
+_m_: wrap sexp       _u_: unwrap sexp         _r_: rewrap sexp
+"
+ ("p" sp-forward-sexp)
+ ("n" sp-backward-sexp)
+ ("b" sp-beginning-of-sexp)
+ ("f" sp-end-of-sexp)
+ ("k" sp-kill-sexp)
+ ("w" sp-copy-sexp)
+ ("m" sp-wrap-round)
+ ("u" sp-unwrap-sexp)
+ ("r" sp-rewrap-sexp))
+(define-key smartparens-mode-map (kbd "\C-c s") 'hydra-smartparens/body)
+
 
 (provide 'init-local-shortkey)

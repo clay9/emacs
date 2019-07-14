@@ -1,4 +1,42 @@
 #+STARTUP: overview
+* TODO [#D] org-mode attach 
+  [2019-07-11 Thu] from 
+  content:
+  C-c c-a 可以掉出 attach界面
+* TODO [#A] emacs做IDE整理
+  SCHEDULED: <2019-07-13 Sat>
+  [2019-07-09 Tue] from 
+  content:
+  如何把Emacs打造成一个顺手的IDE
+* DONE [#B] org-agenda  helm-mode整理
+  CLOSED: [2019-07-09 Tue 22:04] SCHEDULED: <2019-07-09 Tue>
+  - "DONE" Note in [2019-07-09 Tue] \\
+    建议教程
+  [2019-07-08 Mon] from 
+  content:
+* DONE [#D] artist-mode Set-point之后如何确认绘制完成
+  CLOSED: [2019-07-10 Wed 22:27] SCHEDULED: <2019-07-10 Wed>
+  - "DONE" Note in [2019-07-10 Wed] \\
+    o 即是起点 也是终点
+  [2019-07-07 Sun] from 
+  content:
+
+  举例:
+  C-@ o 选择绘制起点, 怎么确认绘制完成????
+* TODO [#D] org-agenda需要修改的地方
+  SCHEDULED: <2019-07-12 Fri>
+  [2019-07-07 Sun] from 
+  content:
+  1. bulk-custom-function中增加 bulk add proirity的函数
+  2. 同步修改 blog/org-agenda.org
+* DONE [#D] agenda中mark之后, B动作中有一个A
+  CLOSED: [2019-07-11 Thu 22:26] SCHEDULED: <2019-07-11 Thu>
+  - "DONE" Note in [2019-07-11 Thu] \\
+    默认的 archive位置
+  [2019-07-07 Sun] from /Users/clay/GTD/task.org
+  content:
+  1. 执行该命令, 发现全部到了一个Archive的*item中, 而且agenda中也不再显示了
+  2. 可以具体看看这个功能, 是否可以取代 org-agenda-archive
 * DONE agenda bulk custom functions 查看是否可以扩展
   CLOSED: [2019-07-07 Sun 16:11]
   - "DONE" Note in [2019-07-07 Sun]
@@ -44,7 +82,7 @@
   [2019-07-07 Sun] from 
   content:
   待确认: 可以为item添加ABC三种优先级,  四象限是否可以借鉴, 从而省去u+i的tag
-* TODO 小蝌蚪聊天室 
+* TODO [#D] 小蝌蚪聊天室 
   :PROPERTIES:
   :END:
   [2019-07-06 Sat] from 
@@ -57,8 +95,10 @@
   [2019-07-06 Sat] from 
   content:
   1. 这个可以有
-* TODO acaudwell -- 把git commit做成动画
-  SCHEDULED: <2019-07-07 Sun>
+* DONE acaudwell -- 把git commit做成动画
+  CLOSED: [2019-07-08 Mon 20:40] SCHEDULED: <2019-07-07 Sun>
+  - "DONE" Note in [2019-07-08 Mon] \\
+    windows平台实现了
   [2019-07-06 Sat] from 
   content:
 * CANCEL Carbon -- 把编辑器中代码 变为 图片
@@ -113,10 +153,11 @@
      this item is scheduled, due to automatic rescheduling of unfinished items
      for the following day.  So this number is one larger than the number of days
      that passed since this item was scheduled first.
-* TODO C-c C-a d 把DONE item archive -> archive.org 可以做成自动化
+* TODO [#D] C-c C-a d 把DONE item archive -> archive.org 可以做成自动化
   [2019-07-06 Sat] from 
   content:
   1. 自动化执行archive(DONE item -> archive.org)
+     
 * CANCEL emacs中的 mode-map 如何添加元素                          :important:
   CLOSED: [2019-07-07 Sun 16:12] DEADLINE: <2017-03-03 Wed>
   - "CANCEL" Note in [2019-07-07 Sun]

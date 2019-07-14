@@ -3,12 +3,22 @@
 * GTD habit
 * ********************
 * TODO 1.[i] inbox     清空便签                                       :habit:
-  SCHEDULED: <2019-07-08 Mon 23:00 .+1d>
+  SCHEDULED: <2019-07-15 Mon 23:00 .+1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-07 Sun 12:11]
+  :LAST_REPEAT: [2019-07-14 Sun 22:11]
   :END:
      
+  - "DONE" Note in [2019-07-14 Sun] \\
+    0个 item
+  - "DONE" Note in [2019-07-13 Sat] \\
+    1个D item
+  - "DONE" Note in [2019-07-11 Thu] \\
+    0 个 item
+  - "DONE" Note in [2019-07-09 Tue] \\
+    1个B item
+  - "DONE" Note in [2019-07-08 Mon] \\
+    3个D item
   - "DONE" Note in [2019-07-07 Sun]
   - "DONE" Note in [2019-07-06 Sat]
   - "DONE" Note in [2019-07-04 Thu]
@@ -26,12 +36,16 @@
   - "DONE" Note in [2019-06-06 Thu] \\
     从此刻开始, 新的开始!!!
 * TODO 2.[f] next step 清空任务                                       :habit:
-  SCHEDULED: <2019-07-09 Tue 23:00 .+3d>
+  SCHEDULED: <2019-07-16 Tue 23:00 .+3d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-06 Sat 19:54]
+  :LAST_REPEAT: [2019-07-13 Sat 13:58]
   :END:
 
+  - "DONE" Note in [2019-07-13 Sat] \\
+    1个A 1个D item
+  - "DONE" Note in [2019-07-09 Tue] \\
+    1个B  3个D  item
   - "DONE" Note in [2019-07-06 Sat]
   - "DONE" Note in [2019-07-03 Wed] \\
     执行力是大问题
@@ -41,12 +55,24 @@
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-06 Thu]
 * TODO 3.[n] agenda    确认任务                                       :habit:
-  SCHEDULED: <2019-07-08 Mon 23:00 .+1d>
+  SCHEDULED: <2019-07-15 Mon 23:00 .+1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-07 Sun 12:14]
+  :LAST_REPEAT: [2019-07-14 Sun 22:11]
   :END:
   
+  - "DONE" Note in [2019-07-14 Sun] \\
+    n list有3个任务 处理了0个任务
+  - "DONE" Note in [2019-07-13 Sat] \\
+    n list有3个任务 处理了1个A任务
+  - "DONE" Note in [2019-07-11 Thu] \\
+    n list有3个任务, 处理了 0个任务
+  - "DONE" Note in [2019-07-10 Wed] \\
+    n list有4个任务, 处理了 1个任务
+  - "DONE" Note in [2019-07-09 Tue] \\
+    n list有6个任务, 处理了 2个任务
+  - "DONE" Note in [2019-07-08 Mon] \\
+    n list有2个任务, 处理了 0个任务
   - "DONE" Note in [2019-07-07 Sun]
   - "DONE" Note in [2019-07-06 Sat]
   - "DONE" Note in [2019-07-04 Thu]
@@ -60,12 +86,14 @@
     今天弄到晚了, 下次应该早点进行的. 或者是将habit时间调到后面
   - "DONE" Note in [2019-06-06 Thu]
 * TODO 4.[ ] archive   任务反馈                                       :habit:
-  SCHEDULED: <2019-07-10 Wed 23:00 .+1w>
+  SCHEDULED: <2019-07-17 Wed 23:00 .+1w>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-03 Wed 22:08]
+  :LAST_REPEAT: [2019-07-10 Wed 20:30]
   :END:
 
+  - "DONE" Note in [2019-07-10 Wed] \\
+    没有处理任何 DONE itme
   - "DONE" Note in [2019-07-03 Wed]
   - "DONE" Note in [2019-06-13 Thu]
   - "DONE" Note in [2019-06-06 Thu]

@@ -80,3 +80,9 @@ clear
 ls
 quit
 exit
+ls
+mkdir emacs_smartparens-mode
+ls
+cp ~/.emacs.d/lisp/init-smartparens-mode.el emacs_smartparens-mode/
+ls emacs_smartparens-mode
+exit
