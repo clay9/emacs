@@ -4,12 +4,12 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* emacs快捷键整理\n  [")
- (rear-context-string . "ARTUP: overview\n")
- (position . 21))
+ (front-context-string . "* global\n  [2019")
+ (rear-context-string . "所以重点仍然是speedbar\n")
+ (position . 159))
 ("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* [#D] org-mode ")
+ (front-context-string . "* [#B] 文档: linux")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 )

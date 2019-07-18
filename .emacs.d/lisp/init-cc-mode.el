@@ -4,7 +4,7 @@
 ;; ********************
 ;; .h关联到c++ mode
 (setq auto-mode-alist
-      (append '(("\\.h$" . c++-)) auto-mode-alist))
+      (append '(("\\.h$" . c++-mode)) auto-mode-alist))
 
 ;; (dir) - CC Mode - Sample Init File
 (defconst my-cpp-style
@@ -27,6 +27,21 @@
 	indent-tabs-mode nil))
 
 (add-hook 'c-mode-common-hook 'my-cpp-mode-common-hook)
+
+
+;; 设置不同的颜色
+(custom-set-faces
+;'(font-lock-string-face ((t (:foreground "Goldenrod"))) t)
+;'(font-lock-constant-face ((t (:foreground "Orange"))) t)
+;'(font-lock-doc-string-face ((t (:foreground "Red"))) t)
+;'(font-lock-variable-name-face ((t (:foreground "OrangeRed"))) t)
+;'(font-lock-function-name-face ((t (:foreground "Brown"))) t)
+;'(font-lock-keyword-face ((t (:foreground "Blue"))) t)
+;'(font-lock-builtin-face ((t (:foreground "Blue"))) t)
+;'(font-lock-type-face ((t (:foreground "Blue"))) t)
+;'(font-lock-other-type-face ((t (:foreground "Blue"))) t)
+'(font-lock-comment-face ((t (:foreground "ForestGreen"))) t))
+;'(font-lock-warning-face ((t (:foreground "Coral"))) t))
 
 
 

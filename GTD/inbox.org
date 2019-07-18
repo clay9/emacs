@@ -1,6 +1,20 @@
 #+STARTUP: overview
-* emacs快捷键整理
-  [2019-07-15 Mon] from 
+* speedbar
+  [2019-07-18 Thu] from /Users/clay/GTD/task.org
   content:
-  1. 常用快捷键
-  2. IDE快捷键
+  sr-speedbar 只是speedbar的一个扩展
+  作用是使speedbar一直显示
+  所以重点仍然是speedbar
+* global
+  [2019-07-18 Thu] from 
+  content:
+  gtags生成
+  GTAGS definition database 4.5M
+  GRTAGS reference database 3.8M
+  GPATH path name database 64K
+  
+  无参数运行 查找GTAGS
+  -r  查找GRTAGS
+  -x show details
+  -a 查找GPATH
+  -s locate symbols which are not defined in GTAGS 找到未定义的变量

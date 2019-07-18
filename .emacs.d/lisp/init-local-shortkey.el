@@ -14,6 +14,8 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ;make TAB work in terminal
 (define-key helm-map (kbd "C-z") 'helm-select-action)
+(define-key helm-map (kbd "C-x k") 'helm-buffer-run-kill-buffers)
+(define-key helm-map (kbd "C-x C-k") 'helm-buffer-run-kill-buffers)
 
 
 ;; *********************************
@@ -57,7 +59,9 @@ _i_: 高亮            _n_: 下一个位置          _w_: 复制
 ;; 3.hs-minor-mode
 ;; *********************************
 (require 'hideshow)
-(define-key hs-minor-mode-map (kbd "<backtab>") 'hs-toggle-hiding);; Shift + Tab
+(require 'init-hs-minor-mode)
+(define-key hs-minor-mode-map (kbd "<backtab>") 'my-hs-shift-tab);; Shift + Tab
+;(define-key hs-minor-mode-map (kbd "<backtab>") 'hs-toggle-hiding);; Shift + Tab
 ;(define-key hs-minor-mode-map (kbd "") 'hs-hide-all);; TODONOW全部隐藏, 未找到合适的快捷键
 ;(define-key hs-minor-mode-map (kbd "") 'hs-show-all);; TODONOW全部展开, 未找到合适的快捷键
 

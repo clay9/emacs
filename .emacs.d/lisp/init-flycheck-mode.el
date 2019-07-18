@@ -1,7 +1,8 @@
 
 ;;copyed from purcell
 (require 'flycheck)
-(add-hook 'after-init-hook 'global-flycheck-mode)
+;(add-hook 'after-init-hook 'global-flycheck-mode)
+(add-hook 'c-mode-common-hook 'flycheck-mode)
 (setq flycheck-display-errors-function #'flycheck-display-error-messages-unless-error-list)
 
 
