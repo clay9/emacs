@@ -17,6 +17,7 @@
 ;; *************************
 (require 'init-frame)           ;;窗口初始化
 (require 'init-font)            ;;字体初始化
+(require 'init-disable-mouse)   ;;停用鼠标
 (require 'init-local-shortkey)  ;;局部快捷键
 (require 'init-global-shortkey) ;;全局快捷键
 (require 'init-helm-mode)       ;;Helm
@@ -87,7 +88,7 @@
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

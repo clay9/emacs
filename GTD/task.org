@@ -1,73 +1,29 @@
 #+STARTUP: overview
-* [#B] 文档: linux 静态动态库
-  [2019-07-16 Tue] from /Users/clay/hexo/blog/source/_posts/4 gnu/emacs_IDE.org
+* TODO [#A] global && gtags-mode && helm-gtags
+  SCHEDULED: <2019-07-20 Sat>
+  [2019-07-18 Thu] from 
   content:
-  静态库  .a
-1. 生成方式:
-   Step 1.由源文件编译生成一堆.o，每个.o里都包含这个编译单元的符号表
-   Step 2.ar命令将很多.o转换成.a，成文静态库
-
-
-***********************************************************************
-动态库  .so shared object
-1. 生成方式:
-   gcc 加特定参数 编译 fPIC生成动态的.o文件; shared把动态.o文件打包为动态库
-   gcc -fPIC file1.c -c                 //这一步生成file1.o
-   gcc -shared file1.o -o libtest.so    //把.o文件打包为动态库(.o文件必须是 fPIC生成)
-
-2. 运行时候找不到动态库, 处理方式:
-  （1）最直接最简单的方法就是把so拉到/usr/lib或/lib中去，但这好像有点污染环境吧？
-  （2）export LD_LIBRARY_PATH=$(pwd)
-  （3）可以在/etc/ld.so.conf文件里加入我们生成的库的目录，然后/sbin/ldconfig 
-
-3. 加载动态库
-   函数原型：void *dlopen(const char *libname,int flag);
-   1) 参数中的libname一般是库的全路径，这样dlopen会直接装载该文件；
-      如果只是指定了库名称，在dlopen在查找库的过程中会按照如下路径进行搜索：
-      a.根据环境变量LD_LIBRARY_PATH查找
-      b.根据/etc/ld.so.cache查找
-      c.查找依次在/lib和/usr/lib目录查找。
-   2) flag参数表示处理未定义函数的方式，可以使用RTLD_LAZY或RTLD_NOW。
-      RTLD_LAZY表示暂时不去处理未定义函数，先把库装载到内存，等用到没定义的函数再说；
-      RTLD_NOW表示马上检查是否存在未定义的函数，若存在，则dlopen以失败告终。
-
-
-
-
-
-***********************************************************************
-TODONOW 详细查看 gcc  –shared –fPIC 参数
-* [#B] 文档: flyspell mode
-  [2019-07-16 Tue] from /Users/clay/hexo/blog/source/_posts/4 gnu/emacs_IDE.org
+  gtags生成
+  GTAGS definition database 4.5M
+  GRTAGS reference database 3.8M
+  GPATH path name database 64K
+  
+  无参数运行 查找GTAGS
+  -r  查找GRTAGS
+  -x show details
+  -a 查找GPATH
+  -s locate symbols which are not defined in GTAGS 找到未定义的变量
+* DONE [#B] speedbar
+  CLOSED: [2019-07-20 Sat 00:06]
+  - "DONE" Note in [2019-07-20 Sat]
+  [2019-07-18 Thu] from /Users/clay/GTD/task.org
   content:
-  flyspell mode
-(font-ends)
-emacs自带, 无需安装
-
-功能:
-1. 错误单词 高亮
-
-2. 自动correct words                -- 还是ispell命令好用一些(实际上使用的是aspell)
-   flyspell-auto-correct-words
-   flyspell-correct-words
-3. 手动检查
-   flyspell-region 
-   flyspell-buffer
-
-依赖checker program (back-ends)
-比如
-1.hunspell
-2.aspell (gnu)
-3.ispell
-4.enchant
-上面这些不是emacs的部分, 一般属于操作系统的, 类似global
-决定使用aspell  
-1.安装aspell本体  sudo yum install aspell
-2.安装aspell词典  sudo yum install aspell-en
-
-官方建议
-ispell-parser检查文档
-* [#B] emacs快捷键整理
+  sr-speedbar 只是speedbar的一个扩展
+  作用是使speedbar一直显示
+  所以重点仍然是speedbar
+* DONE [#B] emacs快捷键整理
+  CLOSED: [2019-07-21 Sun 23:41] SCHEDULED: <2019-07-20 Sat>
+  - "DONE" Note in [2019-07-21 Sun]
   [2019-07-15 Mon] from 
   content:
   1. 常用快捷键
@@ -76,8 +32,10 @@ ispell-parser检查文档
   [2019-07-11 Thu] from 
   content:
   C-c c-a 可以掉出 attach界面
-* TODO [#A] emacs做IDE整理
-  SCHEDULED: <2019-07-13 Sat>
+* CANCEL [#A] emacs做IDE整理
+  CLOSED: [2019-07-20 Sat 00:09] SCHEDULED: <2019-07-13 Sat>
+  - "CANCEL" Note in [2019-07-20 Sat] \\
+    太笼统 取消掉
   [2019-07-09 Tue] from 
   content:
   如何把Emacs打造成一个顺手的IDE
@@ -96,12 +54,14 @@ ispell-parser检查文档
 
   举例:
   C-@ o 选择绘制起点, 怎么确认绘制完成????
-* TODO [#D] org-agenda需要修改的地方
-  SCHEDULED: <2019-07-12 Fri>
+* DONE [#D] org-agenda需要修改的地方
+  CLOSED: [2019-07-21 Sun 01:08] SCHEDULED: <2019-07-12 Fri>
+  - "DONE" Note in [2019-07-21 Sun]
   [2019-07-07 Sun] from 
   content:
-  1. bulk-custom-function中增加 bulk add proirity的函数
-  2. 同步修改 blog/org-agenda.org
+  1. [X] bulk-custom-function中增加 bulk add proirity的函数
+  2. [X] 同步修改 blog/org-agenda.org
+  3. [X] 重载动作(a)函数
 * DONE [#D] agenda中mark之后, B动作中有一个A
   CLOSED: [2019-07-11 Thu 22:26] SCHEDULED: <2019-07-11 Thu>
   - "DONE" Note in [2019-07-11 Thu] \\

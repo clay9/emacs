@@ -141,8 +141,9 @@
 
 ;; 扩展agenda中bulk 操作命令
 (setq org-agenda-bulk-custom-functions
-      '((?w org-agenda-refile)
+      '((?w org-agenda-refile) 
 	(?y org-agenda-archive)
+	(?, org-agenda-priority)
 	))
 
 ;; 供org-agenda-custom-commands调用, 判断item数目 -- 暂时无用
@@ -229,5 +230,8 @@
 (setq org-agenda-prefix-format "%?-7t%-12:s ")
 (org-agenda-list)
 (delete-other-windows)
+
+;; 加载重载函数
+(require 'init-org-mode-fun)
 
 (provide 'init-org-mode)

@@ -15,7 +15,6 @@
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ;make TAB work in terminal
 (define-key helm-map (kbd "C-z") 'helm-select-action)
 (define-key helm-map (kbd "C-x k") 'helm-buffer-run-kill-buffers)
-(define-key helm-map (kbd "C-x C-k") 'helm-buffer-run-kill-buffers)
 
 
 ;; *********************************
@@ -61,9 +60,6 @@ _i_: 高亮            _n_: 下一个位置          _w_: 复制
 (require 'hideshow)
 (require 'init-hs-minor-mode)
 (define-key hs-minor-mode-map (kbd "<backtab>") 'my-hs-shift-tab);; Shift + Tab
-;(define-key hs-minor-mode-map (kbd "<backtab>") 'hs-toggle-hiding);; Shift + Tab
-;(define-key hs-minor-mode-map (kbd "") 'hs-hide-all);; TODONOW全部隐藏, 未找到合适的快捷键
-;(define-key hs-minor-mode-map (kbd "") 'hs-show-all);; TODONOW全部展开, 未找到合适的快捷键
 
 
 ;; *********************************
@@ -80,13 +76,12 @@ _i_: 高亮            _n_: 下一个位置          _w_: 复制
 (defhydra hydra-yas-minor (:color blue
 				  :hint nil)
 "
-_j_: 扩展   _i_: 增加   _v_: 查看
-  
+ya-snippet mode
+_i_: 增加   _v_: 查看
 "
- ("j" yas-expand)  ;;<Tab>仍可使用
- ("i" yas-new-snippet)
- ("v" yas-visit-snippet-file))
-(define-key yas-minor-mode-map (kbd "\C-c ,") 'hydra-yas-minor/body)
+("i" yas-new-snippet)
+("v" yas-visit-snippet-file))
+(define-key yas-minor-mode-map (kbd "\C-c s") 'hydra-yas-minor/body)
 
 
 ;; *********************************
@@ -110,16 +105,16 @@ _e_: 椭圆    _c_: 圆
 _y_: 水雾
 "
  ("o" artist-key-set-point)
- 
+
  ("l" artist-select-op-line)
  ("p" artist-select-op-poly-line)
- 
+
  ("r" artist-select-op-rectangle)
  ("s" artist-select-op-square)
- 
+
  ("e" artist-select-op-ellipse)
  ("c" artist-select-op-circle)
- 
+
  ("y" artist-select-op-spray-can))
 (define-key artist-mode-map (kbd "\C-c g") 'hydra-artist-mode/body)
 
@@ -133,7 +128,7 @@ _y_: 水雾
 (define-key org-agenda-mode-map (kbd "u") 'org-agenda-bulk-unmark)     ;unmark
 (define-key org-agenda-mode-map (kbd "U") 'org-agenda-bulk-unmark-all) ;unmark all
 
-(define-key org-agenda-mode-map (kbd "a") 'org-agenda-bulk-action)     ;执行动作
+(define-key org-agenda-mode-map (kbd "a") 'my-org-agenda-bulk-action)     ;执行动作
 
 
 ;; *********************************
@@ -159,7 +154,7 @@ _m_: wrap sexp       _u_: unwrap sexp         _r_: rewrap sexp
  ("m" sp-wrap-round)
  ("u" sp-unwrap-sexp)
  ("r" sp-rewrap-sexp))
-(define-key smartparens-mode-map (kbd "\C-c s") 'hydra-smartparens/body)
+(define-key smartparens-mode-map (kbd "\C-c /") 'hydra-smartparens/body)
 
 
 (provide 'init-local-shortkey)

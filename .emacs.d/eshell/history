@@ -86,3 +86,16 @@ ls
 cp ~/.emacs.d/lisp/init-smartparens-mode.el emacs_smartparens-mode/
 ls emacs_smartparens-mode
 exit
+ls
+ls |grep flyspe
+mkdir emacs_flyspell-mode
+ln -s ~/.emacs.d/lisp/init-flyspell-mode.el emacs_flyspell-mode/init-flyspell-mode.el
+ls emacs_flyspell-mode/
+exit
+ls
+ls |grep speed
+mkdir emacs_speedbar-mode
+ln -s ~/.emacs.d/lisp/init-sr-speedbar.el emacs_speedbar-mode/init-speedbar.el
+ls emacs_speedbar-mode.org
+ls emacs_speedbar-mode
+exit
