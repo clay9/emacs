@@ -99,3 +99,11 @@ ln -s ~/.emacs.d/lisp/init-sr-speedbar.el emacs_speedbar-mode/init-speedbar.el
 ls emacs_speedbar-mode.org
 ls emacs_speedbar-mode
 exit
+gtags-completing
+gtags
+brew install global
+clear
+
+jobs
+clear
+
