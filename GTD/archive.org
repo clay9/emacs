@@ -206,11 +206,11 @@
      
      
   功能需求:
-  1. 转到声明
-  2. 转到定义
-  3. 查找所有引用
+  1. 转到声明   helm-gtags-dwim
+  2. 转到定义   helm-gtags-dwim
+  3. 查找所有引用 helm-gtags-find-rtags
   4. 在当前文件查找
-  5. 在当前项目查找
+  5. 在当前项目查找   helm-gtags-find-rtags
   6. 在所有项目查找
   7. 在当前文件替换
   8. 在当前项目替换

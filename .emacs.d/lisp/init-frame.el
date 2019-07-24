@@ -13,7 +13,9 @@
 ;; ********************
 ;; scroll bar
 ;; ********************
-(scroll-bar-mode 0)
+(when window-system
+  (scroll-bar-mode 0))
+
 
 
 ;; ********************

@@ -43,9 +43,10 @@
 (require 'init-cc-mode)        ;;格式提示(major)
 (require 'init-company-mode)   ;;补全提示
 (require 'init-helm-gtags)     ;;代码跳转,引用显示
+(require 'init-function-args)  ;;代码跳转,类函数查看 TODONOW 如果没用, 就删掉
 (require 'init-hs-minor-mode)  ;;代码折叠
 (require 'init-flycheck-mode)  ;;实时语法检查
-(require 'init-sr-speedbar)    ;;相关文件目录列表
+(require 'init-sr-speedbar)    ;;文件目录列表
 (require 'init-symbol-overlay-mode);;代码高亮
 ;; ********编译器********s
 (require 'init-compilation-mode) ;;编译器
@@ -87,7 +88,7 @@
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (function-args disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
