@@ -46,6 +46,10 @@
 ;; *********************************
 (global-set-key (kbd "C-z") 'nil); suspend-frame最小化在X下作用不大
 (global-set-key (kbd "s-n") 'nil); ns-new-frame new-frame不受现在配置影响, 因此删除
+(global-set-key (kbd "C-9") 'nil)
+(global-set-key (kbd "C-0") 'nil)
+(global-set-key (kbd "C--") 'nil)
+(global-set-key (kbd "C-=") 'nil)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 

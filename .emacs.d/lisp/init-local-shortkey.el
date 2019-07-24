@@ -31,6 +31,11 @@ _j_: 相关引用      _p_: 上个位置      _n_: 下个位置
  ("n" helm-gtags-next-history))
 (define-key helm-gtags-mode-map (kbd "\C-c ;") 'hydra-helm-gtags/body)
 
+(define-key helm-gtags-mode-map (kbd "C-9") 'helm-gtags-pop-stack)
+(define-key helm-gtags-mode-map (kbd "C-0") 'helm-gtags-dwim)
+(define-key helm-gtags-mode-map (kbd "C--") 'helm-gtags-find-symbol)
+(define-key helm-gtags-mode-map (kbd "C-=") 'helm-gtags-find-rtag)
+
 
 ;; *********************************
 ;; 2.symbol-overlay-mode

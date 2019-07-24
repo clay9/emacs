@@ -1,9 +1,10 @@
 #+STARTUP: overview
-* TODO [#B] GDB 使用
+* TODO [#B] 文档:GDB 使用
   SCHEDULED: <2019-07-22 Mon>
   [2019-07-22 Mon] from 
   content:
 * TODO [#B] 需要TODO的item
+  SCHEDULED: <2019-07-26 Fri>
   1. [ ] 查找功能放到hydra中
      增量查找(Incremental Search)
      向前查找                                        C-s
@@ -70,7 +71,7 @@
      或许把这个命令归入这一类也很合适: 
      M-x speedbar 打开一个独立的目录显示窗口 
      #+END_EXAMPLE
-* TODO [#A] global && gtags-mode && helm-gtags
+* TODO [#A] 文档: global && gtags-mode && helm-gtags
   SCHEDULED: <2019-07-20 Sat>
   [2019-07-18 Thu] from 
   content:
