@@ -12,7 +12,7 @@
 
 ;; helm-gtags
 (setq
- helm-gtags-ignore-case t
+ helm-gtags-ignore-case nil
  helm-gtags-auto-update t
  helm-gtags-use-input-at-cursor t
  helm-gtags-pulse-at-cursor t

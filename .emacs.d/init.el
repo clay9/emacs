@@ -47,8 +47,7 @@
 (require 'init-flycheck-mode)  ;;实时语法检查
 (require 'init-sr-speedbar)    ;;相关文件目录列表
 (require 'init-symbol-overlay-mode);;代码高亮
-;; ********编译器********
-(require 'init-gtags-mode)     ;;语法解析
+;; ********编译器********s
 (require 'init-compilation-mode) ;;编译器
 ;; ********调试器********
 
