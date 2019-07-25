@@ -13690,7 +13690,10 @@ EXTRA is additional text that will be inserted into the notes buffer."
 				    org-log-note-previous-state 1 -1)))
 			  (t (format "\"%s\""
 				     org-log-note-previous-state)))))))
-      (when lines (setq note (concat note " \\\\")))
+      ;; aaded by WangChengQing 注释这两行
+      ;(when lines
+      ;(setq note (concat note " \\\\")))
+
       (push note lines))
     (when (and lines (not org-note-abort))
       (with-current-buffer (marker-buffer org-log-note-marker)

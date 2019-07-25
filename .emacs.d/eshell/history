@@ -1,13 +1,3 @@
-cd ../
-cd ../
-cd ../
-gtags
-cd -
-ls
-cd Scripts/
-ls
-clear
-
 ls
 ExitManagera.cs       GameApp.cs.meta      GameVersion.cs           Models.meta           Utility             shared.meta
 rm GTAGS.meta GTAGS 
@@ -126,3 +116,13 @@ mkdir emacs_helm-gtags-mode
 ln -s  ~/.emacs.d/lisp/init-helm-gtags.el emacs_helm-gtags-mode/init-helm-gtags.el
 ls emacs_helm-gtags-mode
 exit
+cd ..
+ls
+cd elpa/
+ls
+cd org-9.1.14/
+clear
+
+ls
+ls |grep org
+rm org.elc

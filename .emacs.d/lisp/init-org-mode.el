@@ -22,13 +22,13 @@
 (setq org-log-done 'note)
 
  ;; (dir) - Org mode - TODO Items - Progress logging - Tracking TODO state changes
-(setq org-log-note-headings '((done . "%s Note in %d")
+(setq org-log-note-headings '((done . "%d [done]")
 			      (state . "State %-12s from %-12S %t")
 			      (not . "Note taken on %t")
 			      (reschedule . "Reschedule from %S on %t")
 			      (redeadline . "New deadline form %S on %t")
 			      (deldeadline . "Removed deadline was %S on %t")
-			      (refile . "Refiled on %t")
+			      (refile . "%d [refile]")
 			      (clock-out . "")))
 
  ;; (dir) - Org mode - TODO Items - Progress logging - Tracking your habits
@@ -62,7 +62,7 @@
  ;; (dir) - Org mode - Capture_Refile_Archive - Capture - Capture templates
 (setq org-capture-templates
  '(("i" "Idea -> inbox.org" entry (file "~/GTD/inbox.org")
-    "* %?\n  %u from %F\n  content:\n  %i\n")))
+    "* %?\n  - %u [capture]\n %i\n")))
 
  ;; (dir) - Org mode - Capture_Refile_Archive - Refile and copy
 (setq org-refile-targets
@@ -72,7 +72,7 @@
 
 (setq org-refile-use-outline-path 'file)
 (setq org-reverse-note-order t)
-(setq org-log-refile (quote nil))
+(setq org-log-refile 'time)
 
 ;; (dir) - Org mode -Capture_Refile_Archive - Archiving  - Moving a tree to the archive file
 (setq org-archive-location "~/GTD/archive.org::* Finished Tasks")
