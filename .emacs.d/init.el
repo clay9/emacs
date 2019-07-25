@@ -89,7 +89,7 @@
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (nyan-mode function-args disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (helm-gtags helm nyan-mode function-args disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -104,6 +104,7 @@
  '(font-lock-comment-face ((t (:foreground "ForestGreen"))))
  '(helm-buffer-directory ((t (:background "black" :foreground "Sienna3"))))
  '(helm-buffer-file ((t (:background "black" :foreground "white"))))
+ '(helm-buffer-saved-out ((t (:foreground "red"))))
  '(helm-candidate-number ((t (:background "grey75" :foreground "black"))))
  '(helm-ff-directory ((t (:background "black" :foreground "Sienna3"))))
  '(helm-ff-dotted-directory ((t (:background "black" :foreground "Sienna3"))))
