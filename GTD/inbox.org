@@ -1,1 +1,11 @@
 #+STARTUP: overview
+* 
+  [2019-07-25 Thu] from /Users/clay/Desktop/test.cpp
+  content:
+  1. [ ] helm 重新安装
+  2. [ ] init-helm 整理
+  3. [ ] helm face 优化
+  4. [ ] hlem gtags 快捷键
+* 文档: 快捷键
+  [2019-07-25 Thu] from 
+  content:

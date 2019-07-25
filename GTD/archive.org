@@ -123,13 +123,6 @@
       diary支持这2种显示日记方式
       一般都是使用fancy-display(官方推荐)
 
-** company   -mode
-   company-mode的工作机制
-   company-mode为前端front-ends,其依赖后端back-ends
-   【back-ends】
-   back-ends是针对各个语言的解析
-   比如微软有自身的VS开发后端, 苹果有Clang, 以及GNU的gtags等
-
 ** *************************************************************
 ** 快捷键
    1. RET绑定了C-m
@@ -139,19 +132,6 @@
    3. package-list-packages 加载插件
       
 * GNU
-** global
-   功能:
-   global是tag解析器
-   tag为对象，比如变量，函数或者类等
-
-   命令:
-   gtags  -- 生成供helm-gtags使用的数据
-   htags  -- 生成html的数据， 命令 htags --suggest
-   global -- 查看
-
-   缺陷：
-   global并不完美，比如无法解析局部变量
-
 ** gcc
     1. 查看搜索路径
 	g++ | gcc -print-serach-dirs (可通过--help查看)

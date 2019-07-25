@@ -1,9 +1,5 @@
 cd ../
 cd ../
-gtags
-cd ../
-cd ../
-cd ../
 cd ../
 gtags
 cd -
@@ -125,4 +121,8 @@ rm init-gtags-mode.el
 ls
 clear
 
+exit
+mkdir emacs_helm-gtags-mode
+ln -s  ~/.emacs.d/lisp/init-helm-gtags.el emacs_helm-gtags-mode/init-helm-gtags.el
+ls emacs_helm-gtags-mode
 exit

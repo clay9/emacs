@@ -4,9 +4,9 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* GDB 使用\n  [2019")
- (rear-context-string . "  #+END_EXAMPLE\n")
- (position . 1969))
+ (front-context-string . "* 文档: 快捷键\n  [201")
+ (rear-context-string . " hlem gtags 快捷键\n")
+ (position . 175))
 ("org-refile-last-stored"
  (filename . "~/GTD/task.org")
  (front-context-string . "* [#B] GDB 使用\n  ")

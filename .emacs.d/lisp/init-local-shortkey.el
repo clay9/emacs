@@ -27,15 +27,16 @@
 _h_: 上个位置      _j_: dwim
 _k_: 查找函数      _l_: 查找变量
 "
+ ("h" helm-gtags-pop-stack)
  ("j" helm-gtags-dwim)
- ("p" helm-gtags-previous-history)
- ("n" helm-gtags-next-history))
+ ("k" helm-gtags-find-rtag)
+ ("l" helm-gtags-find-symbol))
 (define-key helm-gtags-mode-map (kbd "C-j") 'hydra-helm-gtags/body)
 
-(define-key helm-gtags-mode-map (kbd "C-9") 'helm-gtags-pop-stack)
-(define-key helm-gtags-mode-map (kbd "C-0") 'helm-gtags-dwim)
-(define-key helm-gtags-mode-map (kbd "C--") 'helm-gtags-find-symbol)
-(define-key helm-gtags-mode-map (kbd "C-=") 'helm-gtags-find-rtag)
+;(define-key helm-gtags-mode-map (kbd "C-9") 'helm-gtags-pop-stack)
+;(define-key helm-gtags-mode-map (kbd "C-0") 'helm-gtags-dwim)
+;(define-key helm-gtags-mode-map (kbd "C--") 'helm-gtags-find-symbol)
+;(define-key helm-gtags-mode-map (kbd "C-=") 'helm-gtags-find-rtag)
 
 
 ;; *********************************

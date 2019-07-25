@@ -71,8 +71,9 @@
      或许把这个命令归入这一类也很合适: 
      M-x speedbar 打开一个独立的目录显示窗口 
      #+END_EXAMPLE
-* TODO [#A] 文档: global && gtags-mode && helm-gtags
-  SCHEDULED: <2019-07-20 Sat>
+* DONE [#A] 文档: global && gtags-mode && helm-gtags
+  CLOSED: [2019-07-25 Thu 21:52] SCHEDULED: <2019-07-20 Sat>
+  - "DONE" Note in [2019-07-25 Thu]
   [2019-07-18 Thu] from 
   content:
   gtags生成
