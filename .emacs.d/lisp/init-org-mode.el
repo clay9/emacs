@@ -1,4 +1,6 @@
 
+(require 'init-org-mode-fun)
+
 ;; ******************
 ;; org-mode
 ;; ******************
@@ -95,21 +97,13 @@
  ;; (dir) - Org mode - Agenda Vies - Built_in agenda views - Weekly/daily agenda
 (setq org-agenda-include-diary t)
 
-;; 自动archive DONE-item
-;; 可行, 有2个问题
-;; 1) 如何更改buffer
-;; 2) 不需要user n|y 直接操作 TODONOW
-(defun my-test ()
-  (interactive)
-  (org-archive-subtree  '(4))
-    )
-
 ;; 按r刷新
 (org-agenda-to-appt t)
 (defadvice  org-agenda-redo (after org-agenda-redo-add-appts)
   "Pressing `r' on the agenda will also add appointments."
   (progn
-    (org-agenda-to-appt)))
+    (org-agenda-to-appt)
+    (my-org-archive-all-done)))
 (ad-activate 'org-agenda-redo)
 
  ;; (dir) - Org mode - Agenda views - Built_in agenda views - weekly/daily agenda

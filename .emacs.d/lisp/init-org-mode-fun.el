@@ -1,4 +1,58 @@
 
+(defun my-org-archive-all-done (&optional tag)
+  "Archive sublevels of the current tree without open TODO items.
+If the cursor is not on a headline, try all level 1 trees.  If
+it is on a headline, try all direct children.
+When TAG is non-nil, don't move trees, but mark them with the ARCHIVE tag."
+  (interactive "P")
+  (set-buffer "task.org")
+  (my-org-archive-all-matches
+   (lambda (_beg end)
+     (let ((case-fold-search nil))
+       (unless (re-search-forward org-not-done-heading-regexp end t)
+	 "no open TODO items")))
+   tag))
+
+(defun my-org-archive-all-matches (predicate &optional tag)
+  "Archive sublevels of the current tree that match PREDICATE.
+
+PREDICATE is a function of two arguments, BEG and END, which
+specify the beginning and end of the headline being considered.
+It is called with point positioned at BEG.  The headline will be
+archived if PREDICATE returns non-nil.  If the return value of
+PREDICATE is a string, it should describe the reason for
+archiving the heading.
+
+If the cursor is not on a headline, try all level 1 trees.  If it
+is on a headline, try all direct children.  When TAG is non-nil,
+don't move trees, but mark them with the ARCHIVE tag."
+  (let ((rea (concat ".*:" org-archive-tag ":")) re1
+	(begm (make-marker))
+	(endm (make-marker))
+	reason beg end (cntarch 0))
+
+    (setq re1 "^* ")
+    (move-marker begm (point-min))
+    (move-marker endm (point-max))
+    (save-excursion
+      (goto-char begm)
+      (while (re-search-forward re1 endm t)
+	(setq beg (match-beginning 0)
+	      end (save-excursion (org-end-of-subtree t) (point)))
+	(goto-char beg)
+	(if (not (setq reason (funcall predicate beg end)))
+	    (goto-char end)
+	  (goto-char beg)
+	  (if (or (not tag) (not (looking-at rea)))
+	      (progn
+		(if tag
+		    (org-toggle-tag org-archive-tag 'on)
+		  (org-archive-subtree))
+		(setq cntarch (1+ cntarch)))
+	    (goto-char end)))))
+    (message "%d trees archived" cntarch)))
+
+
 
 (defun my-org-agenda-bulk-action (&optional arg)
   "Execute an remote-editing action on all marked entries.

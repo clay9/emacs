@@ -124,8 +124,6 @@
       一般都是使用fancy-display(官方推荐)
 
 ** *************************************************************
-** 快捷键
-   1. RET绑定了C-m
 ** 常用命令
    1. org-set-property      设置property
    2. customize-group       设置face属性
@@ -147,59 +145,6 @@
 	4. 删除变量 unset C_INCLUDE_PATH
 	5. C++调用 string strValue(getenv("C_INCLUDE_PATH")
        
-* 快捷键
-  | 字母 | C                | M    | C-x      | C-c              | C-j                |
-  |------+------------------+------+----------+------------------+--------------------|
-  | a    | 行首             | 段首 | buffer首 | =mode= org       |                    |
-  | b    | 后退             | 后退 | 列表     |                  |                    |
-  | c    | =修饰=           |      |          | capure           |                    |
-  | d    | 删除             | 删除 | 目录     |                  |                    |
-  | e    | 行尾             | 段尾 | buffer尾 |                  |                    |
-  | f    | 前进             | 前进 | 打开     |                  |                    |
-  | g    | 取消             |      |          | =mode= artist    |                    |
-  | h    | =修饰= 帮助文档  |      |          |                  |                    |
-  | i    | 别名 {TAB}       |      |          |                  |                    |
-  | j    | =修饰=           |      |          |                  |                    |
-  | k    | kill             |      | 删除     |                  |                    |
-  | l    | 移动buffer       |      |          |                  |                    |
-  | m    | 别名 {ENTER}     |      |          |                  |                    |
-  | n    | 下一行           |      |          |                  |                    |
-  | o    | ?  org-open-line |      | 切换     |                  |                    |
-  | p    | 上一行           |      |          |                  |                    |
-  | q    | ?                |      |          |                  |                    |
-  | r    | 查找             |      |          |                  |                    |
-  | s    | 查找             |      | 保存     | =mode= yasnippet | =mode= smartparens |
-  | t    | 替换             |      |          |                  |                    |
-  | u    | =修饰= 命令重复  |      |          |                  |                    |
-  | v    | 翻页             | 翻页 |          |                  |                    |
-  | w    | 剪切             | 复制 |          | refile           |                    |
-  | x    | =修饰= buffer    | 命令 |          |                  |                    |
-  | y    | 粘贴             |      |          | archive          |                    |
-  | z    | ?                |      |          |                  |                    |
-  | DEL  |                  | 删除 |          |                  |                    |
-  | -    | find symbols     |      |          |                  |                    |
-  | \=   | find rtags       |      |          |                  |                    |
-  | 0    | dwim             |      |          |                  |                    |
-  | 9    | pop-stack        |      |          |                  |                    |
-  |------+------------------+------+----------+------------------+--------------------|
-
-  与代码相关的函数  C-j
-  1. helm-gtags
-  2. symbol-overlay
-  3. smartparens mode
-     
-     
-  功能需求:
-  1. 转到声明   helm-gtags-dwim
-  2. 转到定义   helm-gtags-dwim
-  3. 查找所有引用 helm-gtags-find-rtags
-  4. 在当前文件查找
-  5. 在当前项目查找   helm-gtags-find-rtags
-  6. 在所有项目查找
-  7. 在当前文件替换
-  8. 在当前项目替换
-  9. 在所有项目替换
-
 * ***********个人***************
 * 个人账号密码
    | 功能                 | 商家      | 账号                   | 密码           | 备注         |
@@ -361,6 +306,373 @@
    -x show details
    -a 查找GPATH
    -s locate symbols which are not defined in GTAGS 找到未定义的变量
+
+** DONE 文档: 快捷键
+   CLOSED: [2019-07-26 Fri 21:10] SCHEDULED: <2019-07-26 Fri>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 21:52
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - [2019-07-26 Fri] [done]
+   - [2019-07-26 Fri] [refile]
+   [2019-07-25 Thu] from 
+   content:
+
+** DONE [#B] speedbar
+   CLOSED: [2019-07-20 Sat 00:06]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 21:55
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-20 Sat]
+   [2019-07-18 Thu] from /Users/clay/GTD/task.org
+   content:
+   sr-speedbar 只是speedbar的一个扩展
+   作用是使speedbar一直显示
+   所以重点仍然是speedbar
+
+** DONE [#B] emacs快捷键整理
+   CLOSED: [2019-07-21 Sun 23:41] SCHEDULED: <2019-07-20 Sat>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 21:55
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-21 Sun]
+   [2019-07-15 Mon] from 
+   content:
+   1. 常用快捷键
+   2. IDE快捷键
+
+** CANCEL [#A] emacs做IDE整理
+   CLOSED: [2019-07-20 Sat 00:09] SCHEDULED: <2019-07-13 Sat>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: CANCEL
+   :END:
+   - "CANCEL" Note in [2019-07-20 Sat] \\
+     太笼统 取消掉
+   [2019-07-09 Tue] from 
+   content:
+   如何把Emacs打造成一个顺手的IDE
+
+** DONE [#B] org-agenda  helm-mode整理
+   CLOSED: [2019-07-09 Tue 22:04] SCHEDULED: <2019-07-09 Tue>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-09 Tue] \\
+     建议教程
+   [2019-07-08 Mon] from 
+   content:
+
+** DONE [#D] artist-mode Set-point之后如何确认绘制完成
+   CLOSED: [2019-07-10 Wed 22:27] SCHEDULED: <2019-07-10 Wed>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-10 Wed] \\
+     o 即是起点 也是终点
+   [2019-07-07 Sun] from 
+   content:
+
+   举例:
+   C-@ o 选择绘制起点, 怎么确认绘制完成????
+
+** DONE [#D] org-agenda需要修改的地方
+   CLOSED: [2019-07-21 Sun 01:08] SCHEDULED: <2019-07-12 Fri>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-21 Sun]
+   [2019-07-07 Sun] from 
+   content:
+   1. [X] bulk-custom-function中增加 bulk add proirity的函数
+   2. [X] 同步修改 blog/org-agenda.org
+   3. [X] 重载动作(a)函数
+
+** DONE [#D] agenda中mark之后, B动作中有一个A
+   CLOSED: [2019-07-11 Thu 22:26] SCHEDULED: <2019-07-11 Thu>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-11 Thu] \\
+     默认的 archive位置
+   [2019-07-07 Sun] from /Users/clay/GTD/task.org
+   content:
+   1. 执行该命令, 发现全部到了一个Archive的*item中, 而且agenda中也不再显示了
+   2. 可以具体看看这个功能, 是否可以取代 org-agenda-archive
+
+** DONE agenda bulk custom functions 查看是否可以扩展
+   CLOSED: [2019-07-07 Sun 16:11]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-07 Sun]
+   [2019-07-07 Sun] from 
+   content:
+   Hide Org Agenda Bulk Custom Functions:
+   INS
+       State : STANDARD.
+      Alist of characters and custom functions for bulk actions. Hide
+      For example, this value makes those two functions available:
+     
+	'((?R set-category)
+          (?C bulk-cut))
+     
+      With selected entries in an agenda buffer, ‘B R’ will call
+      the custom function ‘set-category’ on the selected entries.
+      Note that functions in this alist don’t need to be quoted.
+
+** DONE C-c a i界面 如何批量操作                                     :urgent:
+   CLOSED: [2019-07-07 Sun 15:40] SCHEDULED: <2019-07-07 Sun>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-07 Sun] \\
+    
+     | com        | key | 说明     |
+     |------------+-----+----------|
+     | mark       | m   |          |
+     |------------+-----+----------|
+     | mark all   | M   | 改建     |
+     |------------+-----+----------|
+     | unmark     | u   |          |
+     |------------+-----+----------|
+     | unmark all | U   |          |
+     |------------+-----+----------|
+     | action     | B   | 执行动作 |
+     |------------+-----+----------|
+   [2019-07-07 Sun] from 
+   content:
+   比如选择多个 然后批量进行操作
+
+** DONE C-a a i界面中 可以为item添加优先级                           :urgent:
+   CLOSED: [2019-07-07 Sun 15:33] SCHEDULED: <2019-07-07 Sun>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-07 Sun] \\
+     1. 设置Priority区间
+     2. 设置默认Priority
+     3. 修改Agenda 四象限的显示
+   [2019-07-07 Sun] from 
+   content:
+   待确认: 可以为item添加ABC三种优先级,  四象限是否可以借鉴, 从而省去u+i的tag
+
+** DONE fuck -- 自动修改敲错的指令
+   CLOSED: [2019-07-07 Sun 20:42] SCHEDULED: <2019-07-07 Sun>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-07 Sun] \\
+     详见 https://github.com/nvbn/thefuck
+   [2019-07-06 Sat] from 
+   content:
+   1. 这个可以有
+
+** DONE acaudwell -- 把git commit做成动画
+   CLOSED: [2019-07-08 Mon 20:40] SCHEDULED: <2019-07-07 Sun>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-08 Mon] \\
+     windows平台实现了
+   [2019-07-06 Sat] from 
+   content:
+
+** CANCEL Carbon -- 把编辑器中代码 变为 图片
+   CLOSED: [2019-07-07 Sun 20:47] SCHEDULED: <2019-07-07 Sun>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: CANCEL
+   :END:
+   - "CANCEL" Note in [2019-07-07 Sun] \\
+     对于emacs来说, 没有必要使用这个软件
+   [2019-07-06 Sat] from 
+   content:
+   需求:
+   1. 查看效果 && 功能, 决定后面是否需要使用
+
+** DONE 设置agenda中 两个节点直接的 字符类型
+   CLOSED: [2019-07-07 Sun 12:12]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-07 Sun] \\
+     具体见init-org-mode.el
+   [2019-07-07 Sun] from 
+   content:
+   Hide Org Agenda Block Separator: Value Menu Character: *
+       State : SAVED and set.
+      The separator between blocks in the agenda. Hide
+      If this is a string, it will be used as the separator, with a newline added.
+      If it is a character, it will be repeated to fill the window width.
+      If nil the separator is disabled.  In ‘org-agenda-custom-commands’ this
+      addresses the separator between the current and the previous block.
+
+** DONE 修改Agenda中Deadline样式
+   CLOSED: [2019-07-07 Sun 12:12]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-07 Sun]
+   [2019-07-06 Sat] from 
+   content:
+   Hide Org Agenda Deadline Leaders:
+   Deadline today          : Deadline:  
+   Deadline in the future  : In %3d d.: 
+   Deadline in the past    : %2d d. ago: 
+       State : STANDARD.
+      Text preceding deadline items in the agenda view. Hide
+      This is a list with three strings.  The first applies when the item has its
+      deadline on the current day.  The second applies when the deadline is in the
+      future, the third one when it is in the past.  The strings may contain %d
+      to capture the number of days.
+
+** DONE 修改Agenda中Schedule的样式
+   CLOSED: [2019-07-07 Sun 12:13]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - "DONE" Note in [2019-07-07 Sun]
+   [2019-07-06 Sat] from 
+   content:
+   Hide Org Agenda Scheduled Leaders:
+   Scheduled today     : Scheduled: 
+   Scheduled previously: Sched.%2dx: 
+       State : STANDARD.
+      Text preceding scheduled items in the agenda view. Hide
+      This is a list with two strings.  The first applies when the item is
+      scheduled on the current day.  The second applies when it has been scheduled
+      previously, it may contain a %d indicating that this is the nth time that
+      this item is scheduled, due to automatic rescheduling of unfinished items
+      for the following day.  So this number is one larger than the number of days
+      that passed since this item was scheduled first.
+
+** CANCEL emacs中的 mode-map 如何添加元素                         :important:
+   CLOSED: [2019-07-07 Sun 16:12] DEADLINE: <2017-03-03 Wed>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: CANCEL
+   :END:
+   - "CANCEL" Note in [2019-07-07 Sun]
+
+** CANCEL 在C-c a a界面中增加 主任务                       :urgent:important:
+   CLOSED: [2019-07-07 Sun 02:27] SCHEDULED: <2019-06-14 Fri 13:00>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: CANCEL
+   :END:
+   - "CANCEL" Note in [2019-07-07 Sun] \\
+     放弃原因:
+     1. 只能做到显示item的标题, 无法显示item的内容
+     2. emacs启动的时候, 调用(org-agenda-todo-list) 无法显示 主要任务node
+   [2019-06-12 Wed] from 
+   content:
+
+   在agenda的界面下方, 增加主任务一栏
+
+** CANCEL 制作org-mode的演示 
+   CLOSED: [2019-07-06 Sat 23:08] DEADLINE: <2019-07-03 Wed>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:06
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: CANCEL
+   :END:
+   - "CANCEL" Note in [2019-07-06 Sat] \\
+     没有意义, 因此取消
+   [2019-06-08 Sat] from 
+   content:
+   制作org-mode的演示图例. 使用gif动态图
+
+** DONE [#D] C-c C-a d 把DONE item archive -> archive.org 可以做成自动化
+   CLOSED: [2019-07-26 Fri 22:10]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:10
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   [2019-07-06 Sat] from 
+   content:
+   1. 自动化执行archive(DONE item -> archive.org)
+
+** DONE [#D] org-mode attach 
+   CLOSED: [2019-07-26 Fri 22:11]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:11
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - [2019-07-26 Fri] [done]
+   [2019-07-11 Thu] from 
+   content:
+   C-c c-a 可以掉出 attach界面
+
+** CANCEL [#D] 小蝌蚪聊天室 
+   CLOSED: [2019-07-26 Fri 22:11]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-26 Fri 22:11
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: CANCEL
+   :END:
+   - [2019-07-26 Fri] [done]
+   [2019-07-06 Sat] from 
+   content:
+   1. 详细查看 -- 感觉可以应用在商业上
 * 项目应用
 ** Java的一些基础
 *** Activity
