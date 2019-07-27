@@ -1,0 +1,93 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/completion.h" include (:system-flag t) nil [194 223])
+            ("linux/delay.h" include (:system-flag t) nil [224 248])
+            ("linux/interrupt.h" include (:system-flag t) nil [249 277])
+            ("linux/module.h" include (:system-flag t) nil [278 303])
+            ("linux/sched.h" include (:system-flag t) nil [304 328])
+            ("linux/stacktrace.h" include (:system-flag t) nil [329 358])
+            ("backtrace_test_normal" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [394 399]))                  
+                :type "void")
+                nil [360 548])
+            ("DECLARE_COMPLETION" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("backtrace_work" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [576 591]))                  
+                :type "int")
+                nil [550 592])
+            ("backtrace_test_irq_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [634 653]))                  
+                :type "void")
+                nil [594 700])
+            ("DECLARE_TASKLET" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("backtrace_tasklet" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [725 743])
+                    ("" variable (:type ("backtrace_test_irq_callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [745 773]))                  
+                :type "int")
+                nil [702 777])
+            ("backtrace_test_irq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [810 815]))                  
+                :type "void")
+                nil [779 1058])
+            ("backtrace_test_saved" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1445 1450]))                  
+                :type "void")
+                nil [1412 1499])
+            ("backtrace_regression_test" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1545 1550]))                  
+                :type "int")
+                nil [1508 1745])
+            ("exitf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1765 1770]))                  
+                :type "void")
+                nil [1747 1774])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("backtrace_regression_test" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1788 1814]))                  
+                :type "int")
+                nil [1776 1815])
+            ("module_exit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("exitf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1828 1834]))                  
+                :type "int")
+                nil [1816 1835])
+            ("MODULE_LICENSE" function
+               (:prototype-flag t
+                :type "int")
+                nil [1836 1858])
+            ("MODULE_AUTHOR" function
+               (:prototype-flag t
+                :type "int")
+                nil [1859 1917]))          
+      :file "backtracetest.c"
+      :pointmax 1918
+      :fsize 1917
+      :lastmodtime '(23868 7108 266985 249000)
+      :unmatched-syntax '((string 1873 . 1915) (string 1851 . 1856) (number 774 . 775) (punctuation 744 . 745))))
+  :file "!Users!clay!linux!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

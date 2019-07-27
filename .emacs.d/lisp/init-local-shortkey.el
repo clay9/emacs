@@ -24,9 +24,11 @@
 (defhydra hydra-helm-gtags (:color blue
                              :hint nil)
  "
-_h_: 上个位置      _j_: dwim
-_k_: 查找函数      _l_: 查找变量
+_y_: 显示行号    _g_: 跳转行号
+_h_: 上个位置    _j_: dwim    _k_: 查找函数    _l_: 查找变量
 "
+ ("y" linum-mode)
+ ("g" goto-line)
  ("h" helm-gtags-pop-stack)
  ("j" helm-gtags-dwim)
  ("k" helm-gtags-find-rtag)
@@ -136,6 +138,10 @@ _y_: 水雾
 (define-key org-agenda-mode-map (kbd "U") 'org-agenda-bulk-unmark-all) ;unmark all
 
 (define-key org-agenda-mode-map (kbd "a") 'my-org-agenda-bulk-action)     ;执行动作
+
+;; agenda buffer 操作
+(define-key org-agenda-mode-map (kbd "C-,") 'my-org-agenda-back)
+(define-key org-agenda-mode-map (kbd "C-.") 'my-org-agenda-forward)
 
 
 ;; *********************************

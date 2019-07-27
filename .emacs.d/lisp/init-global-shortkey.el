@@ -2,7 +2,6 @@
 ;; 目录一栏
 ;; 0.前缀操作  1.对象操作  2.内容显示  3.GTD
 
-
 ;; *********************************
 ;; 1. 对象操作
 ;; 未标明委托mode的为emacs内置
@@ -25,13 +24,6 @@
 
 
 ;; *********************************
-;; 2. 文本显示
-;; *********************************
-(global-set-key (kbd "C-,") 'linum-mode)
-(global-set-key (kbd "C-.") 'goto-line)
-
-
-;; *********************************
 ;; 3. GTD -- 委托: org-mode
 ;; *********************************
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -50,6 +42,7 @@
 (global-set-key (kbd "C-0") 'nil)
 (global-set-key (kbd "C--") 'nil)
 (global-set-key (kbd "C-=") 'nil)
+
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 

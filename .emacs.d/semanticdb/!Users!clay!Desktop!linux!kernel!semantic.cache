@@ -1,0 +1,188 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/interrupt.h" include (:system-flag t) nil [123 151])
+            ("linux/kernel.h" include (:system-flag t) nil [152 177])
+            ("linux/export.h" include (:system-flag t) nil [178 203])
+            ("linux/smp.h" include (:system-flag t) nil [204 226])
+            ("linux/hypervisor.h" include (:system-flag t) nil [227 256])
+            ("smp_call_function_single" function
+               (:arguments 
+                  ( ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [287 295])
+                    ("func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [319 330]))                          
+                        :type "void")
+                        nil nil)
+                    ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [323 334])
+                    ("wait" variable (:type "int") (reparse-symbol arg-sub-list) [339 348]))                  
+                :type "unsigned int")
+                nil [258 472])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("smp_call_function_single" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [487 512]))                  
+                :type "int")
+                nil [473 513])
+            ("smp_call_function_single_async" function
+               (:arguments 
+                  ( ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [550 558])
+                    ("csd" variable
+                       (:pointer 1
+                        :type ("call_single_data_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [559 583]))                  
+                :type "int")
+                nil [515 695])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("smp_call_function_single_async" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [710 741]))                  
+                :type "int")
+                nil [696 742])
+            ("on_each_cpu" function
+               (:arguments 
+                  ( ("func" variable (:type ("smp_call_func_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [761 782])
+                    ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [783 794])
+                    ("wait" variable (:type "int") (reparse-symbol arg-sub-list) [795 804]))                  
+                :type "void")
+                nil [744 895])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("on_each_cpu" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [910 922]))                  
+                :type "int")
+                nil [896 923])
+            ("on_each_cpu_mask" function
+               (:arguments 
+                  ( ("mask" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cpumask" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1127 1154])
+                    ("func" variable (:type ("smp_call_func_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1163 1184])
+                    ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1185 1196])
+                    ("wait" variable (:type "bool") (reparse-symbol arg-sub-list) [1197 1207]))                  
+                :type "void")
+                nil [1105 1338])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("on_each_cpu_mask" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1353 1370]))                  
+                :type "int")
+                nil [1339 1371])
+            ("on_each_cpu_cond_mask" function
+               (:arguments 
+                  ( ("cond_func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [1536 1544])
+                            ("info" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1545 1556]))                          
+                        :type "bool")
+                        nil nil)
+                    ("func" variable (:type ("smp_call_func_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1564 1585])
+                    ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1586 1597])
+                    ("wait" variable (:type "bool") (reparse-symbol arg-sub-list) [1598 1608])
+                    ("gfp_flags" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1615 1631])
+                    ("mask" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cpumask" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1632 1659]))                  
+                :type "void")
+                nil [1491 1822])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("on_each_cpu_cond_mask" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1837 1859]))                  
+                :type "int")
+                nil [1823 1860])
+            ("on_each_cpu_cond" function
+               (:arguments 
+                  ( ("cond_func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [1902 1910])
+                            ("info" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1911 1922]))                          
+                        :type "bool")
+                        nil nil)
+                    ("func" variable (:type ("smp_call_func_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1932 1953])
+                    ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1954 1965])
+                    ("wait" variable (:type "bool") (reparse-symbol arg-sub-list) [1966 1976])
+                    ("gfp_flags" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1985 2001]))                  
+                :type "void")
+                nil [1862 2075])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("on_each_cpu_cond" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2090 2107]))                  
+                :type "int")
+                nil [2076 2108])
+            ("smp_call_on_cpu" function
+               (:arguments 
+                  ( ("cpu" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2130 2147])
+                    ("func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [2160 2167]))                          
+                        :type "int")
+                        nil nil)
+                    ("par" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2169 2179])
+                    ("phys" variable (:type "bool") (reparse-symbol arg-sub-list) [2180 2190]))                  
+                :type "int")
+                nil [2110 2345])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("smp_call_on_cpu" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2364 2380]))                  
+                :type "int")
+                nil [2346 2381]))          
+      :file "up.c"
+      :pointmax 2382
+      :fsize 2381
+      :lastmodtime '(23868 23072 939 707000)
+      :unmatched-syntax nil))
+  :file "!Users!clay!Desktop!linux!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

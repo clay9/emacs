@@ -156,20 +156,27 @@
   (setq id (1+ id))
   (format "%d." id))
 
+;; 标识在哪个agenda-buffer
+(defvar my-org-agenda-buffer-no 1)
+(setq set_org_buffer_no (lambda (val)
+      (setq my-org-agenda-buffer-no val)))
+
 ;; (dir) - Org mode - Agenda Views - Custom agenda views
 (setq org-agenda-custom-commands
       '(
 	; agent && main task
 	("a" "agenda"
 	 ((agenda "+TODO=\"TODO\""))
-	 ((org-agenda-prefix-format "%?-7t%-12:s ")
+	 ((local_temp (funcall set_org_buffer_no 1))
+	  (org-agenda-prefix-format "%?-7t%-12:s ")
 	  (org-agenda-sorting-strategy
 	   '(time-up todo-state-up scheduled-up deadline-up priority-up))))
 	;inbox文件
 	("i" "Inbox"
 	 ((tags "+LEVEL=1"
 		((org-agenda-overriding-header "Inbox Things"))))
-	 ((org-agenda-files '("~/GTD/inbox.org"))
+	 ((local_temp (funcall set_org_buffer_no 2))
+	  (org-agenda-files '("~/GTD/inbox.org"))
 	  (org-agenda-sorting-strategy
 	   '(priority-down alpha-up effort-up))
 	  (org-agenda-prefix-format "%-10:s "))) ;inbox中不存在Schedule, 这么写只是为了前面空格而已
@@ -177,7 +184,8 @@
 	("f" "TAGS 四象限"
 	 ;; Project
 	 ((tags-todo "+TODO=\"PROJECT\""
-		     ((org-agenda-overriding-header "Project")
+		     ((local_temp (funcall set_org_buffer_no 3))
+		      (org-agenda-overriding-header "Project")
 		      (org-agenda-todo-ignore-scheduled 'nil)
 		      (org-agenda-todo-ignore-deadlines 'nil)
 		      (org-agenda-todo-ignore-timestamp 'nil)
@@ -187,7 +195,8 @@
 		      (org-agenda-files '("~/GTD/project.org"))))
 	  ;; Task
 	  (tags "+LEVEL=1-TODO=\"TODO\"-TODO=\"WAITING\"-TODO=\"CANCEL\"-TODO=\"DONE\""
-		((org-agenda-overriding-header "TAG")
+		((local_temp (funcall set_org_buffer_no 3))
+		 (org-agenda-overriding-header "TAG")
 		 (org-agenda-prefix-format "%-10:s ")
 		 (org-agenda-sorting-strategy
 		  '(priority-down alpha-up effort-up))
@@ -199,7 +208,8 @@
 		((org-agenda-overriding-header "TODO")))
 	  (todo "WAITING"
 		((org-agenda-overriding-header "WAITING"))))
-	 ((org-agenda-prefix-format "%-10:c")
+	 ((local_temp (funcall set_org_buffer_no 4))
+	  (org-agenda-prefix-format "%-10:c")
 	  (org-agenda-sorting-strategy
 	   '(priority-down alpha-up effort-up))
 	  (org-agenda-todo-keyword-format "")

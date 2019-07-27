@@ -15,9 +15,9 @@
  helm-gtags-ignore-case nil
  helm-gtags-auto-update t
  helm-gtags-use-input-at-cursor t
- helm-gtags-pulse-at-cursor t
- helm-gtags-prefix-key "\C-cg"
- helm-gtags-suggested-key-mapping t
+ helm-gtags-pulse-at-cursor nil
+ helm-gtags-prefix-key nil
+ helm-gtags-suggested-key-mapping nil
  )
 
 

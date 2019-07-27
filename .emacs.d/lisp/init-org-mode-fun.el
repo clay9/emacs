@@ -1,4 +1,171 @@
 
+(defun my-org-agenda (&optional arg org-keys restriction)
+  (catch 'exit
+    (let* ((prefix-descriptions nil)
+	   (org-agenda-buffer-name org-agenda-buffer-name)
+	   (org-agenda-window-setup (if (equal (buffer-name)
+					       org-agenda-buffer-name)
+					'current-window
+				      org-agenda-window-setup))
+	   (org-agenda-custom-commands-orig org-agenda-custom-commands)
+	   (org-agenda-custom-commands
+	    ;; normalize different versions
+	    (delq nil
+		  (mapcar
+		   (lambda (x)
+		     (cond ((stringp (cdr x))
+			    (push x prefix-descriptions)
+			    nil)
+			   ((stringp (nth 1 x)) x)
+			   ((not (nth 1 x)) (cons (car x) (cons "" (cddr x))))
+			   (t (cons (car x) (cons "" (cdr x))))))
+		   org-agenda-custom-commands)))
+	   (org-agenda-custom-commands
+	    (org-contextualize-keys
+	     org-agenda-custom-commands org-agenda-custom-commands-contexts))
+	   (buf (current-buffer))
+	   (bfn (buffer-file-name (buffer-base-buffer)))
+	   entry key type org-match lprops ans)
+      ;; Turn off restriction unless there is an overriding one,
+      (unless org-agenda-overriding-restriction
+	(unless org-agenda-keep-restricted-file-list
+	  ;; There is a request to keep the file list in place
+	  (put 'org-agenda-files 'org-restrict nil))
+	(setq org-agenda-restrict nil)
+	(move-marker org-agenda-restrict-begin nil)
+	(move-marker org-agenda-restrict-end nil))
+      ;; Delete old local properties
+      (put 'org-agenda-redo-command 'org-lprops nil)
+      ;; Delete previously set last-arguments
+      (put 'org-agenda-redo-command 'last-args nil)
+      ;; Remember where this call originated
+      (setq org-agenda-last-dispatch-buffer (current-buffer))
+      
+      (unless org-keys
+	(message "valid org-keys"))
+      
+      ;; If we have sticky agenda buffers, set a name for the buffer,
+      ;; depending on the invoking keys.  The user may still set this
+      ;; as a command option, which will overwrite what we do here.
+      (if org-agenda-sticky
+	  (setq org-agenda-buffer-name
+		(format "*Org Agenda(%s)*" org-keys)))
+      ;; Establish the restriction, if any
+      (when (and (not org-agenda-overriding-restriction) restriction)
+	(put 'org-agenda-files 'org-restrict (list bfn))
+	(cond
+	 ((eq restriction 'region)
+	  (setq org-agenda-restrict (current-buffer))
+	  (move-marker org-agenda-restrict-begin (region-beginning))
+	  (move-marker org-agenda-restrict-end (region-end)))
+	 ((eq restriction 'subtree)
+	  (save-excursion
+	    (setq org-agenda-restrict (current-buffer))
+	    (org-back-to-heading t)
+	    (move-marker org-agenda-restrict-begin (point))
+	    (move-marker org-agenda-restrict-end
+			 (progn (org-end-of-subtree t)))))))
+
+      ;; For example the todo list should not need it (but does...)
+      (cond
+       ((setq entry (assoc org-keys org-agenda-custom-commands))
+	(if (or (symbolp (nth 2 entry)) (functionp (nth 2 entry)))
+	    (progn
+	      (setq type (nth 2 entry) org-match (eval (nth 3 entry))
+		    lprops (nth 4 entry))
+	      (if org-agenda-sticky
+		  (setq org-agenda-buffer-name
+			(or (and (stringp org-match) (format "*Org Agenda(%s:%s)*" org-keys org-match))
+			    (format "*Org Agenda(%s)*" org-keys))))
+	      (put 'org-agenda-redo-command 'org-lprops lprops)
+	      (cond
+	       ((eq type 'agenda)
+		(org-let lprops '(org-agenda-list current-prefix-arg)))
+	       ((eq type 'agenda*)
+		(org-let lprops '(org-agenda-list current-prefix-arg nil nil t)))
+	       ((eq type 'alltodo)
+		(org-let lprops '(org-todo-list current-prefix-arg)))
+	       ((eq type 'search)
+		(org-let lprops '(org-search-view current-prefix-arg org-match nil)))
+	       ((eq type 'stuck)
+		(org-let lprops '(org-agenda-list-stuck-projects
+				  current-prefix-arg)))
+	       ((eq type 'tags)
+		(org-let lprops '(org-tags-view current-prefix-arg org-match)))
+	       ((eq type 'tags-todo)
+		(org-let lprops '(org-tags-view '(4) org-match)))
+	       ((eq type 'todo)
+		(org-let lprops '(org-todo-list org-match)))
+	       ((eq type 'tags-tree)
+		(org-check-for-org-mode)
+		(org-let lprops '(org-match-sparse-tree current-prefix-arg org-match)))
+	       ((eq type 'todo-tree)
+		(org-check-for-org-mode)
+		(org-let lprops
+		  '(org-occur (concat "^" org-outline-regexp "[ \t]*"
+				      (regexp-quote org-match) "\\>"))))
+	       ((eq type 'occur-tree)
+		(org-check-for-org-mode)
+		(org-let lprops '(org-occur org-match)))
+	       ((functionp type)
+		(org-let lprops '(funcall type org-match)))
+	       ((fboundp type)
+		(org-let lprops '(funcall type org-match)))
+	       (t (user-error "Invalid custom agenda command type %s" type))))
+	  (org-agenda-run-series (nth 1 entry) (cddr entry))))
+       
+       ((equal org-keys "C")
+	(setq org-agenda-custom-commands org-agenda-custom-commands-orig)
+	(customize-variable 'org-agenda-custom-commands))
+       (t (user-error "Invalid agenda key"))
+       ))))
+
+
+(defun my-org-agenda-forward ()
+  "Append another agenda view to the current one.
+This function allows interactive building of block agendas.
+Agenda views are separated by `org-agenda-block-separator'."
+  (interactive)
+  (unless (derived-mode-p 'org-agenda-mode)
+    (user-error "Can only append from within agenda buffer"))
+  (let ((org-agenda-multi nil))
+    (cond
+     ((= my-org-agenda-buffer-no 1)
+      (my-org-agenda nil "i"))
+     ((= my-org-agenda-buffer-no 2)
+      (my-org-agenda nil "f"))
+     ((= my-org-agenda-buffer-no 3)
+      (my-org-agenda nil "n"))
+     ((= my-org-agenda-buffer-no 4)
+      (my-org-agenda nil "a")))
+    (widen)
+    (org-agenda-finalize)
+    (setq buffer-read-only t)
+    (org-agenda-fit-window-to-buffer)))
+
+(defun my-org-agenda-back ()
+  "Append another agenda view to the current one.
+This function allows interactive building of block agendas.
+Agenda views are separated by `org-agenda-block-separator'."
+  (interactive)
+  (unless (derived-mode-p 'org-agenda-mode)
+    (user-error "Can only append from within agenda buffer"))
+  (let ((org-agenda-multi nil))
+    (cond
+     ((= my-org-agenda-buffer-no 4)
+      (my-org-agenda nil "f"))
+     ((= my-org-agenda-buffer-no 3)
+      (my-org-agenda nil "i"))
+     ((= my-org-agenda-buffer-no 2)
+      (my-org-agenda nil "a"))
+     ((= my-org-agenda-buffer-no 1)
+      (my-org-agenda nil "n")))
+    (widen)
+    (org-agenda-finalize)
+    (setq buffer-read-only t)
+    (org-agenda-fit-window-to-buffer)))
+
+
 (defun my-org-archive-all-done (&optional tag)
   "Archive sublevels of the current tree without open TODO items.
 If the cursor is not on a headline, try all level 1 trees.  If
