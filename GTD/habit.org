@@ -3,12 +3,13 @@
 * GTD habit
 * ********************
 * TODO 1.[i] inbox     清空便签                                       :habit:
-  SCHEDULED: <2019-07-27 Sat 23:00 .+1d>
+  SCHEDULED: <2019-07-30 Tue 23:00 .+1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-26 Fri 20:38]
+  :LAST_REPEAT: [2019-07-29 Mon 21:48]
   :END:
      
+  - [2019-07-29 Mon] [done]
   - [2019-07-26 Fri] [done]
     1 item
   - "DONE" Note in [2019-07-25 Thu] \\
@@ -52,12 +53,13 @@
   - "DONE" Note in [2019-06-06 Thu] \\
     从此刻开始, 新的开始!!!
 * TODO 2.[f] next step 清空任务                                       :habit:
-  SCHEDULED: <2019-07-28 Sun 23:00 .+3d>
+  SCHEDULED: <2019-08-01 Thu 23:00 .+3d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-25 Thu 00:13]
+  :LAST_REPEAT: [2019-07-29 Mon 21:48]
   :END:
 
+  - [2019-07-29 Mon] [done]
   - "DONE" Note in [2019-07-25 Thu] \\
     0 item
   - "DONE" Note in [2019-07-22 Mon]
@@ -78,12 +80,13 @@
   - "DONE" Note in [2019-06-12 Wed]
   - "DONE" Note in [2019-06-06 Thu]
 * TODO 3.[n] agenda    确认任务                                       :habit:
-  SCHEDULED: <2019-07-27 Sat 23:00 .+1d>
+  SCHEDULED: <2019-07-30 Tue 23:00 .+1d>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-26 Fri 21:11]
+  :LAST_REPEAT: [2019-07-29 Mon 21:48]
   :END:
   
+  - [2019-07-29 Mon] [done]
   - [2019-07-26 Fri] [done]
   - "DONE" Note in [2019-07-25 Thu] \\
     nlist has 4;  handle 1 B;
@@ -124,12 +127,13 @@
     今天弄到晚了, 下次应该早点进行的. 或者是将habit时间调到后面
   - "DONE" Note in [2019-06-06 Thu]
 * TODO 4.[ ] archive   任务反馈                                       :habit:
-  SCHEDULED: <2019-07-27 Sat 23:00 .+1w>
+  SCHEDULED: <2019-08-05 Mon 23:00 .+1w>
   :PROPERTIES:
   :STYLE:    habit
-  :LAST_REPEAT: [2019-07-20 Sat 00:35]
+  :LAST_REPEAT: [2019-07-29 Mon 21:48]
   :END:
 
+  - [2019-07-29 Mon] [done]
   - "DONE" Note in [2019-07-20 Sat]
   - "DONE" Note in [2019-07-10 Wed] \\
     没有处理任何 DONE itme
