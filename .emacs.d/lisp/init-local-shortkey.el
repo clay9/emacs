@@ -3,6 +3,7 @@
 ;; 0.helm-mode 1.helm-gtags
 ;; 2.symbol-overlay-mode  3.hs-hide-mode  4.speedbar  5.yasnippet
 ;; 6.artist-mode  7.org-agenda-mode 8.smartparens-mode
+;; 9.compilation-mode
 
 (require 'hydra) ;;使用hydra管理快捷键
 
@@ -169,5 +170,14 @@ _m_: wrap sexp       _u_: unwrap sexp         _r_: rewrap sexp
  ("r" sp-rewrap-sexp))
 (define-key smartparens-mode-map (kbd "\C-c /") 'hydra-smartparens/body)
 
+
+;; *********************************
+;; 9.compilation-mode
+;; *********************************
+(require 'compile)
+(define-key compilation-mode-map (kbd "n") 'compilation-next-error)
+(define-key compilation-mode-map (kbd "p") 'compilation-previous-error)
+(define-key compilation-mode-map (kbd "TAB") 'compilation-display-error)
+(define-key compilation-mode-map (kbd "RET") 'compile-goto-error)
 
 (provide 'init-local-shortkey)

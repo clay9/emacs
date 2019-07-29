@@ -15,6 +15,10 @@
 ;; Tag对象 buffer -- 委托: helm-mode
 (global-set-key (kbd "C-x a") 'backward-page)
 (global-set-key (kbd "C-x e") 'forward-page)
+
+(global-set-key (kbd "C-x p") 'previous-multiframe-window)
+(global-set-key (kbd "C-x n") 'next-multiframe-window)
+
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x s") 'save-buffer)

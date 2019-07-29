@@ -2,3 +2,7 @@
 * 查找
   - [2019-07-28 Sun] [capture]
     https://www.cnblogs.com/wuhen/archive/2011/10/28/2227366.html
+* org-agenda快捷键整理
+  - [2019-07-29 Mon] [capture]
+    1. tab只是display 但不跳转
+    2. n, p移动buffer
