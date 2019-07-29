@@ -4,7 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* helm-gatgs的实时解")
+ (front-context-string . "* 查找\n  - [2019-0")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 ("org-refile-last-stored"

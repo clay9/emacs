@@ -1,1 +1,4 @@
 #+STARTUP: overview
+* 查找
+  - [2019-07-28 Sun] [capture]
+    https://www.cnblogs.com/wuhen/archive/2011/10/28/2227366.html

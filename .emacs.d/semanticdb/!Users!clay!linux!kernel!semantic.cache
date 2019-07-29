@@ -87,7 +87,249 @@
       :pointmax 1918
       :fsize 1917
       :lastmodtime '(23868 7108 266985 249000)
-      :unmatched-syntax '((string 1873 . 1915) (string 1851 . 1856) (number 774 . 775) (punctuation 744 . 745))))
+      :unmatched-syntax '((string 1873 . 1915) (string 1851 . 1856) (number 774 . 775) (punctuation 744 . 745)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/async.h" include (:system-flag t) nil [1840 1864])
+            ("linux/atomic.h" include (:system-flag t) nil [1865 1890])
+            ("linux/ktime.h" include (:system-flag t) nil [1891 1915])
+            ("linux/export.h" include (:system-flag t) nil [1916 1941])
+            ("linux/wait.h" include (:system-flag t) nil [1942 1965])
+            ("linux/sched.h" include (:system-flag t) nil [1966 1990])
+            ("linux/slab.h" include (:system-flag t) nil [1991 2014])
+            ("linux/workqueue.h" include (:system-flag t) nil [2015 2043])
+            ("workqueue_internal.h" include nil nil [2045 2076])
+            ("next_cookie" variable
+               (:typemodifiers ("static")
+                :default-value "1"
+                :type ("async_cookie_t" type (:type "class") nil nil))
+                nil [2078 2116])
+            ("MAX_WORK" variable (:constant-flag t) nil [2126 2134])
+            ("ASYNC_COOKIE_MAX" variable (:constant-flag t) nil [2150 2166])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("async_global_pending" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2218 2239]))                  
+                :type "int")
+                nil [2201 2240])
+            ("ASYNC_DOMAIN" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("async_dfl_domain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2300 2317]))                  
+                :type "int")
+                nil [2280 2318])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("async_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2342 2353]))                  
+                :type "int")
+                nil [2319 2354])
+            ("async_entry" type
+               (:members 
+                  ( ("domain_list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2378 2407])
+                    ("global_list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2409 2438])
+                    ("work" variable (:type ("work_struct" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2440 2464])
+                    ("cookie" variable (:type ("async_cookie_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2466 2489])
+                    ("func" variable (:type ("async_func_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2491 2510])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [2512 2525])
+                    ("domain" variable
+                       (:pointer 1
+                        :type ("async_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2527 2555]))                  
+                :type "struct")
+                nil [2356 2558])
+            ("DECLARE_WAIT_QUEUE_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("async_done" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2591 2602]))                  
+                :type "int")
+                nil [2560 2603])
+            ("entry_count" variable
+               (:typemodifiers ("static")
+                :type ("atomic_t" type (:type "class") nil nil))
+                nil [2605 2633])
+            ("lowest_in_progress" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("domain" variable
+                       (:pointer 1
+                        :type ("async_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2676 2704]))                  
+                :type ("async_cookie_t" type (:type "class") nil nil))
+                nil [2635 3224])
+            ("async_run_entry_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3307 3332]))                  
+                :type "void")
+                nil [3276 4360])
+            ("async_schedule_node_domain" function
+               (:arguments 
+                  ( ("func" variable (:type ("async_func_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5132 5150])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5151 5162])
+                    ("node" variable (:type "int") (reparse-symbol arg-sub-list) [5170 5179])
+                    ("domain" variable
+                       (:pointer 1
+                        :type ("async_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5180 5208]))                  
+                :type ("async_cookie_t" type (:type "class") nil nil))
+                nil [5090 6505])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("async_schedule_node_domain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6524 6551]))                  
+                :type "int")
+                nil [6506 6552])
+            ("async_schedule_node" function
+               (:arguments 
+                  ( ("func" variable (:type ("async_func_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7135 7153])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7154 7165])
+                    ("node" variable (:type "int") (reparse-symbol arg-sub-list) [7166 7175]))                  
+                :type ("async_cookie_t" type (:type "class") nil nil))
+                nil [7100 7252])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("async_schedule_node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7271 7291]))                  
+                :type "int")
+                nil [7253 7292])
+            ("async_synchronize_full" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7482 7487]))                  
+                :type "void")
+                nil [7454 7529])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("async_synchronize_full" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7548 7571]))                  
+                :type "int")
+                nil [7530 7572])
+            ("async_unregister_domain" function
+               (:arguments 
+                  ( ("domain" variable
+                       (:pointer 1
+                        :type ("async_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7964 7992]))                  
+                :type "void")
+                nil [7935 8145])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("async_unregister_domain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8164 8188]))                  
+                :type "int")
+                nil [8146 8189])
+            ("async_synchronize_full_domain" function
+               (:arguments 
+                  ( ("domain" variable
+                       (:pointer 1
+                        :type ("async_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8504 8532]))                  
+                :type "void")
+                nil [8469 8596])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("async_synchronize_full_domain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8615 8645]))                  
+                :type "int")
+                nil [8597 8646])
+            ("async_synchronize_cookie_domain" function
+               (:arguments 
+                  ( ("cookie" variable (:type ("async_cookie_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9106 9128])
+                    ("domain" variable
+                       (:pointer 1
+                        :type ("async_domain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9129 9157]))                  
+                :type "void")
+                nil [9069 9672])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("async_synchronize_cookie_domain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9691 9723]))                  
+                :type "int")
+                nil [9673 9724])
+            ("async_synchronize_cookie" function
+               (:arguments 
+                  ( ("cookie" variable (:type ("async_cookie_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10008 10030]))                  
+                :type "void")
+                nil [9978 10095])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("async_synchronize_cookie" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10114 10139]))                  
+                :type "int")
+                nil [10096 10140])
+            ("current_is_async" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10285 10290]))                  
+                :type "bool")
+                nil [10263 10403])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("current_is_async" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10422 10439]))                  
+                :type "int")
+                nil [10404 10440]))          
+      :file "async.c"
+      :pointmax 10441
+      :fsize 10440
+      :lastmodtime '(23868 7108 264724 521000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ASYNC_COOKIE_MAX" . ((symbol "ULLONG_MAX" 2167 . 2177)))
+          ("MAX_WORK" . ((number "32768" 2136 . 2141)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "workqueue_internal.h"
+      :fsize 2448
+      :lastmodtime '(23868 7108 371035 668000)))
   :file "!Users!clay!linux!kernel!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")
