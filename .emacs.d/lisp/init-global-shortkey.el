@@ -40,6 +40,10 @@
 ;; *********************************
 ;; 其他
 ;; *********************************
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C--") 'er/contract-region)
+
+
 (global-set-key (kbd "C-z") 'nil); suspend-frame最小化在X下作用不大
 (global-set-key (kbd "s-n") 'nil); ns-new-frame new-frame不受现在配置影响, 因此删除
 (global-set-key (kbd "C-9") 'nil)

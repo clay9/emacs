@@ -26,6 +26,7 @@
 (require 'init-smartparens-mode);;智能括号
 (require 'init-yasnippet-mode)  ;;模板文件
 (require 'init-eshell)          ;;内置命令行
+(require 'init-expand-region)   ;;快速选择
 
 
 ;; *************************
@@ -89,7 +90,7 @@
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (helm-gtags helm nyan-mode function-args disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (expand-region helm-gtags helm nyan-mode function-args disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
