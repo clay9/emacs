@@ -3,7 +3,7 @@
 ;; 0.helm-mode 1.helm-gtags
 ;; 2.symbol-overlay-mode  3.hs-hide-mode  4.speedbar  5.yasnippet
 ;; 6.artist-mode  7.org-agenda-mode 8.smartparens-mode
-;; 9.compilation-mode
+;; 9.compilation-mode 10.search (ocuur)
 
 (require 'hydra) ;;使用hydra管理快捷键
 
@@ -182,5 +182,15 @@ _m_: wrap sexp       _u_: unwrap sexp         _r_: rewrap sexp
 (define-key compilation-mode-map (kbd "p") 'compilation-previous-error)
 (define-key compilation-mode-map (kbd "TAB") 'compilation-display-error)
 (define-key compilation-mode-map (kbd "RET") 'compile-goto-error)
+
+
+;; *********************************
+;; 10. search (ocuur)
+;; *********************************
+(define-key occur-mode-map (kbd "n") 'occur-next)
+(define-key occur-mode-map (kbd "p") 'occur-prev)
+(define-key occur-mode-map (kbd "TAB") 'occur-mode-display-occurrence)
+(define-key occur-mode-map (kbd "<tab>") 'occur-mode-display-occurrence)
+
 
 (provide 'init-local-shortkey)

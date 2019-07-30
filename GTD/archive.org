@@ -285,6 +285,18 @@
 
 * ***********待归档*************
 * Finished Tasks
+** DONE Occur buffer快捷键配置
+   CLOSED: [2019-07-30 Tue 22:35] SCHEDULED: <2019-07-31 Wed>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-07-30 Tue 22:35
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - [2019-07-30 Tue] [done]
+   - [2019-07-30 Tue] [refile]
+   - [2019-07-30 Tue] [capture]
+    
 * 项目应用
 ** Java的一些基础
 *** Activity

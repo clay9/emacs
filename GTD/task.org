@@ -1,9 +1,4 @@
 #+STARTUP: overview
-* TODO Occur buffer快捷键配置
-  SCHEDULED: <2019-07-31 Wed>
-  - [2019-07-30 Tue] [refile]
-  - [2019-07-30 Tue] [capture]
-    
 * TODO [#B] 文档:GDB 使用
   SCHEDULED: <2019-07-29 Mon>
   [2019-07-22 Mon] from 

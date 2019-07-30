@@ -14,6 +14,7 @@
   (occur-1 regexp nlines (list (current-buffer)))
   (switch-to-buffer-other-window "*Occur*")
   ;;增加跳转到 第一个 匹配处
+  (occur-next)
   )
 
 
