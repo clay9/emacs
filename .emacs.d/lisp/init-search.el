@@ -9,10 +9,11 @@
 
 
 ;;occur函数重载
-(defun my-occur ()
-  (interactive)
-  (occur "hide" nil)
+(defun my-occur (regexp &optional nlines)
+  (interactive (occur-read-primary-args))
+  (occur-1 regexp nlines (list (current-buffer)))
   (switch-to-buffer-other-window "*Occur*")
+  ;;增加跳转到 第一个 匹配处
   )
 
 

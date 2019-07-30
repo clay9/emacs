@@ -1,53 +1,10 @@
 #+STARTUP: overview
-* TODO [#A] org-agenda快捷键整理
-  SCHEDULED: <2019-07-30 Tue>
-  :PROPERTIES:
-  :ARCHIVE_TIME: 2019-07-29 Mon 21:50
-  :ARCHIVE_FILE: ~/GTD/task.org
-  :ARCHIVE_CATEGORY: task
-  :END:
-  - [2019-07-29 Mon] [refile]
-  - [2019-07-29 Mon] [refile]
-  - [2019-07-29 Mon] [refile]
-  - [2019-07-29 Mon] [capture]
-    1. tab只是display 但不跳转
-    2. n, p移动buffer
-
-* TODO [#A] 查找
-  SCHEDULED: <2019-07-30 Tue>
-  :PROPERTIES:
-  :ARCHIVE_TIME: 2019-07-29 Mon 21:50
-  :ARCHIVE_FILE: ~/GTD/task.org
-  :ARCHIVE_CATEGORY: task
-  :END:
-  - [2019-07-29 Mon] [refile]
-  - [2019-07-29 Mon] [refile]
-  - [2019-07-29 Mon] [refile]
-  - [2019-07-28 Sun] [capture]
-    https://www.cnblogs.com/wuhen/archive/2011/10/28/2227366.html
-
+* TODO Occur buffer快捷键配置
+  SCHEDULED: <2019-07-31 Wed>
+  - [2019-07-30 Tue] [refile]
+  - [2019-07-30 Tue] [capture]
+    
 * TODO [#B] 文档:GDB 使用
   SCHEDULED: <2019-07-29 Mon>
   [2019-07-22 Mon] from 
   content:
-* TODO [#B] 需要TODO的item
-  SCHEDULED: <2019-07-26 Fri>
-  1. [ ] 查找功能放到hydra中
-     增量查找(Incremental Search)
-     向前查找                                        C-s
-     向后查找                                        C-r
-     规则表达式查找                                  C-M-s
-     反向规则表达式查找                              C-M-r
-     选择前一个查找字符串                            M-p
-     选择下一个查找字符串                            M-n
-     退出当前查找模式                                C-g
-     在查找的过程中可重复使用C-s和C-r来改变查找方向
-  2. [ ] 标记功能放到hydra中 或者 放到C- +
-     #+BEGIN_EXAMPLE
-     标记（Marking）
-     标记当前位置                                    C-SPC或C-@  expand取代
-
-     标记一段                                        M-SPC或M-@
-     标记一页                                        C-x SPC或C-x @
-
-     #+END_EXAMPLE

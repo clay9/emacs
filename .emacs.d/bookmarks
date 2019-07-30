@@ -4,12 +4,12 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* org-agenda快捷键整")
- (rear-context-string . "28/2227366.html\n")
- (position . 123))
+ (front-context-string . "* Occur buffer快捷")
+ (rear-context-string . "ARTUP: overview\n")
+ (position . 21))
 ("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* TODO [#A] org-")
+ (front-context-string . "* TODO Occur buf")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 )

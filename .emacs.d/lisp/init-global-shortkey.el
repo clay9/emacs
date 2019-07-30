@@ -40,6 +40,7 @@
 ;; *********************************
 ;; 其他
 ;; *********************************
+(require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C--") 'er/contract-region)
 
@@ -48,8 +49,6 @@
 (global-set-key (kbd "s-n") 'nil); ns-new-frame new-frame不受现在配置影响, 因此删除
 (global-set-key (kbd "C-9") 'nil)
 (global-set-key (kbd "C-0") 'nil)
-(global-set-key (kbd "C--") 'nil)
-(global-set-key (kbd "C-=") 'nil)
 
 
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -61,10 +60,11 @@
 "
 _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
 "
- ("a" occur)
+ ("a" my-occur)
  ("r" isearch-backward)
  ("s" isearch-forward))
 (global-set-key (kbd "C-s") 'hydra-search/body)
+
 
 
 (provide 'init-global-shortkey)
