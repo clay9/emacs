@@ -140,9 +140,12 @@ _y_: 水雾
 
 (define-key org-agenda-mode-map (kbd "a") 'my-org-agenda-bulk-action)     ;执行动作
 
-;; agenda buffer 操作
-(define-key org-agenda-mode-map (kbd "C-,") 'my-org-agenda-back)
-(define-key org-agenda-mode-map (kbd "C-.") 'my-org-agenda-forward)
+;; agenda buffer选择
+(define-key org-agenda-mode-map (kbd "p") 'my-org-agenda-back)
+(define-key org-agenda-mode-map (kbd "n") 'my-org-agenda-forward)
+
+(define-key org-agenda-mode-map (kbd "TAB") 'my-org-agenda-show)
+(define-key org-agenda-mode-map (kbd "<tab>") 'my-org-agenda-show)
 
 
 ;; *********************************

@@ -1,3 +1,18 @@
+;(require 'org-agenda)
+
+(defvar my-last-show-entry "")
+(defun my-org-agenda-show ()
+  (interactive)
+  (let ((current-show-entry (format "%S" (org-get-at-bol 'org-marker))))
+    (when current-show-entry
+      (if (string-equal my-last-show-entry current-show-entry)
+          (funcall (lambda ()
+                     (setq my-last-show-entry "")
+                     (org-agenda-goto t)
+                     (delete-window)))
+        (setq my-last-show-entry current-show-entry)
+        (org-agenda-show)))))
+
 
 (defun my-org-agenda (&optional arg org-keys restriction)
   (catch 'exit

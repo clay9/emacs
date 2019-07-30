@@ -27,6 +27,7 @@
 (require 'init-yasnippet-mode)  ;;模板文件
 (require 'init-eshell)          ;;内置命令行
 (require 'init-expand-region)   ;;快速选择
+(require 'init-search)          ;;搜索替换
 
 
 ;; *************************

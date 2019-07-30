@@ -1,4 +1,4 @@
-
+(require 'hydra) ;;使用hydra管理快捷键
 ;; 目录一栏
 ;; 0.前缀操作  1.对象操作  2.内容显示  3.GTD
 
@@ -53,6 +53,18 @@
 
 
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+
+
+(defhydra hydra-search (:color blue
+                               :hint nil)
+"
+_a_: 查找全部    _r_: 向前查找    _s_: 向后查找
+"
+ ("a" occur)
+ ("r" isearch-backward)
+ ("s" isearch-forward))
+(global-set-key (kbd "C-s") 'hydra-search/body)
 
 
 (provide 'init-global-shortkey)
