@@ -20,7 +20,9 @@
 (customize-set-variable 'helm-boring-buffer-regexp-list
    (quote
     ("\\` " "\\`\\*helm" "\\`\\*Echo Area" "\\`\\*Minibuf" "\\*Messages\\*" "\\*GNU Emacs\\*"
-     "\\*Color.*" "BigDay" "\\*Completions\\*" "\\*Org Agenda" "\\*Flycheck error message" "Help" "Backtrace" "new snippet" "Calendar" "Fancy Diary Entries" "\\*Org LATEX Export" "\\*Customize Option*" "\\*Customize Group.*" "\\*Warnings\\*" "\\.DS_Store" "task.org" "habit.org" "project.org" "trash.org" "inbox.org" "diary" "\\*scratch\\*")))
+     "\\*Color.*" "BigDay" "\\*Completions\\*" "\\*Org Agenda" "\\*Flycheck error message" "Help" "Backtrace" "new snippet" "Calendar" "Fancy Diary Entries" "\\*Org LATEX Export" "\\*Customize Option*" "\\*Customize Group.*" "\\*Warnings\\*" "\\.DS_Store" "task.org" "habit.org" "project.org" "trash.org" "inbox.org" "diary" "\\*scratch\\*"
+     "\\*threads of .*" "\\*input/output of .*" "\\*breakpoints of .*" "\\*locals of .*" "\\*stack frames of" "\\*Buffer List\\*"
+     )))
 
 
 ;; ******************

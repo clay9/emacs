@@ -28,6 +28,7 @@
 (require 'init-eshell)          ;;内置命令行
 (require 'init-expand-region)   ;;快速选择
 (require 'init-search)          ;;搜索替换
+(require 'init-window-number)   ;;frame快速选择
 
 
 ;; *************************
@@ -54,7 +55,7 @@
 ;; ********编译器********s
 (require 'init-compilation-mode) ;;编译器
 ;; ********调试器********
-
+(require 'init-gdb)            ;;gdb调试器
 ;; *******版本管理*******
 (require 'init-magit)          ;;git版本管理
 
@@ -91,7 +92,7 @@
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (expand-region helm-gtags helm nyan-mode function-args disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (window-number expand-region helm-gtags helm nyan-mode function-args disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

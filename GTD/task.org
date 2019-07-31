@@ -1,5 +1,8 @@
 #+STARTUP: overview
-* TODO [#B] 文档:GDB 使用
-  SCHEDULED: <2019-07-29 Mon>
-  [2019-07-22 Mon] from 
-  content:
+* TODO GUD配置问题
+  SCHEDULED: <2019-08-01 Thu>
+  - [2019-07-31 Wed] [refile]
+  - [2019-07-31 Wed] [capture]
+    //配置问题
+    1. frame中增加memory buffer
+    2. 显示 complex    --  watch

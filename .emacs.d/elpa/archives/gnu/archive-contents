@@ -48,7 +48,7 @@
 		   ("Stefan Monnier" . "monnier@iro.umontreal.ca"))
 		  (:maintainer "Stephen Berman" . "stephen.berman@gmx.net"))])
  (adjust-parens .
-		[(3 0)
+		[(3 1)
 		 nil "Indent and dedent Lisp code, automatically adjust close parens" tar
 		 ((:maintainer "Barry O'Reilly" . "gundaetiapo@gmail.com")
 		  (:authors
@@ -1090,7 +1090,7 @@
 	      ("Terrence Brannon" . "metaperl@gmail.com"))
 	     (:maintainer nil . "emacs-devel@gnu.org"))])
  (let-alist .
-   [(1 0 5)
+   [(1 0 6)
     ((emacs
       (24 1)))
     "Easily let-bind values of an assoc-list by their names" single
