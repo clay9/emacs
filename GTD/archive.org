@@ -308,6 +308,21 @@
    - [2019-07-31 Wed] [done]
    [2019-07-22 Mon] from 
    content:
+
+** DONE GUD配置问题
+   CLOSED: [2019-08-01 Thu 22:10] SCHEDULED: <2019-08-01 Thu>
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2019-08-01 Thu 22:10
+   :ARCHIVE_FILE: ~/GTD/task.org
+   :ARCHIVE_CATEGORY: task
+   :ARCHIVE_TODO: DONE
+   :END:
+   - [2019-08-01 Thu] [done]
+   - [2019-07-31 Wed] [refile]
+   - [2019-07-31 Wed] [capture]
+     //配置问题
+     1. frame中增加memory buffer
+     2. 显示 complex    --  watch
 * 项目应用
 ** Java的一些基础
 *** Activity

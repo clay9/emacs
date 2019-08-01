@@ -329,7 +329,277 @@
     (semanticdb-table "semanticdb-table"
       :file "workqueue_internal.h"
       :fsize 2448
-      :lastmodtime '(23868 7108 371035 668000)))
+      :lastmodtime '(23868 7108 371035 668000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("linux/mm.h" include (:system-flag t) nil [2062 2083])
+            ("linux/slab.h" include (:system-flag t) nil [2084 2107])
+            ("linux/acct.h" include (:system-flag t) nil [2108 2131])
+            ("linux/capability.h" include (:system-flag t) nil [2132 2161])
+            ("linux/file.h" include (:system-flag t) nil [2162 2185])
+            ("linux/tty.h" include (:system-flag t) nil [2186 2208])
+            ("linux/security.h" include (:system-flag t) nil [2209 2236])
+            ("linux/vfs.h" include (:system-flag t) nil [2237 2259])
+            ("linux/jiffies.h" include (:system-flag t) nil [2260 2286])
+            ("linux/times.h" include (:system-flag t) nil [2287 2311])
+            ("linux/syscalls.h" include (:system-flag t) nil [2312 2339])
+            ("linux/mount.h" include (:system-flag t) nil [2340 2364])
+            ("linux/uaccess.h" include (:system-flag t) nil [2365 2391])
+            ("linux/sched/cputime.h" include (:system-flag t) nil [2392 2424])
+            ("asm/div64.h" include (:system-flag t) nil [2426 2448])
+            ("linux/blkdev.h" include (:system-flag t) nil [2449 2474])
+            ("linux/pid_namespace.h" include (:system-flag t) nil [2492 2524])
+            ("linux/fs_pin.h" include (:system-flag t) nil [2525 2550])
+            ("acct_parm" variable
+               (:dereference 1
+                :default-value "{4, 2, 30}"
+                :type "int")
+                nil [2771 2801])
+            ("RESUME" variable (:constant-flag t) nil [2810 2816])
+            ("SUSPEND" variable (:constant-flag t) nil [2873 2880])
+            ("ACCT_TIMEOUT" variable (:constant-flag t) nil [2938 2950])
+            ("bsd_acct_struct" type
+               (:members 
+                  ( ("pin" variable (:type ("fs_pin" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3088 3107])
+                    ("count" variable (:type ("atomic_long_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3109 3130])
+                    ("rcu" variable (:type ("rcu_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3132 3153])
+                    ("lock" variable (:type ("mutex" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3155 3174])
+                    ("active" variable (:type "int") (reparse-symbol classsubparts) [3176 3189])
+                    ("needcheck" variable (:type "unsigned long") (reparse-symbol classsubparts) [3191 3216])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3218 3237])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3239 3264])
+                    ("work" variable (:type ("work_struct" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3266 3290])
+                    ("done" variable (:type ("completion" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3292 3315]))                  
+                :type "struct")
+                nil [3062 3318])
+            ("do_acct_process" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("acct" variable
+                       (:pointer 1
+                        :type ("bsd_acct_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3348 3377]))                  
+                :type "void")
+                nil [3320 3378])
+            ("check_free_space" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("acct" variable
+                       (:pointer 1
+                        :type ("bsd_acct_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3481 3510]))                  
+                :type "int")
+                nil [3453 4109])
+            ("acct_put" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("bsd_acct_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4132 4158]))                  
+                :type "void")
+                nil [4111 4225])
+            ("to_acct" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("fs_pin" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4273 4290]))                  
+                :type ("bsd_acct_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4227 4359])
+            ("acct_get" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4401 4426]))                  
+                :type ("bsd_acct_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4361 4852])
+            ("acct_pin_kill" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pin" variable
+                       (:pointer 1
+                        :type ("fs_pin" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4880 4899]))                  
+                :type "void")
+                nil [4854 5165])
+            ("close_work" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5190 5215]))                  
+                :type "void")
+                nil [5167 5435])
+            ("acct_on" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pathname" variable
+                       (:pointer 1
+                        :type ("filename" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5456 5482]))                  
+                :type "int")
+                nil [5437 6946])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("acct_on_mutex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6968 6982]))                  
+                :type "int")
+                nil [6948 6983])
+            ("SYSCALL_DEFINE1" function
+               (:arguments 
+                  ( ("" variable (:type ("acct" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7415 7420])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7421 7440])
+                    ("" variable (:type ("name" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7442 7447]))                  
+                :type "int")
+                nil [7399 7811])
+            ("acct_exit_ns" function
+               (:arguments 
+                  ( ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7831 7856]))                  
+                :type "void")
+                nil [7813 7900])
+            ("MANTSIZE" variable (:constant-flag t) nil [8162 8170])
+            ("EXPSIZE" variable (:constant-flag t) nil [8207 8214])
+            ("MAXFRACT" variable (:constant-flag t) nil [8259 8267])
+            ("encode_comp_t" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("value" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8351 8371]))                  
+                :type ("comp_t" type (:type "class") nil nil))
+                nil [8323 8868])
+            ("fill_ac" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ac" variable
+                       (:pointer 1
+                        :type ("acct_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10624 10635]))                  
+                :type "void")
+                nil [10604 12212])
+            ("do_acct_process" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("acct" variable
+                       (:pointer 1
+                        :type ("bsd_acct_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12326 12355]))                  
+                :type "void")
+                nil [12298 13915])
+            ("acct_collect" function
+               (:arguments 
+                  ( ("exitcode" variable (:type "long") (reparse-symbol arg-sub-list) [14109 14123])
+                    ("group_dead" variable (:type "int") (reparse-symbol arg-sub-list) [14124 14139]))                  
+                :type "void")
+                nil [14091 15132])
+            ("slow_acct_process" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15164 15189]))                  
+                :type "void")
+                nil [15134 15368])
+            ("acct_process" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15465 15470]))                  
+                :type "void")
+                nil [15447 15782]))          
+      :file "acct.c"
+      :pointmax 15783
+      :fsize 15782
+      :lastmodtime '(23868 7108 264575 36000)
+      :unmatched-syntax '((punctuation 7439 . 7440))
+      :lexical-table 
+        '(("RESUME" . ((semantic-list "(acct_parm[0])" 2818 . 2832)))
+          ("MAXFRACT" . ((semantic-list "((1 << MANTSIZE) - 1)" 8268 . 8289)))
+          ("MANTSIZE" . ((number "13" 8171 . 8173)))
+          ("SUSPEND" . ((semantic-list "(acct_parm[1])" 2882 . 2896)))
+          ("ACCT_TIMEOUT" . ((semantic-list "(acct_parm[2])" 2951 . 2965)))
+          ("EXPSIZE" . ((number "3" 8216 . 8217)))
+          )
+))
   :file "!Users!clay!linux!kernel!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

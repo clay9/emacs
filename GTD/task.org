@@ -1,8 +1,1 @@
 #+STARTUP: overview
-* TODO GUD配置问题
-  SCHEDULED: <2019-08-01 Thu>
-  - [2019-07-31 Wed] [refile]
-  - [2019-07-31 Wed] [capture]
-    //配置问题
-    1. frame中增加memory buffer
-    2. 显示 complex    --  watch

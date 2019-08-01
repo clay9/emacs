@@ -1,5 +1,6 @@
 
 (require 'speedbar)
+(require 'sr-speedbar)
 
 ;; ****************
 ;; basic CFG

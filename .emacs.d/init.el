@@ -17,6 +17,7 @@
 ;; *************************
 (require 'init-frame)           ;;窗口初始化
 (require 'init-font)            ;;字体初始化
+(require 'init-linum-mode)      ;;行号显示
 (require 'init-nyan)            ;;nyan-cat
 (require 'init-disable-mouse)   ;;停用鼠标
 (require 'init-local-shortkey)  ;;局部快捷键
@@ -117,6 +118,7 @@
  '(helm-history-remote ((t (:foreground "red"))))
  '(helm-selection ((t (:underline "cyan"))))
  '(helm-source-header ((t (:background "black" :foreground "white" :weight bold :height 2 :family "微软雅黑"))))
+ '(linum ((t (:inherit default))))
  '(org-agenda-date ((t (:inherit org-agenda-structure :foreground "white"))))
  '(org-agenda-date-today ((t (:foreground "white" :underline t :slant normal :weight normal))))
  '(org-agenda-date-weekend ((t (:foreground "white"))))

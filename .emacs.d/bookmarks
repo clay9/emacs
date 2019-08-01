@@ -4,7 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* GUD配置问题\n  - [2")
+ (front-context-string . "* GUD中 watch buf")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 ("org-refile-last-stored"

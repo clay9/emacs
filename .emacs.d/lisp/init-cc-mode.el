@@ -9,7 +9,7 @@
 ;; (dir) - CC Mode - Sample Init File
 (defconst my-cpp-style
   '((c-basic-offset . 4)
-    (c-tab-always-inde . t)
+    (c-tab-always-indent . t)
     (c-hanging-braces-alist . ((brace-list-open)
 			       (brace-entry-open)
 			       (statement-cont)))
@@ -23,7 +23,8 @@
 
 (defun my-cpp-mode-common-hook()
   (c-set-style "MY_CPP_STYLE")
-  (setq tab-width 8
+  (linum-mode t) ;;增加line num的显示
+  (setq tab-width 4
 	indent-tabs-mode nil))
 
 (add-hook 'c-mode-common-hook 'my-cpp-mode-common-hook)

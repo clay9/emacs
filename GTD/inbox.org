@@ -1,1 +1,3 @@
 #+STARTUP: overview
+* GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
+  - [2019-08-01 Thu] [capture]
