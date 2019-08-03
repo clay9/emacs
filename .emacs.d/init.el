@@ -18,18 +18,17 @@
 (require 'init-frame)           ;;窗口初始化
 (require 'init-font)            ;;字体初始化
 (require 'init-linum-mode)      ;;行号显示
-(require 'init-nyan)            ;;nyan-cat
-(require 'init-disable-mouse)   ;;停用鼠标
-(require 'init-local-shortkey)  ;;局部快捷键
-(require 'init-global-shortkey) ;;全局快捷键
+(require 'init-nyan)            ;;彩虹猫
+(require 'init-disable-mouse)   ;;禁用鼠标
 (require 'init-helm-mode)       ;;Helm
-(require 'init-flyspell-mode)   ;;单词拼写检查
 (require 'init-smartparens-mode);;智能括号
 (require 'init-yasnippet-mode)  ;;模板文件
 (require 'init-eshell)          ;;内置命令行
 (require 'init-expand-region)   ;;快速选择
 (require 'init-search)          ;;搜索替换
-(require 'init-window-number)   ;;frame快速选择
+(require 'init-window-number)   ;;窗口快速选择
+(require 'init-local-shortkey)  ;;局部快捷键
+(require 'init-global-shortkey) ;;全局快捷键
 
 
 ;; *************************
@@ -42,23 +41,19 @@
 ;; *************************
 ;; c-comon development (IDE)
 ;; *************************
-;; 1.编辑器 2.编译器 3.调试器 4.版本管理
-
-;; ********编辑器********
+;; *******1.编辑器********
 (require 'init-cc-mode)        ;;格式提示(major)
 (require 'init-company-mode)   ;;补全提示
 (require 'init-helm-gtags)     ;;代码跳转,引用显示
-(require 'init-function-args)  ;;代码跳转,类函数查看 TODONOW 如果没用, 就删掉
 (require 'init-hs-minor-mode)  ;;代码折叠
 (require 'init-flycheck-mode)  ;;实时语法检查
 (require 'init-sr-speedbar)    ;;文件目录列表
 (require 'init-symbol-overlay-mode);;代码高亮
-;; ********编译器********s
+;; *******2.编译器********
 (require 'init-compilation-mode) ;;编译器
-;; ********调试器********
+;; *******3.调试器********
 (require 'init-gdb)            ;;gdb调试器
-;; *******版本管理*******
-(require 'init-magit)          ;;git版本管理
+
 
 ;; *************************
 ;; lisp development (IDE)
@@ -93,7 +88,7 @@
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (window-number expand-region helm-gtags helm nyan-mode function-args disable-mouse yasnippet org magit-annex buster-mode magit graphviz-dot-mode markdown-preview-mode markdown-mode ledger-mode csharp-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (window-number expand-region helm-gtags helm nyan-mode disable-mouse yasnippet org magit-annex buster-mode graphviz-dot-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

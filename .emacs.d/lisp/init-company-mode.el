@@ -4,7 +4,6 @@
 ;; ********************
 ;; start up company-mode
 (add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'c-mode-common-hook 'global-company-mode)
 
 ;; chose back-ends
 (setq company-backends

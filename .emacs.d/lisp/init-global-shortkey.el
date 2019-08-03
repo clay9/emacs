@@ -17,8 +17,6 @@
 (global-set-key (kbd "C-x e") 'forward-page)
 
 (global-set-key (kbd "C-x o") 'window-number-switch)
-;(global-set-key (kbd "C-x p") 'previous-multiframe-window)
-;(global-set-key (kbd "C-x n") 'next-multiframe-window)
 
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x f") 'helm-find-files)

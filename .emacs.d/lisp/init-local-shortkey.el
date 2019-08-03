@@ -22,13 +22,16 @@
 ;; 1.helm-gtags
 ;; *********************************
 (require 'helm-gtags)
+(require 'init-expand-region)
 (defhydra hydra-helm-gtags (:color blue
                              :hint nil)
  "
-_y_: 显示行号    _g_: 跳转行号
+_u_: 缩小选择    _i_: 增大选择
+_g_: 跳转行号
 _h_: 上个位置    _j_: dwim    _k_: 查找函数    _l_: 查找变量
 "
- ("y" linum-mode)
+ ("u" my-contract-region)
+ ("i" my-expand-region)
  ("g" goto-line)
  ("h" helm-gtags-pop-stack)
  ("j" helm-gtags-dwim)

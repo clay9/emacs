@@ -1,128 +1,59 @@
-mkdir emacs_smartparens-mode
-ls
-cp ~/.emacs.d/lisp/init-smartparens-mode.el emacs_smartparens-mode/
-ls emacs_smartparens-mode
-exit
-ls
-ls |grep flyspe
-mkdir emacs_flyspell-mode
-ln -s ~/.emacs.d/lisp/init-flyspell-mode.el emacs_flyspell-mode/init-flyspell-mode.el
-ls emacs_flyspell-mode/
-exit
-ls
-ls |grep speed
-mkdir emacs_speedbar-mode
-ln -s ~/.emacs.d/lisp/init-sr-speedbar.el emacs_speedbar-mode/init-speedbar.el
-ls emacs_speedbar-mode.org
-ls emacs_speedbar-mode
-exit
-gtags-completing
-gtags
-brew install global
-clear
-
-jobs
-clear
-
-ls
-clear
-
-ls
-clear
-
-ls
-cd elpa/
-ls
-clear
-
-ls
-cd ..
-ls
-cd site-lisp/
-cler
-ls
-rm -rf gtags/
-clear
-
-ls
-cd helm/
-ls
-clear
-
-ls
-exit
-ls
-rm #	
-clear
-
 ls
 cd lisp/
 ls
-rm init-gtags-mode.el 
+rm init-function-args.el 
 ls
 clear
-
+
+ls
 exit
-mkdir emacs_helm-gtags-mode
-ln -s  ~/.emacs.d/lisp/init-helm-gtags.el emacs_helm-gtags-mode/init-helm-gtags.el
-ls emacs_helm-gtags-mode
-exit
+ls
+cat init-flyspell-mode.el
+rm init-flyspell-mode.el
+clear
+
+ls
 cd ..
+clear
+
 ls
 cd elpa/
 ls
-cd org-9.1.14/
-clear
-
-ls
-ls |grep org
-rm org.elc
-cd Desktop/
-git clone https://github.com/SoftEtherVPN/SoftEtherVPN.git
-git clone https://github.com/SoftEtherVPN/SoftEtherVPN.git
-ls
-clear
-
-git clone https://github.com/torvalds/linux.git
-git clone https://github.com/torvalds/linux.git
-cd linux/
-clear
-
-git log
-git status
-git log
-git branch -a
-clear
-
-exit
-cd ..
-gtags
+rm csharp-mode-readme.txt 
 clear
 
 ls
-ls G*
-exit
-ls -al |grep org-agenda
-exit
+cat disable-mouse-20181225.2206/
+cat disable-mouse-readme.txt 
+rm disable-mouse-readme.txt 
+clear
+
 ls
-mkdir emacs_compilation-mode
-cd emacs_helm-gtags-mode/
-ln -s ~/.emacs.d/lisp/init-compilation-mode.el 
+rm *.txt
 ls
 clear
 
 ls
 cd ..
+exit
+ls
+cd lisp/
+ls
+rm init-magit.el 
+ls
+cd ..
 clear
 
-cd emacs_compilation-mode/
 ls
-ln -s ~/.emacs.d/lisp/init-compilation-mode.el init-compilation-mode.el
+cd elpa/
+clear
+
 ls
-exit
 ls
-mkdir emacs_gdb
-cd emacs_gdb/
+clear
+
 ls
-ln -s ~/.emacs.d/lisp/init-gdb.el init-gdb.el
-exit
+ls gnupg/
+rm -rf gnupg
+ls
+ls

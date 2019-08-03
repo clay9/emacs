@@ -47,7 +47,7 @@
 ;; ********************
 ;; 其他
 ;; ********************
-;; 备份文件目录修改
+;; 备份文件目录修改 "XX~"文件
 (setq backup-directory-alist '(("." . "~/.backup_emacs"))
       backup-by-copying t    ; Don't delink hardlinks
       version-control t      ; Use version numbers on backups
@@ -55,6 +55,10 @@
       kept-new-versions 20   ; how many of the newest versions to keep
       kept-old-versions 5    ; and how many of the old
       )
+;; 自动保存文件  "#XX#"文件
+(setq auto-save-list-file-prefix "~/.autosave_emacs")
+;(setq auto-save-list-file-name "~/.autosave_emacs")
+
 
 ;;关闭emacs启动时的画面
 (setq inhibit-startup-message t)
@@ -63,9 +67,6 @@
 
 ;; 改变Emacs要你回答yes的行为,按y或空格键表示yes，n表示no。
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; 设置标题栏,我的设置为Welcome to Emacs world!
-;(setq frame-title-format "Welcome to Emacs world! ")
 
 
 

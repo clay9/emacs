@@ -2,6 +2,13 @@
 ;; ********************
 ;; CC Mode
 ;; ********************
+ ;; 隐藏 "^M" 的显示
+ (defun hide-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table)) 
+  (aset buffer-display-table ?\^M []))
+
 ;; .h关联到c++ mode
 (setq auto-mode-alist
       (append '(("\\.h$" . c++-mode)) auto-mode-alist))
@@ -24,6 +31,7 @@
 (defun my-cpp-mode-common-hook()
   (c-set-style "MY_CPP_STYLE")
   (linum-mode t) ;;增加line num的显示
+  (hide-dos-eol) ;;隐藏 "^M"
   (setq tab-width 4
 	indent-tabs-mode nil))
 

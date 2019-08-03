@@ -5,10 +5,6 @@
 ;; ********************
 ;; color && format
 ;; ********************
-(setq yas-snippet-dirs
-       '("~/.emacs.d/yasnippets"))
-
-(yas-load-directory "~/.emacs.d/yasnippets/")
 
 
 ;; ********************

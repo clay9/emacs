@@ -10,7 +10,7 @@
    |- lisp              -- 各mode的配置文件
    |- elpa              -- package-list-packeages 下载的mode包
    |- site-lisp         -- 第三方mode包, 一般来自github
-   |- yasnippets        -- 常用的yas-mode expand文件
+   |- snippets          -- 常用的yas-mode expand文件
    |-                      其余为垃圾文件
 
 
