@@ -3,10 +3,8 @@
   - [2019-08-01 Thu] [capture]
 * sync
   周末进行  --   图书馆完成
-  1. .emacs.d 系统整理
-  2. GTD再次整理
-  3. emacs文档再次整理,  至此emacs完成
-
+  1. GTD再次整理
+  2. emacs文档再次整理,  至此emacs完成
 
 
 

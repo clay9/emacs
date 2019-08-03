@@ -1,10 +1,6 @@
 
+(require 'nyan-mode)
 (nyan-mode t)
-
-(setq mode-line-format
-      (list
-       '(:eval (list (nyan-create)))
-       ))
 
 (setq nyan-animate-nyancat nil)
 (setq nyan-wavy-trail nil)
