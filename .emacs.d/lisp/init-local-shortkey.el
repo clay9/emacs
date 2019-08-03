@@ -1,3 +1,4 @@
+(require 'hydra) ;;使用hydra管理快捷键
 
 ;; 目录一栏
 ;; 0.helm-mode 1.helm-gtags
@@ -5,11 +6,10 @@
 ;; 6.artist-mode  7.org-agenda-mode 8.smartparens-mode
 ;; 9.compilation-mode 10.search (ocuur)
 
-(require 'hydra) ;;使用hydra管理快捷键
 
-;; *********************************
+;; ****************************************************
 ;; 0.helm-mode
-;; *********************************
+;; ****************************************************
 (require 'helm)
 (require 'helm-config)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
@@ -18,20 +18,17 @@
 (define-key helm-map (kbd "C-x k") 'helm-buffer-run-kill-buffers)
 
 
-;; *********************************
+;; ****************************************************
 ;; 1.helm-gtags
-;; *********************************
+;; ****************************************************
 (require 'helm-gtags)
 (require 'init-expand-region)
 (defhydra hydra-helm-gtags (:color blue
                              :hint nil)
  "
-_u_: 缩小选择    _i_: 增大选择
 _g_: 跳转行号
 _h_: 上个位置    _j_: dwim    _k_: 查找函数    _l_: 查找变量
 "
- ("u" my-contract-region)
- ("i" my-expand-region)
  ("g" goto-line)
  ("h" helm-gtags-pop-stack)
  ("j" helm-gtags-dwim)
@@ -39,15 +36,10 @@ _h_: 上个位置    _j_: dwim    _k_: 查找函数    _l_: 查找变量
  ("l" helm-gtags-find-symbol))
 (define-key helm-gtags-mode-map (kbd "C-j") 'hydra-helm-gtags/body)
 
-;(define-key helm-gtags-mode-map (kbd "C-9") 'helm-gtags-pop-stack)
-;(define-key helm-gtags-mode-map (kbd "C-0") 'helm-gtags-dwim)
-;(define-key helm-gtags-mode-map (kbd "C--") 'helm-gtags-find-symbol)
-;(define-key helm-gtags-mode-map (kbd "C-=") 'helm-gtags-find-rtag)
 
-
-;; *********************************
+;; ****************************************************
 ;; 2.symbol-overlay-mode
-;; *********************************
+;; ****************************************************
 (require 'symbol-overlay)
 (defhydra hydra-symbol-overlay (:color blue
                              :hint nil)
@@ -67,24 +59,23 @@ _i_: 高亮            _n_: 下一个位置          _w_: 复制
 (define-key symbol-overlay-map (kbd "\C-c j") 'hydra-symbol-overlay/body)
 
 
-;; *********************************
+;; ****************************************************
 ;; 3.hs-minor-mode
-;; *********************************
-(require 'hideshow)
+;; ****************************************************
 (require 'init-hs-minor-mode)
-(define-key hs-minor-mode-map (kbd "<backtab>") 'my-hs-shift-tab);; Shift + Tab
+(define-key hs-minor-mode-map (kbd "<backtab>") 'my-hs-shift-tab);;shift + tab
 
 
-;; *********************************
+;; ****************************************************
 ;; 4.speedbar
-;; *********************************
+;; ****************************************************
 (require 'speedbar)
 (define-key speedbar-mode-map (kbd "u") 'speedbar-up-directory);;移动至上层目录, 类似info
 
 
-;; *********************************
+;; ****************************************************
 ;; 5.yasnippet
-;; *********************************
+;; ****************************************************
 (require 'yasnippet)
 (defhydra hydra-yas-minor (:color blue
 				  :hint nil)
@@ -97,17 +88,15 @@ _i_: 增加   _v_: 查看
 (define-key yas-minor-mode-map (kbd "\C-c s") 'hydra-yas-minor/body)
 
 
-;; *********************************
+;; ****************************************************
 ;; 6.artist-mode
-;; *********************************
-(artist-mode 1)
+;; ****************************************************
+(require 'init-artist-mode)
 (define-key artist-mode-map (kbd "SPC") 'org-self-insert-command)
 (define-key artist-mode-map (kbd "RET") 'org-return)
 (define-key artist-mode-map (kbd "DEL") 'org-delete-backward-char)
 (define-key artist-mode-map (kbd "TAB") 'org-cycle)
 
-;; 修改默认快捷键
-(require 'artist)
 (defhydra hydra-artist-mode (:color blue
                              :hint nil)
  "
@@ -118,30 +107,26 @@ _e_: 椭圆    _c_: 圆
 _y_: 水雾
 "
  ("o" artist-key-set-point)
-
  ("l" artist-select-op-line)
  ("p" artist-select-op-poly-line)
-
  ("r" artist-select-op-rectangle)
  ("s" artist-select-op-square)
-
  ("e" artist-select-op-ellipse)
  ("c" artist-select-op-circle)
-
  ("y" artist-select-op-spray-can))
 (define-key artist-mode-map (kbd "\C-c g") 'hydra-artist-mode/body)
 
 
-;; *********************************
+;; ****************************************************
 ;; 7.org-agenda-mode
-;; *********************************
-(require 'org-agenda)
+;; ****************************************************
+(require 'init-org-mode)
+;; agenda buffer keys
 (define-key org-agenda-mode-map (kbd "m") 'org-agenda-bulk-mark)       ;mark
 (define-key org-agenda-mode-map (kbd "M") 'org-agenda-bulk-mark-all)   ;mark all
 (define-key org-agenda-mode-map (kbd "u") 'org-agenda-bulk-unmark)     ;unmark
 (define-key org-agenda-mode-map (kbd "U") 'org-agenda-bulk-unmark-all) ;unmark all
-
-(define-key org-agenda-mode-map (kbd "a") 'my-org-agenda-bulk-action)     ;执行动作
+(define-key org-agenda-mode-map (kbd "a") 'org-agenda-bulk-action)     ;action
 
 ;; agenda buffer选择
 (define-key org-agenda-mode-map (kbd "p") 'my-org-agenda-back)
@@ -151,10 +136,10 @@ _y_: 水雾
 (define-key org-agenda-mode-map (kbd "<tab>") 'my-org-agenda-show)
 
 
-;; *********************************
+;; ****************************************************
 ;; 8.smartparens
-;; *********************************
-(require 'smartparens)
+;; ****************************************************
+(require 'init-smartparens-mode)
 (defhydra hydra-smartparens (:color blue
 				    :hint nil)
  "
@@ -177,19 +162,19 @@ _m_: wrap sexp       _u_: unwrap sexp         _r_: rewrap sexp
 (define-key smartparens-mode-map (kbd "\C-c /") 'hydra-smartparens/body)
 
 
-;; *********************************
+;; ****************************************************
 ;; 9.compilation-mode
-;; *********************************
-(require 'compile)
+;; ****************************************************
+(require 'init-compilation-mode)
 (define-key compilation-mode-map (kbd "n") 'compilation-next-error)
 (define-key compilation-mode-map (kbd "p") 'compilation-previous-error)
 (define-key compilation-mode-map (kbd "TAB") 'compilation-display-error)
 (define-key compilation-mode-map (kbd "RET") 'compile-goto-error)
 
 
-;; *********************************
+;; ****************************************************
 ;; 10. search (ocuur)
-;; *********************************
+;; ****************************************************
 (define-key occur-mode-map (kbd "n") 'occur-next)
 (define-key occur-mode-map (kbd "p") 'occur-prev)
 (define-key occur-mode-map (kbd "TAB") 'occur-mode-display-occurrence)

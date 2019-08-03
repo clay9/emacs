@@ -1,16 +1,14 @@
-
- ;; ******************
- ;; Calendar && Diary
- ;; ******************
-
- ;; (dir) - emacs - Calendar/Diary - calendar motion - move to Beginning or end
+;; ****************************************************
+;; Calendar && Diary
+;; ****************************************************
+;; set first day is monday
 (setq calendar-week-start-day 1)
-
- ;; (dir) - eamcs - Calendar/Diary - Diary - Displaying the Diary
+;; diary file
 (setq diary-file "~/GTD/BigDay/BigDay")
+;; open diary
 (diary)
 
- ;; (dir) - emacs - Calendar/Diary - Appointments
+;; open appt
 (appt-activate t)
 (setq appt-audible nil)
 (setq appt-display-format (quote window))
@@ -18,10 +16,8 @@
 (setq appt-display-interval 1)
 (setq appt-message-warning-time 4)
 
-
-;; (dir) - emacs - Calendar/Diary - Advanced Calendar/Diary Usage - Diary Display
+;; 
 (setq diary-display-function (quote diary-fancy-display))
-
 
 
 (provide 'init-calendar)

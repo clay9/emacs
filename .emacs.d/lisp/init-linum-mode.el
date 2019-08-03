@@ -1,7 +1,13 @@
 (require 'linum)
 
+
+;; ****************************************************
+;; Overloaded Function
+;; ****************************************************
 (defun linum-update-window (win)
-  "Update line numbers for the portion visible in window WIN."
+  "Used: when update window
+   Change: add \"    \" (four space) after linum num
+   Origin: Update line numbers for the portion visible in window WIN."
   (goto-char (window-start win))
   (let* ((line (line-number-at-pos))
 	 (limit (window-end win t))
@@ -47,5 +53,6 @@
                    (/ (* width 1.0 (linum--face-width 'linum))
                       (frame-char-width)))))
     (set-window-margins win width (cdr (window-margins win)))))
+
 
 (provide 'init-linum-mode)

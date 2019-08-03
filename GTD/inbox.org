@@ -5,8 +5,7 @@
   周末进行  --   图书馆完成
   1. GTD再次整理
   2. emacs文档再次整理,  至此emacs完成
-* minor-mdoe-alist
-  
+* minor-mdoe-alist  
   //已经屏蔽的minor mode
  (smartparens-mode (\" SP\" (:eval (if smartparens-strict-mode \"/s\" \"\"))))
  (disable-mouse-mode disable-mouse-mode-lighter)
@@ -15,10 +14,8 @@
  (hs-minor-mode \" hs\")  
  (helm-mode helm-completion-mode-string)
 
-
   //修改值
  (window-number-mode (:eval (window-number-string)))
-
 
  //没有屏蔽的minor mode
  (edebug-mode \" *Debugging*\")

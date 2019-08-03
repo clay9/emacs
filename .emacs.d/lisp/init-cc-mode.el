@@ -1,19 +1,11 @@
-
-;; ********************
+;; ****************************************************
 ;; CC Mode
-;; ********************
- ;; 隐藏 "^M" 的显示
- (defun hide-dos-eol ()
-  "Do not show ^M in files containing mixed UNIX and DOS line endings."
-  (interactive)
-  (setq buffer-display-table (make-display-table)) 
-  (aset buffer-display-table ?\^M []))
-
+;; ****************************************************
 ;; .h关联到c++ mode
 (setq auto-mode-alist
       (append '(("\\.h$" . c++-mode)) auto-mode-alist))
 
-;; (dir) - CC Mode - Sample Init File
+;; set myself cpp style
 (defconst my-cpp-style
   '((c-basic-offset . 4)
     (c-tab-always-indent . t)
@@ -37,7 +29,6 @@
 
 (add-hook 'c-mode-common-hook 'my-cpp-mode-common-hook)
 
-
 ;; 设置不同的颜色
 (custom-set-faces
 ;'(font-lock-string-face ((t (:foreground "Goldenrod"))) t)
@@ -52,6 +43,15 @@
 '(font-lock-comment-face ((t (:foreground "ForestGreen"))) t))
 ;'(font-lock-warning-face ((t (:foreground "Coral"))) t))
 
+
+;; ****************************************************
+;; Function
+;; ****************************************************
+(defun hide-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table)) 
+  (aset buffer-display-table ?\^M []))
 
 
 (provide 'init-cc-mode)

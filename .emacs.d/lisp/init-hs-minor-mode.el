@@ -1,15 +1,16 @@
-
 (require 'hideshow)
 
-;; ******************
 ;; hook 
-;; ******************
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 
 
-;; 自定义函数
+;; ****************************************************
+;; Function
+;; ****************************************************
 (defun my-hs-shift-tab ()
-  "my hs shift tab"
+  "Used by user;
+   Fcuntion: 函数外, 隐藏显示全部
+             函数内, 隐藏sub, 没有则隐藏自己; 已经隐藏则显示自己和sub"
   (interactive)
   (if (my-hs-is-in-block)
       (my-hs-toggle-block)

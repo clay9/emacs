@@ -1,11 +1,10 @@
-
-;; ********************
+;; ****************************************************
 ;; company-mode
-;; ********************
+;; ****************************************************
 ;; start up company-mode
 (add-hook 'after-init-hook 'global-company-mode)
 
-;; chose back-ends
+;; chose backends
 (setq company-backends
    (quote
     (company-bbdb company-nxml company-css company-eclim company-xcode company-cmake company-capf company-files
@@ -13,9 +12,9 @@
 		  company-oddmuse company-dabbrev)))
 
 
-;; ********************
+;; ****************************************************
 ;; company-c-headers
-;; ********************
+;; ****************************************************
 ;; include-system-path
 (setq company-c-headers-path-system
    (quote
@@ -32,12 +31,11 @@
 (add-to-list 'company-backends 'company-c-headers)
 
 
-;; ****************
+;; ****************************************************
 ;; color && format
-;; ****************
+;; ****************************************************
 (custom-set-faces
  '(company-tooltip ((t (:foreground "white")))))
-
 
 
 (provide 'init-company-mode)

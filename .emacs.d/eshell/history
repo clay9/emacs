@@ -57,3 +57,29 @@ ls gnupg/
 rm -rf gnupg
 ls
 ls
+ls
+cat emacs
+cat emacs-1 
+display editor.  This Info file describes how to edit with Emacs and
+clear
+
+cat emacs
+clear
+
+ls
+exit
+ls
+du -h |grep emacs
+du -h
+du -hs
+du -h emacs
+du -h emacs-1
+du -h emacs-2
+du -h emacs-3
+du -h emacs-4
+du -h emacs-5
+du -h emacs-6
+du -h emacs-6
+du -h emacs-7
+du -h emacs-8
+du -h emacs-mime 
