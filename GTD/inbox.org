@@ -16,6 +16,10 @@
  (helm-mode helm-completion-mode-string)
 
 
+  //修改值
+ (window-number-mode (:eval (window-number-string)))
+
+
  //没有屏蔽的minor mode
  (edebug-mode \" *Debugging*\")
  (xref-etags-mode \"\")
@@ -36,7 +40,6 @@
  (artist-mode \" Artist/pen-l\")
  (symbol-overlay-mode \" SO\")
  (helm-gtags-mode helm-gtags-mode-name)
- (window-number-mode (:eval (window-number-string)))
  (helm-ff--delete-async-modeline-mode (:eval (propertize (format \" %s file(s) async ...\" (if helm-ff--trash-flag \"Trashing\" \"Deleting\")) (quote face) (quote helm-delete-async-message))))
  (helm-migemo-mode \" Hmio\")
  (linum-mode \"\")
