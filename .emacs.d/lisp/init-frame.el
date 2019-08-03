@@ -16,20 +16,11 @@
 (when window-system
   (scroll-bar-mode 0))
 
+
 ;; ********************
 ;; mode line
 ;; ********************
-(require 'init-nyan)
-(setq-default mode-line-format
-	      (list
-	       'mode-line-mule-info
-	       'mode-line-modified
-	       " "
-	       'mode-line-buffer-identification
-	       '(:eval (list (nyan-create)))
-	       "|  "
-	       'mode-line-modes
-	       ))
+;; 具体见init-nyan.el
 
 ;; ********************
 ;; frame size
