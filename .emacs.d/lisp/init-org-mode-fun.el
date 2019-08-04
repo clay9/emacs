@@ -54,7 +54,7 @@
 
 
 ;; ****************************************************
-;; 
+;; 返回agenda (n) 中 item的编号
 ;; ****************************************************
 (defun get_item_num ()
   "Used by or-agenda-custom-commands
@@ -62,6 +62,15 @@
   (setq item_num (+ item_num 1))
   (format "%s." item_num)
   )
+
+(defun my-test ()
+  (interactive)
+  (set-buffer "task.org")
+  (let ((position (point)))
+    ;(goto-char (point-min))
+    (org-sort-entries nil org-agenda-sorting-strategy)
+    ;(goto-char position)
+    ))
 
 
 ;; ****************************************************
@@ -71,7 +80,7 @@
 (defvar my-org-agenda-buffer-no 1)
 (setq set_org_buffer_no (lambda (val)
 			  (setq my-org-agenda-buffer-no val)
-			  (setq item_num 0)
+			  (setq item_num 0) ;;切换时候, reset vaule
 			  ))
 
 (defun my-org-agenda-forward ()

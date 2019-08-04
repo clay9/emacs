@@ -1,4 +1,32 @@
+
 #+STARTUP: overview
+
+
+* TODO c
+* TODO a
+* TODO b
+
+* TODO [#D] GTD
+  inbox
+  
+  task
+  archive
+  trash
+
+  project
+  habit
+
+
+  应用场景
+  1. 任务追踪
+  2. 快速插入任务, 不需要再次确认
+
+     
+  1. 删除inbox, project
+  2. habit删除 habit
+  3. 
+
+  
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
   - [2019-08-01 Thu] [capture]
 * TODO [#B] minor-mdoe-alist  
@@ -43,28 +71,9 @@
  (abbrev-mode \" Abbrev\")
  (overwrite-mode overwrite-mode)
  (isearch-mode isearch-mode))
-* TODO [#D] GTD
-  inbox
-  
-  task
-  archive
-  trash
+* PROJECT [#A] sdfsf
+  - [2019-08-04 Sun] [capture]
 
-  project
-  habit
-
-
-  应用场景
-  1. 任务追踪
-  2. 快速插入任务, 不需要再次确认
-
-     
-  1. 删除inbox, project
-  2. habit删除 habit
-  3. 
-
-
-  
 * PROJECT [#D] 企业形象搭建                                       :important:
 ** DONE 1. 钉钉
    使用功能:
@@ -142,5 +151,3 @@
    3. 配置文件的整理
       保证可以最小化使用
 *
-* PROJECT [#A] sdfsf
-  - [2019-08-04 Sun] [capture]
