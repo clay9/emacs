@@ -18,7 +18,7 @@
      "\\*Color.*" "BigDay" "\\*Completions\\*" "\\*Flycheck error message"
      "Help" "Backtrace" "new snippet"  "Fancy Diary Entries" "\\*Org LATEX Export"
      "\\*Customize Option*" "\\*Customize Group.*" "\\*Warnings\\*" "\\.DS_Store"
-     "task.org" "habit.org" "project.org" "trash.org" "inbox.org" "diary" "\\*scratch\\*"
+     "habit.org" "project.org" "trash.org" "inbox.org" "diary" "\\*scratch\\*"
      "\\*threads of .*" "\\*input/output of .*" "\\*breakpoints of .*" "\\*locals of .*" "\\*stack frames of" "\\*Buffer List\\*"
      )))
 

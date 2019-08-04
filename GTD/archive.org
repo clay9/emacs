@@ -284,45 +284,6 @@
    |------------+------------------+------------------------+---------------------+------------+----------|
 
 * ***********待归档*************
-* Finished Tasks
-** DONE Occur buffer快捷键配置
-   CLOSED: [2019-07-30 Tue 22:35] SCHEDULED: <2019-07-31 Wed>
-   :PROPERTIES:
-   :ARCHIVE_TIME: 2019-07-30 Tue 22:35
-   :ARCHIVE_FILE: ~/GTD/task.org
-   :ARCHIVE_CATEGORY: task
-   :ARCHIVE_TODO: DONE
-   :END:
-   - [2019-07-30 Tue] [done]
-   - [2019-07-30 Tue] [refile]
-   - [2019-07-30 Tue] [capture]
-
-** DONE [#B] 文档:GDB 使用
-   CLOSED: [2019-07-31 Wed 21:09] SCHEDULED: <2019-07-29 Mon>
-   :PROPERTIES:
-   :ARCHIVE_TIME: 2019-07-31 Wed 21:09
-   :ARCHIVE_FILE: ~/GTD/task.org
-   :ARCHIVE_CATEGORY: task
-   :ARCHIVE_TODO: DONE
-   :END:
-   - [2019-07-31 Wed] [done]
-   [2019-07-22 Mon] from 
-   content:
-
-** DONE GUD配置问题
-   CLOSED: [2019-08-01 Thu 22:10] SCHEDULED: <2019-08-01 Thu>
-   :PROPERTIES:
-   :ARCHIVE_TIME: 2019-08-01 Thu 22:10
-   :ARCHIVE_FILE: ~/GTD/task.org
-   :ARCHIVE_CATEGORY: task
-   :ARCHIVE_TODO: DONE
-   :END:
-   - [2019-08-01 Thu] [done]
-   - [2019-07-31 Wed] [refile]
-   - [2019-07-31 Wed] [capture]
-     //配置问题
-     1. frame中增加memory buffer
-     2. 显示 complex    --  watch
 * 项目应用
 ** Java的一些基础
 *** Activity
