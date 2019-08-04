@@ -1,1 +1,146 @@
 #+STARTUP: overview
+* TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
+  - [2019-08-01 Thu] [capture]
+* TODO [#B] minor-mdoe-alist  
+  //已经屏蔽的minor mode
+ (smartparens-mode (\" SP\" (:eval (if smartparens-strict-mode \"/s\" \"\"))))
+ (disable-mouse-mode disable-mouse-mode-lighter)
+ (disable-mouse-global-mode disable-mouse-mode-global-lighter)
+ (company-mode company-lighter)
+ (hs-minor-mode \" hs\")  
+ (helm-mode helm-completion-mode-string)
+
+  //修改值
+ (window-number-mode (:eval (window-number-string)))
+
+ //没有屏蔽的minor mode
+ (edebug-mode \" *Debugging*\")
+ (xref-etags-mode \"\")
+ (company-search-mode company-search-lighter)
+ (flycheck-mode flycheck-mode-line)
+ (view-mode \" View\")
+ (diff-minor-mode \" Diff\")
+ (gnus-dead-summary-mode \" Dead\")
+ (mml-mode \" MML\")
+ (doc-view-minor-mode \" DocView\")
+ (image-minor-mode (:eval (if image-type (format \" Image[%s]\" image-type) \" Image\")))
+ (compilation-minor-mode \" Compilation\")
+ (compilation-shell-minor-mode \" Shell-Compile\")
+ (compilation-in-progress \" Compiling\")
+ (org-cdlatex-mode \" OCDL\")
+ (org-src-mode \" OrgSrc\")
+ (outline-minor-mode \" Outl\")
+ (artist-mode \" Artist/pen-l\")
+ (symbol-overlay-mode \" SO\")
+ (helm-gtags-mode helm-gtags-mode-name)
+ (helm-ff--delete-async-modeline-mode (:eval (propertize (format \" %s file(s) async ...\" (if helm-ff--trash-flag \"Trashing\" \"Deleting\")) (quote face) (quote helm-delete-async-message))))
+ (helm-migemo-mode \" Hmio\")
+ (linum-mode \"\")
+ (eldoc-mode eldoc-minor-mode-string)
+ (visible-mode \" Vis\")
+ (visual-line-mode \" Wrap\")
+ (next-error-follow-minor-mode \" Fol\")
+ (abbrev-mode \" Abbrev\")
+ (overwrite-mode overwrite-mode)
+ (isearch-mode isearch-mode))
+* TODO [#D] GTD
+  inbox
+  
+  task
+  archive
+  trash
+
+  project
+  habit
+
+
+  应用场景
+  1. 任务追踪
+  2. 快速插入任务, 不需要再次确认
+
+     
+  1. 删除inbox, project
+  2. habit删除 habit
+  3. 
+
+
+  
+* PROJECT [#D] 企业形象搭建                                       :important:
+** DONE 1. 钉钉
+   使用功能:
+   1. 公司座机 -- 智能办公电话
+** DONE 2. 对公账户						       :民生银行:
+** DONE 3. 企业支付宝账号认证 						:支付宝:
+** DONE 4. 淘宝账号认证
+   企业营业执照 只能 绑定一个淘宝账号
+     
+   现在的企业淘宝账号已经被冻结.
+   且无法解封, 无法注销, 甚至无法登录.
+     
+   而企业营业执照 也无法再重新申请一个淘宝账号.
+   所以该企业淘宝账号已经作废. 无法再操作
+
+   替代方案:
+   使用个人店铺 代替 企业店铺
+   个人觉得影响不大. 如果业务不大, 个人与企业影响不大; 如果业务很大, 也就不需要再借助淘宝了.
+
+** 5. 淘宝店铺 装修
+** 6. 微信开放平台
+   1. [X] 开放者资质认证
+   2. [X] 移动应用申请
+   3. [ ] 微信支付接口申请
+** 7. 微信公众平台
+   1. [X] 微信绑定实名认证的银行卡
+   2. [X] 申请微信公众服务号
+   3. [ ] 微信支付接口申请
+** 8. 支付宝开放平台
+** DONE 9. ICP域名备案
+   CLOSED: [2017-12-07 Thu 12:37]
+
+* PROJECT [#B] 棋牌项目优化
+** 搭建演示平台   
+   1. [ ] 默认头像存储在本地
+   2. [X] 网络问题
+   3. [ ] 点击头像, 个人中心界面会闪烁
+   4. [ ] 出一个新版本
+** 申请app store
+** 打广告放出去
+** 服务端
+   1. GameServer工程中 获取本机ip地址
+      现在是在Define.h中手动处理, 如何更改为自动获取
+      这样可以避免不同服务器, 都需要编译frame工程
+   2. 子游戏dll的 NodeID
+      现在子游戏中KindID是手动写死的 -- 这个没有问题
+      但是NodeID 能不能写到配置文件中获取
+      这样可以避免不同服务器, 都需要编译子游戏
+   3. Log日志
+      协调服的log日志  还可以
+      登录服的log日志  还可以
+      游戏服的log日志  还可以
+      子游戏的log日志  需要重新设计
+   4. 错误诊断
+      现在的错误诊断是通过打印 具体的文字 来直观查看的
+      希望能改成以下格式
+      时间 + 错误标志ret + 函数名 + 文件名 + 行数
+** 客户端
+   1. 消息号的整理
+      删除无用消息号, 比如之前老大厅的牌友圈
+   2. sdk的整理
+      sdk文件重新整理, 删除无用的socket文件
+   3. 底层函数的封装
+      比如socket相关函数等
+   4. 子游戏代码整理
+   5. 界面的优化处理
+      图集的优化
+   6. 子游戏如何与大厅分离
+   7. UGUI 与 NGUI的统一
+** Web
+   接触不多, 无法评估
+** Database
+   1. 未使用到的全部删除
+   2. 命名的整理
+   3. 配置文件的整理
+      保证可以最小化使用
+*
+* PROJECT [#A] sdfsf
+  - [2019-08-04 Sun] [capture]

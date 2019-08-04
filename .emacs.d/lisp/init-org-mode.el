@@ -7,10 +7,8 @@
 ;; ****************************************************
 ;; agenda files
 (setq org-agenda-files
-      (list "~/GTD/inbox.org"
-	    "~/GTD/task.org"
-	    "~/GTD/habit.org"
-	    "~/GTD/project.org"
+      (list "~/GTD/task.org"
+	    ;"~/GTD/habit.org" ;;暂时屏蔽
 	    "~/GTD/archive.org"
 	    "~/GTD/trash.org"))
 
@@ -55,15 +53,20 @@
 ;; ****************************************************
  ;; capture
 (setq org-capture-templates
- '(("i" "Idea -> inbox.org" entry (file "~/GTD/inbox.org")
-    "* %?\n  - %u [capture]\n %i\n")))
+ '(("t" "todo" entry (file "~/GTD/task.org")
+    "* TODO %?\n  - %u [capture]\n %i\n")
+   ("w" "waiting" entry (file "~/GTD/task.org")
+    "* WAITING %?\n  - %u [capture]\n %i\n")
+   ("p" "project" entry (file "~/GTD/task.org")
+    "* PROJECT %?\n  - %u [capture]\n %i\n")
+    ))
+
  ;; refile
 (setq org-refile-targets
-      '(("~/GTD/task.org" :maxlevel . 1)
-	("~/GTD/project.org" :maxlevel . 2)
+      '(;("~/GTD/task.org" :maxlevel . 1)
 	("~/GTD/trash.org" :level . 1)))
 ;; archive
-(setq org-archive-location "~/GTD/archive.org::* Finished Tasks")
+(setq org-archive-location "~/GTD/trash.org::")
 
  ;; log note headings, olny effected when log set to note
 (setq org-log-note-headings '((done . "%d [done]")
@@ -108,20 +111,13 @@
 ;; not show sublevels in agenda 
 (setq org-agenda-todo-list-sublevels 'nil)
 (setq org-habit-show-habits-only-for-today t)
+
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
-(setq org-deadline-warning-days 0)
-
-;; items sort
-(setq org-agenda-sorting-strategy
-      (quote ((agenda time-up todo-state-up scheduled-up deadline-up priority-up)
-              (todo priority-down category-keep)
-              (tags priority-down category-keep)
-              (search category-keep))))
+(setq org-deadline-warning-days 1)
       
 ;; 设置agenda中bulk mark时候的标志
 (setq org-agenda-bulk-mark-char "x")
-
 ;; 扩展agenda中bulk 操作命令
 (setq org-agenda-bulk-custom-functions
       '((?w org-agenda-refile) 
@@ -139,49 +135,22 @@
 	  (org-agenda-prefix-format "%?-7t%-12:s ")
 	  (org-agenda-sorting-strategy
 	   '(time-up todo-state-up scheduled-up deadline-up priority-up))))
-	;inbox文件
-	("i" "Inbox"
-	 ((tags "+LEVEL=1"
-		((org-agenda-overriding-header "Inbox Things"))))
-	 ((local_temp (funcall set_org_buffer_no 2))
-	  (org-agenda-files '("~/GTD/inbox.org"))
-	  (org-agenda-sorting-strategy
-	   '(priority-down alpha-up effort-up))
-	  (org-agenda-prefix-format "%-10:s "))) ;inbox中不存在Schedule, 这么写只是为了前面空格而已
-	;四象限 todo
-	("f" "TAGS 四象限"
-	 ;; Project
-	 ((tags-todo "+TODO=\"PROJECT\""
-		     ((local_temp (funcall set_org_buffer_no 3))
-		      (org-agenda-overriding-header "Project")
-		      (org-agenda-todo-ignore-scheduled 'nil)
-		      (org-agenda-todo-ignore-deadlines 'nil)
-		      (org-agenda-todo-ignore-timestamp 'nil)
-		      (org-agenda-prefix-format "%?-12t%-10:s")
-		      (org-agenda-sorting-strategy
-		       '(priority-down alpha-up effort-up))
-		      (org-agenda-files '("~/GTD/project.org"))))
-	  ;; Task
-	  (tags "+LEVEL=1-TODO=\"TODO\"-TODO=\"WAITING\"-TODO=\"CANCEL\"-TODO=\"DONE\""
-		((local_temp (funcall set_org_buffer_no 3))
-		 (org-agenda-overriding-header "TAG")
-		 (org-agenda-prefix-format "%-10:s ")
-		 (org-agenda-sorting-strategy
-		  '(priority-down alpha-up effort-up))
-		 ;(org-agenda-block-separator "")
-		 (org-agenda-files '("~/GTD/task.org"))))))
 	;next step
 	("n" "Next Step"
-	 ((todo "TODO"
+	 (
+	  (todo "TODO"
 		((org-agenda-overriding-header "TODO")))
 	  (todo "WAITING"
-		((org-agenda-overriding-header "WAITING"))))
-	 ((local_temp (funcall set_org_buffer_no 4))
-	  (org-agenda-prefix-format "%-10:c")
+		((org-agenda-overriding-header "WAITING")))
+	  (todo "PROJECT"
+		((org-agenda-overriding-header "PROJECT"))
+		)
+	  )
+	 ((local_temp (funcall set_org_buffer_no 2))	  
 	  (org-agenda-sorting-strategy
 	   '(priority-down alpha-up effort-up))
-	  (org-agenda-todo-keyword-format "")
-	  ))))
+	  (org-agenda-prefix-format "%(get_item_num)")
+	  (org-agenda-todo-keyword-format "")))))
 
 
 ;; ****************************************************
@@ -200,11 +169,6 @@
 (setq org-modules
     (quote
      (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
-
-;; (dir) - Org mode - Capture_Refile_Archive - Capture - Setting up capture
-;(setq org-default-notes-file (expand-file-name "~/GTD/inbox.org"))
-
-;(setq org-refile-use-outline-path 'file)
 
 
 ;; ****************************************************

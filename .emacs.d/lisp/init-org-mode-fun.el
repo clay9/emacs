@@ -54,12 +54,25 @@
 
 
 ;; ****************************************************
+;; 
+;; ****************************************************
+(defun get_item_num ()
+  "Used by or-agenda-custom-commands
+   Function: return item num"
+  (setq item_num (+ item_num 1))
+  (format "%s." item_num)
+  )
+
+
+;; ****************************************************
 ;; 快速切换agenda buffer
 ;; ****************************************************
 ;; 标识当前agenda-buffer编号
 (defvar my-org-agenda-buffer-no 1)
 (setq set_org_buffer_no (lambda (val)
-      (setq my-org-agenda-buffer-no val)))
+			  (setq my-org-agenda-buffer-no val)
+			  (setq item_num 0)
+			  ))
 
 (defun my-org-agenda-forward ()
   "Used by user;
@@ -70,12 +83,8 @@
   (let ((org-agenda-multi nil))
     (cond
      ((= my-org-agenda-buffer-no 1)
-      (org-agenda nil "i"))
-     ((= my-org-agenda-buffer-no 2)
-      (org-agenda nil "f"))
-     ((= my-org-agenda-buffer-no 3)
       (org-agenda nil "n"))
-     ((= my-org-agenda-buffer-no 4)
+     ((= my-org-agenda-buffer-no 2)
       (org-agenda nil "a")))
     (widen)
     (org-agenda-finalize)
@@ -90,10 +99,6 @@
     (user-error "Can only append from within agenda buffer"))
   (let ((org-agenda-multi nil))
     (cond
-     ((= my-org-agenda-buffer-no 4)
-      (org-agenda nil "f"))
-     ((= my-org-agenda-buffer-no 3)
-      (org-agenda nil "i"))
      ((= my-org-agenda-buffer-no 2)
       (org-agenda nil "a"))
      ((= my-org-agenda-buffer-no 1)
