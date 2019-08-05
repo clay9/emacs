@@ -54,6 +54,7 @@
 (defun gud-kill ()
   "Kill gdb process, not target process"
   (interactive)
+  (sr-speedbar-close)
   (with-current-buffer gud-comint-buffer (comint-skip-input))
   (kill-process (get-buffer-process gud-comint-buffer)))
 

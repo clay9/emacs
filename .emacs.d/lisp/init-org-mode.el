@@ -130,26 +130,25 @@
       '(
 	; agent && main task
 	("a" "agenda"
-	 ((agenda "+TODO=\"TODO\""))
+	 ((agenda ""))
 	 ((local_temp (funcall set_org_buffer_no 1))
 	  (org-agenda-prefix-format "%?-7t%-12:s ")
 	  (org-agenda-sorting-strategy
 	   '(time-up todo-state-up scheduled-up deadline-up priority-up))))
 	;next step
 	("n" "Next Step"
-	 (
-	  (todo "TODO"
-		((org-agenda-overriding-header "TODO")))
-	  (todo "WAITING"
+	 ((tags-todo "+LEVEL=1/TODO"
+		     ((org-agenda-overriding-header "TODO")))
+	  (tags-todo "+LEVEL=1/WAITING"
 		((org-agenda-overriding-header "WAITING")))
-	  (todo "PROJECT"
-		((org-agenda-overriding-header "PROJECT"))
-		)
-	  )
-	 ((local_temp (funcall set_org_buffer_no 2))	  
+	  (tags-todo "-LEVEL=1/TODO"
+		((org-agenda-overriding-header "PROJECT")
+		 )))
+	 ((local_temp (funcall set_org_buffer_no 2))
 	  (org-agenda-sorting-strategy
 	   '(priority-down alpha-up effort-up))
 	  (org-agenda-prefix-format "%(get_item_num)")
+	  (org-agenda-files '("~/GTD/task.org"))
 	  (org-agenda-todo-keyword-format "")))))
 
 
@@ -199,7 +198,7 @@
 ;; ****************************************************
 (setq org-agenda-prefix-format "%?-7t%-12:s ")
 (org-agenda-list)
-(my-org-sort-entries)
+;(my-org-sort-entries)
 (delete-other-windows)
 
 

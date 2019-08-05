@@ -4,25 +4,37 @@
 ;; 按r 刷新
 ;; ****************************************************
 (org-agenda-to-appt t)
-(defadvice  org-agenda-redo (after org-agenda-redo-add-appts)
-  "Used in agenda-buff by users;
-   Fcunton: Pressing `r' on the agenda will also add appointments && achive done items"
-  (progn
-    (my-org-sort-entries)
-    (org-agenda-to-appt)
-    (my-org-archive-all-done)))
-(ad-activate 'org-agenda-redo)
+(defun my-org-agenda-redo ()
+  "Used in agenda-buffer by user;
+   Function: refresh agenda bufffer"
+  (interactive)
+  (my-org-archive-all-done) ;;archive
+  (my-org-sort-entries) ;;排序
+  (org-agenda-redo t) ;;call origin redo
+  (org-agenda-to-appt)
+  )
+
+;; (defadvice  org-agenda-redo (after org-agenda-redo-add-appts)
+;;   "Used in agenda-buff by users;
+;;    Fcunton: Pressing `r' on the agenda will also add appointments && achive done items"
+;;   (progn
+;;     (my-org-sort-entries)
+;;     (org-agenda-to-appt)
+;;     (my-org-archive-all-done)))
+;; (ad-activate 'org-agenda-redo)
 
 (defun my-org-archive-all-done (&optional tag)
   "Used by org-agenda-refo
   Function: archive all done item -> task.org"
-  (set-buffer "task.org")
-  (my-org-archive-all-matches
-   (lambda (_beg end)
-     (let ((case-fold-search nil))
-       (unless (re-search-forward org-not-done-heading-regexp end t)
-	 "no open TODO items")))
-   tag))
+  (let ((current_buffer (current-buffer)))
+    (set-buffer "task.org")
+    (my-org-archive-all-matches
+     (lambda (_beg end)
+       (let ((case-fold-search nil))
+	 (unless (re-search-forward org-not-done-heading-regexp end t)
+	   "no open TODO items")))
+     tag)
+    (set-buffer current_buffer)))
 
 (defun my-org-archive-all-matches (predicate &optional tag)
   "Used by my-org-archive-all-done
@@ -140,8 +152,9 @@
 	stars  ;; *
 	re
 	re2
-        txt)    ;; the contents of buffer
-
+        txt    ;; the contents of buffer
+	(current_buffer (current-buffer)))
+    
     ;; 设置buffer
     (set-buffer "task.org")
     
@@ -215,10 +228,11 @@
 	 (sort-subr nil fun1 fun2 compare3 nil nil)
 	 (sort-subr nil fun1 fun2 compare2 nil nil)
 	 (sort-subr nil fun1 fun2 compare1 nil nil))
-       )))
-  (org-shifttab 1)
-  )
- 
+       ))
+      (org-shifttab 1)
+      (save-buffer)
+    (set-buffer current_buffer)))
+
 
 ;; ****************************************************
 ;; bulk动作
