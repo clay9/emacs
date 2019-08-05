@@ -22,17 +22,21 @@ _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
 
 ;; region
 (require 'init-expand-region)
+(global-set-key (kbd "C-w") 'kill-region)
 (global-set-key (kbd "C-=") 'my-expand-region)
 (global-set-key (kbd "C--") 'my-contract-region)
-(global-set-key (kbd "C-w") 'kill-region)
+
+(global-set-key (kbd "M-=") 'my-expand-region)    ;;putty不支持C--
+(global-set-key (kbd "M--") 'my-contract-region)  ;;putty不支持C-=
+
 
 ;; buffer, file
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x s") 'save-buffer)
 
-(global-set-key (kbd "C-x a") 'backward-page)
-(global-set-key (kbd "C-x e") 'forward-page)
+(global-set-key (kbd "C-x a") 'beginning-of-buffer)   ;; beg of buffer
+(global-set-key (kbd "C-x e") 'end-of-buffer)         ;; end of buffer
 
 ;; frame
 (global-set-key (kbd "C-x o") 'window-number-switch)
