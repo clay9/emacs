@@ -8,6 +8,7 @@
   "Used in agenda-buff by users;
    Fcunton: Pressing `r' on the agenda will also add appointments && achive done items"
   (progn
+    (my-org-sort-entries)
     (org-agenda-to-appt)
     (my-org-archive-all-done)))
 (ad-activate 'org-agenda-redo)
@@ -62,15 +63,6 @@
   (setq item_num (+ item_num 1))
   (format "%s." item_num)
   )
-
-(defun my-test ()
-  (interactive)
-  (set-buffer "task.org")
-  (let ((position (point)))
-    ;(goto-char (point-min))
-    (org-sort-entries nil org-agenda-sorting-strategy)
-    ;(goto-char position)
-    ))
 
 
 ;; ****************************************************
@@ -136,6 +128,97 @@
         (setq my-last-show-entry current-show-entry)
         (org-agenda-show)))))
 
+
+;; ****************************************************
+;; 对agenda-file 进行排序
+;; ****************************************************
+(defun my-org-sort-entries ()
+  (interactive)  
+  (let (start  ;; beg of first heading 
+	beg    ;; = start
+	end    ;; end of buffer
+	stars  ;; *
+	re
+	re2
+        txt)    ;; the contents of buffer
+
+    ;; 设置buffer
+    (set-buffer "task.org")
+    
+    ;; 找到start
+    (goto-char (point-min))
+    (or (org-at-heading-p) (outline-next-heading))
+    (setq start (point)) 
+    ;; 找到end
+    (goto-char (point-max))      
+    (beginning-of-line 1)
+    (when (looking-at ".*?\\S-")
+      ;; File ends in a non-white line
+      (end-of-line 1)
+      (insert "\n"))      
+    (setq end (point-max))
+    
+    ;;全部展开
+    (goto-char start)
+    (org-show-all '(headings blocks))
+
+    ;; 没有heading, 则返回
+    (setq beg (point))
+    (when (>= beg end) (goto-char start) (user-error "Nothing to sort"))
+
+    ;; 寻找匹配 (*+) -- 会影响match-string
+    (looking-at "\\(\\*+\\)")    
+    (setq stars (match-string 1)  ;; 第一个匹配(*+)的值
+	  re (concat "^" (regexp-quote stars) " +")
+	  re2 (concat "^" (regexp-quote (substring stars 0 -1)) "[ \t\n]")
+	  txt (buffer-substring beg end)) ;; buffer content
+
+    ;; 确保txt 以 \n结尾
+    (unless (equal (substring txt -1) "\n") (setq txt (concat txt "\n")))
+
+    ;; txt不是以 *[ \t\n]  开头
+    (when (and (not (equal stars "*")) (string-match re2 txt))
+      (user-error "Region to sort contains a level above the first entry"))
+
+    ;; sort enrties
+    (save-restriction ;;
+      (narrow-to-region start end)
+      (org-preserve-local-variables ;; execute body while preserving local variables
+       (let ((fun1 (lambda nil
+		     ;; This function moves to the beginning character of the "record" to be sorted.
+		     (if (re-search-forward re nil t)
+			 (goto-char (match-beginning 0))
+		       (goto-char (point-max)))))
+	     (fun2 (lambda nil
+		     ;; This function moves to the last character of the "record" being sorted
+		     (save-match-data
+		       (condition-case nil
+			   (outline-forward-same-level 1)
+			 (error
+			  (goto-char (point-max)))))))
+	     (compare1 (lambda ()
+			 ;; todo key
+			 (when (looking-at org-complex-heading-regexp)
+			   (let* ((m (match-string 2))
+				  (s (if (member m org-done-keywords) '- '+)))
+			     (- 99 (funcall s (length (member m org-todo-keywords-1))))))))
+	     (compare2 (lambda nil
+			 ;; priority
+			 (if (re-search-forward org-priority-regexp (point-at-eol) t)
+			     (string-to-char (match-string 2))
+			   org-default-priority)))
+	     (compare3 (lambda nil
+			 ;; case
+			 (downcase (org-sort-remove-invisible (org-get-heading t t t t)))))
+	     )
+	 ; sort -- case
+	 (sort-subr nil fun1 fun2 compare3 nil nil)
+	 (sort-subr nil fun1 fun2 compare2 nil nil)
+	 (sort-subr nil fun1 fun2 compare1 nil nil))
+       )))
+  (org-shifttab 1)
+  )
+ 
 
 ;; ****************************************************
 ;; bulk动作
