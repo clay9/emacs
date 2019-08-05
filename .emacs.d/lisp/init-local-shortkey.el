@@ -129,6 +129,9 @@ _y_: 水雾
 (define-key org-agenda-mode-map (kbd "a") 'org-agenda-bulk-action)     ;action
 (define-key org-agenda-mode-map (kbd "r") 'my-org-agenda-redo)         ;refresh
 
+(define-key org-agenda-mode-map (kbd "C-p") 'org-agenda-previous-item) ;previous item
+(define-key org-agenda-mode-map (kbd "C-n") 'org-agenda-next-item)     ;next item
+
 ;; agenda buffer选择
 (define-key org-agenda-mode-map (kbd "p") 'my-org-agenda-back)
 (define-key org-agenda-mode-map (kbd "n") 'my-org-agenda-forward)
