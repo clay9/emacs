@@ -198,7 +198,6 @@
 ;; ****************************************************
 (setq org-agenda-prefix-format "%?-7t%-12:s ")
 (org-agenda-list)
-;(my-org-sort-entries)
 (delete-other-windows)
 
 

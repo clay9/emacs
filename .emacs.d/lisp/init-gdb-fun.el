@@ -54,8 +54,13 @@
 (defun gud-kill ()
   "Kill gdb process, not target process"
   (interactive)
-  (sr-speedbar-close)
   (with-current-buffer gud-comint-buffer (comint-skip-input))
-  (kill-process (get-buffer-process gud-comint-buffer)))
+  (kill-process (get-buffer-process gud-comint-buffer))
+  (sr-speedbar-close) ;关闭speedbar frame
+  (kill-buffer "*gud*") ;关闭gud frame
+  
+  (org-agenda-list) ;显示agenda buffer
+  (delete-other-windows))
+
 
 (provide 'init-gdb-fun)
