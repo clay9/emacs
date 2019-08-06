@@ -2,33 +2,6 @@
 #+STARTUP: overview
 
 
-* TODO c
-* TODO a
-* TODO b
-
-* TODO [#D] GTD
-  inbox
-  
-  task
-  archive
-  trash
-
-  project
-  habit
-
-
-  应用场景
-  1. 任务追踪
-  2. 快速插入任务, 不需要再次确认
-
-     
-  1. 删除inbox, project
-  2. habit删除 habit
-  3. 
-
-  
-* TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
-  - [2019-08-01 Thu] [capture]
 * TODO [#B] minor-mdoe-alist  
   //已经屏蔽的minor mode
  (smartparens-mode (\" SP\" (:eval (if smartparens-strict-mode \"/s\" \"\"))))
@@ -71,40 +44,35 @@
  (abbrev-mode \" Abbrev\")
  (overwrite-mode overwrite-mode)
  (isearch-mode isearch-mode))
+* TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
+  - [2019-08-01 Thu] [capture]
+* TODO a
+* TODO b
+
+* TODO c
+* TODO [#D] GTD
+  inbox
+  
+  task
+  archive
+  trash
+
+  project
+  habit
+
+
+  应用场景
+  1. 任务追踪
+  2. 快速插入任务, 不需要再次确认
+
+     
+  1. 删除inbox, project
+  2. habit删除 habit
+  3. 
+
+  
 * PROJECT [#A] sdfsf
   - [2019-08-04 Sun] [capture]
-
-* PROJECT [#D] 企业形象搭建                                       :important:
-** DONE 1. 钉钉
-   使用功能:
-   1. 公司座机 -- 智能办公电话
-** DONE 2. 对公账户						       :民生银行:
-** DONE 3. 企业支付宝账号认证 						:支付宝:
-** DONE 4. 淘宝账号认证
-   企业营业执照 只能 绑定一个淘宝账号
-     
-   现在的企业淘宝账号已经被冻结.
-   且无法解封, 无法注销, 甚至无法登录.
-     
-   而企业营业执照 也无法再重新申请一个淘宝账号.
-   所以该企业淘宝账号已经作废. 无法再操作
-
-   替代方案:
-   使用个人店铺 代替 企业店铺
-   个人觉得影响不大. 如果业务不大, 个人与企业影响不大; 如果业务很大, 也就不需要再借助淘宝了.
-
-** 5. 淘宝店铺 装修
-** 6. 微信开放平台
-   1. [X] 开放者资质认证
-   2. [X] 移动应用申请
-   3. [ ] 微信支付接口申请
-** 7. 微信公众平台
-   1. [X] 微信绑定实名认证的银行卡
-   2. [X] 申请微信公众服务号
-   3. [ ] 微信支付接口申请
-** 8. 支付宝开放平台
-** DONE 9. ICP域名备案
-   CLOSED: [2017-12-07 Thu 12:37]
 
 * PROJECT [#B] 棋牌项目优化
 ** 搭建演示平台   
@@ -151,3 +119,35 @@
    3. 配置文件的整理
       保证可以最小化使用
 *
+* PROJECT [#D] 企业形象搭建                                       :important:
+** DONE 1. 钉钉
+   使用功能:
+   1. 公司座机 -- 智能办公电话
+** DONE 2. 对公账户						       :民生银行:
+** DONE 3. 企业支付宝账号认证 						:支付宝:
+** DONE 4. 淘宝账号认证
+   企业营业执照 只能 绑定一个淘宝账号
+     
+   现在的企业淘宝账号已经被冻结.
+   且无法解封, 无法注销, 甚至无法登录.
+     
+   而企业营业执照 也无法再重新申请一个淘宝账号.
+   所以该企业淘宝账号已经作废. 无法再操作
+
+   替代方案:
+   使用个人店铺 代替 企业店铺
+   个人觉得影响不大. 如果业务不大, 个人与企业影响不大; 如果业务很大, 也就不需要再借助淘宝了.
+
+** 5. 淘宝店铺 装修
+** 6. 微信开放平台
+   1. [X] 开放者资质认证
+   2. [X] 移动应用申请
+   3. [ ] 微信支付接口申请
+** 7. 微信公众平台
+   1. [X] 微信绑定实名认证的银行卡
+   2. [X] 申请微信公众服务号
+   3. [ ] 微信支付接口申请
+** 8. 支付宝开放平台
+** DONE 9. ICP域名备案
+   CLOSED: [2017-12-07 Thu 12:37]
+

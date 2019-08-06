@@ -26,14 +26,27 @@
 (defhydra hydra-helm-gtags (:color blue
                              :hint nil)
  "
+**************** Symbol Overlay **********************************
+_i_: 高亮        _w_: 复制        _r_: 全部替换
+_n_: 下个位置    _p_:上个位置
+
+*****************  helm gtags  ***********************************
+_h_: 上个位置    _j_: dwim        _k_: 查找函数    _l_: 查找变量
 _g_: 跳转行号
-_h_: 上个位置    _j_: dwim    _k_: 查找函数    _l_: 查找变量
 "
- ("g" goto-line)
+ ;;
+ ("i" symbol-overlay-put)
+ ("w" symbol-overlay-save-symbol)
+ ("r" symbol-overlay-rename)
+ ("n" symbol-overlay-jump-next)
+ ("p" symbol-overlay-jump-prev)
+ ;;
  ("h" helm-gtags-pop-stack)
  ("j" helm-gtags-dwim)
  ("k" helm-gtags-find-rtag)
- ("l" helm-gtags-find-symbol))
+ ("l" helm-gtags-find-symbol)
+ ;;
+ ("g" goto-line))
 (define-key helm-gtags-mode-map (kbd "C-j") 'hydra-helm-gtags/body)
 
 
@@ -56,7 +69,7 @@ _i_: 高亮            _n_: 下一个位置          _w_: 复制
  ("w" symbol-overlay-save-symbol)
  ("q" symbol-overlay-query-replace)
  ("r" symbol-overlay-rename))
-(define-key symbol-overlay-map (kbd "\C-c j") 'hydra-symbol-overlay/body)
+;;(define-key symbol-overlay-map (kbd "\C-c j") 'hydra-symbol-overlay/body)
 
 
 ;; ****************************************************
