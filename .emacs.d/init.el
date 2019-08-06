@@ -27,6 +27,7 @@
 (require 'init-expand-region)   ;;快速选择
 (require 'init-search)          ;;搜索替换
 (require 'init-window-number)   ;;窗口快速选择
+(require 'init-basic-fun)       ;;自定义函数(basic)
 (require 'init-local-shortkey)  ;;局部快捷键
 (require 'init-global-shortkey) ;;全局快捷键
 
