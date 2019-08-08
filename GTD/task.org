@@ -1,7 +1,4 @@
-
 #+STARTUP: overview
-
-
 * TODO [#B] minor-mdoe-alist  
   //已经屏蔽的minor mode
  (smartparens-mode (\" SP\" (:eval (if smartparens-strict-mode \"/s\" \"\"))))
@@ -46,34 +43,7 @@
  (isearch-mode isearch-mode))
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
   - [2019-08-01 Thu] [capture]
-* TODO a
-* TODO b
-
-* TODO c
-* TODO [#D] GTD
-  inbox
   
-  task
-  archive
-  trash
-
-  project
-  habit
-
-
-  应用场景
-  1. 任务追踪
-  2. 快速插入任务, 不需要再次确认
-
-     
-  1. 删除inbox, project
-  2. habit删除 habit
-  3. 
-
-  
-* PROJECT [#A] sdfsf
-  - [2019-08-04 Sun] [capture]
-
 * PROJECT [#B] 棋牌项目优化
 ** 搭建演示平台   
    1. [ ] 默认头像存储在本地
@@ -150,7 +120,3 @@
 ** 8. 支付宝开放平台
 ** DONE 9. ICP域名备案
    CLOSED: [2017-12-07 Thu 12:37]
-
-
-
-
