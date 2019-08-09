@@ -413,3 +413,25 @@
       2) 跳转界面代码中的解析 1处
 
 	 
+* ************文档**************
+* vargrind
+  程序性能查看工具,号称程序员的瑞士军刀
+  可以查看内存信息, 函数调用, cache信息等等
+  
+* helm
+  1. helm-occur
+     替代my-occur函数
+  2. helm-buffers-list
+     1) 输入 " @XX", 过滤掉buffer
+     2) 在所要查找的buffer中, C-s 调用helm-occur
+     3) 可以直接查找
+  3. helm-browse-project
+     绑定在了C-x C-b上
+  4. helm-filtered-bookmarks
+     查看书签(emacs register,永久)
+     待使用 确认效果
+  5. helm-mode
+     1) helm-compilation
+	helm-mode中重载了emacs的compilation
+
+

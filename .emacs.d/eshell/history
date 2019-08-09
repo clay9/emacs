@@ -83,3 +83,6 @@ du -h emacs-6
 du -h emacs-7
 du -h emacs-8
 du -h emacs-mime 
+ls
+find . -name "*.el" |xargs grep revert
+emacs
