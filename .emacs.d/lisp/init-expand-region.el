@@ -4,16 +4,12 @@
 ;; ****************************************************
 ;; Overloaded Function
 ;; ****************************************************
-(defun my-copy-region-as-kill (beg end &optional region)
+(defun my-copy-region-as-kill (beg end )
   "Used for Fun: my-expand-region, my-contract-region
   Change: when copy, no longer unmark the region
   Origin: Copy an unmark the region"
-  (interactive (list (mark) (point)
-                     (prefix-numeric-value current-prefix-arg)))
-  (let ((str (if region
-                 (funcall region-extract-function nil)
-               (filter-buffer-substring beg end))))
-  (if (eq last-command 'kill-region)
+  (let ((str (filter-buffer-substring beg end)))
+    (if (eq last-command 'kill-region)
         (kill-append str (< end beg))
       (kill-new str)))
   nil)

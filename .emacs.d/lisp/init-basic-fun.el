@@ -1,4 +1,6 @@
-
+`';; ****************************************************
+;; yank
+;; ****************************************************
 (setq yank-point 0)
 (defun my-yank-pop()
   "Used by Fun:my-yank
@@ -15,5 +17,21 @@
     (yank)
     (setq yank-point (point))
     ))
+
+
+;; ****************************************************
+;; coding system
+;; ****************************************************
+(defun my-coding-system ()
+  "Userd by user, M-x RET my-coding-system
+   Function: first revert; then set coding-system utf-8"
+  (interactive)
+  ;(list-coding-systems)
+  ;(revert-buffer-with-coding-system 'nil)
+  (set-buffer-file-coding-system 'utf-8-hfs)
+  ;(save-buffer)
+  )
+
+
 
 (provide 'init-basic-fun)

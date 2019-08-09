@@ -14,7 +14,7 @@
 "
 _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
 "
- ("a" my-occur)
+ ("a" helm-occur)
  ("r" isearch-backward)
  ("s" isearch-forward))
 (global-set-key (kbd "C-s") 'hydra-search/body)
@@ -33,6 +33,7 @@ _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
 
 ;; buffer, file
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-b") 'helm-browse-project)
 (global-set-key (kbd "C-x f") 'helm-find-files)
 (global-set-key (kbd "C-x s") 'save-buffer)
 

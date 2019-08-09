@@ -14,15 +14,6 @@
   (org-agenda-to-appt)
   )
 
-;; (defadvice  org-agenda-redo (after org-agenda-redo-add-appts)
-;;   "Used in agenda-buff by users;
-;;    Fcunton: Pressing `r' on the agenda will also add appointments && achive done items"
-;;   (progn
-;;     (my-org-sort-entries)
-;;     (org-agenda-to-appt)
-;;     (my-org-archive-all-done)))
-;; (ad-activate 'org-agenda-redo)
-
 (defun my-org-archive-all-done (&optional tag)
   "Used by org-agenda-refo
   Function: archive all done item -> task.org"
@@ -147,7 +138,8 @@
 ;; 对agenda-file 进行排序
 ;; ****************************************************
 (defun my-org-sort-entries ()
-  (interactive)  
+  "Used by my-org-agenda-redo
+   Function: sort agenda entries"
   (let (start  ;; beg of first heading 
 	beg    ;; = start
 	end    ;; end of buffer
