@@ -24,8 +24,6 @@ _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
 (require 'init-expand-region)
 (global-set-key (kbd "C-w") 'kill-region)         ;;kill
 (global-set-key (kbd "C-y") 'my-yank)             ;;yank && yank-pop
-(global-set-key (kbd "C-=") 'my-expand-region)
-(global-set-key (kbd "C--") 'my-contract-region)
 
 (global-set-key (kbd "M-=") 'my-expand-region)    ;;putty不支持C--
 (global-set-key (kbd "M--") 'my-contract-region)  ;;putty不支持C-=

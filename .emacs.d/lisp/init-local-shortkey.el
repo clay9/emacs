@@ -32,6 +32,8 @@ _n_: 下个位置    _p_:上个位置
 
 *****************  helm gtags  ***********************************
 _h_: 上个位置    _j_: dwim        _k_: 查找函数    _l_: 查找变量
+
+*******************  others  *************************************
 _g_: 跳转行号
 "
  ;;
@@ -176,7 +178,7 @@ _m_: wrap sexp       _u_: unwrap sexp         _r_: rewrap sexp
  ("m" sp-wrap-round)
  ("u" sp-unwrap-sexp)
  ("r" sp-rewrap-sexp))
-(define-key smartparens-mode-map (kbd "\C-c /") 'hydra-smartparens/body)
+;(define-key smartparens-mode-map (kbd "\C-c /") 'hydra-smartparens/body)
 
 
 ;; ****************************************************
