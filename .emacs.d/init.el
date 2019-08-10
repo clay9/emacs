@@ -26,8 +26,9 @@
 (require 'init-expand-region)   ;;快速选择
 (require 'init-search)          ;;搜索替换
 (require 'init-window-number)   ;;窗口快速选择
+;;(require 'init-dict)          ;;汉英词典(bing词典) TODONOW 待补充
+;;(require 'init-completion)    ;;命令补全   TODONOW 待补充
 (require 'init-basic-fun)       ;;自定义函数(basic)
-;;(require 'init-dict)          ;;汉英词典(bing词典)
 (require 'init-local-shortkey)  ;;局部快捷键
 (require 'init-global-shortkey) ;;全局快捷键
 
@@ -49,9 +50,9 @@
 (require 'init-hs-minor-mode)  ;;代码折叠
 (require 'init-flycheck-mode)  ;;实时语法检查
 (require 'init-sr-speedbar)    ;;文件目录列表
-(require 'init-symbol-overlay-mode);;代码高亮
+(require 'init-symbol-overlay);;代码高亮
 ;; *******2.编译器********
-(require 'init-compilation-mode) ;;编译器
+(require 'init-compile)        ;;编译器
 ;; *******3.调试器********
 (require 'init-gdb)            ;;gdb调试器
 

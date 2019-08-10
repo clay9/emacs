@@ -182,7 +182,7 @@ _m_: wrap sexp       _u_: unwrap sexp         _r_: rewrap sexp
 ;; ****************************************************
 ;; 9.compilation-mode
 ;; ****************************************************
-(require 'init-compilation-mode)
+(require 'init-compile)
 (define-key compilation-mode-map (kbd "n") 'compilation-next-error)
 (define-key compilation-mode-map (kbd "p") 'compilation-previous-error)
 (define-key compilation-mode-map (kbd "TAB") 'compilation-display-error)

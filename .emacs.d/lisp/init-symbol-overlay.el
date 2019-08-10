@@ -7,4 +7,4 @@
 (add-hook 'asm-mode-hook 'symbol-overlay-mode)
 
 
-(provide 'init-symbol-overlay-mode)
+(provide 'init-symbol-overlay)

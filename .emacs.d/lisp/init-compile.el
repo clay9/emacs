@@ -23,4 +23,4 @@
 (add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
 
 
-(provide 'init-compilation-mode)
+(provide 'init-compile)

@@ -22,16 +22,13 @@
 ;; ****************************************************
 ;; coding system
 ;; ****************************************************
-(defun my-coding-system (coding_system)
+(defun my-coding-system ()
   "Userd by user, M-x RET my-coding-system
    Function: first revert; then set coding-system utf-8"
   (interactive)
-  ;(list-coding-systems)
-  ;(revert-buffer-with-coding-system coding_system)
+  (call-interactively 'revert-buffer-with-coding-system)
   (set-buffer-file-coding-system 'utf-8-hfs)
-  ;(save-buffer)
-  )
-
+  (save-buffer))
 
 
 (provide 'init-basic-fun)

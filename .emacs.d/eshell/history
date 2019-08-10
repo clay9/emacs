@@ -86,3 +86,26 @@ du -h emacs-mime
 ls
 find . -name "*.el" |xargs grep revert
 emacs
+git status
+git push
+git push
+clear
+
+git push
+clear
+
+git status
+git add .
+git status
+git add .
+git status
+exit
+ls
+mv init-compilation-mode.el init-compile.el
+clear
+
+ls
+exit
+ls
+mv init-symbol-overlay-mode.el init-symbol-overlay.el
+exit
