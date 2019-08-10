@@ -1,4 +1,3 @@
-
 ;; 说明
 ;; 注释中带major的是major mode
 
@@ -28,6 +27,7 @@
 (require 'init-search)          ;;搜索替换
 (require 'init-window-number)   ;;窗口快速选择
 (require 'init-basic-fun)       ;;自定义函数(basic)
+;;(require 'init-dict)          ;;汉英词典
 (require 'init-local-shortkey)  ;;局部快捷键
 (require 'init-global-shortkey) ;;全局快捷键
 
@@ -89,7 +89,7 @@
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (window-number expand-region helm-gtags helm nyan-mode disable-mouse yasnippet org magit-annex buster-mode graphviz-dot-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (bing-dict window-number expand-region helm-gtags helm nyan-mode disable-mouse yasnippet org magit-annex buster-mode graphviz-dot-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -132,3 +132,5 @@
  '(speedbar-directory-face ((t (:foreground "Sienna3"))))
  '(speedbar-file-face ((t (:foreground "white"))))
  '(yas-field-highlight-face ((t (:foreground "green" :background "black" :inherit (quote region))))))
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
