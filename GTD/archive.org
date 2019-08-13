@@ -294,3 +294,9 @@
   5. helm-mode
      1) helm-compilation
 	helm-mode中重载了emacs的compilation
+* socket
+** 阻塞I/O
+** 非阻塞I/O
+** select
+** poll
+** epoll

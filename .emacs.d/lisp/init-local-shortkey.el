@@ -155,6 +155,11 @@ _y_: 水雾
 (define-key org-agenda-mode-map (kbd "<tab>") 'my-org-agenda-show)
 
 
+;; agenda mode
+(define-key org-mode-map (kbd "M-n") 'org-next-visible-heading)
+(define-key org-mode-map (kbd "M-p") 'org-previous-visible-heading)
+
+
 ;; ****************************************************
 ;; 8.smartparens
 ;; ****************************************************
