@@ -126,3 +126,8 @@ rm message_sub.proto
 mv new.proto message_sub.proto
 clear
 exit
+source .bash_profile.macports-saved_2018-12-30_at_18:01:54
+source .bash_profile
+source .bash_profile
+source .bash_profile
+source .bash_profile
