@@ -1,111 +1,128 @@
-ls
-cd lisp/
-ls
-rm init-function-args.el 
-ls
+./manager 
+fg
 clear
-
+make
+./manager 
+sdfs
+make
+./manager 
+make
+make
+./manager 
+make
+./manager 
+make
+make
+./manager 
+sdf
+make
+./manager 
+make
+make clean
+make
+./manager 
+sdf
+./manager 
+clear
+./manager 
+./manager 
+ls
+mv CCfg.cpp cfg.cpp
+mv CCfg.h cfg.h
+mv CUI.cpp  ui.cpp
+mv CUI.h ui.h
+clear
+ls
+make clean
+fg
+make clean
+ls
+rm CUI.o 
 ls
 exit
 ls
-cat init-flyspell-mode.el
-rm init-flyspell-mode.el
+gtags
+gtags
 clear
-
-ls
-cd ..
-clear
-
-ls
-cd elpa/
-ls
-rm csharp-mode-readme.txt 
-clear
-
-ls
-cat disable-mouse-20181225.2206/
-cat disable-mouse-readme.txt 
-rm disable-mouse-readme.txt 
-clear
-
-ls
-rm *.txt
-ls
-clear
-
-ls
-cd ..
+gtags
+make
 exit
-ls
-cd lisp/
-ls
-rm init-magit.el 
-ls
-cd ..
+gtags
+g++ ManagerServer.cpp -o manager
 clear
-
-ls
-cd elpa/
 clear
-
-ls
-ls
+g++ ManagerServer.cpp -o manager
+make
+./manager 
+./manager 
+make clean
+make
+./manager 
+cat GameServer.cfg 
+./manager 
 clear
-
+./manager 
+exit
+./manager 
+make clean
+make
+./manager 
+./manager 
+fg
+./manager 
+./manager 
+./manager ls
+exit
+exit
+./manager ls
+exit
+./manager 
+./manager 
+exit
+exit
+exit
+./manager 
+exit
+exit
+cd .ncu
+cd ../bin/.ncurses/
 ls
-ls gnupg/
-rm -rf gnupg
+touch screen_cfg_win
+touch screen_info_win
+touch scrren_out_win
 ls
+mv scrren_out_win screen_info
+mv screen_cfg_win screen_cfg
 ls
-ls
-cat emacs
-cat emacs-1 
-display editor.  This Info file describes how to edit with Emacs and
-clear
-
-cat emacs
-clear
-
+mv screen_info_win  screen_out
 ls
 exit
 ls
-du -h |grep emacs
-du -h
-du -hs
-du -h emacs
-du -h emacs-1
-du -h emacs-2
-du -h emacs-3
-du -h emacs-4
-du -h emacs-5
-du -h emacs-6
-du -h emacs-6
-du -h emacs-7
-du -h emacs-8
-du -h emacs-mime 
-ls
-find . -name "*.el" |xargs grep revert
-emacs
-git status
-git push
-git push
-clear
-
-git push
-clear
-
-git status
-git add .
-git status
-git add .
-git status
-exit
-ls
-mv init-compilation-mode.el init-compile.el
-clear
-
+mv task.odt ~/code/
 ls
 exit
 ls
-mv init-symbol-overlay-mode.el init-symbol-overlay.el
+mv task.odt ~/code/
+exit
+ls
+mv task.odt ~/code/
+exit
+ls
+mv task.odt ~/code/
+exit
+ls
+mv task.md ~/code/
+exit
+ls
+mv task.odt ~/code/
+exit
+ls
+m task.tex ~/code
+mv task.tex ~/code
+ls
+exit
+ls
+mv task.md ~/code/
+exit
+sudo find / -name "ncurses.h"
 exit

@@ -294,9 +294,116 @@
   5. helm-mode
      1) helm-compilation
 	helm-mode中重载了emacs的compilation
-* socket
-** 阻塞I/O
-** 非阻塞I/O
-** select
-** poll
-** epoll
+* 网络编程
+  关注点:
+  1. 阻塞问题
+  2. 粘包问题 (tcp特有 -- 有边界但无法确认)
+  3. 队列问题
+     多线程处理
+** 乱七八糟协议集合中的 socket 移到此处
+** 原始socket问题
+   1. 阻塞
+      阻塞影响了并发
+      方案:
+      1) select
+      2) poll
+      3) epoll
+   2. 粘包
+      方案:
+      1) 限制发送大小
+      2) 每个消息增加长度标识
+   3. 同步 异步
+      client端, 与server关系不大
+      同步: 等待结果返回; 返回之前无法操作
+      异步: 等待结果返回, 返回之前可以自由活动
+   4. 队列问题
+      方案:
+      多线程
+** I/O模型
+   [[https://mp.weixin.qq.com/s?src=11&timestamp=1565671711&ver=1787&signature=-mLkqQr803XDHb4f3aj9Lf1dJl8uVOV9fCCMMTzs0zSuOYH-qof7nsYCdgho1XLdPQYQP6QL5-WHtI6g-MD9xIsJcuxzdH*idpCZqtzl85r9D4C3XRRuOcCXqLKDzi-i&new=1][强烈建议阅读]]
+   (链接过期, 直接搜狗搜索epoll, "epoll本质"即是)
+   1. 阻塞式      
+   2. 非阻塞
+   3. 复合 -- select
+   4. 复合 -- poll
+   5. 复合 -- epoll (linux特有)
+*** epoll本身为我们处理了什么
+    1. 之前socket::recv()时, 导致我们的进程阻塞
+    2. 现在socket::recv()时, 使epoll阻塞; epoll中断时, 告之进程
+*** 有了epoll我们还需要处理什么
+    1. 创建epoll对象
+    2. 添加检视的fd对象 -- op, epoll_event 
+    3. 检测是否有中断, 然后处理
+* 多线程
+* curses使用
+  官方地址: http://www.tldp.org/HOWTO/NCURSES-Programming-HOWTO/windows.html
+* fstream类
+  文件操作类
+  流程函数
+  1. 构造fstream对象
+     fstream file;
+  2. 打开文件
+     file.open(file_name, mode)
+  3. 读文件
+     1) file >> string file_val
+	>> 遇到 空格 \n \r \t时候停止 -- 待确认TODONOW
+     2) file.get(char ch)
+	每次读取一个字符
+     3) getline(file, string &file_val)
+	读取一行, 遇到\n停止
+     4) file.read(char*buf, length)
+	在读指针位置读取length长度到buf中, 一般用于二进制文件
+  4. 写文件
+     1) file << file_val
+	待确认TODONOW
+     2) file.put(ch)
+	写入一个字符
+     3) file.write(char*buf, length)
+	在写指针位置写入length长度的buf, 一般用户二进制文件
+  5. 关闭文件
+     file.close
+
+     
+  读写指针函数
+  1. 获得读写指针位置
+     TODONOW 待确认
+  2. 设置读写指针函数
+     1) 读: seekg(postion) //postion绝对位置
+	一般用户文本文件
+     2) 读: seekg(offset, ios::beg|ios::end::ios::cur) //offset相对位置
+	一般用户二进制文件, 最好勿在文本文件中使用
+     3) 写: seekp(positon)
+	一般用户文本文件
+     4) 写: seekp(offset, ios::beg|ios::end|ios::cur)
+	一般用户二进制文件, 最好勿在文本文件中使用
+
+
+  fstream状态函数
+  1. if(file) 检验流是否有效
+     这个需要重点查看下, 什么时候流会失效
+     已知:
+     1) file.eof()时候, file则会变为无效
+  2. file.is_open() 流是否打开了文件
+  3. file.eof() 是否到了文件尾
+  4. file.clear()
+     TODONOW 这个也需要再看下
+     如果file.eof(), 调用clear可以重置标志;
+     重置标识后, file重新变为有效流
+* FILE
+  FILE是C的文件操作 -- C++的为fstream
+  问: 为什么有了fstream 还需要FILE?
+  答: 很多系统函数,都是对C的支持, 比如popen()函数等
+
+  1. fopen
+  2. fread
+  3. fwrite
+  4. fclose
+  
+* string类
+  1. 构造
+  2. 比较
+  3. 查找
+  4. 插入
+  5. 删除
+  6. 
+* C++ 与 shell的互相调用,传参,获取运行输出
