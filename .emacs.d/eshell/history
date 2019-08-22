@@ -1,40 +1,3 @@
-./manager 
-fg
-clear
-make
-./manager 
-sdfs
-make
-./manager 
-make
-make
-./manager 
-make
-./manager 
-make
-make
-./manager 
-sdf
-make
-./manager 
-make
-make clean
-make
-./manager 
-sdf
-./manager 
-clear
-./manager 
-./manager 
-ls
-mv CCfg.cpp cfg.cpp
-mv CCfg.h cfg.h
-mv CUI.cpp  ui.cpp
-mv CUI.h ui.h
-clear
-ls
-make clean
-fg
 make clean
 ls
 rm CUI.o 
@@ -125,4 +88,41 @@ ls
 mv task.md ~/code/
 exit
 sudo find / -name "ncurses.h"
+exit
+ls
+mv message.proto message_sub.proto
+exit
+exit
+pwd
+cd bin/
+ls
+pwd
+clear
+ls
+cd DB
+ls
+ls
+make clean
+clear
+ls
+rm message_sub.pb.cpp
+ls
+rm message_sub.pb.h
+ls
+mv message_sub.proto message.proto
+ls
+clear
+ls
+cp message.proto message_sub.proto
+clear
+ls
+s
+clear
+ls
+fg
+exit
+ls
+rm message_sub.proto
+mv new.proto message_sub.proto
+clear
 exit

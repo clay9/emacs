@@ -31,14 +31,14 @@
 
 ;; 设置不同的颜色
 (custom-set-faces
-;'(font-lock-string-face ((t (:foreground "Goldenrod"))) t)
+'(font-lock-string-face ((t (:foreground "White"))) t)
 ;'(font-lock-constant-face ((t (:foreground "Orange"))) t)
 ;'(font-lock-doc-string-face ((t (:foreground "Red"))) t)
-;'(font-lock-variable-name-face ((t (:foreground "OrangeRed"))) t)
-;'(font-lock-function-name-face ((t (:foreground "Brown"))) t)
-;'(font-lock-keyword-face ((t (:foreground "Blue"))) t)
+'(font-lock-variable-name-face ((t (:foreground "brightblue"))) t)
+'(font-lock-function-name-face ((t (:foreground "Orange"))) t) 
+'(font-lock-keyword-face ((t (:foreground "color-27"))) t)
 ;'(font-lock-builtin-face ((t (:foreground "Blue"))) t)
-;'(font-lock-type-face ((t (:foreground "Blue"))) t)
+'(font-lock-type-face ((t (:foreground "color-148"))) t)  
 ;'(font-lock-other-type-face ((t (:foreground "Blue"))) t)
 '(font-lock-comment-face ((t (:foreground "ForestGreen"))) t))
 ;'(font-lock-warning-face ((t (:foreground "Coral"))) t))
