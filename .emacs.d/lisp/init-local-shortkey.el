@@ -107,15 +107,16 @@ _i_: 增加   _v_: 查看
 ;; 6.artist-mode
 ;; ****************************************************
 (require 'init-artist-mode)
-(define-key artist-mode-map (kbd "SPC") 'org-self-insert-command)
-(define-key artist-mode-map (kbd "RET") 'org-return)
-(define-key artist-mode-map (kbd "DEL") 'org-delete-backward-char)
-(define-key artist-mode-map (kbd "TAB") 'org-cycle)
+;;(define-key artist-mode-map (kbd "SPC") 'org-self-insert-command)
+;;(define-key artist-mode-map (kbd "RET") 'org-return)
+;;(define-key artist-mode-map (kbd "DEL") 'org-delete-backward-char)
+;;(define-key artist-mode-map (kbd "TAB") 'org-cycle)
 
 (defhydra hydra-artist-mode (:color blue
                              :hint nil)
  "
 _o_: 起点,终点
+_t_: 文字
 _l_: 线      _p_: 直线
 _r_: 四边形  _s_: 正方形
 _e_: 椭圆    _c_: 圆
@@ -128,8 +129,9 @@ _y_: 水雾
  ("s" artist-select-op-square)
  ("e" artist-select-op-ellipse)
  ("c" artist-select-op-circle)
- ("y" artist-select-op-spray-can))
-(define-key artist-mode-map (kbd "\C-c g") 'hydra-artist-mode/body)
+ ("y" artist-select-op-spray-can)
+ ("t" artist-select-op-text-overwrite))
+(define-key artist-mode-map (kbd "C-j") 'hydra-artist-mode/body)
 
 
 ;; ****************************************************

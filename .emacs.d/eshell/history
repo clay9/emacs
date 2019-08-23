@@ -1,0 +1,113 @@
+ls
+rm GameServerManager.h 
+rm GameServerManager.cpp 
+rm AndroidUserItemSink.h
+rm AndroidUserItemSink.cpp 
+ls
+clear
+ls
+cd ..
+mkdir new
+cd -
+ls
+mv GameCardConfig.cpp GameCardConfig.h GamePlayerConfig.cpp GamePlayerConfig.h ../new/
+clear
+ls
+rm MSADO15.dll 
+clear
+ls
+cat Stdafx.cpp
+cat Stdafx.h
+clear
+ls
+rm Stdafx.cpp Stdafx.h 
+clear
+ls
+ls Resource.h
+ls Res
+rm -rf Res
+clear
+ls
+rm Resource.h 
+clear
+ls
+cat SUB_GAMES_LOG.txt 
+ls
+rm SUB_GAMES_LOG.txt 
+clear
+ls
+cat ReadMe.txt 
+clear
+clear
+ls
+mv ReadMe.txt ../new/
+clear
+ls
+ls
+clear
+ls
+gtags
+rm ServerLog.cpp ServerLog.h 
+clear
+ls
+clear
+ls
+clear
+ls
+rm SubGames_FightLandlord.user
+rm SubGames_FightLandlord.vcxproj
+rm SubGames_FightLandlord.filters
+clear
+ls
+rm SubGames_FightLandlord.vcxproj.user
+rm SubGames_FightLandlord.vcxproj.filters
+clear
+ls
+gtags
+clear
+ls
+clear
+ls
+mv * ../new/
+clear
+ls
+cd ..
+clear
+ls
+rm 游戏服务器/
+clear
+ls
+cd new/
+clear
+ls
+clear
+ls
+cd new/
+clear
+ls
+mv TableFrameSink.h GameRoomSink.h
+mv TableFrameSink.cpp  GameRoomSink.cpp
+clear
+ls
+mv ReadMe.txt  README.txt
+ls
+mv ReadMe.txt 1
+mv 1 README.txt
+ls
+gtags
+ls
+(let ((file_list (directory-files "~/poker/" )))  (dolist (file_name file_list)    (message file_name)    ))
+cd ..
+clear
+cd ~/poker/new/
+clear
+ls
+cd ..
+ls
+hi.el
+./hi.el
+chmod 775 hi.el
+./hi.el
+hi.el
+clear
+ls
