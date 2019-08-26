@@ -1,113 +1,128 @@
-ls
-rm GameServerManager.h 
-rm GameServerManager.cpp 
-rm AndroidUserItemSink.h
-rm AndroidUserItemSink.cpp 
-ls
-clear
-ls
-cd ..
-mkdir new
-cd -
-ls
-mv GameCardConfig.cpp GameCardConfig.h GamePlayerConfig.cpp GamePlayerConfig.h ../new/
-clear
-ls
-rm MSADO15.dll 
-clear
-ls
-cat Stdafx.cpp
-cat Stdafx.h
-clear
-ls
-rm Stdafx.cpp Stdafx.h 
-clear
-ls
-ls Resource.h
-ls Res
-rm -rf Res
-clear
-ls
-rm Resource.h 
-clear
-ls
-cat SUB_GAMES_LOG.txt 
-ls
-rm SUB_GAMES_LOG.txt 
-clear
-ls
-cat ReadMe.txt 
-clear
-clear
-ls
-mv ReadMe.txt ../new/
-clear
-ls
-ls
-clear
-ls
-gtags
-rm ServerLog.cpp ServerLog.h 
-clear
-ls
-clear
-ls
-clear
-ls
-rm SubGames_FightLandlord.user
-rm SubGames_FightLandlord.vcxproj
-rm SubGames_FightLandlord.filters
-clear
-ls
-rm SubGames_FightLandlord.vcxproj.user
-rm SubGames_FightLandlord.vcxproj.filters
-clear
-ls
-gtags
-clear
-ls
-clear
-ls
-mv * ../new/
-clear
-ls
-cd ..
-clear
-ls
-rm 游戏服务器/
-clear
-ls
-cd new/
-clear
-ls
-clear
-ls
-cd new/
-clear
-ls
-mv TableFrameSink.h GameRoomSink.h
-mv TableFrameSink.cpp  GameRoomSink.cpp
-clear
-ls
-mv ReadMe.txt  README.txt
-ls
-mv ReadMe.txt 1
-mv 1 README.txt
-ls
-gtags
-ls
-(let ((file_list (directory-files "~/poker/" )))  (dolist (file_name file_list)    (message file_name)    ))
-cd ..
-clear
-cd ~/poker/new/
-clear
-ls
-cd ..
-ls
-hi.el
-./hi.el
 chmod 775 hi.el
 ./hi.el
 hi.el
 clear
+ls
+ls
+rm *.txt
+ls
+ls
+ls
+rm pocker_new/
+ls pocker_new/
+rm -rf pocker_new/
+cd ..
+ls
+rm -rf poker_new
+ls
+clearl
+clear
+ls
+cd pocker_new/
+cd ..
+rm -r pocker_new/
+ls
+clear
+ls
+cd poker/
+ls
+ls
+rm p_nnnnn/
+rm -r p_nnnnn/
+ls
+cd ..
+clear
+ls
+ls
+clear
+ls
+rm -r pocker_new/
+clear
+ls
+ls poker/
+ls
+ls
+ls
+rm -r pocker_new/
+ls
+ls poker/
+rm pocker_new/
+rm -r pocker_new/
+ls
+ls poker/
+ls pocker_new/
+ls
+clear
+ls
+ls poker/
+clear
+ls
+cd poker/
+ls
+cd ..
+clear
+ls
+ls poker/
+clear
+ls
+ls poker/
+clear
+ls
+ls poker/
+ls
+ls
+clear
+ls
+ls poker/
+clear
+ls
+cd poker/
+ls
+ls
+clear
+ls
+ls new/
+cd ..
+clear
+ls
+ls pocker_new/
+clear
+ls
+ls poker/
+clear
+ls pocker_new/
+ls -al pocker_new/
+rm pocker_new/
+exit
+ls
+cd ..
+ls
+cd pocker_new/
+ls
+ls
+clear
+ls -al
+clear
+ls
+clearls
+cd .git
+ls
+ls
+ls
+cd ..
+ls
+cd ..
+cd poker/
+clear
+ls
+cd .git/
+ls
+cd /usr/local/
+ls
+cd Cellar/
+ls
+cd protobuf/
+pwd
+ls
+cd 3.7.1/
 ls

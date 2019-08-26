@@ -26,7 +26,8 @@
   "Userd by user, M-x RET my-coding-system
    Function: first revert; then set coding-system utf-8"
   (interactive)
-  (call-interactively 'revert-buffer-with-coding-system)
+  ;(call-interactively 'revert-buffer-with-coding-system)
+  (revert-buffer-with-coding-system 'gb2312)
   (set-buffer-file-coding-system 'utf-8-hfs)
   (save-buffer))
 
