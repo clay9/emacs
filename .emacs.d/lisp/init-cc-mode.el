@@ -31,17 +31,17 @@
 
 ;; 设置不同的颜色
 (custom-set-faces
-'(font-lock-string-face ((t (:foreground "White"))) t)
-;'(font-lock-constant-face ((t (:foreground "Orange"))) t)
-;'(font-lock-doc-string-face ((t (:foreground "Red"))) t)
-'(font-lock-variable-name-face ((t (:foreground "brightblue"))) t)
-'(font-lock-function-name-face ((t (:foreground "Orange"))) t) 
-'(font-lock-keyword-face ((t (:foreground "color-27"))) t)
-;'(font-lock-builtin-face ((t (:foreground "Blue"))) t)
-'(font-lock-type-face ((t (:foreground "color-148"))) t)  
-;'(font-lock-other-type-face ((t (:foreground "Blue"))) t)
-'(font-lock-comment-face ((t (:foreground "ForestGreen"))) t))
-;'(font-lock-warning-face ((t (:foreground "Coral"))) t))
+'(font-lock-string-face ((t (:foreground "dark grey"))) t)
+'(font-lock-constant-face ((t (:foreground "DarkOrange3"))) t)
+'(font-lock-doc-string-face ((t (:foreground "Red"))) t)
+'(font-lock-variable-name-face ((t (:foreground "White"))) t)
+'(font-lock-function-name-face ((t (:foreground "DarkOrange3"))) t) 
+'(font-lock-keyword-face ((t (:foreground "dark cyan"))) t)
+'(font-lock-builtin-face ((t (:foreground "dark green"))) t)
+'(font-lock-type-face ((t (:foreground "dark cyan"))) t)  
+'(font-lock-other-type-face ((t (:foreground "Blue"))) t)
+'(font-lock-comment-face ((t (:foreground "ForestGreen"))) t)
+'(font-lock-warning-face ((t (:foreground "Coral"))) t))
 
 
 ;; ****************************************************

@@ -1,5 +1,6 @@
-(setq inferior-lisp-program "E:\\lisp\\sbcl\\sbcl.exe")
-(setq slime-contribs '(slime-fancy))
 
+(require 'slime)
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
 
 (provide 'init-slime)

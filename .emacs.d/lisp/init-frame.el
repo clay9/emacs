@@ -48,8 +48,8 @@
 (add-to-list 'default-frame-alist '(height . 40))
 
 ;; frame transparent
-(set-frame-parameter (selected-frame) 'alpha (list 85 50))
-(add-to-list 'default-frame-alist (cons 'alpha (list 85 50)))
+;(set-frame-parameter (selected-frame) 'alpha (list 85 50))
+;(add-to-list 'default-frame-alist (cons 'alpha (list 85 50)))
 
 ;; window-color
 (set-foreground-color "white")
@@ -58,6 +58,8 @@
 ;; indent
 ;(setq tab-always-indent 't)
 
+;; avoid noisy bell
+;;(setq visible-bell t)
 
 ;; ****************************************
 ;;     others

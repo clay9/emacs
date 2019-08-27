@@ -50,7 +50,7 @@
 (require 'init-hs-minor-mode)  ;;代码折叠
 (require 'init-flycheck-mode)  ;;实时语法检查
 (require 'init-sr-speedbar)    ;;文件目录列表
-(require 'init-symbol-overlay);;代码高亮
+(require 'init-symbol-overlay) ;;代码高亮
 ;; *******2.编译器********
 (require 'init-compile)        ;;编译器
 ;; *******3.调试器********
@@ -68,7 +68,6 @@
 ;; Other
 ;; *************************
 (require 'init-artist-mode)    ;;简易绘图
-
 
 
 ;; *************************
@@ -101,13 +100,17 @@
  '(flycheck-fringe-info ((t (:inherit success :underline t))))
  '(flycheck-fringe-warning ((t (:inherit error :underline t))))
  '(flycheck-warning ((t (:inherit error :underline t))))
- '(flyspell-incorrect ((t (:inherit warning :underline t))))
+ '(font-lock-builtin-face ((t (:foreground "dark green"))))
  '(font-lock-comment-face ((t (:foreground "ForestGreen"))))
- '(font-lock-function-name-face ((t (:foreground "Orange"))))
- '(font-lock-keyword-face ((t (:foreground "color-27"))))
- '(font-lock-string-face ((t (:foreground "White"))))
- '(font-lock-type-face ((t (:foreground "color-148"))))
- '(font-lock-variable-name-face ((t (:foreground "brightblue"))))
+ '(font-lock-constant-face ((t (:foreground "DarkOrange3"))))
+ '(font-lock-doc-string-face ((t (:foreground "Red"))) t)
+ '(font-lock-function-name-face ((t (:foreground "DarkOrange3"))))
+ '(font-lock-keyword-face ((t (:foreground "dark cyan"))))
+ '(font-lock-other-type-face ((t (:foreground "Blue"))) t)
+ '(font-lock-string-face ((t (:foreground "dark grey"))))
+ '(font-lock-type-face ((t (:foreground "dark cyan"))))
+ '(font-lock-variable-name-face ((t (:foreground "White"))))
+ '(font-lock-warning-face ((t (:foreground "Coral"))))
  '(helm-buffer-directory ((t (:background "black" :foreground "Sienna3"))))
  '(helm-buffer-file ((t (:background "black" :foreground "white"))))
  '(helm-buffer-saved-out ((t (:foreground "red"))))
@@ -126,6 +129,7 @@
  '(org-agenda-date-weekend ((t (:foreground "white"))))
  '(org-agenda-structure ((t (:foreground "white"))))
  '(org-habit-alert-face ((t (:background "orange" :foreground "black"))))
+ '(org-level-2 ((t (:foreground "cyan"))))
  '(org-link ((t (:foreground "cyan"))))
  '(org-list-dt ((t nil)))
  '(org-scheduled-previously ((t (:foreground "PaleGreen"))))

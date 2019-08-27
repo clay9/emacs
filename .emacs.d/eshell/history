@@ -1,5 +1,3 @@
-chmod 775 hi.el
-./hi.el
 hi.el
 clear
 ls
@@ -126,3 +124,5 @@ pwd
 ls
 cd 3.7.1/
 ls
+$clisp
+exit
