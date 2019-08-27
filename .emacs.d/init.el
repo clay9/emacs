@@ -89,7 +89,7 @@
  '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (bing-dict window-number expand-region helm-gtags helm nyan-mode disable-mouse yasnippet org magit-annex buster-mode graphviz-dot-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (window-number expand-region helm-gtags helm nyan-mode disable-mouse yasnippet org magit-annex buster-mode graphviz-dot-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
