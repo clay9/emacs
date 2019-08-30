@@ -1,46 +1,4 @@
 #+STARTUP: overview
-* TODO [#B] minor-mdoe-alist  
-  //已经屏蔽的minor mode
- (smartparens-mode (\" SP\" (:eval (if smartparens-strict-mode \"/s\" \"\"))))
- (disable-mouse-mode disable-mouse-mode-lighter)
- (disable-mouse-global-mode disable-mouse-mode-global-lighter)
- (company-mode company-lighter)
- (hs-minor-mode \" hs\")  
- (helm-mode helm-completion-mode-string)
-
-  //修改值
- (window-number-mode (:eval (window-number-string)))
-
- //没有屏蔽的minor mode
- (edebug-mode \" *Debugging*\")
- (xref-etags-mode \"\")
- (company-search-mode company-search-lighter)
- (flycheck-mode flycheck-mode-line)
- (view-mode \" View\")
- (diff-minor-mode \" Diff\")
- (gnus-dead-summary-mode \" Dead\")
- (mml-mode \" MML\")
- (doc-view-minor-mode \" DocView\")
- (image-minor-mode (:eval (if image-type (format \" Image[%s]\" image-type) \" Image\")))
- (compilation-minor-mode \" Compilation\")
- (compilation-shell-minor-mode \" Shell-Compile\")
- (compilation-in-progress \" Compiling\")
- (org-cdlatex-mode \" OCDL\")
- (org-src-mode \" OrgSrc\")
- (outline-minor-mode \" Outl\")
- (artist-mode \" Artist/pen-l\")
- (symbol-overlay-mode \" SO\")
- (helm-gtags-mode helm-gtags-mode-name)
- (helm-ff--delete-async-modeline-mode (:eval (propertize (format \" %s file(s) async ...\" (if helm-ff--trash-flag \"Trashing\" \"Deleting\")) (quote face) (quote helm-delete-async-message))))
- (helm-migemo-mode \" Hmio\")
- (linum-mode \"\")
- (eldoc-mode eldoc-minor-mode-string)
- (visible-mode \" Vis\")
- (visual-line-mode \" Wrap\")
- (next-error-follow-minor-mode \" Fol\")
- (abbrev-mode \" Abbrev\")
- (overwrite-mode overwrite-mode)
- (isearch-mode isearch-mode))
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
   - [2019-08-01 Thu] [capture]
   
@@ -263,7 +221,7 @@
     1. lobby, gmae创建房间的流程
     2. 房间规则  -- 来源与流程
 
-** 比赛场                                                         :TODOLATER:
+** TODO 比赛场                                                    :TODOLATER:
 *** 消息号
     加入  C2L_MATCH_APPLY
 *** 主要类
@@ -651,13 +609,3 @@
    3. 配置文件读取
    4. log日志接口
    5. robot处理
-
-** frame 2.0
-*** 功能变更说明
-    1. frame与sub 房间规则分离
-    2. frame与sub 接口定义完成
-    3. frame与sub 代码分离
-*** 影响范围
-    1. client 子游戏房间规则需要改动
-       具体见之前方案 
-    2. server->sub 房间规则需要变更

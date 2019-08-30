@@ -29,3 +29,16 @@
    other for common --> 3 platform
 ** [ ] hexo熟悉 && hexo文档扩充
 ** [ ] 认真思考下下步打算
+
+* DONE hexo-renderer-org不适配最新的node.js
+  CLOSED: [2019-08-29 Thu 19:45]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-08-29 Thu 19:45
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-08-29 Thu] [done]
+  - [2019-08-19 Mon] [capture]
+    1. 熟悉node.js
+    2. npm语法问题    

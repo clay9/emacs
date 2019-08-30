@@ -2,32 +2,6 @@
 * ***********软件***************
 * Emacs
 ** org       -mode
-*** 特性: habit
-    1. habit到了指定time, 没有appt的提示????
-       解决方案:
-       1) org-mode自身是不带appt功能的,需要借助emacs的appt功能
-          org-mode中有个function org-agenda-to-appt,可以实现上面的要求
-       2) 每次在agenda中增加todo-items(有timestamp)时候,需要将其注册到appt中
-	  在org-mode中添加有timestamps的todo-items不会自动触发appt的事件,需要手动完成
-	  这个是借助agenda中的rebuilding事件来做到刷新appt事件的
-	  具体的实现查看emacs配置文件
-	  (dir) - Org mode - Agenda view - Built_in agenda views -Weekly/daily agenda
-
-*** 特性: appt
-    org-mode自身是不带appt功能的, 使用的emacs自带的appt
-
-    1. 如何增加appointment
-       解决方案:
-       (app-add message)
-       只是临时增加, 关闭emacs会使appt失效
-       (可以写进.emacs, 冒充永久appt)
-
-    2. 如何查看appointment list?
-       解决方案:
-       使用appt-delete算是变相的实现了
-       虽然无法以list形式显示,
-       但是会以时间排序,逐个显示
-       虽不完美, 但足以~
 *** 特性: MobileOrg
     方案流程
      1. PC端配置MobileOrg
@@ -96,54 +70,21 @@
 
     对table使用C-c} 可以查看行列值
     
-*** ************************************************************
-*** 如何优雅的refile
-    虽然通过修改org-refile-tagets已经成功的完成了files间的node转移
-    但是
-    1. 在refile的时候，如何为node添加格式，比如"TODO" timestamp等
-       解决方案 :: timestamp可以通过org-log-refile来实现
-                   添加TODO暂时实现不了, refile好像不会改变source
-                   现在的org-refile只能做到对target做出判断
-                   暂时关闭该问题
-
-    2. 如何快速在refile之间穿梭, 类似于capture的C-u C-c c
-       解决方案 :: org-refile-goto-last-stored
-                   类比 org-capture-goto-last-stored
-
-** calendar  -mode
-   1. sexq entry
-      sexq entry是一种特殊的diary entry,支持elisp,且已经内置了很多函数和变量
-      常用的有:
-       	1) anniversary
-       	2) block
-       	3) cyclic
-       	4) folating
-
-   2. fancy-display 和 simple-display
-      diary支持这2种显示日记方式
-      一般都是使用fancy-display(官方推荐)
-
-** *************************************************************
-** 常用命令
-   1. org-set-property      设置property
-   2. customize-group       设置face属性
-   3. package-list-packages 加载插件
-      
 * GNU
 ** gcc
     1. 查看搜索路径
-	g++ | gcc -print-serach-dirs (可通过--help查看)
+       g++ | gcc -print-serach-dirs (可通过--help查看)
     2. 设定搜索路径
-	gcc  C_INCLUDE_PATH
-	g++  CPLUS_INCLUDE_PATH
+       gcc  C_INCLUDE_PATH
+       g++  CPLUS_INCLUDE_PATH
 
-	ep: export CPLUS_INCLUDE_PATH=/usr/lib/
-	_扩展1_
-	1. 输出 echo $C_INCLUDE_PATH
-	2. 调用 $C_INCLUDE_PATH
-	3. 赋值 export C_INCLUDE_PATH
-	4. 删除变量 unset C_INCLUDE_PATH
-	5. C++调用 string strValue(getenv("C_INCLUDE_PATH")
+       ep: export CPLUS_INCLUDE_PATH=/usr/lib/
+       _扩展1_
+       1. 输出 echo $C_INCLUDE_PATH
+       2. 调用 $C_INCLUDE_PATH
+       3. 赋值 export C_INCLUDE_PATH
+       4. 删除变量 unset C_INCLUDE_PATH
+       5. C++调用 string strValue(getenv("C_INCLUDE_PATH")
        
 * ***********待归档*************
 * 项目应用
@@ -274,136 +215,4 @@
 	 1) URL中需要配置 为 XXX?key1=:key1&key2=:key2
       2) 跳转界面代码中的解析 1处
 	 
-* ************文档**************
-* vargrind
-  程序性能查看工具,号称程序员的瑞士军刀
-  可以查看内存信息, 函数调用, cache信息等等
-  
-* helm
-  1. helm-occur
-     替代my-occur函数
-  2. helm-buffers-list
-     1) 输入 " @XX", 过滤掉buffer
-     2) 在所要查找的buffer中, C-s 调用helm-occur
-     3) 可以直接查找
-  3. helm-browse-project
-     绑定在了C-x C-b上
-  4. helm-filtered-bookmarks
-     查看书签(emacs register,永久)
-     待使用 确认效果
-  5. helm-mode
-     1) helm-compilation
-	helm-mode中重载了emacs的compilation
-* 网络编程
-  关注点:
-  1. 阻塞问题
-  2. 粘包问题 (tcp特有 -- 有边界但无法确认)
-  3. 队列问题
-     多线程处理
-** 乱七八糟协议集合中的 socket 移到此处
-** 原始socket问题
-   1. 阻塞
-      阻塞影响了并发
-      方案:
-      1) select
-      2) poll
-      3) epoll
-   2. 粘包
-      方案:
-      1) 限制发送大小
-      2) 每个消息增加长度标识
-   3. 同步 异步
-      client端, 与server关系不大
-      同步: 等待结果返回; 返回之前无法操作
-      异步: 等待结果返回, 返回之前可以自由活动
-   4. 队列问题
-      方案:
-      多线程
-** I/O模型
-   [[https://mp.weixin.qq.com/s?src=11&timestamp=1565671711&ver=1787&signature=-mLkqQr803XDHb4f3aj9Lf1dJl8uVOV9fCCMMTzs0zSuOYH-qof7nsYCdgho1XLdPQYQP6QL5-WHtI6g-MD9xIsJcuxzdH*idpCZqtzl85r9D4C3XRRuOcCXqLKDzi-i&new=1][强烈建议阅读]]
-   (链接过期, 直接搜狗搜索epoll, "epoll本质"即是)
-   1. 阻塞式      
-   2. 非阻塞
-   3. 复合 -- select
-   4. 复合 -- poll
-   5. 复合 -- epoll (linux特有)
-*** epoll本身为我们处理了什么
-    1. 之前socket::recv()时, 导致我们的进程阻塞
-    2. 现在socket::recv()时, 使epoll阻塞; epoll中断时, 告之进程
-*** 有了epoll我们还需要处理什么
-    1. 创建epoll对象
-    2. 添加检视的fd对象 -- op, epoll_event 
-    3. 检测是否有中断, 然后处理
-* 多线程
-* curses使用
-  官方地址: http://www.tldp.org/HOWTO/NCURSES-Programming-HOWTO/windows.html
-* fstream类
-  文件操作类
-  流程函数
-  1. 构造fstream对象
-     fstream file;
-  2. 打开文件
-     file.open(file_name, mode)
-  3. 读文件
-     1) file >> string file_val
-	>> 遇到 空格 \n \r \t时候停止 -- 待确认TODONOW
-     2) file.get(char ch)
-	每次读取一个字符
-     3) getline(file, string &file_val)
-	读取一行, 遇到\n停止
-     4) file.read(char*buf, length)
-	在读指针位置读取length长度到buf中, 一般用于二进制文件
-  4. 写文件
-     1) file << file_val
-	待确认TODONOW
-     2) file.put(ch)
-	写入一个字符
-     3) file.write(char*buf, length)
-	在写指针位置写入length长度的buf, 一般用户二进制文件
-  5. 关闭文件
-     file.close
 
-     
-  读写指针函数
-  1. 获得读写指针位置
-     TODONOW 待确认
-  2. 设置读写指针函数
-     1) 读: seekg(postion) //postion绝对位置
-	一般用户文本文件
-     2) 读: seekg(offset, ios::beg|ios::end::ios::cur) //offset相对位置
-	一般用户二进制文件, 最好勿在文本文件中使用
-     3) 写: seekp(positon)
-	一般用户文本文件
-     4) 写: seekp(offset, ios::beg|ios::end|ios::cur)
-	一般用户二进制文件, 最好勿在文本文件中使用
-
-
-  fstream状态函数
-  1. if(file) 检验流是否有效
-     这个需要重点查看下, 什么时候流会失效
-     已知:
-     1) file.eof()时候, file则会变为无效
-  2. file.is_open() 流是否打开了文件
-  3. file.eof() 是否到了文件尾
-  4. file.clear()
-     TODONOW 这个也需要再看下
-     如果file.eof(), 调用clear可以重置标志;
-     重置标识后, file重新变为有效流
-* FILE
-  FILE是C的文件操作 -- C++的为fstream
-  问: 为什么有了fstream 还需要FILE?
-  答: 很多系统函数,都是对C的支持, 比如popen()函数等
-
-  1. fopen
-  2. fread
-  3. fwrite
-  4. fclose
-  
-* string类
-  1. 构造
-  2. 比较
-  3. 查找
-  4. 插入
-  5. 删除
-  6. 
-* C++ 与 shell的互相调用,传参,获取运行输出
