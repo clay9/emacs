@@ -609,3 +609,38 @@
    3. 配置文件读取
    4. log日志接口
    5. robot处理
+
+** frame框架 v0.2
+   1. log接口
+   2. cfg接口
+
+* task
+  1. org -- info -- hexo
+     完成第一阶段
+  2. [ ] sql -- 阅读 -- 脚本
+     完成第二阶段
+  3. [X] clog类 完成
+  4. [X] Emacs-server 与 Emacs-client
+     取消
+     1) 加密原因, 导致无效
+     2) 大部分是emacs server -> file -> emacs client, 实际没有必要
+  5. [X] 环境搭建 mac模拟linux环境
+     使用gitlab的 CI功能完成
+     1) epoll为linux 内核特有, 除非移植代码, 否则无法在mac上编译
+     2) mac上编辑, 在linux上编译, 运行
+
+     最终解决方案:
+     1) M pc 编辑, 并且提供git server库
+     2) C pc 编译, 拉取M pc上的git server库, 进行代码编译
+  6. [ ] v0.1 bug同步
+     1) 断线重连
+     2) 牌局未解散
+     3) 心跳    
+
+
+* 自我整理
+  1. mac  --> mac
+          -->
+        
+  2. PC A --> win10
+          --> centos
