@@ -1,58 +1,3 @@
-hi.el
-clear
-ls
-ls
-rm *.txt
-ls
-ls
-ls
-rm pocker_new/
-ls pocker_new/
-rm -rf pocker_new/
-cd ..
-ls
-rm -rf poker_new
-ls
-clearl
-clear
-ls
-cd pocker_new/
-cd ..
-rm -r pocker_new/
-ls
-clear
-ls
-cd poker/
-ls
-ls
-rm p_nnnnn/
-rm -r p_nnnnn/
-ls
-cd ..
-clear
-ls
-ls
-clear
-ls
-rm -r pocker_new/
-clear
-ls
-ls poker/
-ls
-ls
-ls
-rm -r pocker_new/
-ls
-ls poker/
-rm pocker_new/
-rm -r pocker_new/
-ls
-ls poker/
-ls pocker_new/
-ls
-clear
-ls
-ls poker/
 clear
 ls
 cd poker/
@@ -125,4 +70,59 @@ ls
 cd 3.7.1/
 ls
 $clisp
+exit
+ls
+cd ..
+ls
+cd ..
+cd database/
+ls -al
+clear
+
+ls
+cd ..
+clear
+
+ls
+cd server/
+clear
+
+ls
+cd frame/
+clear
+
+ls
+git log
+clear
+
+ls
+cd 服务器组件
+ls
+cd 协调服务器/
+ls
+rm Stdafx.cpp
+clear
+
+ls
+ls
+ls
+rm CorrespondServer.h
+ls
+clear
+
+ls
+mv Stdafx.h 
+exit
+ls
+mv DlgCorrespondServer.cpp
+rm DlgCorrespondServer.cpp
+rm DlgCorrespondServer.h 
+ls
+clear
+
+ls
+mv ServiceUnits.cpp GameCtrl.cpp
+mv ServiceUnits.h  GameCtrl.h
+clear
+
 exit
