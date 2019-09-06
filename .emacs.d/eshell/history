@@ -1,32 +1,5 @@
 
 ls
-rm -rf Res/
-rm -rf Release_Unicode/
-ls
-clear
-
-ls
-rm Resource.h 
-ls
-rm *.vcproj*
-ls
-rm *.vcxproj*
-ls
-rm *.aps
-rm *.rc
-clear
-
-ls
-cat KernelEngineD.def
-rm *.def
-clear
-
-ls
-cat Stdafx.cpp
-rm Stdafx.cpp
-clear
-
-ls
 clear
 
 jobs
@@ -125,4 +98,31 @@ cd -
 ls
 cd fun/
 mv init-org-mode-fun.el init-org-gtd-fun.el
+exit
+git status
+cd ..
+git status
+clear
+
+ls
+rm bookmarks 
+ls
+rm tramp 
+ls
+clear
+
+ls
+git status
+git add .
+git status
+git add ../GTD/
+git status
+git add -f ../GTD/inbox.org 
+git status
+git commit -m "2019.9.6"
+cler
+git log
+clear
+
+exit	modified:   ../GTD/task.org
 exit

@@ -23,6 +23,7 @@
 		(string= first "smartparens-mode")
 		(string= first "hs-minor-mode")
 		(string= first "helm-mode")
+		(string= first "yasnippet-mode")
 		)
 	(delete var minor-mode-alist))))
   (list minor-mode-alist))
@@ -51,15 +52,6 @@
 ;(set-frame-parameter (selected-frame) 'alpha (list 85 50))
 ;(add-to-list 'default-frame-alist (cons 'alpha (list 85 50)))
 
-;; window-color
-(set-foreground-color "white")
-(set-background-color "black")
-
-;; indent
-;(setq tab-always-indent 't)
-
-;; avoid noisy bell
-;;(setq visible-bell t)
 
 ;; ****************************************
 ;;     others

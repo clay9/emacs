@@ -12,7 +12,9 @@
    Change: cancel font face
    Origin: Returns the string containing the number of the current window"
   (let ((n (window-number)))
-    (if (= n 0) ""
+    (if (or (= n 0)
+	    (= n 1))
+	""
       (propertize
        (concat " [" (number-to-string n) "] ")))))
 

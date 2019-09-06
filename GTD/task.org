@@ -1,4 +1,6 @@
 #+STARTUP: overview
+* TODO [#B] org-info.js 如何导出所有org-file, 而不是一个个导出
+  - [2019-09-05 Thu] [capture]
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [refile]
@@ -11,8 +13,6 @@
     org 生成html时候的js, 可以在右侧生成导航
 * TODO emacs跳转到标准库头文件
   - [2019-08-13 Tue] [capture]
-* TODO org-info.js 如何导出所有org-file, 而不是一个个导出
-  - [2019-09-05 Thu] [capture]
 * PROJECT [#A] 企业形象搭建                                       :important:
 ** DONE 1. 钉钉
    使用功能:

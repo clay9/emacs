@@ -31,11 +31,4 @@
 (add-to-list 'company-backends 'company-c-headers)
 
 
-;; ****************************************************
-;; color && format
-;; ****************************************************
-(custom-set-faces
- '(company-tooltip ((t (:foreground "white")))))
-
-
 (provide 'init-company-mode)

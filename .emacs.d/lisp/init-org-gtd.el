@@ -1,8 +1,10 @@
 (require 'org-agenda)
 (require 'init-org-gtd-fun);; 加载重载函数
+(require 'org-bullets)
 
-;; 使用图标代替heading中的* 
-(org-bullets-mode t)
+;; 使用图标代替heading中的*
+(add-hook 'org-mode-hook 'org-bullets-mode)
+(setq org-bullets-mode t)
 ;; ****************************************************
 ;; files, todo, tag, priority
 ;; ****************************************************
@@ -183,30 +185,6 @@
 (setq org-modules
     (quote
      (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
-
-
-;; ****************************************************
-;; color && format
-;; ****************************************************
-(custom-set-faces
- '(org-agenda-date ((t (:inherit org-agenda-structure :foreground "white"))) t)
- '(org-agenda-date-today ((t (:foreground "white" :underline t :slant normal :weight normal))) t)
- '(org-agenda-date-weekend ((t (:foreground "white"))) t)
- '(org-time-grid ((t (:foreground "white"))))
- '(org-scheduled-previously ((t (:foreground "PaleGreen"))))
- '(org-habit-alert-face ((t (:background "orange" :foreground "black"))))
- '(org-list-dt ((t nil)))
- '(org-tag ((t nil)))
- '(org-agenda-structure ((t (:foreground "white"))))
- '(org-todo ((t (:foreground "Pink"))))
- '(org-warning ((t (:foreground "red")))))
-
-(custom-set-variables
- '(org-agenda-block-separator 42)
- '(org-agenda-menu-show-matcher nil)
- '(org-todo-keyword-faces (quote (("WAITING" . "tan1")
-				  ("TODO" . "brown1")))))
-
 
 ;; ****************************************************
 ;; 设置启动界面

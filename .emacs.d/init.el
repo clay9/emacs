@@ -15,6 +15,7 @@
 ;; *************************
 ;; Basic CFG
 ;; *************************
+(load-theme 'dracula t)         ;;主题加载
 (require 'init-frame)           ;;窗口初始化
 (require 'init-font)            ;;字体初始化
 (require 'init-linum-mode)      ;;行号显示
@@ -74,8 +75,8 @@
 ;; *************************
 ;; 特殊函数
 ;; *************************
-(require 'init-sync-fun)       ;;破解加密
-(require 'init-hexo-fun)       ;;org-info.js 与 hexo配合
+;(require 'init-sync-fun)       ;;破解加密
+;(require 'init-hexo-fun)       ;;org-info.js 与 hexo配合
 
 
 
@@ -87,71 +88,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-block-separator 42)
- '(org-agenda-menu-show-matcher nil)
- '(org-priority-faces
-   (quote
-    ((65 :background "red" :foreground "white" :weight bold)
-     (66 :background "DarkOrange" :foreground "white" :weight bold)
-     (67 :background "yellow" :foreground "DarkGreen" :weight bold)
-     (68 :background "DodgerBlue" :foreground "black" :weight bold))))
- '(org-todo-keyword-faces (quote (("WAITING" . "tan1") ("TODO" . "brown1"))))
  '(package-selected-packages
    (quote
-    (org-bullets window-number expand-region helm-gtags helm nyan-mode disable-mouse yasnippet org magit-annex buster-mode graphviz-dot-mode hydra company-c-headers symbol-overlay slime flycheck sr-speedbar company))))
+    (yasnippet window-number symbol-overlay sr-speedbar smartparens slime org-bullets org nyan-mode hydra helm-gtags graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip ((t (:foreground "white"))))
- '(flycheck-error-list-highlight ((t (:underline t))))
- '(flycheck-fringe-info ((t (:inherit success :underline t))))
- '(flycheck-fringe-warning ((t (:inherit error :underline t))))
- '(flycheck-warning ((t (:inherit error :underline t))))
- '(font-lock-builtin-face ((t (:foreground "dark green"))))
- '(font-lock-comment-face ((t (:foreground "ForestGreen"))))
- '(font-lock-constant-face ((t (:foreground "DarkOrange3"))))
- '(font-lock-doc-string-face ((t (:foreground "Red"))) t)
- '(font-lock-function-name-face ((t (:foreground "DarkOrange3"))))
- '(font-lock-keyword-face ((t (:foreground "dark cyan"))))
- '(font-lock-other-type-face ((t (:foreground "Blue"))) t)
- '(font-lock-string-face ((t (:foreground "dark grey"))))
- '(font-lock-type-face ((t (:foreground "dark cyan"))))
- '(font-lock-variable-name-face ((t (:foreground "White"))))
- '(font-lock-warning-face ((t (:foreground "Coral"))))
- '(helm-buffer-directory ((t (:background "black" :foreground "Sienna3"))))
- '(helm-buffer-file ((t (:background "black" :foreground "white"))))
- '(helm-buffer-saved-out ((t (:foreground "red"))))
- '(helm-candidate-number ((t (:background "grey75" :foreground "black"))))
- '(helm-ff-directory ((t (:background "black" :foreground "Sienna3"))))
- '(helm-ff-dotted-directory ((t (:background "black" :foreground "Sienna3"))))
- '(helm-ff-file ((t (:background "black" :foreground "white"))))
- '(helm-ff-invalid-symlink ((t (:foreground "green"))))
- '(helm-ff-symlink ((t (:foreground "green"))))
- '(helm-history-remote ((t (:foreground "red"))))
- '(helm-selection ((t (:underline "cyan"))))
- '(helm-source-header ((t (:background "black" :foreground "white" :weight bold :height 2 :family "微软雅黑"))))
- '(linum ((t (:inherit default))))
- '(org-agenda-date ((t (:inherit org-agenda-structure :foreground "white"))))
- '(org-agenda-date-today ((t (:foreground "white" :underline t :slant normal :weight normal))))
- '(org-agenda-date-weekend ((t (:foreground "white"))))
- '(org-agenda-structure ((t (:foreground "white"))))
- '(org-habit-alert-face ((t (:background "orange" :foreground "black"))))
- '(org-level-2 ((t (:foreground "cyan"))))
- '(org-link ((t (:foreground "cyan"))))
- '(org-list-dt ((t nil)))
- '(org-scheduled-previously ((t (:foreground "PaleGreen"))))
- '(org-table ((t (:foreground "cyan"))))
- '(org-tag ((t nil)))
- '(org-time-grid ((t (:foreground "white"))))
- '(org-todo ((t (:foreground "Pink"))))
- '(org-warning ((t (:foreground "red"))))
- '(sp-show-pair-enclosing ((t (:inherit nil :underline t))))
- '(sp-show-pair-match-face ((t (:inherit nil :foreground "orange" :underline t))))
- '(sp-show-pair-mismatch-face ((t (:inherit nil :foreground "red" :underline t))))
- '(speedbar-directory-face ((t (:foreground "Sienna3"))))
- '(speedbar-file-face ((t (:foreground "white"))))
- '(yas-field-highlight-face ((t (:foreground "green" :background "black" :inherit (quote region))))))
-(put 'narrow-to-region 'disabled nil)
-(put 'narrow-to-page 'disabled nil)
+ )

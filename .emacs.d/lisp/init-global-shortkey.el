@@ -16,17 +16,17 @@ _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
 "
  ("a" helm-occur)
  ("r" isearch-backward)
- ("s" isearch-forward))
+ ("s" isearch-forward)
+ ("t" replace-string))
 (global-set-key (kbd "C-s") 'hydra-search/body)
-(global-set-key (kbd "C-t") 'replace-string);;替换 TODONOW 扔到上面
 
 ;; region
 (require 'init-expand-region)
 (global-set-key (kbd "C-w") 'kill-region)         ;;kill
 (global-set-key (kbd "C-y") 'my-yank)             ;;yank && yank-pop
 
-(global-set-key (kbd "M-=") 'my-expand-region)    ;;putty不支持C--
-(global-set-key (kbd "M--") 'my-contract-region)  ;;putty不支持C-=
+(global-set-key (kbd "C-=") 'my-expand-region)    ;;putty不支持C--
+(global-set-key (kbd "C--") 'my-contract-region)  ;;putty不支持C-=
 
 
 ;; buffer, file
@@ -50,7 +50,7 @@ _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
 ;; ****************************************************
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c w") 'org-agenda-refile)
+;(global-set-key (kbd "C-c w") 'org-agenda-refile) 以后在C-c a i界面中处理refile
 
 
 ;; ****************************************************
