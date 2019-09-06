@@ -1,0 +1,7 @@
+* INFO [#D] org-refile 的 rfloc
+  - [2019-09-06 Fri] [capture]
+    I've wondered what RFLOC should look like before, but never investigated. Looking at the org source code, it should be a list consisting of:
+    heading
+    file
+    re (regular expression)
+    pos (position of target heading)

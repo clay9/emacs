@@ -1,7 +1,8 @@
 (require 'org-agenda)
 (require 'init-org-gtd-fun);; 加载重载函数
 
-
+;; 使用图标代替heading中的* 
+(org-bullets-mode t)
 ;; ****************************************************
 ;; files, todo, tag, priority
 ;; ****************************************************
@@ -10,7 +11,6 @@
       (list "~/GTD/inbox.org"
 	    "~/GTD/task.org"
 	    "~/GTD/archive.org"
-	    "~/GTD/trash.org"
 	    ;"~/GTD/habit.org" ;;暂时屏蔽
 	    ))
 
@@ -70,10 +70,10 @@
 (setq org-refile-use-outline-path 'file)
 (setq org-refile-targets
       '(("~/GTD/task.org" . (:maxlevel . 1))
-	("~/GTD/trash.org" . (:level . 1))
+	("~/GTD/archive.org" . (:level . 1))
 	))
 ;; archive
-(setq org-archive-location "~/GTD/trash.org::")
+(setq org-archive-location "~/GTD/archive.org::")
 
  ;; log note headings, olny effected when log set to note
 (setq org-log-note-headings '((done . "%d [done]")
@@ -96,10 +96,10 @@
 ;; schedule, deadline
 ;; ****************************************************
 ;; 显示标准: 月 -- 一览全局
-(setq org-agenda-span 'month)
+(setq org-agenda-span 'week)
 
 ;; 设置agenda中 时间样式表
-(setq org-agenda-time-grid '((daily today) (1100 1400 1800 2000) "..... " "----------------"))
+;(setq org-agenda-time-grid '((daily today) (1100 1400 1800 2000) "..... " "----------------"))
 
 ;; 设置Schedule 和 Deadline的提示样式
 (setq org-agenda-scheduled-leaders '("Start" "Start %2dd"));

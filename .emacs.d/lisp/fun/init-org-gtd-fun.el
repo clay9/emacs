@@ -8,7 +8,7 @@
   "Used in agenda-buffer by user;
    Function: refresh agenda bufffer"
   (interactive)
-;  (my-org-refile-all-todo)  ;;refile: inbox.org->task.org
+  (my-org-refile-all-todo)  ;;refile: inbox.org->task.org
   (my-org-archive-all-done) ;;archive: task.org->archive.org
   (my-org-sort-entries "inbox.org") ;;inbox排序
   (my-org-sort-entries "task.org") ;;task排序
@@ -20,13 +20,8 @@
      Function: refile all todo|project|waitting item;  inbox.org -> task.org"
   (let ((current_buffer (current-buffer)))
     (set-buffer "inbox.org")
-    ;(my-org-refile-all-todo-1)
-    (goto-char (point-min))
-    (org-refile 2)
+    (my-org-refile-all-todo-1)
     (set-buffer current_buffer)))
-
-(my-org-refile-all-todo)
-
 
 (defun my-org-refile-all-todo-1 ()
   "Used by my-org-refile-all-todo
@@ -42,7 +37,7 @@
     (when (or (org-match-line "* TODO")
 	      (org-match-line "* WAITING")
 	      (org-match-line "* PROJECT"))
-      (org-refile ))
+      (org-refile nil nil (list nil "~/GTD/task.org" nil nil)))
     (next-line)))
   
 (defun my-org-archive-all-done (&optional tag)
