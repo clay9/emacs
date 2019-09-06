@@ -1,7 +1,7 @@
 (require 'hydra) ;;使用hydra管理快捷键
 
 ;; 目录一栏
-;; 0.helm-mode 1.helm-gtags
+;; 0.helm-mode 1.helm
 ;; 2.symbol-overlay-mode  3.hs-hide-mode  4.speedbar  5.yasnippet
 ;; 6.artist-mode  7.org-agenda-mode 8.smartparens-mode
 ;; 9.compilation-mode 10.search (ocuur)
@@ -115,29 +115,31 @@ _i_: 增加   _v_: 查看
 (defhydra hydra-artist-mode (:color blue
                              :hint nil)
  "
-_o_: 起点,终点
-_t_: 文字
 _l_: 线      _p_: 直线
 _r_: 四边形  _s_: 正方形
 _e_: 椭圆    _c_: 圆
-_y_: 水雾
+_w_: cut     _y_: yank    _k_: kill
 "
- ("o" artist-key-set-point)
  ("l" artist-select-op-line)
  ("p" artist-select-op-poly-line)
  ("r" artist-select-op-rectangle)
  ("s" artist-select-op-square)
  ("e" artist-select-op-ellipse)
  ("c" artist-select-op-circle)
- ("y" artist-select-op-spray-can)
- ("t" artist-select-op-text-overwrite))
+; ("y" artist-select-op-spray-can) ;;水雾
+; ("t" artist-select-op-text-overwrite) ;;艺术字
+; ("T" artist-select-op-text-see-thru)  ;; 艺术字
+; ("f" artist-select-op-flood-fill) ;;洪水效果, 填充整个图
+ ("w" artist-select-op-cut-rectangle)
+ ("y" artist-select-op-paste)
+ ("k" artist-select-op-erase-rectangle))
 (define-key artist-mode-map (kbd "C-j") 'hydra-artist-mode/body)
 
 
 ;; ****************************************************
 ;; 7.org-agenda-mode
 ;; ****************************************************
-(require 'init-org-mode)
+(require 'init-org-gtd)
 ;; agenda buffer keys
 (define-key org-agenda-mode-map (kbd "m") 'org-agenda-bulk-mark)       ;mark
 (define-key org-agenda-mode-map (kbd "M") 'org-agenda-bulk-mark-all)   ;mark all

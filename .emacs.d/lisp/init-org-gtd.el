@@ -1,5 +1,5 @@
 (require 'org-agenda)
-(require 'init-org-mode-fun);; 加载重载函数
+(require 'init-org-gtd-fun);; 加载重载函数
 
 
 ;; ****************************************************
@@ -7,10 +7,12 @@
 ;; ****************************************************
 ;; agenda files
 (setq org-agenda-files
-      (list "~/GTD/task.org"
-	    ;"~/GTD/habit.org" ;;暂时屏蔽
+      (list "~/GTD/inbox.org"
+	    "~/GTD/task.org"
 	    "~/GTD/archive.org"
-	    "~/GTD/trash.org"))
+	    "~/GTD/trash.org"
+	    ;"~/GTD/habit.org" ;;暂时屏蔽
+	    ))
 
 ;; todo keywords
 (setq org-todo-keywords
@@ -20,14 +22,14 @@
 ;;
 (setq org-closed-keep-when-no-todo 'nil)
 
-;; tags; obsoleted; use priority instead
-(setq org-tag-alist
-      '((:startgroup . nil)
-	("urgent" . ?u)
-	(:endgroup . nil)
-	(:startgroup . nil)
-	("important" . ?i)
-	(:endgroup . nil)))
+;; tags; 
+;(setq org-tag-alist
+;      '((:startgroup . nil)
+;	("urgent" . ?u)
+;	(:endgroup . nil)
+;	(:startgroup . nil)
+;	("important" . ?i)
+;	(:endgroup . nil)))
 ;; ignore tags in agenda buffer
 (setq org-agenda-hide-tags-regexp
       "company\\|home\\|urgent\\|important\\|habit")
@@ -53,18 +55,23 @@
 ;; ****************************************************
  ;; capture
 (setq org-capture-templates
- '(("t" "todo" entry (file "~/GTD/task.org")
-    "* TODO %?\n  - %u [capture]\n %i\n")
-   ("w" "waiting" entry (file "~/GTD/task.org")
-    "* WAITING %?\n  - %u [capture]\n %i\n")
-   ("p" "project" entry (file "~/GTD/task.org")
-    "* PROJECT %?\n  - %u [capture]\n %i\n")
-    ))
+      '(("i" "info" entry (file "~/GTD/inbox.org")
+	 "* INFO [#D] %?\n  - %u [capture]\n %i\n")
+	("t" "todo" entry (file "~/GTD/inbox.org")
+	 "* TODO [#C] %?\n  - %u [capture]\n %i\n")
+	("w" "waiting" entry (file "~/GTD/inbox.org")
+	 "* WAITING [#C] %?\n  - %u [capture]\n %i\n")
+	("p" "project" entry (file "~/GTD/inbox.org")
+	 "* PROJECT [#B] %?\n  - %u [capture]\n %i\n")
+	))
 
- ;; refile
+;; refile
+;; make file as target refiles
+(setq org-refile-use-outline-path 'file)
 (setq org-refile-targets
-      '(;("~/GTD/task.org" :maxlevel . 1)
-	("~/GTD/trash.org" :level . 1)))
+      '(("~/GTD/task.org" . (:maxlevel . 1))
+	("~/GTD/trash.org" . (:level . 1))
+	))
 ;; archive
 (setq org-archive-location "~/GTD/trash.org::")
 
@@ -88,8 +95,8 @@
 ;; ****************************************************
 ;; schedule, deadline
 ;; ****************************************************
-;; 显示标准: 天
-(setq org-agenda-span 'day)
+;; 显示标准: 月 -- 一览全局
+(setq org-agenda-span 'month)
 
 ;; 设置agenda中 时间样式表
 (setq org-agenda-time-grid '((daily today) (1100 1400 1800 2000) "..... " "----------------"))
@@ -103,7 +110,7 @@
 ;; agenda buffers
 ;; ****************************************************
 ;; set which itmes can show
-;; ignore todo
+;; ignore items in todo view
 (setq org-agenda-todo-ignore-scheduled 'all)
 (setq org-agenda-todo-ignore-deadlines 'all)
 (setq org-agenda-todo-ignore-timestamp 'all)
@@ -149,7 +156,15 @@
 	   '(priority-down alpha-up effort-up))
 	  (org-agenda-prefix-format "%(get_item_num)")
 	  (org-agenda-files '("~/GTD/task.org"))
-	  (org-agenda-todo-keyword-format "")))))
+	  (org-agenda-todo-keyword-format "")))
+	("i" "inbox"
+	 ((search "INFO"
+		((org-agenda-overriding-header "Inbox"))))
+	 ((local_temp (funcall set_org_buffer_no 3))
+	  (org-agenda-sorting-strategy
+	   '(priority-down alpha-up effort-up))
+	  (org-agenda-prefix-format "%(get_item_num)")
+	  (org-agenda-files '("~/GTD/inbox.org"))))))	
 
 
 ;; ****************************************************
@@ -202,4 +217,4 @@
 (delete-other-windows)
 
 
-(provide 'init-org-mode)
+(provide 'init-org-gtd)

@@ -6,6 +6,7 @@
 ;; *************************
 (package-initialize)
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/fun" user-emacs-directory))
 
 (require 'init-package)         ;;远端包库
 (require 'init-site-lisp)       ;;本地包库
@@ -36,7 +37,7 @@
 ;; *************************
 ;; 日程排表 && 知识管理 (GTD)
 ;; *************************
-(require 'init-org-mode)        ;;所想所得(major)
+(require 'init-org-gtd)         ;;GTD
 (require 'init-calendar)        ;;日历
 
 
@@ -68,6 +69,14 @@
 ;; Other
 ;; *************************
 (require 'init-artist-mode)    ;;简易绘图
+
+
+;; *************************
+;; 特殊函数
+;; *************************
+(require 'init-sync-fun)       ;;破解加密
+(require 'init-hexo-fun)       ;;org-info.js 与 hexo配合
+
 
 
 ;; *************************

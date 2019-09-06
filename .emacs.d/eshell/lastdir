@@ -1,7 +1,6 @@
 /Users/clay/ddz/游戏服务器
 /Users/clay/ddz
 /Users/clay/ddz/new
-/Users/clay/.emacs.d/lisp
 /Users/clay/.emacs.d
 /Users/clay/poker/new
 ~/poker
@@ -14,7 +13,6 @@
 /usr/local/Cellar
 /usr/local/Cellar/protobuf
 /usr/local/Cellar/protobuf/3.7.1
-/Users/clay/.emacs.d/lisp
 /Users/clay/code/database/database
 /Users/clay/code/database
 /Users/clay/code
@@ -22,3 +20,11 @@
 /Users/clay/code/server/frame
 /Users/clay/code/server/frame/服务器组件
 /Users/clay/code/server/frame/服务器组件/协调服务器
+/Users/clay/code/server/kernel/全局定义
+/Users/clay/code/server/kernel
+/Users/clay/code/server/kernel/内核引擎
+/Users/clay/GTD
+/Users/clay/hexo/post/emacs
+/Users/clay/code/company
+/Users/clay/.emacs.d/lisp
+/Users/clay/.emacs.d/lisp/fun

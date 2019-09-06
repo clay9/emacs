@@ -8,15 +8,46 @@
   "Used in agenda-buffer by user;
    Function: refresh agenda bufffer"
   (interactive)
-  (my-org-archive-all-done) ;;archive
-  (my-org-sort-entries) ;;排序
+;  (my-org-refile-all-todo)  ;;refile: inbox.org->task.org
+  (my-org-archive-all-done) ;;archive: task.org->archive.org
+  (my-org-sort-entries "inbox.org") ;;inbox排序
+  (my-org-sort-entries "task.org") ;;task排序
   (org-agenda-redo t) ;;call origin redo
-  (org-agenda-to-appt)
-  )
+  (org-agenda-to-appt))
 
+(defun my-org-refile-all-todo ()
+    "Used by org-agenda-redo
+     Function: refile all todo|project|waitting item;  inbox.org -> task.org"
+  (let ((current_buffer (current-buffer)))
+    (set-buffer "inbox.org")
+    ;(my-org-refile-all-todo-1)
+    (goto-char (point-min))
+    (org-refile 2)
+    (set-buffer current_buffer)))
+
+(my-org-refile-all-todo)
+
+
+(defun my-org-refile-all-todo-1 ()
+  "Used by my-org-refile-all-todo
+   Fucntion:"
+  ;; hide org-file all headings 
+  (goto-char (point-min))
+  (org-show-all '(headings))
+  (org-shifttab)
+  ;; goto first line
+  (goto-char (point-min))
+  ;; lootp: next line 
+  (while (/= (point) (point-max))      
+    (when (or (org-match-line "* TODO")
+	      (org-match-line "* WAITING")
+	      (org-match-line "* PROJECT"))
+      (org-refile ))
+    (next-line)))
+  
 (defun my-org-archive-all-done (&optional tag)
-  "Used by org-agenda-refo
-  Function: archive all done item -> task.org"
+  "Used by org-agenda-redo
+  Function: archive all done item;  task.org -> trash.org"
   (let ((current_buffer (current-buffer)))
     (set-buffer "task.org")
     (my-org-archive-all-matches
@@ -89,7 +120,10 @@
      ((= my-org-agenda-buffer-no 1)
       (org-agenda nil "n"))
      ((= my-org-agenda-buffer-no 2)
-      (org-agenda nil "a")))
+      (org-agenda nil "i"))
+     ((= my-org-agenda-buffer-no 3)
+      (org-agenda nil "a"))     
+     )
     (org-agenda-next-item 1)
     (widen)
     (org-agenda-finalize)
@@ -104,10 +138,13 @@
     (user-error "Can only append from within agenda buffer"))
   (let ((org-agenda-multi nil))
     (cond
+     ((= my-org-agenda-buffer-no 3)
+      (org-agenda nil "n"))     
      ((= my-org-agenda-buffer-no 2)
       (org-agenda nil "a"))
      ((= my-org-agenda-buffer-no 1)
-      (org-agenda nil "n")))
+      (org-agenda nil "i"))
+     )
     (org-agenda-next-item 1)
     (widen)
     (org-agenda-finalize)
@@ -137,7 +174,7 @@
 ;; ****************************************************
 ;; 对agenda-file 进行排序
 ;; ****************************************************
-(defun my-org-sort-entries ()
+(defun my-org-sort-entries (buffer-name)
   "Used by my-org-agenda-redo
    Function: sort agenda entries"
   (let (start  ;; beg of first heading 
@@ -150,7 +187,7 @@
 	(current_buffer (current-buffer)))
     
     ;; 设置buffer
-    (set-buffer "task.org")
+    (set-buffer buffer-name)
     
     ;; 找到start
     (goto-char (point-min))
@@ -376,4 +413,4 @@ _s_: schedule    _d_ : deadline    _S_: Scatter
 		 (if (not org-agenda-persistent-marks) "" " (kept marked)"))))))
 
 
-(provide 'init-org-mode-fun)
+(provide 'init-org-gtd-fun)

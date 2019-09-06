@@ -1,91 +1,4 @@
 #+STARTUP: overview
-* ***********软件***************
-* Emacs
-** org       -mode
-*** 特性: MobileOrg
-    方案流程
-     1. PC端配置MobileOrg
-       	具体见.emacs
-     2. 寻找WebDAV server
-       	现在使用的是坚果云
-     3. curl同步PC端到webDAV server
-       	这一块非常纠结
-       	起初使用的ssh的scp,发现scp貌似不支持https?
-       	后来使用了curl, 结果发现curl不支持目录的上传.....
-       	导致.emacs中mobileorg的配置十分难看, 有机会应该改掉这块!
-       	方法有2:
-       	1) 换一种工具取代curl  -- 更倾向于这一种方式
-       	2) 使用regular expression -- 貌似curl支持的不好
-
-
-    总览图
-
-     +-----------+ push	       	+--------------+
-     | PC端      |-------------->| WwbDAV server|
-     |           |<--------------|              |
-     +-----------+ pull	       	+--------------+
-       	       	       	       	       | 	  ^ |
-       	       	       	       	       | 	    |
-       	       	       	       	       | 	    |
-				       v	  |
-                                 +--------------+
- 			       	 | Mobile       |
-                                 |              |
-                                 +--------------+
-
-*** ************************************************************
-*** 语法: time-stamp选择
-    添加time-stamp时, 不要在calendar中移动,效率太低
-    使用以下2种方式即可:
-    1. 使用简约的时间格式
-       17-1-1  => 2017-01-01
-    2. 使用时间间隔
-       now = [2016-12-28 Wed]
-       +1d  => 2016-12-29
-
-    具体见(dir) - Org mode - Dates and times - Creating timestamps - The date/time promt
-
-*** 语法: 时间repeate
-    org-mode repeate格式
-    +   .+   ++区别
-
-    1. "+"
-       backlog 可以积压的item
-    2. ".+"
-       specific date, no backlog 在特定日期完成的item
-       ep: call mother
-       每周六给mother打电话, 不可积压(或者说现在的操作不会影响之前)
-    3. "++"
-       specific interval, no backlog 在特定间隔完成的item
-       ep: change batteries
-       每隔1月更换电池, 不可积压
-*** 语法: table计算
-    @ 表示行； $表示列
-    < 表示第一;   > 表示最后；
-
-    例子:
-    @<  第一行
-    $>  最后一列
-    @<< 第二行(更建议使用 @2)
-
-    对table使用C-c} 可以查看行列值
-    
-* GNU
-** gcc
-    1. 查看搜索路径
-       g++ | gcc -print-serach-dirs (可通过--help查看)
-    2. 设定搜索路径
-       gcc  C_INCLUDE_PATH
-       g++  CPLUS_INCLUDE_PATH
-
-       ep: export CPLUS_INCLUDE_PATH=/usr/lib/
-       _扩展1_
-       1. 输出 echo $C_INCLUDE_PATH
-       2. 调用 $C_INCLUDE_PATH
-       3. 赋值 export C_INCLUDE_PATH
-       4. 删除变量 unset C_INCLUDE_PATH
-       5. C++调用 string strValue(getenv("C_INCLUDE_PATH")
-       
 * ***********待归档*************
 * 项目应用
 ** Java的一些基础
@@ -213,6 +126,4 @@
    3. 动态参数的修改
       1) web后台的配置  1处
 	 1) URL中需要配置 为 XXX?key1=:key1&key2=:key2
-      2) 跳转界面代码中的解析 1处
-	 
-
+      2) 跳转界面代码中的解析 1

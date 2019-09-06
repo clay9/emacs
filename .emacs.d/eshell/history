@@ -1,128 +1,128 @@
-clear
+
 ls
-cd poker/
-ls
-cd ..
-clear
-ls
-ls poker/
-clear
-ls
-ls poker/
-clear
-ls
-ls poker/
-ls
+rm -rf Res/
+rm -rf Release_Unicode/
 ls
 clear
+
 ls
-ls poker/
+rm Resource.h 
+ls
+rm *.vcproj*
+ls
+rm *.vcxproj*
+ls
+rm *.aps
+rm *.rc
 clear
+
 ls
-cd poker/
-ls
-ls
+cat KernelEngineD.def
+rm *.def
 clear
+
 ls
-ls new/
-cd ..
-clear
-ls
-ls pocker_new/
-clear
-ls
-ls poker/
-clear
-ls pocker_new/
-ls -al pocker_new/
-rm pocker_new/
-exit
-ls
-cd ..
-ls
-cd pocker_new/
-ls
-ls
-clear
-ls -al
-clear
-ls
-clearls
-cd .git
-ls
-ls
-ls
-cd ..
-ls
-cd ..
-cd poker/
-clear
-ls
-cd .git/
-ls
-cd /usr/local/
-ls
-cd Cellar/
-ls
-cd protobuf/
-pwd
-ls
-cd 3.7.1/
-ls
-$clisp
-exit
-ls
-cd ..
-ls
-cd ..
-cd database/
-ls -al
-clear
-
-ls
-cd ..
-clear
-
-ls
-cd server/
-clear
-
-ls
-cd frame/
-clear
-
-ls
-git log
-clear
-
-ls
-cd 服务器组件
-ls
-cd 协调服务器/
-ls
+cat Stdafx.cpp
 rm Stdafx.cpp
 clear
+
+ls
+clear
+
+jobs
+ls
+mv TraceService.h log.h
+mv TraceService.cpp log.cpp
+clear
+
+ls
+clear
+
+ls
+g+ -std=c++11 log.cpp 
+g++ -std=c++11 log.cpp 
+g++ -std=c++11 log.cpp 
+g++ -std=c++11 log.cpp 
+g++ -std=c++11 log.cpp 
+g++ -std=c++11 log.cpp 
+g++ -std=c++11 log.cpp 
+ls
+./a.out 
+clear
+
+ls
+g++ -std=c++11 log.cpp 
+ls
+./a.out 
+g++ -std=c++11 log.cpp 
+./a.out 
+ls
+ls
+clear
+
+ls
+sudo find / -name "test.ha"
+g++ -std=c++11 log.cpp 
+ls
+ls -al
+./a.out
+g++ -std=c++11 log.cpp 
+./a.out 
+g++ -std=c++11 log.cpp 
+clear
 
+./a.out 
+
+g++ -std=c++11 log.cpp 
+./a.out 
 ls
+./a.out 
 ls
+date
+./a.out 
+g++ -std=c++11 log.cpp 
+./a.out 
+g++ -std=c++11 log.cpp 
+clear
+
+./a.out 
 ls
-rm CorrespondServer.h
+g++ -std=c++11 log.cpp 
+ls -al
+./a.out 
+ls -al
+./a.out 
+g++ -std=c++11 log.cpp 
+./a.out 
 ls
+cat test.ha2019-9-3\ 20:53:51.log
+./a.out 
+ls
+cat test.ha2019-9-3\ 20:54:15.log
 clear
 
 ls
-mv Stdafx.h 
+g++ -std=c++11 log.cpp
+g++ -std=c++11 log.cpp
+g++ -std=c++11 log.cpp
+clear
+
+ls
+./a.out 
+ls
+cat test.ha2019-9-3\ 20:59:13.log
+cd ../hexo/post/emacs/
+ls
+mv emacs_org-mode.org emacs_GTD.org
+ls
 exit
 ls
-mv DlgCorrespondServer.cpp
-rm DlgCorrespondServer.cpp
-rm DlgCorrespondServer.h 
+cd ~/.emacs.d/lisp/
 ls
-clear
-
+mv init-org-mode.el  init-org-gtd.el
+exit
+cd -
 ls
-mv ServiceUnits.cpp GameCtrl.cpp
-mv ServiceUnits.h  GameCtrl.h
-clear
-
+cd fun/
+mv init-org-mode-fun.el init-org-gtd-fun.el
 exit

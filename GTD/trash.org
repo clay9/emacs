@@ -42,3 +42,22 @@
   - [2019-08-19 Mon] [capture]
     1. 熟悉node.js
     2. npm语法问题    
+
+* task
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-05 Thu 12:36
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :END:
+  1. org -- info -- hexo
+  2. wireshark
+  3. [X] v0.1 bug同步
+     1) 断线重连
+     2) 牌局未解散
+     3) 心跳
+  4. [X] frame与sub断线重连接口
+     1) 函数
+     2) sub无法通知client  玩家具体数据, 比如id,头像等信息
+  5. [X] 战绩方案实施
+  9. [X] frame 与 sub设计文档
+     info-xhtml 发布到web 阅读
