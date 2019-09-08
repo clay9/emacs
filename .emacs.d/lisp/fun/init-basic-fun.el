@@ -1,9 +1,11 @@
 ;; ****************************************************
 ;; compile  el->elc
 ;; ****************************************************
-(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+(defun my-recompile-all-el ()
+  (interactive)
+  (byte-recompile-directory (expand-file-name "~/.emacs.d") 0))
 
-
+(my-recompile-all-el)
 ;; ****************************************************
 ;; yank
 ;; ****************************************************

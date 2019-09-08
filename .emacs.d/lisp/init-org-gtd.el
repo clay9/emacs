@@ -1,7 +1,6 @@
 (require 'org-agenda)
 (require 'init-org-gtd-fun);; 加载重载函数
 
-
 ;; ****************************************************
 ;; files, todo, tag, priority
 ;; ****************************************************
@@ -183,13 +182,6 @@
     (quote
      (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
 
-;; ****************************************************
-;; 设置启动界面
-;; ****************************************************
-(setq org-agenda-prefix-format "%?-7t%-12:s ")
-(org-agenda-list)
-(org-agenda-next-item 1)
-(delete-other-windows)
 
 
 (provide 'init-org-gtd)
