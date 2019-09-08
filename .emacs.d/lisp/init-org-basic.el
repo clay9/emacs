@@ -1,11 +1,13 @@
 (require 'org-bullets)
 (require 'ox-publish)
+(require 'ox-html)
 
 ;; 使用图标代替heading中的*
 (add-hook 'org-mode-hook 'org-bullets-mode)
 (setq org-bullets-mode t)
 
-
+;; remove validate link
+(setq org-html-validation-link nil)
 ;; alway publish all
 (setq org-publish-use-timestamps-flag nil)
 ;; publish
