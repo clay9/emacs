@@ -38,6 +38,7 @@
 ;; *************************
 ;; 日程排表 && 知识管理 (GTD)
 ;; *************************
+(require 'init-org-basic)       ;;org
 (require 'init-org-gtd)         ;;GTD
 (require 'init-calendar)        ;;日历
 
@@ -76,8 +77,6 @@
 ;; 特殊函数
 ;; *************************
 ;(require 'init-sync-fun)       ;;破解加密
-;(require 'init-hexo-fun)       ;;org-info.js 与 hexo配合
-
 
 
 ;; *************************

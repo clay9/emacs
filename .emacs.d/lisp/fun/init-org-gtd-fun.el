@@ -38,7 +38,7 @@
 	      (org-match-line "* WAITING")
 	      (org-match-line "* PROJECT"))
       (org-refile nil nil (list nil "~/GTD/task.org" nil nil)))
-    (next-line)))
+    (forward-line)))
   
 (defun my-org-archive-all-done (&optional tag)
   "Used by org-agenda-redo

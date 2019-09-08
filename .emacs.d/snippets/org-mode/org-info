@@ -3,7 +3,7 @@
 # key: info
 # --
 #+TITLE: ${1}
-#+INFOJS_OPT: path:${2}
+#+INFOJS_OPT: path:../script/org-info.js
 #+INFOJS_OPT: home:http://wcq.fun
-#+INFOJS_OPT: up:index.html${3}
-#+INFOJS_OPT: view:info toc:t ltoc:t mouse:underline buttons:nil
+#+INFOJS_OPT: toc:t ltoc:t
+#+INFOJS_OPT: view:info mouse:underline buttons:nil

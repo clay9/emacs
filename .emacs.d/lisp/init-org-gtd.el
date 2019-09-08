@@ -1,10 +1,7 @@
 (require 'org-agenda)
 (require 'init-org-gtd-fun);; 加载重载函数
-(require 'org-bullets)
 
-;; 使用图标代替heading中的*
-(add-hook 'org-mode-hook 'org-bullets-mode)
-(setq org-bullets-mode t)
+
 ;; ****************************************************
 ;; files, todo, tag, priority
 ;; ****************************************************

@@ -20,7 +20,7 @@
                                                     ("* ||\n[i]" "RET")))
 
 ;; set pairs for lisp-mode
-(sp-with-modes sp--lisp-modes
+(sp-with-modes sp-lisp-modes
   (sp-local-pair "(" nil
                  :wrap "C-("
                  :pre-handlers '(my-add-space-before-sexp-insertion)

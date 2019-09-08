@@ -2,7 +2,8 @@
 ;;copyed from Purcell
 
 ;;; Set load path
-(eval-when-compile (require 'cl))
+(require 'cl)
+;(eval-when-compile (require 'cl))
 
 (defun sanityinc/add-subdirs-to-load-path (parent-dir)
   "Adds every non-hidden subdir of PARENT-DIR to `load-path'."
