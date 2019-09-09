@@ -1,103 +1,3 @@
-clear
-
-ls
-git status
-git add .
-git status
-git add ../GTD/
-git status
-git add -f ../GTD/inbox.org 
-git status
-git commit -m "2019.9.6"
-cler
-git log
-clear
-
-exit	modified:   ../GTD/task.org
-exit
-ls
-clear
-
-ls
-cd hexo/post/
-clear
-
-ls
-cd ..
-ls
-cd blog/source/
-ls
-clear
-
-ls
-cd _posts/
-ls
-cd emacs/
-ls
-mv emacs_IDE.org emacs_IDE/ ../../org-info/
-ls
-cd ../../org-info/
-ls
-clear
-
-ls
-rm 01.html
-rm 01.html\~
-rm 01.org 
-clear
-
-ls
-rm test.org test.html\~ test.html 
-clear
-
-ls
-rm -rf sub/
-clear
-
-ls
-clear
-
-ls
-exit]
-exit
-ls
-rm title 
-exit
-ls
-rm index.org
-mv index_backup.org  index.org
-clear
-
-ls
-cat index.org 
-exit
-ls
-chmod 775 post-commit
-ls
-exit
-ls
-rm hexoc.sh
-ls
-clear
-
-ls
-exit
-ls
-clear
-
-clear
-
-ls
-cd ..
-ls
-ls |grep fun
-exit
-ls
-rm init-org-basic.elc
-exit
-ls
-cp company.org  ~/hexo/org-info/
-clear
 
 hexog.sh
 exit
@@ -125,4 +25,104 @@ rm hexod.sh
 clear
 
 ls
+exit
+ssh
+clear
+
+ls
+emacs
+clear
+
+exit
+ls
+cd /ssh:clay@192.168.0.97:~
+ls
+clear
+
+ls
+clear
+
+ls
+cd code/
+clear
+
+ls
+cd server/
+ls
+cd SystemModule/
+ls
+cd BaseCode/
+ls
+cat CDateTime.cpp
+clear
+
+ls
+cd ..
+ls
+cd bin/Game/
+ls
+s
+clear
+
+ls
+clear
+
+ls
+cd config/
+ls
+cat GameServer.cfg 
+clea
+clear
+
+uname -a
+clear
+
+emacs
+clear
+
+ls
+clear
+
+cd ..
+clear
+
+ls
+cd ..
+ls
+cd ..
+ls
+cd BaseCode/
+ls
+vim Acceptor.cpp
+clear
+
+jobs
+clear
+
+clear
+
+uname -a
+jobs
+clear
+
+jobs
+clear
+
+jobs
+clear
+
+bash
+ls
+uname -a
+ssh
+clear
+
+uname
+uname -a
+which bash
+bash
+clear
+
+ls
+exit
 exit

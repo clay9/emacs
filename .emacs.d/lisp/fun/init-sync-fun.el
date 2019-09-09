@@ -47,7 +47,7 @@
 
 (defun my-copy ()
   (interactive)
-  (copy-file-from-buffer "~/code/Server" "~/code/new"))
+  (copy-file-from-buffer "~/code/server" "~/code/new"))
 
 (defun my-encode ()
   (interactive)

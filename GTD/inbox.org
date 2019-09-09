@@ -5,3 +5,21 @@
     file
     re (regular expression)
     pos (position of target heading)
+* INFO [#D] emacs奇妙
+  - [2019-09-09 Mon] [capture]
+    本来是想把emacs当做ssh client, 以此来获取remote PC上的bash shell
+    
+    但其实完全没必要这么做
+    1. emacs中的C-x C-f中直接
+       #+BEGIN_EXAMPLE
+       /ssh:user@host:path
+       #+END_EXAMPLE
+       就可以直接操作remote file
+       如果远端文件是加密过的, 需要解密的时候, 
+       则还是获得remote bash, 通过remote bash来调用应用程序比较方便
+
+    2. 更神奇的是通过eshell
+       #+BEGIN_EXAMPLE
+       cd /ssh:user@host:path 
+       #+END_EXAMPLE
+       直接就获得remote bash shell了!!!!!!!!!!
