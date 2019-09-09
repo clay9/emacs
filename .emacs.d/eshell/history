@@ -1,128 +1,128 @@
-./psserver.sh 
-ps aux |grep Server
-clar
-clear
-
-jobs
+emacs -Q --script sync.sh 
+emacs --script sync.sh 
 ls
-cd ~/bin
-clear
-
+scp one_key_for_server_frame.sh clay@192.168.0.97:~/bin
+source remote_sync.sh 
 ls
 clear
 
 ls
-ls
-cd ../code/
-ls
-claer
-cd ~
-ls
-cd bin/
-ls
-ls
-cd ..
-ls
-ls Desktop/
-ls GTD/
-git status
-clear
-
-git status
-scp
-ls
-scp clay@192.168.0.97:~/linux .
-ls
-rm test 
-ls
-rm linux 
-clear
-
-ls
-fg
-exit
-scp  -h
-scp clay:yezi@192.168.0.97:~/linux .
-clear
-
-jobs
-clear
-
-exit
-ls
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
+pwd
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
+which echo
 clear
 
 ls
-ssh -h
+which emacs
+ls
+rm remote_sync.sh 
+ls
+source sync.sh 
+pwd
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
+ls
+which cd
 cd /ssh:clay@192.168.0.97:~
-ls
-uname -i
-uname -a
-ls
-which bash
 exit
+cd ~/bin/
+source sync.sh 
 ls
-sync.sh
-./sync.sh 
+ls
+source sync.sh 
+ls
+which mkdir
+ls
+source sync.sh 
+ls
+which emacs
+ls
+cd ~
 clear
 
-./sync.sh 
-./sync.sh 
-./sync.sh 
-./sync.sh 
-rm -rf clay@192.168.0.97:~/code/temp
-rm -r clay@192.168.0.97:~/code/temp
-./sync.sh 
-rm -r /ssh:clay@192.168.0.97:~/code/temp
-./sync.sh 
-which bas
-which bash
-./sync.sh 
-./sync.sh 
-cd /ssh:clay@192.168.0.97:~/
-emacs -u clay --script ~/.emacs.d/lisp/fun/init-sync-fun.el
-emacs  --script ~/.emacs.d/lisp/fun/init-sync-fun.el
-emacs -nw
-emacs
+souce .bash_profile
+source .bash_profile
+source .bash_profile
+source .bash_profile
+source .bash_profile
 clear
 
 ls
-jobs
+clear
+
+ls
+which emacs
 cd bin/
+source sync.sh 
+ls
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
+emacs --version
+source sync.sh 
+emacs --script ~/.emacs.d/lisp/fun/init-sync-fun.el
+source sync.sh 
+source sync.sh 
+emacs --help
+source sync.sh 
+source sync.sh 
+emacs --help
+--no-window-system, -nw     do not communicate with X, ignoring $DISPLAY
+source sync.sh 
+--no-window-system, -nw     do not communicate with X, ignoring $DISPLAY
+source sync.sh 
+souce sync.sh 
+source sync.sh 
+source sync.sh 
 clear
 
 ls
-touch new
+emacs --help
+used for debugging Emacs
+source sync.sh 
+source sync.sh 
+emacs --help
+--border-color, -bd COLOR       main border color
+source sync.sh 
+source sync.sh 
+source sync.sh 
 ls
+cd /ssh:clay@192.168.0.97:~/code
 ls
-chmod 775 new 
+cd server/
 ls
-chmod 775 new
+cd SystemModule/
+cd bin/
 ls
+cd Lobby/
 ls
-echo "echo 	haha" >> new
+./GateServer
+ps 
+ps aux |grep Gate
+./GateServer
 ls
-./new 
+ckear
 clear
 
-./new 
-clear
-
 ls
-cp ~/.emacs.d/lisp/fun/init-sync-fun.el .
-ls
-mkdir emacs_sync
-ls
-mv init-sync-fun.el emacs_sync/
-ls
-mv new emacs_sync.sh
-ls
-clear
-
-ls
-./emacs_sync.sh 
-clear
-
-clear
-
 exit
+cd ~/bin
+ls
+source sync.sh 
+source sync.sh 
+source sync.sh 
+source sync.sh 
