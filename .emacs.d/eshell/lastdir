@@ -1,6 +1,3 @@
-/usr/local
-/usr/local/Cellar
-/usr/local/Cellar/protobuf
 /usr/local/Cellar/protobuf/3.7.1
 /Users/clay/code/database/database
 /Users/clay/code/database
@@ -30,3 +27,6 @@
 /Users/clay/bin
 /Users/clay/.emacs.d/lisp/fun
 /Users/clay/.emacs.d/lisp
+/Users/clay/code/company
+/Users/clay/.emacs.d/lisp
+/Users/clay/bin

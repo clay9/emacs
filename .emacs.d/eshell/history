@@ -1,35 +1,4 @@
 clear
-
-ls
-./a.out 
-ls
-cat test.ha2019-9-3\ 20:59:13.log
-cd ../hexo/post/emacs/
-ls
-mv emacs_org-mode.org emacs_GTD.org
-ls
-exit
-ls
-cd ~/.emacs.d/lisp/
-ls
-mv init-org-mode.el  init-org-gtd.el
-exit
-cd -
-ls
-cd fun/
-mv init-org-mode-fun.el init-org-gtd-fun.el
-exit
-git status
-cd ..
-git status
-clear
-
-ls
-rm bookmarks 
-ls
-rm tramp 
-ls
-clear
 
 ls
 git status
@@ -125,4 +94,35 @@ ls |grep fun
 exit
 ls
 rm init-org-basic.elc
+exit
+ls
+cp company.org  ~/hexo/org-info/
+clear
+
+hexog.sh
+exit
+ls
+exit
+ls
+rm company.html
+exit
+ls
+rm test.org 
+ls
+exit
+ls
+rm hexod.sh 
+ls
+ls |grep hexo
+exit
+ls
+clear
+
+clear
+
+ls
+rm hexod.sh
+clear
+
+ls
 exit

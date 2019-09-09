@@ -1,5 +1,6 @@
 (require 'ox-publish)
 (require 'ox-html)
+(require 'ox)
 (require 'org-bullets)
 
 ;; 使用图标代替heading中的*
@@ -10,6 +11,8 @@
 (setq org-ellipsis "⤵")
 
 
+;; when export, do not raise an error on broken links -- 对publish无效
+(setq org-export-with-broken-links t)
 ;; remove validate link
 (setq org-html-validation-link nil)
 ;; alway publish all
@@ -18,9 +21,10 @@
 (setq org-publish-project-alist
       '(("root"
          :base-directory "~/hexo/org-info"
-         :publishing-directory "~/hexo/blog/public/org-info"
+         :publishing-directory "~/hexo/blog/public/org-info"	 
          :publishing-function org-html-publish-to-html
          :with-toc t
+	 :with-broken-links t  ;没有效果
 	 :html-link-home "http://wcq.fun"
 	 :html-use-infojs t)
         ("script"
@@ -35,6 +39,13 @@
 	 :with-toc t
 	 :html-link-home "http://wcq.fun"
 	 :html-link-up "http://wcq.fun/org-info/emacs_IDE.html"
+	 :html-use-infojs t)
+	("company"
+	 :base-directory "~/code/company/"
+         :publishing-directory "~/hexo/blog/public/org-info"
+         :publishing-function org-html-publish-to-html
+         :with-toc t
+	 :html-link-home "http://wcq.fun"
 	 :html-use-infojs t)
         ("org-info" :components ("root" "script" "emacs_IDE"))))
 
