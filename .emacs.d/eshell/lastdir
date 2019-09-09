@@ -1,4 +1,3 @@
-/Users/clay/code/company
 /Users/clay/.emacs.d/lisp
 /Users/clay/.emacs.d
 ~
@@ -21,12 +20,13 @@
 /ssh:clay@192.168.0.97:/home/clay/code/server/SystemModule
 /ssh:clay@192.168.0.97:/home/clay/code/server/SystemModule/BaseCode
 /ssh:clay@192.168.0.97:/home/clay/code/server/SystemModule/bin/Game/config
-/ssh:clay@192.168.0.97:/home/clay
 /ssh:clay@192.168.0.97:/home/clay/code
 /ssh:clay@192.168.0.97:/home/clay/code/server
 /ssh:clay@192.168.0.97:/home/clay/code/server/SystemModule/bin
 /Users/clay/code
 /Users/clay
-/Users/clay/bin
 /Users/clay
 /Users/clay/.emacs.d/lisp/fun
+/Users/clay/bin
+/ssh:clay@192.168.0.97:/home/clay
+/ssh:clay@192.168.0.97:/home/clay/bin

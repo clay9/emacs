@@ -1,80 +1,3 @@
-ls
-cd ..
-ls
-cd ..
-ls
-cd BaseCode/
-ls
-vim Acceptor.cpp
-clear
-
-jobs
-clear
-
-clear
-
-uname -a
-jobs
-clear
-
-jobs
-clear
-
-jobs
-clear
-
-bash
-ls
-uname -a
-ssh
-clear
-
-uname
-uname -a
-which bash
-bash
-clear
-
-ls
-exit
-exit
-cd ~
-ls
-pwd
-uname -a
-clear
-
-ssh
-clear
-
-emacs
-clear
-
-ls
-ssh -h
-ssh -J clay@192.168.0.97
-ssh clay@192.168.0.97
-clear
-
-ls
-emacs
-clear
-
-cd /ssh:clay@192.168.0.97:~
-pwd
-uname -a
-clear
-
-ls
-cd code/
-ls
-cd server/
-ls
-cd SystemModule/bin/
-clear
-
-./start-all.sh 
-ls
 ./psserver.sh 
 ps aux |grep Server
 clar
@@ -125,4 +48,81 @@ clear
 jobs
 clear
 
+exit
+ls
+clear
+
+ls
+ssh -h
+cd /ssh:clay@192.168.0.97:~
+ls
+uname -i
+uname -a
+ls
+which bash
+exit
+ls
+sync.sh
+./sync.sh 
+clear
+
+./sync.sh 
+./sync.sh 
+./sync.sh 
+./sync.sh 
+rm -rf clay@192.168.0.97:~/code/temp
+rm -r clay@192.168.0.97:~/code/temp
+./sync.sh 
+rm -r /ssh:clay@192.168.0.97:~/code/temp
+./sync.sh 
+which bas
+which bash
+./sync.sh 
+./sync.sh 
+cd /ssh:clay@192.168.0.97:~/
+emacs -u clay --script ~/.emacs.d/lisp/fun/init-sync-fun.el
+emacs  --script ~/.emacs.d/lisp/fun/init-sync-fun.el
+emacs -nw
+emacs
+clear
+
+ls
+jobs
+cd bin/
+clear
+
+ls
+touch new
+ls
+ls
+chmod 775 new 
+ls
+chmod 775 new
+ls
+ls
+echo "echo 	haha" >> new
+ls
+./new 
+clear
+
+./new 
+clear
+
+ls
+cp ~/.emacs.d/lisp/fun/init-sync-fun.el .
+ls
+mkdir emacs_sync
+ls
+mv init-sync-fun.el emacs_sync/
+ls
+mv new emacs_sync.sh
+ls
+clear
+
+ls
+./emacs_sync.sh 
+clear
+
+clear
+
 exit

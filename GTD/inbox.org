@@ -23,3 +23,6 @@
        cd /ssh:user@host:path 
        #+END_EXAMPLE
        直接就获得remote bash shell了!!!!!!!!!!
+* INFO [#D] eshell 指导文档
+  - [2019-09-09 Mon] [capture]
+    https://linuxtoy.org/archives/emacs-eshell.html

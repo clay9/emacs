@@ -49,7 +49,7 @@
 ;  (interactive)
   (if (file-directory-p "~/code/company")
       (message "hello")
-    (copy-file-from-buffer "~/code/server" "~/code/new")))
+    (copy-file-from-buffer "~/code/server" "~/code/temp")))
 
 (defun my-encode ()
 ;  (interactive)
