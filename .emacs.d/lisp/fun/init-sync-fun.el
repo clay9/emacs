@@ -46,12 +46,19 @@
 	  (rename-file file_name (substring file_name 0 -5)))))))
 
 (defun my-copy ()
-  (interactive)
-  (copy-file-from-buffer "~/code/server" "~/code/new"))
+;  (interactive)
+  (if (file-directory-p "~/code/company")
+      (message "hello")
+    (copy-file-from-buffer "~/code/server" "~/code/new")))
 
 (defun my-encode ()
-  (interactive)
-  (sync-from-file "~/code/company"))
+;  (interactive)
+  (if (file-directory-p "~/code/company")
+      (sync-from-file "~/code/company")))
+
+
+(my-copy)
+(my-encode)
 
 
 (provide 'init-sync-fun)
