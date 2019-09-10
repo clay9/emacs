@@ -1,128 +1,128 @@
-emacs -Q --script sync.sh 
-emacs --script sync.sh 
+
 ls
-scp one_key_for_server_frame.sh clay@192.168.0.97:~/bin
-source remote_sync.sh 
+cd /ssh:clay@192.168.0.97:~/code/
+ls
+cd ddmj/
 ls
 clear
 
-ls
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
-pwd
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
-which echo
-clear
-
-ls
-which emacs
-ls
-rm remote_sync.sh 
-ls
-source sync.sh 
-pwd
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
-ls
-which cd
-cd /ssh:clay@192.168.0.97:~
-exit
-cd ~/bin/
-source sync.sh 
-ls
-ls
-source sync.sh 
-ls
-which mkdir
-ls
-source sync.sh 
-ls
-which emacs
-ls
-cd ~
-clear
-
-souce .bash_profile
-source .bash_profile
-source .bash_profile
-source .bash_profile
-source .bash_profile
-clear
-
-ls
-clear
-
-ls
-which emacs
-cd bin/
-source sync.sh 
-ls
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
-emacs --version
-source sync.sh 
-emacs --script ~/.emacs.d/lisp/fun/init-sync-fun.el
-source sync.sh 
-source sync.sh 
-emacs --help
-source sync.sh 
-source sync.sh 
-emacs --help
---no-window-system, -nw     do not communicate with X, ignoring $DISPLAY
-source sync.sh 
---no-window-system, -nw     do not communicate with X, ignoring $DISPLAY
-source sync.sh 
-souce sync.sh 
-source sync.sh 
-source sync.sh 
-clear
-
-ls
-emacs --help
-used for debugging Emacs
-source sync.sh 
-source sync.sh 
-emacs --help
---border-color, -bd COLOR       main border color
-source sync.sh 
-source sync.sh 
-source sync.sh 
-ls
-cd /ssh:clay@192.168.0.97:~/code
-ls
-cd server/
-ls
 cd SystemModule/
-cd bin/
-ls
-cd Lobby/
-ls
-./GateServer
-ps 
-ps aux |grep Gate
-./GateServer
-ls
-ckear
+clear
+
+make clean
+make
 clear
 
 ls
-exit
-cd ~/bin
+clear
+
 ls
-source sync.sh 
-source sync.sh 
-source sync.sh 
-source sync.sh 
+clear
+
+ls
+cd poker_template/
+make clean
+make
+cd ..
+ls
+cd bin/
+clear
+
+clear
+
+ls
+./start-all.sh 
+./psserver.sh 
+./start-all.sh > info
+./psserver.sh 
+clear
+
+ls
+./start-all.sh 
+./psserver.sh 
+ls
+clear
+
+ls
+cd Game/config/
+ls
+cat GameServer.cfg 
+clear
+
+cd ..
+ls
+clear
+
+ls
+cd ..
+clear
+
+ls
+./shutdown-all.sh
+./start-all.sh 
+clear
+
+./start-all.sh 
+cd Game/
+ls
+clear
+
+cd ..
+ls
+clear
+
+ls
+./start-all.sh 
+./psserver.sh 
+clear
+
+clear
+
+clear
+
+cd ~/hexo/post/
+ls
+mv gnu/elisp.org  emacs/emacs_elisp.org
+ls gun
+ls gnu/
+clear
+
+cd /ssh:clay@192.168.0.97:~/bin
+ls
+cd ../code/ddmj/
+ls
+clear
+
+ls
+ls
+clear
+
+ls
+clear
+
+ls
+cd SystemModule/bin/
+ls
+clear
+
+./start-all.sh 
+clear
+
+./start-all.sh 
+./psserver.sh 
+clear
+
+ls
+clear
+
+ls
+cd Game/
+ls
+cd subgame/
+ls
+cd ..
+ls
+mv 4.cfg 4.back
+clear
+
+ls

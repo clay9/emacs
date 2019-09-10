@@ -20,6 +20,7 @@
                      (string= "cpp" (file-name-extension file_name))
                      (string= "hpp" (file-name-extension file_name))
                      (string= "cfg" (file-name-extension file_name))
+		     (string= "proto" (file-name-extension file_name))
                      (string= "pid" (file-name-extension file_name))
                      (string= "lock" (file-name-extension file_name))
                      (string= "sh" (file-name-extension file_name))
@@ -46,7 +47,8 @@
 	  (rename-file file_name (substring file_name 0 -5)))))))
 
 (defun my-copy ()
-  (copy-file-from-buffer "~/code/server" "~/code/temp"))
+  (if (not (file-directory-p "~/code/company"))
+      (copy-file-from-buffer "~/code/server" "~/code/temp")))
 
 (defun my-encode ()
   (sync-from-file "~/code/company"))
