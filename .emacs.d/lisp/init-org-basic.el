@@ -40,6 +40,14 @@
 	 :html-link-home "http://wcq.fun"
 	 :html-link-up "http://wcq.fun/org-info/emacs_IDE.html"
 	 :html-use-infojs t)
+	("emacs_com"
+         :base-directory "~/hexo/org-info/emacs_com"
+         :publishing-directory "~/hexo/blog/public/org-info/emacs_com"
+         :publishing-function org-html-publish-to-html
+	 :with-toc t
+	 :html-link-home "http://wcq.fun"
+	 :html-link-up "http://wcq.fun/org-info/emacs_com.html"
+	 :html-use-infojs t)
 	("company"
 	 :base-directory "~/code/company/"
          :publishing-directory "~/hexo/blog/public/org-info"

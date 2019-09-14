@@ -44,12 +44,6 @@
 ** 8. 支付宝开放平台
 ** DONE 9. ICP域名备案
    CLOSED: [2017-12-07 Thu 12:37]
-* PROJECT [#A] 文档整理
-  - [2019-09-06 Fri] [refile]
-  - [2019-09-06 Fri] [capture]
-** 使用org-info整理emacs
-** hexo中内嵌org-info的连接
-** 文档整理
 * PROJECT [#A] 棋牌项目优化
 ** 搭建演示平台
    1. [ ] 默认头像存储在本地

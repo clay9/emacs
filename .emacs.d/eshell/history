@@ -1,128 +1,128 @@
+cd ..
+cd ..
+ls
+clear
+
+ls
+./test.sh 
+clear
+
+ls
+./test.sh 
+clear
+
+date
+ls
+ls
+date 
+date
+date
+ls
+clear
 
 ls
-cd /ssh:clay@192.168.0.97:~/code/
+clear
+
+clear
+
 ls
-cd ddmj/
+ls
 ls
 clear
 
 cd SystemModule/
+ls
+cd BaseCode/
+l
+ls
+ls
 clear
 
+ls
+ls
+ls
+clear
+
+ls
+ls
+clear
+
+ls |grep #
+ls
+ls -al |grep CodeQue
 make clean
-make
 clear
 
 ls
-clear
-
 ls
-clear
-
 ls
-cd poker_template/
-make clean
-make
-cd ..
-ls
-cd bin/
-clear
-
-clear
-
-ls
-./start-all.sh 
-./psserver.sh 
-./start-all.sh > info
-./psserver.sh 
-clear
-
-ls
-./start-all.sh 
-./psserver.sh 
-ls
-clear
-
-ls
-cd Game/config/
-ls
-cat GameServer.cfg 
-clear
-
-cd ..
-ls
-clear
-
-ls
-cd ..
-clear
-
-ls
-./shutdown-all.sh
-./start-all.sh 
-clear
-
-./start-all.sh 
-cd Game/
-ls
-clear
-
-cd ..
-ls
-clear
-
-ls
-./start-all.sh 
-./psserver.sh 
-clear
-
-clear
-
-clear
-
-cd ~/hexo/post/
-ls
-mv gnu/elisp.org  emacs/emacs_elisp.org
-ls gun
-ls gnu/
-clear
-
-cd /ssh:clay@192.168.0.97:~/bin
-ls
-cd ../code/ddmj/
-ls
-clear
-
 ls
 ls
 clear
 
+cd ~
 ls
 clear
 
-ls
-cd SystemModule/bin/
-ls
-clear
-
-./start-all.sh 
-clear
-
-./start-all.sh 
-./psserver.sh 
+(setq outline-minor-mode t)
+sdf
 clear
 
 ls
+* sdf
+sfd\sdfs
+ls\cd ~\ls\echo hah
+ls
+cd ~/hexo/post/emacs/
+ls
+cd emacs_com/
+ls
+mv emacs_shell.org emacs_eshell.org
+ls
+ls
 clear
-
+
+cd ../bin/
 ls
-cd Game/
+cd /ssh:clay@192.168.0.97:~
 ls
-cd subgame/
 ls
-cd ..
 ls
-mv 4.cfg 4.back
+cd code/
+ls
+touch test
+ls
+ls
+touch test
+ls
+echo hah >> test 
+ls
+ls
+cp test  ~/Desktop/
+ls
+ls ~/Desktop/
+mv ~/Desktop/test  ~/Desktop/test2
+ls ~/Desktop/
+mv ~/Desktop/test2 .
+ls
+rm test test2 
+ls
+cd -
 clear
 
 ls
+cd ~/Desktop/
+ls
+ls
+clear
+
+ls
+cd -
+ls
+cd Desktop/
+ls
+ls
+ls
+ls
+ls
+ls emacs_com/

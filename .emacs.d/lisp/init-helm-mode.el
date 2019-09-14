@@ -1,5 +1,8 @@
 (require 'helm)
 (require 'helm-config)
+(require 'helm-lib)
+(require 'helm-buffers)
+(require 'helm-files)
 
 (helm-mode 1)
 (setq helm-display-header-line nil)
@@ -20,6 +23,7 @@
      "\\*Customize Option*" "\\*Customize Group.*" "\\*Warnings\\*" "\\.DS_Store"
      "habit.org" "project.org" "trash.org" "diary" "\\*scratch\\*"
      "\\*threads of .*" "\\*input/output of .*" "\\*breakpoints of .*" "\\*locals of .*" "\\*stack frames of" "\\*Buffer List\\*"
+     "\\.d$"
      )))
 
 
@@ -28,7 +32,7 @@
 ;; ****************************************************
 ;; ignore file for helm-find
 (setq helm-ff-skip-boring-files t)
-(setq helm-boring-file-regexp-list
+(customize-set-variable 'helm-boring-file-regexp-list
    (quote
     ("\\.o$" "~$" "\\.bin$" "\\.lbin$" "\\.so$" "\\.a$" "\\.ln$" "\\.blg$" "\\.bbl$" "\\.elc$"
      "\\.lof$" "\\.glo$" "\\.idx$" "\\.lot$" "\\.svn/" "\\.hg/" "\\.git/" "\\.bzr/" "CVS/"
@@ -37,8 +41,8 @@
      "\\.dx64fsl$" "\\.dx32fsl$" "\\.fx64fsl$" "\\.fx32fsl$" "\\.sx64fsl$" "\\.sx32fsl$"
      "\\.wx64fsl$" "\\.wx32fsl$" "\\.fasl$" "\\.ufsl$" "\\.fsl$" "\\.dxl$" "\\.lo$" "\\.la$" "\\.gmo$"
      "\\.mo$" "\\.toc$" "\\.aux$" "\\.cp$" "\\.fn$" "\\.ky$" "\\.pg$" "\\.tp$" "\\.vr$" "\\.cps$" "\\.fns$"
-     "\\.kys$" "\\.pgs$" "\\.tps$" "\\.vrs$" "\\.pyc$" "\\.pyo$" "\\.DS_Store$" "^[a-z].*\\.d$" "\\.#.*$"
-     "\\#$" "\\.^[0-9]*$"))) 
+     "\\.kys$" "\\.pgs$" "\\.tps$" "\\.vrs$" "\\.pyc$" "\\.pyo$" "\\.DS_Store$" "\\.#.*$"
+     "\\#$" "\\.^[0-9]*$" "\\.d$" "\.svn/?")))
 
 
 ;; ****************************************************

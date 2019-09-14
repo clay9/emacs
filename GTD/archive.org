@@ -127,3 +127,18 @@
       1) web后台的配置  1处
 	 1) URL中需要配置 为 XXX?key1=:key1&key2=:key2
       2) 跳转界面代码中的解析 1
+
+* DONE [#A] 文档整理
+  CLOSED: [2019-09-11 Wed 09:30]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-11 Wed 09:30
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-09-11 Wed] [done]
+  - [2019-09-06 Fri] [refile]
+  - [2019-09-06 Fri] [capture]
+** 使用org-info整理emacs
+** hexo中内嵌org-info的连接
+** 文档整理

@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <19/09/10 14:47:07 /Users/clay/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <19/09/12 18:43:46 /Users/clay/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -10,6 +10,7 @@
    ("/usr/bin" "/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
   ("remote-shell" "/bin/sh")
   ("file-exists" "test -e")
+  ("~" "/home/clay")
   ("stat" nil)
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
@@ -18,17 +19,11 @@
   ("gid-string" "clay")
   ("gid-integer" 1000)
   ("readlink" "\\readlink")
-  ("ls" "/usr/bin/ls --color=never")
-  ("ls-dired" t)
   ("git" "\\git")
+  ("ls" "/usr/bin/ls --color=never")
   ("uid-integer" 1000)
-  ("~" "/home/clay")
   ("tmpdir" "/tmp")
   ("touch-t" t)
-  ("touch" "\\touch"))
- (["scp" nil "ssh" nil nil]
-  nil)
- (["ssh" "clay" "192.168.0.198" nil nil]
-  nil)
- (["ssh" "clay" "192.168.1.100" nil nil]
-  nil))
+  ("touch" "\\touch")
+  ("trash" nil)
+  ("ls-dired" t)))
