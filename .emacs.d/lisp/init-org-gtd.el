@@ -69,6 +69,7 @@
 (setq org-refile-targets
       '(("~/GTD/task.org" . (:maxlevel . 1))
 	("~/GTD/archive.org" . (:level . 1))
+	(nil . (:maxlevel . 2))
 	))
 ;; archive
 (setq org-archive-location "~/GTD/archive.org::")

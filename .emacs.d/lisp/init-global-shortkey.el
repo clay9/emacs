@@ -33,6 +33,7 @@ _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-b") 'helm-browse-project)
 (global-set-key (kbd "C-x f") 'helm-find-files)
+(global-set-key (kbd "C-x C-f") 'helm-bookmarks)
 (global-set-key (kbd "C-x s") 'save-buffer)
 
 (global-set-key (kbd "C-x a") 'beginning-of-buffer)   ;; beg of buffer

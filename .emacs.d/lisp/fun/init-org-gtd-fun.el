@@ -1,5 +1,20 @@
 (require 'org-agenda)
 
+
+;; ****************************************************
+;; 自定义refile
+;; ****************************************************
+(require 'org)
+(defun my-org-refile()
+  "Used by my-org-refile-all-todo
+   Fucntion:"
+  (interactive)
+  (let ((org-refile-use-outline-path nil)
+	(org-refile-targets
+	 '((nil . (:maxlevel . 2)))))
+    (call-interactively 'org-refile)))
+
+
 ;; ****************************************************
 ;; 按r 刷新
 ;; ****************************************************

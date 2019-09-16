@@ -16,12 +16,13 @@
 ;; Basic CFG
 ;; *************************
 (load-theme 'dracula t)         ;;主题加载
+(require 'init-helm-mode)       ;;Helm
 (require 'init-frame)           ;;窗口初始化
 (require 'init-font)            ;;字体初始化
 (require 'init-linum-mode)      ;;行号显示
 (require 'init-nyan)            ;;彩虹猫
 (require 'init-disable-mouse)   ;;禁用鼠标
-(require 'init-helm-mode)       ;;Helm
+(require 'init-bookmark)        ;;书签
 (require 'init-smartparens-mode);;智能括号
 (require 'init-yasnippet-mode)  ;;模板文件
 (require 'init-eshell)          ;;内置命令行
@@ -68,10 +69,10 @@
 
 
 ;; *************************
-;; Other
+;; 奇淫技巧
 ;; *************************
 (require 'init-artist-mode)    ;;简易绘图
-
+(require 'init-figlet)         ;;ASCII图形
 
 ;; *************************
 ;; 特殊函数
@@ -89,7 +90,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet window-number symbol-overlay sr-speedbar smartparens slime org-bullets org nyan-mode hydra helm-gtags graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers))))
+    (figlet yasnippet window-number symbol-overlay sr-speedbar smartparens slime org-bullets org nyan-mode hydra helm-gtags graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

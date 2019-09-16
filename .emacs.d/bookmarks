@@ -4,7 +4,13 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* INFO [#D] eshe")
- (rear-context-string . "hell了!!!!!!!!!!\n")
- (position . 761))
+ (front-context-string . "* TODO [#C] org-")
+ (rear-context-string . "   学习如何配置figlet\n")
+ (position . 694))
+(".emacs.d::init.el"
+ (filename . "~/.emacs.d/init.el")
+ (front-context-string . "(package-initial")
+ (rear-context-string . "***************\n")
+ (position . 100)
+ (annotation . "emacs配置文件信息"))
 )

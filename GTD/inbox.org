@@ -17,4 +17,11 @@
     file
     re (regular expression)
     pos (position of target heading)
+* TODO [#C] figlet使用指南
+  - [2019-09-15 Sun] [capture]
+    学习如何配置figlet
+* TODO [#C] org-mode把_当做了下标处理
+  - [2019-09-15 Sun] [capture]
+    org-mode把_当做了下标处理, 导致输出为html的时候, 很多地方显示错误
+
 
