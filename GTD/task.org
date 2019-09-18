@@ -1,12 +1,15 @@
 #+STARTUP: overview
-* TODO [#B] org-info.js 如何导出所有org-file, 而不是一个个导出
-  - [2019-09-05 Thu] [capture]
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [refile]
   - [2019-08-01 Thu] [capture]
   
+* TODO [#C] org-mode把_当做了下标处理
+  - [2019-09-15 Sun] [capture]
+    org-mode把_当做了下标处理, 导致输出为html的时候, 很多地方显示错误
+
+
 * TODO [#C] ox-twbs
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [capture]

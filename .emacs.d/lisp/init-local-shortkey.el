@@ -158,10 +158,12 @@ _w_: cut     _y_: yank    _k_: kill
 (define-key org-agenda-mode-map (kbd "TAB") 'my-org-agenda-show)
 (define-key org-agenda-mode-map (kbd "<tab>") 'my-org-agenda-show)
 
-
 ;; agenda mode
 (define-key org-mode-map (kbd "M-n") 'org-next-visible-heading)
 (define-key org-mode-map (kbd "M-p") 'org-previous-visible-heading)
+
+(define-key org-mode-map (kbd "C-c j") 'org-edit-special)         ;editor for the element at point
+(define-key org-src-mode-map (kbd "C-c j") 'org-edit-src-exit)    ;exit when in src block
 
 
 ;; ****************************************************

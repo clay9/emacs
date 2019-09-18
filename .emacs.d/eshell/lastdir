@@ -1,14 +1,4 @@
-/ssh:clay@192.168.0.97:/home/clay/code/server/SystemModule/bin
-/ssh:clay@192.168.0.97:/home/clay/code/server/SystemModule/bin/Lobby
-/ssh:clay@192.168.0.97:/home/clay/code/manager
-/Users/clay/.emacs.d/lisp/fun
-/Users/clay/code/company/temp/SystemModule
-/Users/clay/code/company/temp
-/Users/clay/code/company
-/Users/clay/code/company
 /Users/clay/code/temp
-/Users/clay/code
-/Users/clay/bin
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/poker_template
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/bin/Game/config
 /Users/clay/hexo/post
@@ -19,7 +9,6 @@
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/bin/Game
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule
-/Users/clay
 /Users/clay/hexo/post/emacs
 /Users/clay/hexo/post/emacs/emacs_com
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/BaseCode
@@ -31,3 +20,14 @@
 /ssh:clay@192.168.0.97:/home/clay/Desktop
 /Users/clay/hexo/org-info
 /Users/clay/hexo/blog/source/categories
+/Users/clay/bin
+/Users/clay/code/company
+/Users/clay/code/company/temp
+/Users/clay/code/company
+/Users/clay/code
+/Users/clay
+/ssh:root@192.168.0.193:/root/Desktop
+/ssh:root@192.168.0.193:
+/ssh:root@192.168.0.193:/etc
+/ssh:root@192.168.0.193:/root
+/home

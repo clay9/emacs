@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <19/09/12 18:43:46 /Users/clay/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <19/09/17 13:21:36 /Users/clay/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -26,4 +26,45 @@
   ("touch-t" t)
   ("touch" "\\touch")
   ("trash" nil)
-  ("ls-dired" t)))
+  ("ls-dired" t))
+ (["ssh" "root" "192.168.0.193" nil nil]
+  ("uname" "Linux 3.10.0-327.el7.x86_64")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/root")
+  ("file-exists" "test -e")
+  ("stat" nil)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("gid-string" "root")
+  ("readlink" "\\readlink")
+  ("git" nil)
+  ("ls" "/usr/bin/ls --color=never"))
+ (["scp" nil "ssh" nil nil]
+  nil)
+ (["ssh" nil "192.168.0.198" nil nil]
+  nil)
+ (["ssh" nil "192.168.1.100" nil nil]
+  nil)
+ (["ssh" nil "127.0.0.1" nil nil]
+  nil)
+ (["ssh" nil "github.com" nil nil]
+  nil)
+ (["ssh" nil "www.45quyou.com" nil nil]
+  nil)
+ (["ssh" nil "192.168.0.97" nil nil]
+  nil)
+ (["ssh" nil "192.168.0.193" nil nil]
+  nil)
+ (["ssh" "root" "192.168.0.198" nil nil]
+  nil)
+ (["ssh" "root" "192.168.1.100" nil nil]
+  nil)
+ (["ssh" "root" "192.168.0.97" nil nil]
+  nil))

@@ -142,3 +142,28 @@
 ** 使用org-info整理emacs
 ** hexo中内嵌org-info的连接
 ** 文档整理
+
+* DONE [#B] org-info.js 如何导出所有org-file, 而不是一个个导出
+  CLOSED: [2019-09-16 Mon 20:55]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-16 Mon 20:55
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-09-16 Mon] [done]
+  - [2019-09-05 Thu] [capture]
+
+* DONE [#C] figlet使用指南
+  CLOSED: [2019-09-16 Mon 21:05]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-16 Mon 21:05
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-09-16 Mon] [done]
+  - [2019-09-16 Mon] [refile]
+  - [2019-09-16 Mon] [refile]
+  - [2019-09-15 Sun] [capture]
+    学习如何配置figlet

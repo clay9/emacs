@@ -1,128 +1,128 @@
-
-ls
-./test.sh 
-clear
-
-ls
-./test.sh 
-clear
-
-date
-ls
-ls
-date 
-date
-date
-ls
-clear
-
-ls
-clear
-
-clear
-
-ls
-ls
-ls
-clear
-
-cd SystemModule/
-ls
-cd BaseCode/
-l
-ls
-ls
-clear
-
-ls
-ls
-ls
-clear
-
-ls
-ls
-clear
-
-ls |grep #
-ls
-ls -al |grep CodeQue
-make clean
-clear
-
-ls
-ls
-ls
-ls
-ls
-clear
-
-cd ~
-ls
-clear
-
-(setq outline-minor-mode t)
-sdf
-clear
-
-ls
-* sdf
-sfd\sdfs
-ls\cd ~\ls\echo hah
-ls
-cd ~/hexo/post/emacs/
-ls
-cd emacs_com/
-ls
-mv emacs_shell.org emacs_eshell.org
-ls
-ls
-clear
-
-cd ../bin/
-ls
-cd /ssh:clay@192.168.0.97:~
-ls
-ls
-ls
-cd code/
-ls
-touch test
-ls
-ls
-touch test
-ls
-echo hah >> test 
-ls
-ls
-cp test  ~/Desktop/
-ls
-ls ~/Desktop/
-mv ~/Desktop/test  ~/Desktop/test2
-ls ~/Desktop/
-mv ~/Desktop/test2 .
-ls
-rm test test2 
-ls
-cd -
-clear
-
-ls
-cd ~/Desktop/
-ls
-ls
-clear
-
-ls
-cd -
-ls
-cd Desktop/
-ls
-ls
-ls
-ls
-ls
-ls emacs_com/
 ls
 mv index.md index_backup.md
 ls
+exit
+cd ~/bin/
+ls
+source sync.sh 
+cd ../code/
+ls
+cd company/
+ls
+cd temp/
+ls
+cat SystemModule/GameServer/GameCtrl.cpp 
+clear
+
+cd ..
+tar -cf temp temp/
+tar -cf temp/ 
+ls
+scp temp.zip root@192.168.0.193
+ls
+scp temp.zip root@192.168.0.193:~
+clear
+
+ls
+tar -cf temp/ ha
+clear
+
+man tar
+tar -c temp/
+clear
+
+ls
+rm -r root@192.168.0.193  temp.zip
+ls
+tar -cf temp
+tar -cf temp/
+tar -cf haha.tar temp/
+ls
+ls -al haha.tar 
+du -h haha.tar 
+scp haha.tar  root@192.168.0.193:~
+ls temp/
+clear
+
+clear
+
+clear
+
+ls
+clear
+
+jobs
+ls
+rm haha.tar 
+rm -rf temp/
+clear
+
+ls
+jobs
+exit
+ls
+cd /ssh:root@192.168.0.193:~
+ls
+clear
+
+ls
+cd ~
+ls
+cd -
+clear
+
+ls
+cd Desktop/
+ls
+touch test
+echo "hahah 	->" >> test 
+ls
+cat test 
+useradd test
+ls
+passwd test
+ls
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd /ssh:root@192.168.0.193:/
+ls
+cd etc/
+ls
+cat sudoers
+emacs sudoers
+vim sudoers
+clear
+
+ls
+ls
+ls
+cat yum.conf
+clear
+
+ping baidu.com
+clear
+
+scp ~/bin/hexog.sh .
+sudo scp ~/bin/hexog.sh .
+cd ..
+scp ~/bin/hexog.sh .
+scp ~/bin/hexog.sh .
+clear
+
+ls
+clear
+
+clear
+
+su test
+cd /home/
+ls
+uname
+clear
+
 exit

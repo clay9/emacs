@@ -1,15 +1,3 @@
-* INFO [#D] emacs奇妙
-  - [2019-09-09 Mon] [capture]
-    本来是想把emacs当做ssh client, 以此来获取remote PC上的bash shell
-    
-    但其实完全没必要这么做
-    1. emacs中的C-x C-f中直接
-       #+BEGIN_EXAMPLE
-       /ssh:user@host:path
-       #+END_EXAMPLE
-       就可以直接操作remote file
-       如果远端文件是加密过的, 需要解密的时候, 
-       则还是获得remote bash, 通过remote bash来调用应用程序比较方便
 * INFO [#D] org-refile 的 rfloc
   - [2019-09-06 Fri] [capture]
     I've wondered what RFLOC should look like before, but never investigated. Looking at the org source code, it should be a list consisting of:
@@ -17,11 +5,4 @@
     file
     re (regular expression)
     pos (position of target heading)
-* TODO [#C] figlet使用指南
-  - [2019-09-15 Sun] [capture]
-    学习如何配置figlet
-* TODO [#C] org-mode把_当做了下标处理
-  - [2019-09-15 Sun] [capture]
-    org-mode把_当做了下标处理, 导致输出为html的时候, 很多地方显示错误
-
 

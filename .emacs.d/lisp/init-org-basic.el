@@ -38,7 +38,7 @@
          :publishing-function org-html-publish-to-html
 	 :with-toc t
 	 :html-link-home "http://wcq.fun"
-	 :html-link-up "http://wcq.fun/org-info/emacs_IDE.html"
+	 :html-link-up "http://wcq.fun/org-info/emacs.html"
 	 :html-use-infojs t)
 	("emacs_com"
          :base-directory "~/hexo/org-info/emacs_com"
@@ -46,7 +46,7 @@
          :publishing-function org-html-publish-to-html
 	 :with-toc t
 	 :html-link-home "http://wcq.fun"
-	 :html-link-up "http://wcq.fun/org-info/emacs_com.html"
+	 :html-link-up "http://wcq.fun/org-info/emacs.html"
 	 :html-use-infojs t)
 	("company"
 	 :base-directory "~/code/company/"
@@ -56,6 +56,13 @@
 	 :html-link-home "http://wcq.fun"
 	 :html-use-infojs t)
         ("org-info" :components ("root" "script" "emacs_IDE"))))
+
+
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((C . t)
+   (emacs-lisp . nil)))
 
 
 ;; ****************************************************

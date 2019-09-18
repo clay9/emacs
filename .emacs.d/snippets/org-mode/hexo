@@ -6,6 +6,7 @@
 #+LAYOUT: post
 #+CATEGORIES: ${2}
 #+TAGS: ${3}
+#+OPTIONS: ^:nil
 
  ${4}
 
