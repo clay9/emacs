@@ -1,6 +1,3 @@
-/Users/clay/code/temp
-/ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/poker_template
-/ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/bin/Game/config
 /Users/clay/hexo/post
 /ssh:clay@192.168.0.97:/home/clay/bin
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/bin
@@ -31,3 +28,6 @@
 /ssh:root@192.168.0.193:/etc
 /ssh:root@192.168.0.193:/root
 /home
+/Users/clay/.emacs.d/lisp/fun
+/Users/clay/.emacs.d/lisp
+/Users/clay/hexo/post/c++

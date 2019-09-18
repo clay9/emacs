@@ -1,12 +1,3 @@
-ls
-mv index.md index_backup.md
-ls
-exit
-cd ~/bin/
-ls
-source sync.sh 
-cd ../code/
-ls
 cd company/
 ls
 cd temp/
@@ -126,3 +117,12 @@ uname
 clear
 
 exit
+cd ..
+ls
+cd ~/hexo/post/c++/
+ls
+mv lib.org c++.org
+ls
+clear
+
+ls
