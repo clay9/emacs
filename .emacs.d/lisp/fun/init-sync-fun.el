@@ -54,7 +54,7 @@
   (sync-from-file "~/code/company"))
 
 
-(my-copy)
+;(my-copy)
 
 
 (provide 'init-sync-fun)
