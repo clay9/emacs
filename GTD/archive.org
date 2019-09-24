@@ -167,3 +167,45 @@
   - [2019-09-16 Mon] [refile]
   - [2019-09-15 Sun] [capture]
     学习如何配置figlet
+
+* DONE [#C] org-mode把_当做了下标处理
+  CLOSED: [2019-09-19 Thu 09:23]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-20 Fri 11:34
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-09-19 Thu] [done] \\
+    #OPTION: ^:nil
+  - [2019-09-15 Sun] [capture]
+    org-mode把_当做了下标处理, 导致输出为html的时候, 很多地方显示错误
+
+
+
+* DONE [#C] socket数据接收(windows下 或 原生)
+  CLOSED: [2019-09-24 Tue 11:55] SCHEDULED: <2019-09-24 Tue>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-24 Tue 11:55
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-09-24 Tue] [done]
+  - [2019-09-24 Tue] [capture]
+    
+
+* DONE [#C] 加解密
+  CLOSED: [2019-09-24 Tue 17:33] SCHEDULED: <2019-09-24 Tue>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-09-24 Tue 17:33
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-09-24 Tue] [done] \\
+    删除加密
+    1) 导致代码复杂, 难以维护
+    2) 加密key 依赖于包, 非常容易导致失败
+  - [2019-09-24 Tue] [capture]
+    

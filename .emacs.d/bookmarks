@@ -4,14 +4,14 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* TODO [#C] org-")
+ (front-context-string . "* TODO [#C] js环境")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 ("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* TODO [#C] org-")
- (rear-context-string . "   学习如何配置figlet\n")
- (position . 694))
+ (front-context-string . "* TODO [#C] js环境")
+ (rear-context-string . "到这个元素, 并且赋值发送即可\n")
+ (position . 8488))
 (".emacs.d::init.el"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . "(package-initial")

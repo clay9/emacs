@@ -13,6 +13,7 @@
                                :hint nil)
 "
 _a_: 查找全部    _r_: 向前查找    _s_: 向后查找
+_t_: 替换
 "
  ("a" helm-occur)
  ("r" isearch-backward)

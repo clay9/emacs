@@ -226,7 +226,7 @@
 	  re (concat "^" (regexp-quote stars) " +")
 	  re2 (concat "^" (regexp-quote (substring stars 0 -1)) "[ \t\n]")
 	  txt (buffer-substring beg end)) ;; buffer content
-
+    
     ;; 确保txt 以 \n结尾
     (unless (equal (substring txt -1) "\n") (setq txt (concat txt "\n")))
 
