@@ -1,5 +1,11 @@
 #+STARTUP: overview
+* TODO [#C] dot使用
+  - [2019-09-25 Wed] [refile]
+  - [2019-09-25 Wed] [capture]
+    1. [ ] dot语法高亮
+    2. [ ] org-mode中增加对dot语法的执行
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
+  - [2019-09-25 Wed] [refile]
   - [2019-09-24 Tue] [refile]
   - [2019-09-24 Tue] [refile]
   - [2019-09-24 Tue] [refile]
@@ -19,6 +25,11 @@
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [capture]
     org 生成html时候的js, 可以在右侧生成导航
+* TODO [#C] 数据库 以及 数据库引擎
+  SCHEDULED: <2019-09-25 Wed>
+  - [2019-09-25 Wed] [capture]
+    1. [X] 完成数据库的启动
+    2. [ ] 完成数据库引擎与数据库的交互
 * TODO [#C] 语言对比
   - [2019-09-23 Mon] [capture]
     
