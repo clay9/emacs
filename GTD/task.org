@@ -1,4 +1,23 @@
 #+STARTUP: overview
+* TODO [#A] kernel bug修复
+  SCHEDULED: <2019-09-26 Thu>
+  - [2019-09-26 Thu] [capture]
+    现象:
+    1. Attemper 重复启动
+    2. [socker::server, socker::client]回调覆盖?
+
+    校验点:
+    1. [timer, socket::server, socket::client]回调的函数名字都是一样的
+       会不会 回调函数 被 覆盖??
+    2. [timer, socket::server, socket::client]不应该操控回调对象
+
+    猜测原因:
+    1. attemper中没有继承并实现 [timer, socket::server, socket::client]的回调
+
+* TODO [#C] C-c C-f选择book之后,不要显示book的描述buffer
+  - [2019-09-26 Thu] [refile]
+  - [2019-09-26 Thu] [refile]
+  - [2019-09-25 Wed] [capture]
 * TODO [#C] dot使用
   - [2019-09-25 Wed] [refile]
   - [2019-09-25 Wed] [capture]

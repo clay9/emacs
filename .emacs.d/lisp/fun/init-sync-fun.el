@@ -47,10 +47,11 @@
 	  (rename-file file_name (substring file_name 0 -5)))))))
 
 (defun my-copy ()
-  (if (not (file-directory-p "~/code/company"))
-      (copy-file-from-buffer "~/code/server" "~/code/temp")))
+  (interactive)
+  (copy-file-from-buffer "~/code/server" "~/code/temp"))
 
 (defun my-encode ()
+  (interactive)
   (sync-from-file "~/code/company"))
 
 
