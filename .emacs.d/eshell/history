@@ -1,71 +1,3 @@
-cd company/
-ls
-cd temp/
-ls
-cat SystemModule/GameServer/GameCtrl.cpp 
-clear
-
-cd ..
-tar -cf temp temp/
-tar -cf temp/ 
-ls
-scp temp.zip root@192.168.0.193
-ls
-scp temp.zip root@192.168.0.193:~
-clear
-
-ls
-tar -cf temp/ ha
-clear
-
-man tar
-tar -c temp/
-clear
-
-ls
-rm -r root@192.168.0.193  temp.zip
-ls
-tar -cf temp
-tar -cf temp/
-tar -cf haha.tar temp/
-ls
-ls -al haha.tar 
-du -h haha.tar 
-scp haha.tar  root@192.168.0.193:~
-ls temp/
-clear
-
-clear
-
-clear
-
-ls
-clear
-
-jobs
-ls
-rm haha.tar 
-rm -rf temp/
-clear
-
-ls
-jobs
-exit
-ls
-cd /ssh:root@192.168.0.193:~
-ls
-clear
-
-ls
-cd ~
-ls
-cd -
-clear
-
-ls
-cd Desktop/
-ls
-touch test
 echo "hahah 	->" >> test 
 ls
 cat test 
@@ -126,3 +58,71 @@ ls
 clear
 
 ls
+cd bin/
+ls
+source sync.sh
+source sync.sh
+cd bin/
+ls
+source sync.sh
+ls
+cd ..
+ls
+cd code/
+cd company/
+ls
+ls temp/SystemModule/GameServer/
+cd ~/bin/
+ls
+cat sync.sh 
+clear
+
+ls
+clear
+
+ls
+source sync.sh
+cd ..
+ls
+cd code/company/temp/
+ls
+cd SystemModule/
+ls
+clear
+
+ls
+ls GameServer/
+clear
+
+cd ..
+ls
+clear
+
+ls
+clear
+
+ls
+ls
+clear
+
+ls
+ls SystemModule/
+ls
+clear
+
+ls
+cd SystemModule/
+ls
+clear
+
+ls
+cd BaseCode/
+ls
+exit
+ls
+mv object.org dll.org
+ls
+clear
+
+ls
+exit

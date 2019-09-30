@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <19/09/26 19:17:21 /Users/clay/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <19/09/29 14:07:00 /Users/clay/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -45,6 +45,4 @@
   ("gid-string" "root")
   ("readlink" "\\readlink")
   ("git" nil)
-  ("ls" "/usr/bin/ls --color=never"))
- (["ssh" "clay" "192.168.0.07" nil nil]
-  nil))
+  ("ls" "/usr/bin/ls --color=never")))

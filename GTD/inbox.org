@@ -108,6 +108,81 @@
   #+BEGIN_SRC html
   
   #+END_SRC
+* INFO [#D] windows下socket网络编程
+  - [2019-09-29 Sun] [capture]
+   
+ 
+  1. 最基本的例子
+     : 违背IOCP思想
+   #+BEGIN_SRC c++
+     //1. 创建socket
+     SOCKET sck = WSASocket(AF_INET, SOCK_DGRAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
+
+     //2. bind
+     bind(sck, (struct sockaddr *) &addr, sizeof(struct sockaddr_in));
+
+     //3. ??
+     HANDLE hPort = CreateIoCompletionPort((HANDLE)sck, NULL, 0, 0);
+     if(!hPort)
+     {
+	 //error
+	 return;
+     }
+
+     //4. 变量初始化
+     // ??
+     WSAOVERLAPPED Overlapped = {0};
+     Overlapped.hEvent = WSACreateEvent();
+
+     BYTE buffer[0xFFFF];
+     DWORD dwBytesRecved = 0;
+     DWORD dwFlags = 0;
+     sockaddr_in fromaddr = {0};
+     int fromaddrlen = sizeof(fromaddr);
+
+     WSABUF buf;
+     buf.len = sizeof(buffer);
+     buf.buf = buffer;
+
+     //5. recv Data
+     int iRet = WSARecvFrom(sck, &buf, 1, &dwBytesRecved, &dwFlags,
+			    (sockaddr*) &fromaddr, &fromaddrlen, &Overlapped, NULL);
+
+     if(iRet == SOCKET_ERROR)
+     {
+	 if(WSAGetLastError() != WSA_IO_PENDING)
+	 {
+	     //error
+	     return;
+	 }
+
+	 DWORD rBytes;
+	 ULONG_PTR key;
+	 LPOVERLAPPED pOverlapped = NULL;
+	 if(!GetQueuedCompletionStatus(hPort, &rbytes, &key, &pOverlapped, INFINITE))
+	 {
+	     if(pOverlapped)
+	     {
+		 //WSARecvFrom() failed
+	     }
+	     else
+	     {
+		 //GetQueuedCompletionStatus() failed
+	     }
+
+	     //do something
+	     return;
+	 }
+     }
+
+     //I/O complete, use buffer, dwBytesRecvd, dwFlags, fromaddr
+   #+END_SRC
+   
+  2. 正确的使用
+     #+BEGIN_SRC c++
+
+     #+END_SRC
+
 * INFO javaScript基本语法
   javascript
   - 使用 window.alert() 写入警告框
