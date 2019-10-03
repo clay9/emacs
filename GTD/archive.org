@@ -243,3 +243,57 @@
   :END:
   - [2019-09-29 Sun] [done]
   - [2019-09-28 Sat] [capture]
+
+* DONE [#C] mac增加 截图 && gif功能
+  CLOSED: [2019-10-02 Wed 23:57] SCHEDULED: <2019-10-02 Wed>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-02 Wed 23:57
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-02 Wed] [done]
+  - [2019-10-02 Wed] [capture]
+  可以参阅 github star上的项目
+  增加截图 && gif功能
+
+* DONE [#C] C-c C-f选择book之后,不要显示book的描述buffer
+  CLOSED: [2019-10-03 Thu 13:20]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-03 Thu 13:20
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-03 Thu] [done]
+  - [2019-10-02 Wed] [refile]
+  - [2019-10-02 Wed] [refile]
+  - [2019-09-28 Sat] [refile]
+  - [2019-09-26 Thu] [refile]
+  - [2019-09-26 Thu] [refile]
+  - [2019-09-25 Wed] [capture]
+
+* DONE [#C] 语言对比
+  CLOSED: [2019-10-03 Thu 13:21]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-03 Thu 13:21
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-03 Thu] [done]
+  - [2019-09-23 Mon] [capture]
+    
+    | 语言       | 优点               | 缺点             | 适用场景       | 自己使用场景   |
+    |------------+--------------------+------------------+----------------+----------------|
+    | C          | 1.高效             | 1.过程性编程     | 服务器底层     | 服务器底层部分 |
+    |            | 2.其他语言支持广泛 | 2.类少           |                |                |
+    |------------+--------------------+------------------+----------------+----------------|
+    | C++        | 1.库多             | 1.繁琐           | 1.底层         | 1.业务逻辑     |
+    |            | 2.面向对象等思想   | 2.编译器错误提示 | 2.部分业务逻辑 |                |
+    |------------+--------------------+------------------+----------------+----------------|
+    | lisp       | 演算能力强大       | 1.缺少统一标准   | 人工智能?      | emacs函数      |
+    |            |                    | 2.库少           |                |                |
+    |------------+--------------------+------------------+----------------+----------------|
+    | javaScript | 1.web上的编程语言  |                  | web            | web            |
+    |------------+--------------------+------------------+----------------+----------------|

@@ -1,9 +1,3 @@
-echo "hahah 	->" >> test 
-ls
-cat test 
-useradd test
-ls
-passwd test
 ls
 ls
 cd ..
@@ -126,3 +120,9 @@ clear
 
 ls
 exit
+ls
+ls ~
+exit
+ls
+cd ~
+ls

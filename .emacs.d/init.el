@@ -31,6 +31,7 @@
 (require 'init-window-number)   ;;窗口快速选择
 ;;(require 'init-dict)          ;;汉英词典(bing词典) TODONOW 待补充
 ;;(require 'init-completion)    ;;命令补全   TODONOW 待补充
+(require 'bm)                   ;;临时bookmarks
 (require 'init-basic-fun)       ;;自定义函数(basic)
 (require 'init-local-shortkey)  ;;局部快捷键
 (require 'init-global-shortkey) ;;全局快捷键
@@ -90,7 +91,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (figlet yasnippet window-number symbol-overlay sr-speedbar smartparens slime org-bullets org nyan-mode hydra helm-gtags graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers))))
+    (bm figlet yasnippet window-number symbol-overlay sr-speedbar smartparens slime org-bullets org nyan-mode hydra helm-gtags graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

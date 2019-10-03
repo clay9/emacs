@@ -1,5 +1,8 @@
 (require 'bookmark)
 
+
+(setq bookmark-automatically-show-annotations nil)
+
 (defun bookmark-to-abbrevs ()
   "Create abbrevs based on `bookmark-alist'."
   (interactive)
