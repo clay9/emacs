@@ -297,3 +297,89 @@
     |------------+--------------------+------------------+----------------+----------------|
     | javaScript | 1.web上的编程语言  |                  | web            | web            |
     |------------+--------------------+------------------+----------------+----------------|
+
+* DONE [#C] 数据库 以及 数据库引擎
+  CLOSED: [2019-10-03 Thu 16:59] SCHEDULED: <2019-09-25 Wed>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-03 Thu 16:59
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-03 Thu] [done]
+  - [2019-09-25 Wed] [capture]
+    1. [X] 完成数据库的启动
+    2. [ ] 完成数据库引擎与数据库的交互
+
+* DONE [#C] 确认emacs.git, blog.git是否有提交到github上面
+  CLOSED: [2019-10-05 Sat 13:36] SCHEDULED: <2019-10-02 Wed 21:00>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-05 Sat 13:36
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-05 Sat] [done]
+  - [2019-10-02 Wed] [capture]
+    
+
+* DONE [#C] 安装git gui软件
+  CLOSED: [2019-10-05 Sat 15:27] SCHEDULED: <2019-10-05 Sat>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-05 Sat 15:27
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-05 Sat] [done] \\
+    使用 magit in emacs
+  - [2019-10-05 Sat] [capture]
+
+* DONE [#C] 安装对比软件 
+  CLOSED: [2019-10-05 Sat 15:27] SCHEDULED: <2019-10-05 Sat>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-05 Sat 15:27
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-05 Sat] [done] \\
+    使用magit in emacs
+  - [2019-10-05 Sat] [capture]
+
+* DONE [#C] 完成端口
+  CLOSED: [2019-10-06 Sun 00:18]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-06 Sun 00:18
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-06 Sun] [done]
+  :LOGBOOK:
+  CLOCK: [2019-10-05 Sat 16:44]
+  :END:
+  - [2019-10-05 Sat] [capture]
+
+* DONE [#C] macos 恢复 自带软件
+  CLOSED: [2019-10-06 Sun 02:15] SCHEDULED: <2019-10-05 Sat>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-06 Sun 02:15
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-06 Sun] [done]
+  - [2019-10-05 Sat] [capture]
+    
+
+* DONE [#C] 日历 软件配置完成
+  CLOSED: [2019-10-06 Sun 14:48] SCHEDULED: <2019-10-05 Sat>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2019-10-06 Sun 14:48
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2019-10-06 Sun] [done]
+  - [2019-10-05 Sat] [capture]

@@ -1,9 +1,4 @@
 #+STARTUP: overview
-* TODO [#C] dot使用
-  - [2019-09-25 Wed] [refile]
-  - [2019-09-25 Wed] [capture]
-    1. [ ] dot语法高亮
-    2. [ ] org-mode中增加对dot语法的执行
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
   - [2019-09-25 Wed] [refile]
   - [2019-09-24 Tue] [refile]
@@ -21,14 +16,14 @@
   - [2019-09-24 Tue] [capture]
     1. web环境
     2. emacs环境配置
+* TODO [#C] magit配置使用
+  SCHEDULED: <2019-10-05 Sat>
+  - [2019-10-05 Sat] [capture]
+    
 * TODO [#C] ox-twbs
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [capture]
     org 生成html时候的js, 可以在右侧生成导航
-* TODO [#C] 确认emacs.git, blog.git是否有提交到github上面
-  SCHEDULED: <2019-10-02 Wed 21:00>
-  - [2019-10-02 Wed] [capture]
-    
 * TODO emacs跳转到标准库头文件
   - [2019-08-13 Tue] [capture]
 * PROJECT [#A] 企业形象搭建                                       :important:

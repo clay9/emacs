@@ -1,5 +1,3 @@
-/ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/bin/Game/subgame
-/ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/bin/Game
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule
 /Users/clay/hexo/post/emacs
@@ -31,3 +29,5 @@
 /Users/clay/hexo/blog/source/_posts/protocal
 /Users/clay/hexo/blog/source/_posts/system
 /Users/clay
+/Users/clay/hexo/post/protocol
+~

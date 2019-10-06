@@ -2,14 +2,22 @@
 (require 'ox-html)
 (require 'ox)
 (require 'org-bullets)
+(require 'iimage)
 
 ;; 使用图标代替heading中的*
 (add-hook 'org-mode-hook
           (lambda ()
-            (org-bullets-mode t)))
+            (org-bullets-mode t)
+	    (iimage-mode)
+	    ))
 ;; ⤵ 替换 省略号
 (setq org-ellipsis "⤵")
 
+
+;; 显示图片
+(add-to-list 'iimage-mode-image-regex-alist
+             (cons (concat "\\[\\[file:\\(~?" iimage-mode-image-filename-regex
+                           "\\)\\]")  1))
 
 ;; when export, do not raise an error on broken links -- 对publish无效
 (setq org-export-with-broken-links t)
@@ -47,15 +55,14 @@
 	 :with-toc t
 	 :html-link-home "http://wcq.fun"
 	 :html-link-up "http://wcq.fun/org-info/emacs.html"
-	 :html-use-infojs t)
-	("company"
-	 :base-directory "~/code/company/"
-         :publishing-directory "~/hexo/blog/public/org-info"
-         :publishing-function org-html-publish-to-html
-         :with-toc t
-	 :html-link-home "http://wcq.fun"
-	 :html-use-infojs t)
-        ("org-info" :components ("root" "script" "emacs_IDE"))))
+	 :html-use-infojs t)))
+	;; ("company"
+	;;  :base-directory "~/code/company/"
+        ;;  :publishing-directory "~/hexo/blog/public/org-info"
+        ;;  :publishing-function org-html-publish-to-html
+        ;;  :with-toc t
+	;;  :html-link-home "http://wcq.fun"
+	;;  :html-use-infojs t)
 
 
 ;; active Babel languages
