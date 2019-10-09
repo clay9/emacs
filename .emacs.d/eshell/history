@@ -1,46 +1,3 @@
-cd ..
-ls
-cd ..
-ls
-cd /ssh:root@192.168.0.193:/
-ls
-cd etc/
-ls
-cat sudoers
-emacs sudoers
-vim sudoers
-clear
-
-ls
-ls
-ls
-cat yum.conf
-clear
-
-ping baidu.com
-clear
-
-scp ~/bin/hexog.sh .
-sudo scp ~/bin/hexog.sh .
-cd ..
-scp ~/bin/hexog.sh .
-scp ~/bin/hexog.sh .
-clear
-
-ls
-clear
-
-clear
-
-su test
-cd /home/
-ls
-uname
-clear
-
-exit
-cd ..
-ls
 cd ~/hexo/post/c++/
 ls
 mv lib.org c++.org
@@ -126,3 +83,46 @@ ls
 mkdir iocp
 exit
 (image-type-available-p 'imagemagick)
+ls
+scp start-all.sh clay@192.168.0.97:~/code/
+clear
+
+ls
+exit
+ls
+cd ~
+ls
+cd bin/
+ls
+./sync.sh
+source sync.sh 
+clear
+
+ls
+exit
+scp shutdown-all.sh clay@192.168.0.97:~/code
+clearl
+clay@192.168.0.97:~/code/server/
+/ssh:clay@192.168.0.97:~/code/server/
+ls
+cd SubGame/
+ls
+cd Library/bin/
+clear
+
+ls
+cd Game/
+clear
+
+ls
+cat GameServer.port
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+exit
