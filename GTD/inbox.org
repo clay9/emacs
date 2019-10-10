@@ -20,3 +20,20 @@
   
   不应该去管 它是如何发送的,
   只需要调到这个元素, 并且赋值发送即可
+** 今日头条
+   #+BEGIN_SRC js
+   //内容修改
+   document.getElementsByClassName("imgBox upload-box")[0].childNodes[0].value = "js学不会"
+
+   //发表
+   document.getElementsByClassName("upload-publish active")[0].click()
+   #+END_SRC
+   
+
+金币场可认为是局数只有一场的房卡场
+
+1. 子游戏 小局结束后, 判断是否是大局结束的时候, 统一使用
+   if(m_currentCount == AllCount)
+
+2. 大局结束函数中, 在发送总结算之前, 增加是否金币场的判断
+   if( IsGoldRoom())
