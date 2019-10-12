@@ -1,4 +1,3 @@
-/ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/BaseCode
 /ssh:clay@192.168.0.97:/home/clay/code/ddmj/SystemModule/bin
 /ssh:clay@192.168.0.97:/home/clay/code
 /Users/clay/Desktop
@@ -22,12 +21,12 @@
 /Users/clay/hexo/blog/source/_posts/system
 /Users/clay/hexo/post/protocol
 ~
-/Users/clay/.emacs.d/lisp/fun
-/Users/clay
-/Users/clay/bin
-/Users/clay/bin
-/Users/clay/code/company
 /ssh:clay@192.168.0.97:/home/clay/code/server
 /ssh:clay@192.168.0.97:/home/clay/code/server/SubGame
 /ssh:clay@192.168.0.97:/home/clay/code/server/SubGame/Library/bin
 /ssh:clay@192.168.0.97:/home/clay/code/server/SubGame/Library/bin/Game
+/Users/clay/.emacs.d/lisp/fun
+/Users/clay
+/Users/clay/bin
+/Users/clay/code/company
+/Users/clay/code/company/manager
