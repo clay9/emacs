@@ -9,9 +9,9 @@
  (position . 21))
 ("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* TODO [#C] magi")
- (rear-context-string . "到这个元素, 并且赋值发送即可\n")
- (position . 9467))
+ (front-context-string . "* INFO [#D] mac ")
+ (rear-context-string . " Sat] [capture]\n")
+ (position . 1102))
 (".emacs.d::init.el"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . "(package-initial")
