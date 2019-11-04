@@ -40,12 +40,3 @@
 2. 大局结束函数中, 在发送总结算之前, 增加是否金币场的判断
    if( IsGoldRoom())
 
-
-* 比赛场
-[match] cur rank size: 6
-m_cur_ranking at 0; value: 12961
-m_cur_ranking at 1; value: 12636
-m_cur_ranking at 2; value: 12635
-m_cur_ranking at 3; value: 12633
-m_cur_ranking at 4; value: 12640
-m_cur_ranking at 5; value: 12646
