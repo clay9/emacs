@@ -1,128 +1,128 @@
-ls temp/SystemModule/GameServer/
-cd ~/bin/
-ls
-cat sync.sh 
-clear
-
+cat cfg_key.cpp
 ls
 clear
-
+
 ls
-source sync.sh
-cd ..
-ls
-cd code/company/temp/
-ls
-cd SystemModule/
-ls
+rm -rf Debug_Unicode/
+rm -rf Release_Unicode/
 clear
-
+
 ls
-ls GameServer/
+ls Res/
+rm -rf Res/
 clear
-
-cd ..
-ls
-clear
-
-ls
-clear
-
+
 ls
 ls
-clear
-
-ls
-ls SystemModule/
-ls
-clear
-
-ls
-cd SystemModule/
-ls
-clear
-
-ls
-cd BaseCode/
-ls
-exit
-ls
-mv object.org dll.org
-ls
-clear
-
-ls
-exit
-ls
-ls ~
-exit
-ls
-cd ~
-ls
-ls
-mkdir iocp
-exit
-(image-type-available-p 'imagemagick)
-ls
-scp start-all.sh clay@192.168.0.97:~/code/
-clear
-
-ls
-exit
-ls
-cd ~
-ls
-cd bin/
-ls
-./sync.sh
 source sync.sh 
 clear
 
 ls
-exit
-scp shutdown-all.sh clay@192.168.0.97:~/code
-clearl
-clay@192.168.0.97:~/code/server/
-/ssh:clay@192.168.0.97:~/code/server/
+cd ~/code/
+clear
+
+ls
+ls company/
+clear
+
+ls
+ls company/
+cd company/
+ls
+ls SubGame/
+clear
+
+ls
+cd SubGame/PokerGame/
+clear
+
+ls
+cd DDZ/
+clear
+
+ls
+ll
+ls -al
+cd ..
+clear
+
+ls
+cd ..
+cd ..
+ls
+cd ..
+cd -
+ls
+cd temp/
+ls
+clear
+
 ls
 cd SubGame/
-ls
-cd Library/bin/
 clear
 
 ls
-cd Game/
+cd PokerGame/DDZ/
+ls -al
 clear
 
 ls
-cat GameServer.port
+cd code/
+clear
+
 ls
+cd ../bin/
+clear
+
 ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-exit
-cd ~
-ls
-cd bin/
 ls
 source sync.sh 
 clear
 
 ls
 cd ../code/company/
-ls
-mv temp/ manager
-ls
-cd manager/
 clear
 
 ls
 clear
 
 ls
-cat cfg_key.cpp
+cd temp/
+ls
+clear
+
+ls
+clear
+
+ls
+ls DDZ/
+ls
+cd DDZ/
+ls
+cd DDZ/
+ls
+clear
+
+ls
+cd ..
+ls
+cd ddz-master/
+clear
+
+ls
+cd 游戏服务器/
+clear
+
+ls
+cd -
+clear
+
+cd ../
+cd ..
+ls
+cd ..
+ls
+clear
+
+ls
+exit

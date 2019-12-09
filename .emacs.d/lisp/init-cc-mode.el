@@ -5,6 +5,7 @@
 (setq auto-mode-alist
       (append '(("\\.h$" . c++-mode)
 		("\\.hpp$" . c++-mode)
+		("\\.cs$" . c++-mode)
 		("\\.proto$" . c++-mode))
 	      auto-mode-alist))
 

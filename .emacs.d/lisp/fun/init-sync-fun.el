@@ -49,13 +49,13 @@
 
 (defun my-copy ()
   (if (not (file-directory-p "~/code/company"))
-      (copy-file-from-buffer "~/code/server" "~/code/temp")))
+      (copy-file-from-buffer "~/code/test" "~/code/temp")))
 
 (defun my-encode ()
   (interactive)
   (sync-from-file "~/code/company"))
 
-(my-copy)
+;;(my-copy)
 
 
 (provide 'init-sync-fun)
