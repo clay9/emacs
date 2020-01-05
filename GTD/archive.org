@@ -43,8 +43,7 @@
        1) 编译器gradlew版本
 	  1) 修改工程下gradle/wrapper/gradle-wrapper.properties文件中的distributionUrl版本为4.1
 	  2) 修改工程下build.gradle文件中的classpath版本为4.1 -- 只影响gradlew指令, 不修改也可以
-       2) app文件的taget从a
-	  pp改为android module
+       2) app文件的taget从app改为android module
 	  1) 修改工程下app/built.gradle文件中的plugin为apply plugin: 'com.android.library'
 	  2) 删除工程下app/built.gradle文件中的applicationId -- 仅当application才有
        3) app文件的taget sdk版本修改
