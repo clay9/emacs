@@ -1,9 +1,3 @@
-/ssh:root@192.168.0.193:/etc
-/ssh:root@192.168.0.193:/root
-/home
-/Users/clay/.emacs.d/lisp
-/Users/clay/hexo/post/c++
-/Users/clay/code/company/temp/SystemModule
 /Users/clay/code/company/temp/SystemModule/BaseCode
 /Users/clay/hexo/blog/source/_posts/protocal
 /Users/clay/hexo/blog/source/_posts/system
@@ -31,3 +25,9 @@
 /Users/clay/code/company/temp/DDZ
 /Users/clay/code/company/temp
 /Users/clay/code/company
+/Users/clay/hexo/blog/source/_posts/protocol
+/Users/clay/hexo/blog/source/_posts
+/Users/clay/hexo/blog/source
+/Users/clay/hexo/blog
+/Users/clay/hexo
+/Users/clay/hexo/org-info
