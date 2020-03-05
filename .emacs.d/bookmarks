@@ -3,10 +3,10 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
- (filename . "~/GTD/task.org")
- (front-context-string . "* TODO [#C] magi")
- (rear-context-string . "ARTUP: overview\n")
- (position . 21))
+ (filename . "~/code/game.org")
+ (front-context-string . "* 说明\n  目的: 项目苹果打")
+ (rear-context-string . "TLE 棋牌麻将游戏框架整理\n\n")
+ (position . 22))
 ("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
  (front-context-string . "* INFO [#D] mac ")
