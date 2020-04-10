@@ -1,5 +1,3 @@
-* INFO [#D] mac pro订单号
-  - [2019-10-13 Sun] [capture]
 * INFO [#D] org-refile 的 rfloc
   - [2019-09-06 Fri] [capture]
     I've wondered what RFLOC should look like before, but never investigated. Looking at the org source code, it should be a list consisting of:
