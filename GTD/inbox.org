@@ -37,4 +37,5 @@
 
 2. 大局结束函数中, 在发送总结算之前, 增加是否金币场的判断
    if( IsGoldRoom())
-
+* protobuf cmake生成命令
+cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../../../../../install ../.. -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_BUILD_SHARED_LIBS=ON
