@@ -39,3 +39,814 @@
    if( IsGoldRoom())
 * protobuf cmake生成命令
 cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../../../../../install ../.. -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_BUILD_SHARED_LIBS=ON
+* logon server
+  
+    #region 登录服
+
+    #region MDM_L_LOGON结构体
+    //游客登录
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_LOGON_TEMP
+    {
+        //机器序列
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MACHINE_ID)]
+        public string szMachineID;
+
+        public UInt32 dwProxyID; //代理ID
+    };
+
+    //帐号登录
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_LOGON_ACCOUNTS
+    {
+        //版本校验
+        public UInt32 dwVersionCheck;
+
+        //登录帐号
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_ACCOUNTS)]
+        public string szAccounts;
+
+        //登录密码
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_PASSWORD)]
+        public string szPassword;
+
+        //机器序列
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MACHINE_ID)]
+        public string szMachineID;
+
+        public UInt32 dwProxyID;//代理ID
+    };
+
+    //账号注册
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_LOGON_REGISTER
+    {
+        //版本校验
+        public UInt32 dwVersionCheck;
+
+        //登录帐号
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_ACCOUNTS)]
+        public string szAccounts;
+
+        //登录密码
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_PASSWORD)]
+        public string szPassword;
+
+        //用户昵称
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_NICKNAME)]
+        public string szNickName;
+
+        //用户性别
+        public byte cbGender;
+
+        //手机号码
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MOBILE_PHONE)]
+        public string szMobilePhone;
+
+        //机器序列
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MACHINE_ID)]
+        public string szMachineID;
+
+        public UInt32 dwProxyID;          //代理ID
+
+    };
+
+    //平台登录
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_LOGON_PLATFORM
+    {
+        //版本校验
+        public UInt32 dwVersionCheck;
+
+        //登录帐号
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_OPEN_ID)]
+        public string szOpenID;
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_OPEN_ID)]
+        public string szunionID;
+
+        //用户昵称
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_NICKNAME)]
+        public string szNickName;
+        //用户性别
+        public byte cbGender;
+        //用户头像
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_HEAD_URL)]
+        public string strHeadUrl;
+
+        //机器序列
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MACHINE_ID)]
+        public string szMachineID;
+
+        public UInt32 dwProxyID; //代理ID
+    };
+
+    //账号登录|平台登录 CMD
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_LOGON_PLATFORM
+    {
+        //操作结果 
+        public UInt32 dwResultCode;
+        //描述信息
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeString;
+
+        public UserInfo userInfo;                    //玩家信息
+        public UInt32 dwOfflineGameID;               //断线重连的游戏ID, 非空表示需要断线重连
+    }
+
+    //重复登录 CMD
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_LOGON_REPEAT_LOGON
+    {
+        //描述信息
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeString;
+    };
+    #endregion
+
+    #region MDM_L_SERVICE结构体
+    #region SUB结构体
+
+    //财富信息
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public struct STR_CMD_RC_USER_MODIFY_TREASURE
+    {
+        public Int64 lUserDiamond;         //钻石
+        public Int64 lUserGlod;            //金币
+        public Int64 lOpenRoomCard;        //房卡
+    }
+
+    //请求失败
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_GC_REQUESTFAILURE
+    {
+        public UInt32 lErrorCode;
+        //错误代码
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
+        public string szDescribeString;
+        //描述信息
+    };
+
+    //玩家准备
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CG_USER_READY
+    {
+        public byte btype;  //0准备, 1取消准备 
+    };
+
+    //玩家准备 返回
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_GC_USER_READY
+    {
+        public byte result;  //0操作成功, 其他失败
+        public byte btype;   //0点击准备 返回,  1 点击取消准备 返回
+    };
+    
+    //关注, 粉丝
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_FLOWER
+    {
+        public UInt32 dwTargetID;   //用户ID
+    };
+
+    //关注, 粉丝
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_FLOWER_P
+    {
+        public UInt32 dwUserID;                         //用户ID
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_ACCOUNTS)]
+        public string szNickName;         //用户昵称
+        public byte cbGender;                          //用户性别
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_HEAD_URL)]
+        public string szHeadUrl;          //头像地址
+        public UInt32 dwLoveValue;                        //爱心值
+    };
+    //关注, 粉丝
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_FLOWER
+    {
+        public UInt32 dwFolwerNum;  //我的关注
+        public UInt32 dwFolwingNum; //我的粉丝
+        public byte cbIsShowGuanZhu;//是否显示关注 1显示关注btn 2显示取消关注btn 其他不显示
+
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
+        public STR_CMD_LC_SERVICE_FLOWER_P[] folwingInfo;
+    };
+
+    //关注, 粉丝 ACT
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_FLOWER_ACT
+    {
+        public UInt32 dwTargetID;   //用户ID
+        public byte cbMask;   //1关注, 2取消关注
+    };
+    //关注, 粉丝 ACT 返回
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_FLOWER_ACT
+    {
+        public byte cbResult; //0成功， 其他失败
+        public byte cbMask;   //1显示取消关注,  2显示关注
+    };
+
+
+
+    //个人资料
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_RESUME
+    {
+        /***基本属性***/
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_NICKNAME)]
+        public string szNickName;                 //用户昵称   
+        public Byte cbGender;                        //用户性别
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_HEAD_URL)]
+        public string szHeadUrl;                    //头像索引
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MY_SIGNATURE)]
+        public string szMySignature;            //个性签名 
+
+        /***联系方式***/
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_IDENTITY_NAME)]
+        public string szIdentityName;             //真实姓名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_IDENTITY_NUM)]
+        public string szIdentityNum;              //身份证号
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MOBILE_PHONE)]
+        public string szMobilePhone;              //手机号码
+    };
+    //刷新用户信息
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_REFRESH
+    {
+        public UInt32 dwUserID;                   //用户 I D
+    }
+    //用户反馈
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_FEEDBACK
+    {
+        /***用户标识***/
+        public UInt32 dwUserID;                  //用户 I D
+
+        //TODONOW 长度需要重新定义
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_FEEDBACK_TITLE)]
+        public string title;                              //反馈类型
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_FEEDBACK_CONTENT)]
+        public string content;                       //反馈内容
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MOBILE_PHONE)]
+        public string contact;                      //联系方式
+    }
+    //领取在线奖励
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_ONLINE_REWARD
+    {
+        public UInt32 dwUserID;                   //用户 I D
+    }
+
+    //排行榜列表（旧大厅）
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_STANDING_LIST
+    {
+        public byte byIndex;  //榜单序号,0今日消耗房卡 1今日胜场 2昨日消耗 3昨日胜场 4本周消耗 5本周胜场 6本月消耗 7本月胜场
+    };
+
+
+    //抽奖
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_LOTTERY
+    {
+        public UInt32 dwUserID;                   //用户 I D
+    };
+
+    //任务列表
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_TASKLIST
+    {
+        public UInt32 dwUserID;                                                 //用户ID
+    };
+
+    //领取任务奖励
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct SUB_CL_SERVICE_TASKREWARD
+    {
+        public UInt32 dwUserID;                                                 //用户ID
+        public UInt16 wTaskID;                                                  //任务ID
+    };
+    //录像数据查询
+    struct STR_SUB_CL_SERVICE_RECORD_LIST
+    {
+        public UInt32 dwUserID;
+    };
+
+    //获取指定ID录像
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_GET_SPECIFIC_RECORD
+    {
+        public UInt32 dwRecordID;              //录像ID
+    }
+
+
+    //请求排行榜数据（新大厅）
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_NEW_HALL_STANDING_LIST
+    {
+        public UInt32 dwUserID;//玩家id
+    };
+
+    //排行榜数据返回（新大厅）
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_CL_SERVICE_NEW_HALL_STANDING_LIST
+    {
+        public byte byRanking;//排名
+        public UInt32 dwUserID;//玩家id
+        public UInt32 dwLoveLiness;//用户魅力
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_NICKNAME)]
+        public string szNickName;//昵称
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_HEAD_URL)]
+        public string szHeadUrl;//头像
+    };
+
+    //排行榜数据返回结束（新大厅）
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_CL_SERVICE_NEW_HALL_STANDING_LIST_FINISH
+    {
+        public byte byMask; //无意义
+        public UInt32 byRanking;//自身排名
+        public UInt32 dwLoveLiness;//用户魅力
+    };
+
+    //大局战绩查询
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_DJ_RECORD_LIST
+    {
+        public UInt32 dwClubID;//牌友圈(版本2)索引, 为0表示是大厅
+    };
+
+    //大局战绩玩家信息
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct RecordDjPlayerInfo
+    {
+        public UInt32 dwUserID;//玩家ID
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_NICKNAME)]
+        public string szNickName;//昵称
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_HEAD_URL)]
+        public string szHeadUrl;//头像
+        public long lScore;//玩家得分（300，-300）
+    }
+
+    //大局战绩查询 返回
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_DJ_RECORD_LIST
+    {
+        public UInt32 dwTableID;    //桌子id
+        public UInt16 wTableType;   //桌子类型（0房、1比赛、2金、3房金、4工会）
+        public UInt16 wAllCount;    //总局数
+        public UInt16 wPlayerCount; //玩家人数
+        public UInt16 wKindID;      //游戏标志
+
+        public SystemTime szTime;       //时间(年/月/日)
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string szOnlyID;     //唯一标识
+
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
+        public RecordDjPlayerInfo[] playerInfo;//玩家信息
+    };
+
+    //查询某一房间战绩的小局战绩
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_XJ_RECORD_LIST
+    {
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string szOnlyID;     //唯一标识
+    }
+
+    //小局玩家信息
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct RecodeXjPlayerInfo
+    {
+        public UInt32 dwUserID;//玩家ID
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_NICKNAME)]
+        public string szNickName;//昵称
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_HEAD_URL)]
+        public string szHeadUrl;//头像
+        public long lScore;//玩家得分（300，-300）
+        public UInt16 wIdentity; //身份  （0农民 1地主）
+    }
+
+    //查询某一战绩的小局战绩返回
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_XJ_RECORD_LIST
+    {
+        public UInt32 dwTableID;    //桌子id
+        public UInt16 wCurCount;    //当前局数
+
+        public SystemTime szTime;   //时间(年/月/日)
+
+        public UInt16 wPlayerCount; //玩家人数
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string szOnlyID;     //唯一标识
+
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
+        public RecodeXjPlayerInfo[] playerInfo;//玩家信息
+    }
+
+    //滚动公告
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_MARQUEE
+    {
+        public byte byMask;//1代表新增;  2代表删除  3忽略此消息  4发送此消息  TODONOW删除
+
+        public UInt32 dwMarqueeID;//跑马灯索引                            TODONOW删除
+        public UInt32 dwMaruqeeTime;//跑马灯 滚动间隔                      TODONOW删除
+        SystemTime timeStartTime;//跑马灯 开始时间                         
+        SystemTime timeEndTime;//跑马灯 结束时间
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_MARQUEEMSG)]
+        public string szMarqueeMsg;//跑马灯消息
+
+    }
+
+    //请求录像回放数据
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SERVICE_XJ_RECORD_PLAYACK
+    {
+        public UInt16 wCurCount;    //当前局数
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string szOnlyID;     //唯一标识
+
+    }
+    //请求录像数据返回
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_XJ_RECORD_PLAYACK
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2048)]
+        public byte[] dwRecordDate; //录像Id
+
+        public byte cbCurCount;     //当前数据包 站位 从0开始计数
+        public byte cbAllCount;     //数据包 总数
+        public UInt16 wkindID;      //游戏标志
+    }
+
+    //录像数据 中的玩家信息
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct RePlayPlayerInfo
+    {
+        public UInt32 dwUserID;//玩家ID
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_NICKNAME)]
+        public string szNickName;//昵称
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_HEAD_URL)]
+        public string szHeadUrl;//头像
+        public long lScore;//玩家得分（300，-300）
+        public UInt16 wChaiID; //椅子号
+    }
+
+    //用户状态
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_GC_USERSTATUS
+    {
+        public byte UserAction; //玩家动作
+        public UserInfo userinfo; //玩家信息
+    };
+
+    #endregion
+
+    #region CMD结构体
+    //加入房间
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct CMD_GR_Join_Room
+    {
+        public UInt32 dwRoomNum;     //房间ID
+    };
+
+    //个人资料
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_RESUME
+    {
+        //操作结果 
+        public int dwResultCode;
+        //描述信息
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeString;
+    }
+
+    //用户反馈
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_FEEDBACK
+    {
+        //操作结果 
+        public int dwResultCode;
+        //描述信息
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeString;
+    }
+
+    //任务信息 -- 为单个Task信息
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_TASKLIST
+    {
+        /*** AccountTaskList ***/
+        public UInt16 wTaskID;                                              //任务ID
+
+        //TODONOW added by WangChengQing 增加任务类型
+        public byte byTaskType;                                            //任务类型 1日常; 2周常; 3月常; 4成就
+
+        public byte byActionType;                                          //任务动作类型 ，1绑定信息; 2微信分享; 3充值; 4房卡游戏; 5金币游戏 
+        public UInt32 dwNeedCount;                                     //任务完成所需的数量, 比如完成5局房卡游戏, 这里就是5; 上面字段为4
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribe;                                             //任务描述
+
+        public byte byRewardType;                                        //奖励类型 1金币; 2房卡; 3钻石
+        public UInt32 dwRewardCount;                                 //奖励数量
+
+        /*** AccountTaskStatus ***/
+        public byte byTaskStatus;                                          //完成状态 0进行中|未完成; 1完成未领取; 2完成已领取
+        public UInt32 dwFinishedCount;                              //已完成的任务所需数量
+
+        /*** 附加信息 ***/
+        public byte byListFinistMask;                                    //list发送完成标志 0未完成; 1完成
+
+    };
+    //任务奖励
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_TASKREWARD
+    {
+        public Int32 lResultCode;                                          //0-任务完成  其他-任务未完成
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribe;                                          //完成描述，例如 任完成,获得10000金币
+    };
+    //转盘抽奖
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_LOTTERY
+    {
+        public int dwResultCode;                                         //操作结果 
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeString;                                //描述信息
+
+        public byte index;                                                     //摇奖序号0-11
+    };
+    //排行榜列表
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_STANDING_LIST
+    {
+        public byte byIndex;                                                  //榜单序号
+
+        public UInt32 dwUserID;                                          //用户ID    
+        public UInt32 dwCount;                                            //消费或胜利数量
+        public byte byRankNum;                                          //名次
+        public byte byReceived;                                            //已领取
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_NICKNAME)]
+        public string szNickName;                                    //昵称
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_HEAD_URL)]
+        public string szHeadUrl;                                        //头像
+    };
+    //排行榜奖励
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_STANDING_RD
+    {
+        public Int64 lResultCode;                                         //0-领取成功  其他失败
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribe;                                          //完成描述，例如 领取成功,获得10000金币
+    };
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_USER_QUERY_SCORE_INFO
+    {
+        public int lResultCode;                      //操作代码
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeSrting;              //描述消息
+        public UInt32 dwUserID;                      //用户id
+        public Int64 lOpenRoomCard;                 //房卡
+        public Int64 lGold;                         //金币
+        public Int64 lDiamond;                      //钻石
+    }
+    //录像信息
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_RECORD_LIST
+    {
+        public UInt32 dwTableID;          //桌子ID
+        public UInt32 dwUserID1;          //0为人不存在
+        public UInt32 dwUserID2;
+        public UInt32 dwUserID3;
+        public UInt32 dwUserID4;
+        public UInt32 dwUserID5;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName1;          //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName2;          //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName3;          //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName4;          //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName5;          //玩家名
+        public byte byGameMode;             //游戏模式
+        public byte byZhuangType;           //坐庄类型
+        public UInt16 wCurrentJuShu;        //当前局数
+        public UInt16 wTotalJuShu;          //总局数
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 30)]
+        public string GameTime;             //游戏时间
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 50)]
+        public string GameScore;            //游戏总得分
+    };
+    //获取指定ID录像返回
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_SERVICE_GET_SPECIFIC_RECORD
+    {
+        public UInt16 wCurrentJuShu;            //当前局数
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName1;               //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName2;               //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName3;               //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName4;               //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string dwUserName5;               //玩家名
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 50)]
+        public string szScore;
+    }
+    #endregion
+    #endregion
+
+    #region MDM_L_GIFT结构体
+    //赠送道具
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_GIFT_GIVE_PROPS
+    {
+        public UInt32 dwSrcUserID;              //扣除用户ID
+        public UInt32 dwDstUserID;              //目标用户ID
+        public UInt32 dwPropsID;                    //道具编号
+        public UInt32 dwCount;					//赠送数量
+
+    }
+
+    //赠送道具返回
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_GIFT_GIVE_PROPS
+    {
+        public UInt32 dwResultCode;             //结果标识
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeString;        //描述消息
+
+        public UInt32 dwPropsID;                    //道具编号
+        public UInt32 dwCount;                  //赠送数量
+
+        public UInt32 dwLoveness;					//魅力值
+
+    }
+
+    //礼物赠送 -- 被赠送人的提醒
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_GIFT_GIVE_PROPS_SHOW
+    {
+        public UInt32 dwTargetID;                           //玩家ID
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeString;				//描述消息
+    }
+
+    #endregion
+
+    #region MDM_L_SHOP结构体
+    /************************************* 物品信息 ************************************/
+    //商城购买
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SHOP_BUY
+    {
+        public UInt32 dwGoodsID;        //物品Id
+        public UInt32 dwGoodsNum;       //物品数量
+        public byte byTreasureType;     //财富类型
+    }
+
+    //商城购买 返回
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_SHOP_BUY_RESULT
+    {
+        public byte byResult;          //0购买成功; 其他失败 
+    }
+
+    //背包物品查询返回
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_BAG_RESULT
+    {
+        public UInt32 dwGoodsID;  //物品id
+        public UInt32 dwGoodsNum; //物品数量
+    }
+
+    //消耗道具
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CG_EFFECT
+    {
+        public byte target_chair;     //to
+        public UInt32 dwGoodsID;      //物品id
+    }
+
+    //消耗道具广播
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_GC_EFFECT_BRODCAST
+    {
+        public byte source_chair;     //from
+        public byte target_chair;     //to
+        public UInt32 dwGoodsID;      //物品id
+    }
+
+    //0游戏开始, 1小局结束, 2大局结束
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_GC_GAME_ACT
+    {
+        public byte act;     //0游戏开始, 1小局结束, 2大局结束
+    }
+    #endregion
+
+    #region MDM_GAME
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_SUB_CL_GAME_QUERY_GAMEID
+    {
+        public UInt32 dwKindID;     //TODONOW 确认kindID的类型 -- 需要修改为GameID类型--否则加入房间时候, 会有错误
+    };
+
+    //创建房间之前, 先查询可用的GameID
+    [System.Serializable]
+    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]
+    public struct STR_CMD_LC_GAME_QUERY_GAMEID
+    {
+        //操作结果
+        public UInt32 dwResultCode;                         //结果标识
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_DESCRIBE)]
+        public string szDescribeString;     //描述消息
+        public UInt32 dwGameID;             //可用的GameID;
+
+        
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = CommonDefine.LEN_IP_ADDR)]
+        public string szIPAddr;            //ip地址
+        public UInt32 dwPort;              //ip端口
+    };
+
+    #endregion
+
+    #endregion
