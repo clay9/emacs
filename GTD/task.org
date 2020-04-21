@@ -1,5 +1,6 @@
 #+STARTUP: overview
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
+  - [2020-04-21 Tue] [refile]
   - [2019-09-25 Wed] [refile]
   - [2019-09-24 Tue] [refile]
   - [2019-09-24 Tue] [refile]
@@ -11,15 +12,9 @@
   - [2019-09-06 Fri] [refile]
   - [2019-08-01 Thu] [capture]
   
-* TODO [#C] js环境
-  SCHEDULED: <2019-09-24 Tue>
-  - [2019-09-24 Tue] [capture]
-    1. web环境
-    2. emacs环境配置
-* TODO [#C] magit配置使用
-  SCHEDULED: <2019-10-05 Sat>
-  - [2019-10-05 Sat] [capture]
-    
+* TODO [#C] hexo重新整理
+  SCHEDULED: <2020-04-21 Tue>
+  - [2020-04-21 Tue] [capture]
 * TODO [#C] ox-twbs
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [capture]

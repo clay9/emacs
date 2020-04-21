@@ -3,15 +3,15 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
- (filename . "~/code/game.org")
- (front-context-string . "* 说明\n  目的: 项目苹果打")
- (rear-context-string . "TLE 棋牌麻将游戏框架整理\n\n")
- (position . 22))
+ (filename . "~/GTD/task.org")
+ (front-context-string . "* TODO [#C] hexo")
+ (rear-context-string . "ARTUP: overview\n")
+ (position . 21))
 ("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* INFO [#D] mac ")
- (rear-context-string . " Sat] [capture]\n")
- (position . 1102))
+ (front-context-string . "* TODO [#C] hexo")
+ (rear-context-string . " unity3D 出 h5问题\n")
+ (position . 2351))
 (".emacs.d::init.el"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . "(package-initial")
