@@ -1,5 +1,6 @@
 #+STARTUP: overview
 * TODO [#C] GUD中 watch buffer需要手动调用speedbar-refresh才能刷新
+  - [2020-06-12 Fri] [refile]
   - [2020-04-21 Tue] [refile]
   - [2019-09-25 Wed] [refile]
   - [2019-09-24 Tue] [refile]
@@ -19,6 +20,8 @@
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [capture]
     org 生成html时候的js, 可以在右侧生成导航
+* TODO [#C] 尾款跟踪
+  - [2020-06-12 Fri] [capture]
 * TODO emacs跳转到标准库头文件
   - [2019-08-13 Tue] [capture]
 * PROJECT [#A] 企业形象搭建                                       :important:

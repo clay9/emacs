@@ -1,3 +1,5 @@
+* INFO [#D] lisp设计美学
+  - [2020-06-12 Fri] [capture]
 * protobuf cmake生成命令
 cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../../../../../install ../.. -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_BUILD_SHARED_LIBS=ON
 cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../../../../../install ../.. -Dprotobuf_BUILD_TESTS=OFF
@@ -5,4 +7,3 @@ cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../../../../../
 
 cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../install ../cmake -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_BUILD_SHARED_LIBS=ON
 #define PROTOBUF_USE_DLLS
-
