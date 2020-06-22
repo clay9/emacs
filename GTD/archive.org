@@ -1,2 +1,13 @@
 #+STARTUP: overview
 * ***********待归档*************
+
+* DONE [#C] hexo重新整理
+  CLOSED: [2020-06-22 Mon 01:03] SCHEDULED: <2020-04-21 Tue>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-06-22 Mon 01:03
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: DONE
+  :END:
+  - [2020-06-22 Mon] [done]
+  - [2020-04-21 Tue] [capture]

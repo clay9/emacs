@@ -9,9 +9,9 @@
  (position . 21))
 ("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* TODO [#C] 尾款跟踪")
+ (front-context-string . "* INFO [#D] 运营注意")
  (rear-context-string . "OTOBUF_USE_DLLS\n")
- (position . 520))
+ (position . 468))
 (".emacs.d::init.el"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . "(package-initial")
