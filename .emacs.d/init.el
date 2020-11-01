@@ -75,11 +75,6 @@
 (require 'init-artist-mode)    ;;简易绘图
 (require 'init-figlet)         ;;ASCII图形
 
-;; *************************
-;; 特殊函数
-;; *************************
-(require 'init-sync-fun)       ;;破解加密
-
 
 ;; *************************
 ;; 自定义
@@ -91,7 +86,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (php-mode magit bm figlet yasnippet window-number symbol-overlay sr-speedbar smartparens slime org-bullets org nyan-mode hydra helm-gtags graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers))))
+    (cal-china-x php-mode magit bm figlet yasnippet window-number symbol-overlay sr-speedbar smartparens slime org-bullets org nyan-mode hydra helm-gtags graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
