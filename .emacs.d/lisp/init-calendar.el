@@ -32,6 +32,7 @@
 
 ;; set first day is monday
 (setq calendar-week-start-day 1)
+(setq calendar-day-header-array ["日" "一" "二" "三" "四" "五" "六"]) 
 
 
 ;; diary file

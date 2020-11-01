@@ -39,5 +39,4 @@
   (set-buffer-file-coding-system 'utf-8-hfs)
   (save-buffer))
 
-
 (provide 'init-basic-fun)

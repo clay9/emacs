@@ -1,4 +1,4 @@
-;(require 'helm)
+(require 'helm)
 (require 'helm-config)
 (require 'helm-lib)
 (require 'helm-buffers)
