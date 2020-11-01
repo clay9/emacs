@@ -85,8 +85,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (cal-china-x php-mode magit bm figlet yasnippet window-number symbol-overlay sr-speedbar smartparens slime org-bullets org nyan-mode hydra helm-gtags graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers))))
+   '(ebdb-i18n-chn cal-china-x magit bm figlet window-number sr-speedbar hydra graphviz-dot-mode flycheck expand-region dracula-theme disable-mouse company-c-headers)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
