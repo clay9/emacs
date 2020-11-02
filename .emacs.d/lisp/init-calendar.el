@@ -30,7 +30,7 @@
 
 
 ;; set first day is monday
-;(setq calendar-week-start-day 1)
+(setq calendar-week-start-day 1)
 
 ;; diary file
 (setq diary-file "~/GTD/BigDay/BigDay")

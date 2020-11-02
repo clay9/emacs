@@ -54,7 +54,7 @@
  ;; capture
 (setq org-capture-templates
       '(("i" "info" entry (file "~/GTD/inbox.org")
-	 "* INFO [#D] %?\n  - %u [capture]\n %i\n")
+	 "* [#D] %?\n  - %u [capture]\n %i\n")
 	("t" "todo" entry (file "~/GTD/inbox.org")
 	 "* TODO [#C] %?\n  - %u [capture]\n %i\n")
 	("w" "waiting" entry (file "~/GTD/inbox.org")
@@ -157,7 +157,7 @@
 	  (org-agenda-files '("~/GTD/task.org"))
 	  (org-agenda-todo-keyword-format "")))
 	("i" "inbox"
-	 ((search "INFO"
+	 ((search "* "
 		((org-agenda-overriding-header "Inbox"))))
 	 ((local_temp (funcall set_org_buffer_no 3))
 	  (org-agenda-sorting-strategy

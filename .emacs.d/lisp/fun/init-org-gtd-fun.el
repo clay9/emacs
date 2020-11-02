@@ -51,7 +51,12 @@
   (while (/= (point) (point-max))      
     (when (or (org-match-line "* TODO")
 	      (org-match-line "* WAITING")
-	      (org-match-line "* PROJECT"))
+	      (org-match-line "* PROJECT")
+	      (org-match-line "* DONE")
+	      (org-match-line "* CANCEL"))
+      ;; replace "INFO"
+      ;(when (org-match-line "INFO"))
+      
       (org-refile nil nil (list nil "~/GTD/task.org" nil nil)))
     (forward-line)))
   
@@ -59,14 +64,6 @@
   "Used by org-agenda-redo
   Function: archive all done item;  task.org -> trash.org"
   (let ((current_buffer (current-buffer)))
-    (set-buffer "inbox.org")
-    (my-org-archive-all-matches
-     (lambda (_beg end)
-       (let ((case-fold-search nil))
-	 (unless (re-search-forward org-not-done-heading-regexp end t)
-	   "no open TODO items")))
-     tag)
-    
     (set-buffer "task.org")
     (my-org-archive-all-matches
      (lambda (_beg end)

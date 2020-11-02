@@ -1,13 +1,16 @@
 #+STARTUP: overview
 * ***********待归档*************
 
-* DONE [#C] hexo重新整理
-  CLOSED: [2020-06-22 Mon 01:03] SCHEDULED: <2020-04-21 Tue>
+* protobuf cmake生成命令
   :PROPERTIES:
-  :ARCHIVE_TIME: 2020-06-22 Mon 01:03
-  :ARCHIVE_FILE: ~/GTD/task.org
-  :ARCHIVE_CATEGORY: task
-  :ARCHIVE_TODO: DONE
+  :ARCHIVE_TIME: 2020-11-02 Mon 10:09
+  :ARCHIVE_FILE: ~/GTD/inbox.org
+  :ARCHIVE_CATEGORY: inbox
   :END:
-  - [2020-06-22 Mon] [done]
-  - [2020-04-21 Tue] [capture]
+cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../../../../../install ../.. -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_BUILD_SHARED_LIBS=ON
+cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../../../../../install ../.. -Dprotobuf_BUILD_TESTS=OFF
+
+
+cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../install ../cmake -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_BUILD_SHARED_LIBS=ON
+#define PROTOBUF_USE_DLLS
+
