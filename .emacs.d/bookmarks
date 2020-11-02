@@ -1,15 +1,15 @@
-;;;; Emacs Bookmark Format Version 1 ;;;;
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* TODO [#C] 尾款跟踪")
+ (front-context-string . "* TODO INFO [#D]")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 ("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* INFO [#D] 运营注意")
+ (front-context-string . "* INFO [#D] 测试使用")
  (rear-context-string . "OTOBUF_USE_DLLS\n")
  (position . 468))
 (".emacs.d::init.el"

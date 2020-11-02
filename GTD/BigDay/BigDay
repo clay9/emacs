@@ -1,12 +1,12 @@
 ;;
 ;;*** Special Date ***
 ;;
-%%(diary-remind '(diary-anniversary (car (get-lunar-day 11 22)) (cadr (get-lunar-day 11 22)) 1989) '(1,2,3,4,5,6)) ❤妈妈%d生日❤
-%%(diary-remind '(diary-anniversary (car (get-lunar-day 8 23)) (cadr (get-lunar-day 8 23)) 1994) '(1,2,3,4,5,6)) ♥宝宝%d岁生日♥
-%%(diary-remind '(diary-anniversary (car (get-lunar-day 12 19)) (cadr (get-lunar-day 12 19)) 1989) '(1,2,3,4,5,6)) ♥我%d岁生日♥
-%%(diary-anniversary 9 15 2019) ♥枕头%d岁生日♥
+&%%(diary-remind '(diary-anniversary (car (get-lunar-day 11 22)) (cadr (get-lunar-day 11 22)) 1989) '(1,2,3,4,5,6)) ❤妈妈%d生日❤
+&%%(diary-remind '(diary-anniversary (car (get-lunar-day 8 23)) (cadr (get-lunar-day 8 23)) 1994) '(1,2,3,4,5,6)) ♥宝宝%d岁生日♥
+&%%(diary-remind '(diary-anniversary (car (get-lunar-day 12 19)) (cadr (get-lunar-day 12 19)) 1989) '(1,2,3,4,5,6)) ♥我%d岁生日♥
+&%%(diary-anniversary 9 15 2019) ♥枕头%d岁生日♥
 
-%%(diary-remind '(diary-anniversary 7 4 2020) '(1,2,3,4,5,6)) ♥相恋%d年♥
+&%%(diary-remind '(diary-anniversary 7 4 2020) '(1,2,3,4,5,6)) ♥相恋%d年♥
 
 
 ;;

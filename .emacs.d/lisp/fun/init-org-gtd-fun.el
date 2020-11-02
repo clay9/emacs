@@ -59,6 +59,14 @@
   "Used by org-agenda-redo
   Function: archive all done item;  task.org -> trash.org"
   (let ((current_buffer (current-buffer)))
+    (set-buffer "inbox.org")
+    (my-org-archive-all-matches
+     (lambda (_beg end)
+       (let ((case-fold-search nil))
+	 (unless (re-search-forward org-not-done-heading-regexp end t)
+	   "no open TODO items")))
+     tag)
+    
     (set-buffer "task.org")
     (my-org-archive-all-matches
      (lambda (_beg end)
@@ -66,6 +74,7 @@
 	 (unless (re-search-forward org-not-done-heading-regexp end t)
 	   "no open TODO items")))
      tag)
+    
     (set-buffer current_buffer)))
 
 (defun my-org-archive-all-matches (predicate &optional tag)
