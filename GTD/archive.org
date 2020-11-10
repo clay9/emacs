@@ -14,3 +14,24 @@ cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../../../../../
 cmake -G "Visual Studio 16 2019" -A Win32 -DCMAKE_INSTALL_PREFIX=../install ../cmake -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_BUILD_SHARED_LIBS=ON
 #define PROTOBUF_USE_DLLS
 
+
+* CANCEL [#C] 是不是org的 r刷新没有反应
+  CLOSED: [2020-11-02 Mon 10:56]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-11-02 Mon 10:56
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: CANCEL
+  :END:
+  - [2020-11-02 Mon] [capture]
+
+* CANCEL [#D] 配置org的gtd2
+  CLOSED: [2020-11-02 Mon 10:56]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-11-02 Mon 10:56
+  :ARCHIVE_FILE: ~/GTD/task.org
+  :ARCHIVE_CATEGORY: task
+  :ARCHIVE_TODO: CANCEL
+  :END:
+  - [2020-11-02 Mon] [capture]
+    好像刷新没有反应

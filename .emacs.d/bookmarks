@@ -4,14 +4,14 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
  (filename . "~/GTD/task.org")
- (front-context-string . "* CANCEL [#D] te")
+ (front-context-string . "* CANCEL [#D] 配置")
  (rear-context-string . "ARTUP: overview\n")
  (position . 21))
 ("org-capture-last-stored"
  (filename . "~/GTD/inbox.org")
- (front-context-string . "* [#D] test\n  - ")
- (rear-context-string)
- (position . 1))
+ (front-context-string . "* TODO [#C] 是不是o")
+ (rear-context-string . "e]\n    好像刷新没有反应\n")
+ (position . 63))
 (".emacs.d::init.el"
  (filename . "~/.emacs.d/init.el")
  (front-context-string . "(package-initial")

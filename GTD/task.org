@@ -4,6 +4,7 @@
   - [2020-11-02 Mon] [refile]
   - [2020-11-02 Mon] [refile]
   - [2020-11-02 Mon] [refile]
+  - [2020-11-02 Mon] [refile]
   - [2020-06-12 Fri] [refile]
   - [2020-04-21 Tue] [refile]
   - [2019-09-25 Wed] [refile]
@@ -21,6 +22,11 @@
   - [2019-09-06 Fri] [refile]
   - [2019-09-06 Fri] [capture]
     org 生成html时候的js, 可以在右侧生成导航
+* TODO [#C] 配置org的gtd
+  - [2020-11-02 Mon] [refile]
+  - [2020-11-02 Mon] [capture]
+    1. project工程常驻显示, 不再隐藏
+       貌似这样也不好, 常驻的话, 非常容易出问题, 但是如果不显示的话, 也不好, 不知道到哪一步了
 * TODO emacs跳转到标准库头文件
   - [2019-08-13 Tue] [capture]
 * PROJECT [#A] 企业形象搭建                                       :important:
